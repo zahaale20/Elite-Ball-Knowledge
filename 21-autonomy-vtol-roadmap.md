@@ -1,5 +1,18 @@
 # Autonomous VTOL Program Roadmap
 
+> This file is the program's backbone. It exists so that every other guide in
+> the autonomy band — SITL ([22-autonomy-px4-sitl.md](22-autonomy-px4-sitl.md)),
+> the onboard system ([23-autonomy-onboard-system.md](23-autonomy-onboard-system.md)),
+> the test scaffold ([24-autonomy-test-scaffold.md](24-autonomy-test-scaffold.md)),
+> control theory ([25-autonomy-control-theory.md](25-autonomy-control-theory.md)),
+> and GNC ([28-autonomy-gnc.md](28-autonomy-gnc.md)) — hangs off a single,
+> staged plan with hard exit criteria. Reading it should make you able to answer
+> three questions for any piece of work: *which stage am I in, what proves the
+> stage is done, and what kills the program if I get it wrong?* A roadmap that
+> can't answer those is a wish list. This one is gated. See
+> [02-ten-year-mastery-plan.md](02-ten-year-mastery-plan.md) for how this program
+> slots into the longer arc.
+
 This document is the single source of truth for the program that builds, flies,
 and operates a 3D-printed fixed-wing UAV in its **VTOL
 tilt-tricopter** configuration, controlled by a Holybro/Auterion **Pixhawk 6C**
@@ -98,6 +111,232 @@ only; it is not representative of VTOL behavior.
 | 7 | Security & CI hardening | TLS in front of the onboard service, rotate API token via env, restrict mission upload origin, GitHub Actions on both repos (lint, type-check, unit + integration tests, dependency scan). | both |
 | 8 | Mission expansion | Geofence enforcement, BVLOS-ready logging, payload integration via the airframe's modular nose. | both |
 
+### Stage-by-stage rationale, exit criteria, and risks
+
+The table above is the contract. This section is the *why* behind each row —
+the reasoning a reviewer (or a future you) needs to decide whether a stage is
+genuinely closed or just looks closed.
+
+#### Stage 1 — SITL as a Tiltrotor VTOL
+
+- **Rationale.** You cannot iterate on mission logic, telemetry shaping, or the
+  transition state machine against real hardware — the cost of a mistake is a
+  broken airframe. SITL collapses the iteration loop from hours to seconds and
+  lets you exercise the *full* software stack (onboard service + GCS) before any
+  motor spins. This is the single highest-leverage stage; everything downstream
+  rides on having a trustworthy simulator in the loop.
+- **Exit criteria (binary).** `tools/sim_up.sh` brings up PX4 SITL +
+  onboard service + UI with one command; `vtol_demo.py` completes
+  hover → FW → waypoints → MC → land with **zero `ABORT`**; the UI can command a
+  transition and you see the vehicle obey.
+- **Risks.** macOS Gazebo flakiness (mitigation: Docker-Linux fallback);
+  treating the `gz_tiltrotor` stand-in as if it were the real airframe (it is
+  *not* — see Stage 2). Do not tune gains against the stand-in.
+
+#### Stage 2 — Airframe-specific SDF + live VTOL state pill
+
+- **Rationale.** The stock `gz_tiltrotor` is a 4-motor quadplane. Your airframe
+  is a 3-motor tilt-tri with a V-tail. Their mass, inertia, and control
+  allocation differ enough that any tuning done against the stand-in is
+  throwaway. A geometry-accurate SDF is the first time SITL behavior starts to
+  predict hardware behavior. The live `MAV_VTOL_STATE` pill matters because the
+  transition is the most dangerous phase of flight and the operator must *see*
+  which sub-state the vehicle is in.
+- **Exit criteria.** Custom model in `drone/sim/models/vtol/` with measured (not
+  guessed) mass/inertia once a physical airframe exists; UI shows MC /
+  TRANSITION_TO_FW / FW / TRANSITION_TO_MC sourced from a **pymavlink**
+  side-channel (MAVSDK-Python does not surface `EXTENDED_SYS_STATE`).
+- **Risks.** Inertia tensor guessed instead of measured; CG drift from LW-PLA
+  warpage invalidating the model (re-weigh after every major print revision).
+
+#### Stage 3 — Hardware BOM lock-in
+
+- **Rationale.** Ordering the wrong ESC current rating, prop pitch, or servo
+  torque costs weeks of shipping lead time and can damage the airframe on first
+  power-up. Locking the BOM *before* Stage 4 params forces you to reconcile the
+  electrical reality (channel count, current draw, UART budget) with the
+  firmware mapping.
+- **Exit criteria.** `drone/hardware/BOM.md` committed; every output channel
+  mapped to a physical 6C pin; total continuous current within ESC/battery
+  limits with margin.
+- **Risks.** PWM/DShot channel shortfall (9 outputs needed — see the channel
+  budget below); UART contention (GPS + ELRS + telemetry + companion link).
+
+#### Stage 4 — PX4 airframe params for the VTOL
+
+- **Rationale.** This is where the custom control allocator and mixer live. A
+  tilt-tri is not expressible with a stock mixer; you need explicit motor/servo
+  output mapping, tilt-servo allocation, and transition thresholds. The params
+  file is the bridge that lets the *same* configuration load into SITL and the
+  real Pixhawk, so SITL stays representative.
+- **Exit criteria.** `drone/airframes/tiltrotor.params` loads cleanly into both
+  SITL and hardware; control-surface and motor directions verified on the bench
+  (Stage 5); transition airspeed thresholds set conservatively.
+- **Risks.** Allocation sign errors (a reversed tilt servo turns a transition
+  into a crash); over-aggressive transition airspeed causing a stall during
+  back-transition.
+
+#### Stages 5-8 — bring-up, first flight, hardening, expansion
+
+- **Stage 5 (bench bring-up)** exists to catch every wiring and direction error
+  *with props off*. Exit: motors-off arm test, surface-direction test, ESC cal,
+  sensor cal, RC failsafe, link tests all pass and are scripted.
+- **Stage 6 (first flight)** is gated by go/no-go checklists and HITL log
+  replay — never fly a config you have not replayed. Exit: manual hover, manual
+  FW, autonomous transition, RTL all logged and reviewed in Flight Review.
+- **Stage 7 (security & CI)** treats the onboard service as an internet-facing
+  product: TLS, rotating tokens, restricted mission-upload origin, GitHub
+  Actions running lint + types + unit + integration on every push. See
+  [09-foundations-safety-assurance.md](09-foundations-safety-assurance.md).
+- **Stage 8 (mission expansion)** adds geofence enforcement, BVLOS-grade
+  logging, and payload integration. Exit: geofence breach triggers the correct
+  failsafe in SITL *and* on the bench.
+
+## Tilt-tricopter control allocation
+
+The control problem that defines this airframe is **allocation**: how the
+autopilot's desired body torques and thrust get mapped onto three motors, two
+tilt servos, and a V-tail — and how that mapping *changes continuously* through
+the transition. This is the part that no stock PX4 airframe gives you for free.
+
+```
+              FRONT
+        M1 (tilt) ── M2 (tilt)      M1,M2: front motors on tilt servos
+            \         /             tilt = 90° (up)  → hover
+             \       /              tilt =  0° (fwd) → cruise
+              \     /
+               body                 M3: rear lift motor (CW),
+                |                        idles in forward flight
+               M3 (fixed, lift)
+              /     \
+           V-tail   V-tail          ruddervators: pitch + yaw in FW
+            REAR
+```
+
+| Flight phase | Lift source | Pitch | Roll | Yaw |
+| ------------ | ----------- | ----- | ---- | --- |
+| Hover (MC) | M1+M2+M3 thrust | front/rear thrust diff | front motor thrust diff | rear motor torque + differential tilt |
+| Transition | blended (tilt sweeps) | blended | blended | blended (authority migrates) |
+| Cruise (FW) | wing | V-tail (ruddervators) | ailerons | V-tail (ruddervators) |
+
+Key allocation facts to internalize:
+
+- **Yaw authority migrates.** In hover, yaw comes from the rear motor's reaction
+  torque plus differential tilt of the two front motors (tilt them slightly
+  opposite to produce a yaw moment). In cruise, yaw is aerodynamic via the
+  V-tail. The dangerous window is mid-transition where *neither* source is at
+  full authority — this is why transition airspeed scheduling matters.
+- **The rear motor is dead weight in cruise.** It produces drag and mass it
+  cannot pay back aerodynamically, so the allocator must idle it cleanly and the
+  airframe design must accept the cruise-efficiency penalty.
+- **Tilt servos are a control surface, not a config switch.** The allocator
+  commands a continuous tilt angle, not a binary up/down. Treat tilt angle as a
+  first-class actuator with its own rate limit, slew, and failure mode.
+- **Sign discipline is everything.** A reversed motor rotation, prop, or tilt
+  direction passes a desk review and kills the vehicle on the bench. Stage 5
+  exists specifically to catch this with props off.
+
+For the control-theory underneath (mixing matrices, pseudo-inverse allocation,
+actuator saturation), see [25-autonomy-control-theory.md](25-autonomy-control-theory.md)
+and the GNC integration in [28-autonomy-gnc.md](28-autonomy-gnc.md).
+
+## Transition envelope
+
+The transition is a scheduled maneuver, not an instant. PX4 sequences it through
+`MAV_VTOL_STATE`, and your job is to keep the vehicle inside a safe envelope of
+airspeed, altitude, and tilt angle the whole way.
+
+```
+ airspeed
+   │                         ┌──────────── FW cruise (wing-borne)
+   │                     ────┘
+   │   stall margin  ┌───┘   ← back-transition must stay above stall
+   │ ───────────────┤        ← forward-transition must reach blend airspeed
+   │  hover (0)  ────┘
+   └─────────────────────────────────────► time
+        MC   │ TRANSITION_TO_FW │   FW   │ TRANSITION_TO_MC │  MC
+```
+
+| Parameter (conceptual) | Forward transition | Back transition |
+| ---------------------- | ------------------ | --------------- |
+| Trigger | operator/mission command in MC | command in FW |
+| Tilt schedule | 90° → 0° over `VT_F_TRANS_DUR` | 0° → 90° |
+| Airspeed gate | must reach blend airspeed before completing | must stay **above stall** until hover thrust supports weight |
+| Failure mode | incomplete transition → wallowing, altitude loss | stall/drop if airspeed bled off too early |
+| Abort path | revert to MC, re-establish hover | hold FW, climb, retry |
+
+Hard rules:
+
+- **Always have altitude to spend.** Both transitions can lose altitude; never
+  initiate one near the ground in SITL or on hardware.
+- **Back-transition is the killer.** Going FW → MC, if airspeed drops below
+  stall before the lift motors take the load, the wing stops flying and the
+  vehicle falls. Conservative airspeed thresholds (Stage 4) buy margin.
+- **The operator must see the sub-state.** Hence the Stage 2 pymavlink
+  `EXTENDED_SYS_STATE` pill — a transition stuck in `TRANSITION_TO_MC` is an
+  emergency the operator needs to recognize in under a second.
+
+## BOM & airframe considerations
+
+The airframe is a constraint, not a detail. CG, channel count, current budget,
+and print tolerances all feed back into the firmware and the flight envelope.
+
+### Pixhawk 6C output channel budget
+
+Nine outputs are required. Verify against the 6C MAIN/AUX PWM map *before*
+ordering ESCs and wiring tilt-servo extensions.
+
+| Output | Count | Type | Notes |
+| ------ | ----- | ---- | ----- |
+| Lift/cruise motors | 3 | PWM or DShot | M1, M2 (tilting) + M3 (fixed rear) |
+| Tilt servos | 2 | PWM | continuous angle, needs rate limit |
+| V-tail (ruddervators) | 2 | PWM | pitch + yaw in FW |
+| Ailerons | 2 | PWM | inherited from base airframe |
+| **Total** | **9** | | check AUX vs MAIN split on 6C |
+
+### UART budget
+
+The companion link, GPS, RC (ELRS), and a telemetry radio all compete for
+serial ports. Map every consumer to a physical UART before Stage 3 closes —
+running out of UARTs mid-build is a common, avoidable stall.
+
+### Mass, CG, and print tolerance
+
+- **AUW 2000-3000 g** drives motor/prop/ESC sizing and the stall airspeed that
+  bounds the transition envelope.
+- **LW-PLA + PETG** warps and absorbs moisture; CG can shift between prints.
+  Re-weigh and re-balance after every major airframe revision and feed the new
+  numbers back into the Stage 2 SDF inertia tensor.
+- **Tilt mechanism slop** is a real failure source: backlash in the tilt servo
+  linkage shows up as a control-allocation error mid-transition. Inspect it as
+  part of Stage 5 bench bring-up.
+
+## SITL-to-hardware gates
+
+Nothing moves from simulation to a powered airframe without passing an explicit
+gate. This is the single discipline that separates a portfolio project from a
+crash compilation.
+
+```
+ SITL green ──► Bench (props OFF) ──► Tethered/manual hover ──► Autonomous
+   │                │                        │                      │
+   └ vtol_demo      └ Stage 5 protocol       └ Stage 6 go/no-go      └ HITL replay
+     zero ABORT       all checks pass          checklist              before each new config
+```
+
+| Gate | You may proceed only when… |
+| ---- | -------------------------- |
+| SITL → Bench | `vtol_demo.py` completes with zero `ABORT`; params load identically into SITL and hardware |
+| Bench → Hover | every Stage 5 check passes **with props off**; surface and motor directions verified |
+| Hover → Autonomous | manual hover + manual FW logged and reviewed; failsafes (RC loss, geofence, low battery) tested |
+| New config → Flight | the exact config has been HITL log-replayed; no untested param reaches a powered airframe |
+
+The preflight gate in every mission script enforces the software half of this:
+it refuses to arm without GPS lock, home position, and healthy calibrations. If
+it times out indoors, that is the safety feature working — see
+[23-autonomy-onboard-system.md](23-autonomy-onboard-system.md) for the
+constitution-gated command policy that backs it.
+
 ## Test strategy (applies to every stage)
 
 Per the project's testing philosophy, every change ships with risk-prevention
@@ -139,5 +378,8 @@ stages fill it out.
 - MAVSDK-Python: https://mavsdk.mavlink.io  ·  pymavlink: https://github.com/ArduPilot/pymavlink
 - Pixhawk 6C (Holybro) hardware: https://docs.holybro.com  ·  PX4 hardware: https://docs.px4.io/main/en/flight_controller/
 - Flight log review (PlotJuggler / PX4 Flight Review): https://plotjuggler.io, https://logs.px4.io
+- VTOL aerodynamics & transition: Anderson, *Aircraft Performance and Design*; Beard & McLain, *Small Unmanned Aircraft: Theory and Practice* (Princeton).
+- Control allocation background: see [25-autonomy-control-theory.md](25-autonomy-control-theory.md) and [28-autonomy-gnc.md](28-autonomy-gnc.md).
+- Companion guides: SITL [22-autonomy-px4-sitl.md](22-autonomy-px4-sitl.md), onboard [23-autonomy-onboard-system.md](23-autonomy-onboard-system.md), tests [24-autonomy-test-scaffold.md](24-autonomy-test-scaffold.md), assurance [09-foundations-safety-assurance.md](09-foundations-safety-assurance.md).
 
 *This roadmap documents the author's own VTOL program; stage definitions are the author's. Hardware/firmware specifics track the vendor docs above.*

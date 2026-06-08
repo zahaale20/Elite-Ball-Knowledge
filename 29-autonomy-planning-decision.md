@@ -1,6 +1,6 @@
 # Module 04 — Autonomy: Planning & Decision-Making
 
-> **Where this sits in the curriculum.** [Module 03 — Guidance, Navigation & Control](03_guidance_navigation_control.md) gave the airframe a *body* that can hold a setpoint and a *nervous system* that knows where it is. This module gives it a *will*: the layer that turns "state of the world" into "correct next action." For the perception and learning machinery this layer consumes — detectors, trackers, deep RL — link out to the companion [ML/RL guide](../ML_AI_AUTONOMY_GUIDE.md) rather than duplicating it here. For how multiple airframes share decisions, see [Module 05 — Distributed Systems, Comms & Mesh](05_distributed_systems_comms_mesh.md).
+> **Where this sits in the curriculum.** [Module 03 — Guidance, Navigation & Control](28-autonomy-gnc.md) gave the airframe a *body* that can hold a setpoint and a *nervous system* that knows where it is. This module gives it a *will*: the layer that turns "state of the world" into "correct next action." For the perception and learning machinery this layer consumes — detectors, trackers, deep RL — link out to the companion [ML/RL guide](20-autonomy-ml-ai.md) rather than duplicating it here. For how multiple airframes share decisions, see [Module 05 — Distributed Systems, Comms & Mesh](05_distributed_systems_comms_mesh.md).
 >
 > **What a senior autonomy engineer actually owns.** Not "the AI." They own the *decision architecture*: which paradigm runs the show, where uncertainty is represented, what the fallback is when every assumption breaks, and — at a defense-autonomy company — the **trust boundary** that keeps an unbounded model from ever commanding an unbounded action. That last point is the whole module's spine.
 
@@ -322,7 +322,7 @@ So the FSM in `mission_director.py` is best understood as a **coarse, hand-coded
 
 ### 3.4 The bridge to Reinforcement Learning
 
-An MDP/POMDP where you **don't know** $T$ and $R$ a priori, and must *learn* the policy from experience, is **reinforcement learning**. The Bellman equation is still the backbone — Q-learning, actor-critic, PPO/SAC all descend from it. RL shines where the optimal policy is too complex to hand-code (agile evasion, vision-based control, learned search heuristics) and is dangerous where you need a guarantee (anything irreversible). **For the deep treatment — value-based vs policy-gradient, sim-to-real, reward shaping, where RL fits this airframe — see the companion [ML/RL guide](../ML_AI_AUTONOMY_GUIDE.md#reinforcement-learning).** The architectural rule from §1.1 holds: put learned policies *inside leaves* of an explicit, verifiable arbitration structure; don't let them *be* the arbiter of irreversible actions.
+An MDP/POMDP where you **don't know** $T$ and $R$ a priori, and must *learn* the policy from experience, is **reinforcement learning**. The Bellman equation is still the backbone — Q-learning, actor-critic, PPO/SAC all descend from it. RL shines where the optimal policy is too complex to hand-code (agile evasion, vision-based control, learned search heuristics) and is dangerous where you need a guarantee (anything irreversible). **For the deep treatment — value-based vs policy-gradient, sim-to-real, reward shaping, where RL fits this airframe — see the companion [ML/RL guide](20-autonomy-ml-ai.md#reinforcement-learning).** The architectural rule from §1.1 holds: put learned policies *inside leaves* of an explicit, verifiable arbitration structure; don't let them *be* the arbiter of irreversible actions.
 
 ---
 
@@ -384,11 +384,11 @@ A plan is a hypothesis about the future; the future disagrees. Robust autonomy p
 
 ## 5. Multi-Target Tracking as Decision Input
 
-Tracking isn't a perception side-quest — it's the **belief over targets** that feeds every tactical decision. [onboard/track_engine.py](onboard/track_engine.py) turns raw detections into the decision-grade state the planner needs. (For the *perception* that produces detections — detectors, appearance embeddings, the IMX500 pipeline — see the [ML/RL guide](../ML_AI_AUTONOMY_GUIDE.md).)
+Tracking isn't a perception side-quest — it's the **belief over targets** that feeds every tactical decision. [onboard/track_engine.py](onboard/track_engine.py) turns raw detections into the decision-grade state the planner needs. (For the *perception* that produces detections — detectors, appearance embeddings, the IMX500 pipeline — see the [ML/RL guide](20-autonomy-ml-ai.md).)
 
 ### 5.1 Data association — the hard core
 
-Each frame yields detections; you must decide *which detection is which existing track* (or a new one). The repo does **class-scoped greedy nearest-neighbor** association within `ASSOC_RADIUS_M` (18 m) in a local ENU frame, with **appearance-gated re-ID**: a retired track parks its 32-bin HSV color signature in a ghost buffer (`GHOST_TTL_S`), and a later detection with no nearby same-class track but a matching appearance (within the wider `REID_RADIUS_M`) **resurrects the same track id**. This keeps identity alive across occlusions and the IMX500's frame-rate gaps far better than position gating alone. (The formal cousins — Global Nearest Neighbor, JPDA, MHT — live in the [ML/RL guide](../ML_AI_AUTONOMY_GUIDE.md); greedy + appearance is the right cost/benefit on this compute.)
+Each frame yields detections; you must decide *which detection is which existing track* (or a new one). The repo does **class-scoped greedy nearest-neighbor** association within `ASSOC_RADIUS_M` (18 m) in a local ENU frame, with **appearance-gated re-ID**: a retired track parks its 32-bin HSV color signature in a ghost buffer (`GHOST_TTL_S`), and a later detection with no nearby same-class track but a matching appearance (within the wider `REID_RADIUS_M`) **resurrects the same track id**. This keeps identity alive across occlusions and the IMX500's frame-rate gaps far better than position gating alone. (The formal cousins — Global Nearest Neighbor, JPDA, MHT — live in the [ML/RL guide](20-autonomy-ml-ai.md); greedy + appearance is the right cost/benefit on this compute.)
 
 ### 5.2 Kinematic state → behavior → threat
 
@@ -637,13 +637,13 @@ A concrete, do-it checklist. Each item builds intuition you can defend in an int
 - [ ] Open the decision log and run `verify_chain()`; hand-edit one record and confirm the chain reports tampering. Understand *why* that property matters in a defense review (§8.4).
 
 **Connect outward.**
-- [ ] Skim the RL section of the [ML/RL guide](../ML_AI_AUTONOMY_GUIDE.md) and write one sentence on where a learned policy could slot into the §9 ladder *without* becoming the arbiter of an irreversible action.
+- [ ] Skim the RL section of the [ML/RL guide](20-autonomy-ml-ai.md) and write one sentence on where a learned policy could slot into the §9 ladder *without* becoming the arbiter of an irreversible action.
 
 ---
 
 ### Cross-links
-- ⬅ **[Module 03 — Guidance, Navigation & Control](03_guidance_navigation_control.md)** — the body & nervous system this layer commands (setpoints, EKF, nav filter, the geofence/nav-loss monitors).
-- 🧠 **[ML/RL & Perception Guide](../ML_AI_AUTONOMY_GUIDE.md)** — detectors, trackers, appearance embeddings, and deep RL that fill the *leaves* of this decision architecture.
+- ⬅ **[Module 03 — Guidance, Navigation & Control](28-autonomy-gnc.md)** — the body & nervous system this layer commands (setpoints, EKF, nav filter, the geofence/nav-loss monitors).
+- 🧠 **[ML/RL & Perception Guide](20-autonomy-ml-ai.md)** — detectors, trackers, appearance embeddings, and deep RL that fill the *leaves* of this decision architecture.
 - 🐝 **[Module 05 — Distributed Systems, Comms & Mesh](05_distributed_systems_comms_mesh.md)** — when "the agent" becomes "the swarm": multi-agent task allocation, contact fusion, and shared belief.
 
 > *Autonomy is not the cleverness of the decision. It is the discipline of the architecture that makes a clever decision safe to make at all.*

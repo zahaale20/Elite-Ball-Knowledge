@@ -14,8 +14,8 @@
 > proof that the theory is the code.
 >
 > **Prerequisites:** [Module 01 — First Principles & Systems Engineering](01_first_principles_systems_engineering.md).
-> **Companions:** [ML/AI Perception & Autonomy](../ML_AI_AUTONOMY_GUIDE.md) ·
-> [Module 06 — Simulation, Test & Verification](06_simulation_test_verification.md).
+> **Companions:** [ML/AI Perception & Autonomy](20-autonomy-ml-ai.md) ·
+> [Module 06 — Simulation, Test & Verification](06-foundations-simulation-test-verification.md).
 
 ---
 
@@ -1213,10 +1213,10 @@ A concrete, hands-on checklist. Do the math *and* run the code.
 **Within this curriculum**
 - [Module 01 — First Principles & Systems Engineering](01_first_principles_systems_engineering.md)
   — the modeling discipline and budget thinking that GNC stands on.
-- [ML/AI Perception & Autonomy](../ML_AI_AUTONOMY_GUIDE.md) — where the camera
+- [ML/AI Perception & Autonomy](20-autonomy-ml-ai.md) — where the camera
   *features* that feed VO and map-matching come from; perception is the front-end of
   vision-aided nav.
-- [Module 06 — Simulation, Test & Verification](06_simulation_test_verification.md)
+- [Module 06 — Simulation, Test & Verification](06-foundations-simulation-test-verification.md)
   — SITL, HITL, and how you *prove* a filter is consistent before it flies.
 
 **Within this repo (read the code as primary text)**

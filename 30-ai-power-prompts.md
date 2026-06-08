@@ -324,6 +324,312 @@ a bare question. Everything above is a recombination of those four levers.
 
 ---
 
+## 12. Going Fast Without Letting AI Hide the Fundamentals
+
+This is the section that matters most for *your* path. The ten-year mastery plan
+([02-ten-year-mastery-plan.md](02-ten-year-mastery-plan.md)) has one
+non-negotiable principle: **use AI to go faster, never to skip the
+understanding.** A model that writes your EKF for you is an accelerant if you can
+re-derive it, and a liability if you can't. The difference is *discipline*, and
+it's almost entirely about how you prompt.
+
+### The rule: AI may scaffold, you must own
+- **Generate, then re-derive.** Let the model produce the quaternion update or the
+  PID anti-windup logic — then close it and re-derive the key step yourself. If
+  you can't, you don't understand it yet, and you've found your study target.
+- **Never paste code you can't debug at 3 a.m.** On a real Pixhawk, a bug you
+  don't understand is a crash you can't fix. The cost of hidden fundamentals is
+  paid in hardware.
+- **Ask for the *why*, not just the *what*.** Every accept should come with a
+  one-paragraph explanation you could give in an interview
+  ([17-career-interview-prep.md](17-career-interview-prep.md)).
+
+### Prompts that force understanding instead of outsourcing it
+**The "teach me as you build" move**
+```
+Implement [thing]. As you go, narrate the reasoning like a tutor:
+why each design choice, what the alternative was, and what would
+break if I did it the naive way. End with 3 questions that test
+whether I actually understand it — and don't give the answers yet.
+```
+
+**The "no-code-until-I-can-derive-it" move**
+```
+Before writing any code for [algorithm], walk me through the math
+from first principles. Stop at each step and ask me to predict the
+next line. Only write the implementation after I've reasoned through
+the derivation with you.
+```
+
+**The "find my gap" move**
+```
+Here's my explanation of how [concept] works: [paste my words].
+Don't be polite — find every place my mental model is wrong,
+incomplete, or hand-wavy. Then give me the minimal correction
+for each, and one exercise that would close the gap.
+```
+
+> The tell of mastery: you could rebuild the thing the AI gave you on a whiteboard,
+> from memory, under questioning. If you can't, you haven't learned — you've
+> *borrowed*. Prompt accordingly.
+
+---
+
+## 13. Domain Prompt Library: Autonomy, Embedded, Controls, Estimation
+
+High-leverage prompts tuned for the actual work of building a PX4/Pixhawk + Pi 5
+autonomy stack. Cross-reference the technical guides:
+[22-autonomy-px4-sitl.md](22-autonomy-px4-sitl.md),
+[23-autonomy-onboard-system.md](23-autonomy-onboard-system.md),
+[25-autonomy-control-theory.md](25-autonomy-control-theory.md),
+[28-autonomy-gnc.md](28-autonomy-gnc.md).
+
+### Controls
+```
+Act as a flight-controls engineer. I have a [quadplane/multirotor]
+with [mass, arm length, prop data]. Derive the attitude-rate PID
+starting points from first principles, explain the physical meaning
+of each gain, and tell me the failure mode of getting each one wrong.
+Then give me a safe SITL tuning sequence, innermost loop first.
+```
+
+### State estimation
+```
+You are an estimation specialist. Explain why PX4's EKF2 fuses
+[GPS + baro + mag + IMU] the way it does. Walk through one
+measurement-update step with real units. Then list the top 5 ways
+this filter diverges in flight and the telemetry signature of each.
+```
+
+### Embedded / real-time
+```
+Act as a real-time embedded reviewer. This runs in a [1 kHz] control
+loop on [STM32 / Pi 5]. Flag anything that allocates, blocks, takes a
+lock, or has unbounded latency on the hot path. For each, give the
+deterministic alternative. Assume a missed deadline can crash an aircraft.
+```
+
+### ROS 2 / middleware
+```
+I'm wiring [node A] to [node B] over ROS 2 with [DDS QoS settings].
+Explain how messages can be dropped or delayed under this config,
+what QoS profile fits a [safety-critical command vs. telemetry] topic,
+and how I'd prove the latency budget holds.
+```
+
+### Simulation / SITL
+```
+Design a SITL test that would catch [specific failure, e.g. GPS-denied
+drift] before it ever reaches hardware. Specify the scenario, the
+injected fault, the pass/fail metric, and the log fields I'd assert on.
+```
+
+### Sensor fusion / GNSS resilience
+```
+Act as a navigation engineer hardening against GPS jamming/spoofing.
+Given [my sensor suite], propose a fusion strategy that degrades
+gracefully when GNSS is denied. Rank the options by added complexity
+vs. resilience, and tell me how I'd test each in SITL and on bench.
+```
+*(See [26-autonomy-gnss-jamming-spoofing.md](26-autonomy-gnss-jamming-spoofing.md).)*
+
+---
+
+## 14. Debugging From Logs & Telemetry
+
+The model is excellent at pattern-matching a wall of logs *if you frame it right*.
+The trick is to make it form ranked hypotheses before touching code.
+
+### The "diagnose from the log" move
+```
+Here is a [PX4 ULog excerpt / dmesg / stack trace]: [paste].
+Don't propose a fix yet. First: (1) summarize what the system was
+doing, (2) list the anomalies in order of when they appear,
+(3) give 3 ranked root-cause hypotheses with the evidence for each,
+(4) tell me the single next datum that would best discriminate
+between them. Then wait.
+```
+
+### The "bisect with me" move
+```
+This worked at commit [A] and fails at [B]. Help me bisect:
+given these symptoms, which changes in that range are most suspect
+and why? Propose the order to test them to converge fastest.
+```
+
+### The "timeline reconstruction" move
+```
+From these timestamped logs, reconstruct an exact timeline of events
+leading to [the failure]. Mark each entry as cause, symptom, or
+unrelated noise. Flag any gap where I'm missing instrumentation.
+```
+
+**Discipline note:** make it cite the *specific log line* for every claim
+("[verified] line 412 shows EKF innovation spike"). A hypothesis with no log
+anchor is a guess — see the "Prove it" move in Section 4.
+
+---
+
+## 15. Code Review & Hardening for Real-Time / Embedded
+
+Generic "review this code" gets generic results. Constrain the reviewer to your
+actual failure domain.
+
+### The "hostile flight-software reviewer" move
+```
+You are a skeptical flight-software reviewer signing off before a
+test flight. Review this for: undefined behavior, integer/float
+overflow, unit mismatches, unchecked return codes, blocking calls on
+the control path, and any state that isn't safe under sudden RC loss
+or power glitch. Only flag real defects. For each, give severity and
+the exact fix.
+```
+
+### The "make it production-grade for hardware" move
+```
+This passes in SITL. List everything between here and flying it on
+real hardware: watchdog behavior, failsafe paths, sensor-dropout
+handling, init-order assumptions, and what happens if [subsystem]
+is slow or absent. Prioritize by what could destroy the aircraft,
+then fix the top 3.
+```
+
+### The "concurrency audit" move
+```
+Audit this for data races and priority inversions across these
+threads/tasks: [list]. Show me the shared state, who writes it,
+and where a lock is missing or held too long on the hot path.
+```
+
+---
+
+## 16. Learning a Hard Concept (Without Outsourcing Understanding)
+
+For the genuinely hard stuff — Lie algebra for attitude, MPC, factor graphs —
+use the model as a relentless tutor, not an answer key.
+
+### The "Feynman gauntlet" move
+```
+I want to truly understand [concept]. Teach it in four passes:
+(1) the intuition with one physical analogy,
+(2) the math, derived, not stated,
+(3) a worked numeric example I can check by hand,
+(4) quiz me with 3 questions that expose fake understanding —
+    wait for my answers, then grade them harshly and fill gaps.
+```
+
+### The "compare the approaches" move
+```
+For [problem], compare [approach A] vs [approach B] vs [C] on:
+assumptions, compute cost, failure modes, and when each is the
+right call in a flight stack. Give me the one-line heuristic for
+choosing, and the trap of each.
+```
+
+### The "from paper to code to intuition" move
+```
+Here's a paper/algorithm: [link or paste]. Give me (1) the core
+idea in plain language, (2) the one equation that does the real
+work, (3) a minimal reference implementation, and (4) the assumption
+that, if violated, makes the whole thing fail. Then quiz me on (4).
+```
+
+Pair these with the deliberate-practice cadence in
+[02-ten-year-mastery-plan.md](02-ten-year-mastery-plan.md): the AI accelerates the
+loop, but the *re-derivation* is what writes it to memory.
+
+---
+
+## 17. Red-Teaming a Design
+
+Before you commit to an architecture, make the model attack it harder than any
+reviewer will.
+
+### The "pre-mortem" move
+```
+It's 12 months from now and my [autonomy architecture] failed
+catastrophically in the field. Write the incident report explaining
+what went wrong and why — the most likely failure, not the dramatic
+one. Then turn each cause into a design change I should make now.
+```
+
+### The "adversary's playbook" move
+```
+You are an adversary trying to defeat this [counter-UAS / nav]
+system. Given its design, how would you spoof, jam, saturate, or
+deceive it? Rank your attacks by ease and impact. Then tell me the
+cheapest mitigations that close the biggest gaps.
+```
+*(See [27-autonomy-counter-uas-ew.md](27-autonomy-counter-uas-ew.md).)*
+
+### The "what breaks at the boundary" move
+```
+List every assumption this design makes about its inputs, timing,
+environment, and hardware. For each, tell me what happens the moment
+it's violated, and whether the failure is safe, recoverable, or fatal.
+```
+
+---
+
+## 18. Prompt Patterns — A Compact Taxonomy
+
+Once you see the *patterns*, you stop collecting prompts and start composing them.
+Every effective prompt is one or more of these:
+
+| Pattern | What it does | Canonical trigger |
+|---|---|---|
+| **Role assignment** | Selects the standards/vocabulary the model applies | "Act as a flight-controls engineer…" |
+| **Plan-then-act** | Separates design from implementation | "Don't code yet. Write the plan first." |
+| **Reverse-prompt** | Loads *your* constraints into context | "Ask me the questions that change your approach." |
+| **Constraint stack** | Bounds the solution space explicitly | "Must NOT change X; optimize for Y." |
+| **Self-critique loop** | Trades one good pass for two | "Critique your answer, then rewrite it." |
+| **Verification framing** | Separates knowledge from guessing | "Mark each claim [verified]/[uncertain]." |
+| **Few-shot priming** | Shows the target shape | "Here are 2 examples; produce a third." |
+| **Persona panel** | Surfaces trade-offs via disagreement | "Three experts who disagree, then synthesize." |
+| **Output contract** | Forces a parseable shape | "Respond ONLY in this format…" |
+| **Inversion / pre-mortem** | Finds failure before it happens | "How would this most likely fail?" |
+
+**Composition is the skill.** A great working prompt is often *role + constraint
+stack + plan-then-act + verification* fused into one. The libraries above are just
+common, useful fusions.
+
+---
+
+## 19. Pitfalls & Anti-Patterns
+
+The failure modes that quietly cost you the most:
+
+- **Accepting confident prose as fact.** Fluency is not accuracy. Always pair a
+  claim with a verification path — especially for numbers, APIs, and physics.
+- **Hallucinated APIs / functions.** Models invent plausible-looking calls. For
+  any library function, confirm it exists before you build on it.
+- **Letting it own the fundamentals.** The Section 12 trap: shipping code you
+  can't re-derive. On hardware, this is a latent crash.
+- **Stale knowledge.** A model's training has a cutoff; framework behavior,
+  PX4 params, and ROS 2 APIs drift. Treat anything version-specific as a
+  hypothesis to check against current docs.
+- **Context rot in long threads.** After many turns the model loses the thread —
+  re-state the goal and constraints, or start a clean thread with a tight summary.
+- **Over-trusting a single pass.** One greedy answer is the weakest mode the model
+  has. Critique-and-revise (Section 4) is nearly free and almost always better.
+- **Prompt-injection from pasted content.** If you paste logs, web text, or files,
+  hostile instructions inside them can hijack the model. Treat pasted content as
+  *data to analyze*, not commands to follow — and say so in the prompt.
+- **Outsourcing judgment.** The model proposes; *you* decide. Architecture, safety
+  trade-offs, and what's "good enough to fly" are yours to own.
+
+---
+
+## 20. Cross-Links
+
+- [02-ten-year-mastery-plan.md](02-ten-year-mastery-plan.md) — the principle this file serves: AI accelerates, never replaces, understanding.
+- [22-autonomy-px4-sitl.md](22-autonomy-px4-sitl.md) / [23-autonomy-onboard-system.md](23-autonomy-onboard-system.md) — the stack the domain prompts target.
+- [24-autonomy-test-scaffold.md](24-autonomy-test-scaffold.md) — turning the AI's tests into a real harness.
+- [25-autonomy-control-theory.md](25-autonomy-control-theory.md) / [28-autonomy-gnc.md](28-autonomy-gnc.md) — the fundamentals you must own, not outsource.
+- [12-career-software-engineering.md](12-career-software-engineering.md) / [17-career-interview-prep.md](17-career-interview-prep.md) — where "can you explain what you built?" gets tested.
+
+---
+
 ## Sources & Citations
 
 **Foundational papers (mechanisms behind the moves)**
@@ -340,5 +646,6 @@ a bare question. Everything above is a recombination of those four levers.
 - Anthropic — Prompt engineering overview: https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview
 - Google — Prompting guidance: https://ai.google.dev/gemini-api/docs/prompting-intro
 - *Prompt Engineering Guide* (community): https://www.promptingguide.ai
+- OWASP — *Top 10 for LLM Applications* (prompt injection & related risks): https://owasp.org/www-project-top-10-for-large-language-model-applications/
 
 *Techniques generalize across current frontier models, but exact behavior varies by model and version — test prompts against the model you actually use.*

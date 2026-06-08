@@ -283,6 +283,193 @@ Software Pathway; primes dominate Major Capability Acquisition.
 
 ---
 
+## 12. The Budget Calendar in Practice
+
+[07-foundations-defense-acquisition.md](07-foundations-defense-acquisition.md)
+covers *how the DoD buys things*; this section covers the **political calendar**
+that decides *whether the money shows up* — the rhythm every program lives and
+dies by. Memorize the beats and you'll always know what's actually happening when
+a manager says "we're in the POM build" or "we're under a CR."
+
+| Window (typical FY runs Oct 1 – Sep 30) | What's happening | Why it's political |
+|---|---|---|
+| **~18 mo out: POM build** | Services build their **Program Objective Memorandum** — the 5-year funding bet inside the FYDP | Every office fights to protect its line; losers get "marked" down |
+| **Feb: President's Budget (PB) drops** | The administration's request lands at Congress | The opening bid, not the final number — Congress will rewrite it |
+| **Spring–Summer: Authorization & Appropriations markups** | HASC/SASC mark the **NDAA**; Approps subcommittees mark the **spending bill** | This is where programs get added, cut, or fenced |
+| **Sep 30: fiscal year ends** | If bills aren't passed, you get a **Continuing Resolution** | CRs freeze you at last year's level — *no new starts* |
+| **Execution year** | You spend appropriated money against the **color** and the **clock** | "Use it or lose it" — unspent funds can lapse and signal you over-asked |
+
+### Three execution facts that trip up newcomers
+- **Money expires.** O&M is typically 1-year money, Procurement 3-year, RDT&E
+  2-year, MILCON 5-year. Spend it in its window or it lapses (and you look like
+  you didn't need it).
+- **"Anomalies" inside a CR.** A CR can carry specific exceptions ("anomalies")
+  that let a critical program start or ramp. Getting your program named as an
+  anomaly is a small act of budget politics.
+- **Reprogramming has limits.** Moving money between lines/colors above set
+  thresholds needs the four committees' blessing. Misuse violates the
+  **Antideficiency Act** — a fireable, occasionally prosecutable, offense.
+
+---
+
+## 13. Congressional Politics: Marks, Districts, and the Power of the Purse
+
+Congress doesn't just approve the DoD's plan — it *rewrites* it every year. Knowing
+how it does so explains a huge share of why programs survive or die.
+
+- **Authorizers vs. appropriators (again, because it's everything).** The NDAA
+  (HASC/SASC) says a program *may* exist and sets policy. The Appropriations Act
+  (Approps Defense subcommittees) decides if it gets *cash*. A program can be
+  authorized and starved, or funded without authorization — the appropriators hold
+  the real power because money is oxygen.
+- **Marks.** When a committee "marks up" a bill, it adds (a **plus-up**) or cuts
+  (a **mark**) specific lines. A beloved program gets plus-ups; an unloved one
+  gets zeroed or **fenced** (money withheld until conditions are met).
+- **Members of Congress protect district jobs.** A program with subcontractors in
+  many states and districts is politically armored — killing it threatens jobs in
+  dozens of members' backyards. This is *why* primes deliberately spread
+  manufacturing across the map (the F-35's "parts in 45 states" is the canonical
+  example). It's not an accident; it's strategy.
+- **Professional staff run the machine.** The members get the headlines, but the
+  committee **professional staff members (PSMs)** write the language and remember
+  every program for decades. They are the most durable, least-visible power in
+  defense. Engineers who can give a PSM a crisp, honest technical answer build
+  quiet, lasting credibility.
+- **Oversight is a weapon and a shield.** Hearings, GAO reports, and
+  Inspector-General investigations can kill a program's reputation overnight — or
+  vindicate it. Programs that brief Congress proactively and honestly weather
+  oversight far better than those that hide.
+
+---
+
+## 14. Primes, Lobbying, and the "Iron Triangle"
+
+To understand *who really shapes outcomes*, learn the classic model and how it's
+changing.
+
+### The iron triangle
+A self-reinforcing relationship among three actors:
+1. **Congress** — provides funding and protects district jobs.
+2. **The DoD / military services** — want capability and program continuity.
+3. **The defense industry (primes)** — deliver systems, employ voters, and lobby.
+
+Each leg supports the others: industry funds campaigns and employs constituents;
+Congress funds programs; the services advocate for the systems they want.
+Reformers call it sclerotic; defenders call it stable industrial policy. As an
+engineer you don't have to judge it — you have to *see* it, because it explains
+why some technically inferior programs persist and some superior ones never field.
+
+### How primes actually compete
+- **Lobbying & government relations.** Primes maintain large GR shops and PACs;
+  they cultivate members, staff, and retired officials (the **"revolving door"**).
+- **Teaming & subcontracting.** A prime locks up a market by spreading work to
+  subs in key districts and onboarding small/disadvantaged businesses to hit
+  socioeconomic goals.
+- **Incumbency advantage.** The incumbent on a program of record has data, sunk
+  infrastructure, and relationships that make displacement extremely hard — which
+  is exactly the moat new entrants must break.
+
+---
+
+## 15. How Anduril, SpaceX, and the New Entrants Changed the Game
+
+For a decade the conventional wisdom was "you can't beat the primes." A wave of
+venture-backed defense-tech firms is rewriting that — and understanding *how* is
+essential career context if you're targeting
+[Anduril / SpaceX / Skydio / Shield AI](08-foundations-company-strategy-moat.md).
+
+- **They fund themselves first.** Instead of waiting for a government program to
+  pay for R&D (cost-plus), they raise private capital, **build the product on
+  their own dime**, and sell a finished capability. This sidesteps the slow
+  requirements-first model and lets them move at commercial speed.
+- **They exploit the fast pathways.** OTAs, the **Middle Tier of Acquisition**,
+  the **Software Acquisition Pathway**, SBIR/STTR, and DIU/AFWERX/SOFWERX are the
+  on-ramps that let a non-traditional vendor field without the full FAR overhead
+  (see §11.1–11.2). Anduril and Palantir essentially weaponized these vehicles.
+- **They attack the Valley of Death directly.** By owning the product and the IP,
+  they can self-fund the prototype-to-production gap and present Congress with a
+  *working* system that's easy to fund — flipping the usual death trap.
+- **Fixed-price, commercial-style deals.** SpaceX's success showed the DoD that
+  firm-fixed-price, milestone-based contracting with a commercial company can
+  deliver more capability per dollar than cost-plus — a cultural earthquake the
+  whole building is still absorbing.
+- **Software-first, hardware-agnostic moats.** The new entrants treat the
+  *autonomy software and data* as the durable moat (Anduril's Lattice, Palantir's
+  platforms), with hardware as a refreshable shell. That is precisely the bet your
+  own PX4/Pixhawk + onboard-autonomy stack is built around — you are training on
+  the thesis these companies hire for.
+
+**The career implication:** the skills that matter at these firms are *shipping
+real autonomy fast and safely*, not navigating a 20-year program. But they still
+operate inside the budget and requirements machinery above — the winners are
+fluent in **both** the startup motion and the PPBE/JCIDS reality.
+
+---
+
+## 16. Requirements Politics: Where Capability Demand Is Manufactured
+
+A program needs three things aligned: a **requirement**, a **budget line**, and an
+**acquisition strategy** (the "big A" triad, §11.4). The requirement is the most
+political of the three because it decides *what the DoD is even allowed to want*.
+
+- **JCIDS & the JROC.** Validated requirements flow through the Joint Requirements
+  Oversight Council (**JROC**, chaired by the VCJCS). What the JROC blesses gets a
+  path to money; what it doesn't, withers. Getting a capability *into* a validated
+  requirement document (ICD → CDD → CPD) is a quiet, high-stakes fight.
+- **Requirements creep.** Each stakeholder adds "must-haves," and the requirement
+  balloons until the program is unaffordable — a leading cause of cost overruns
+  and Nunn-McCurdy breaches. Discipline here is rare and valuable.
+- **The urgent-need fast lane.** **JUONs/JEONs** (Joint Urgent/Emergent
+  Operational Needs) and service rapid-acquisition cells can bypass the slow
+  JCIDS process for combat-driven needs — a way around requirements gridlock.
+- **Requirements-pull vs. technology-push.** The traditional model is
+  requirements-pull (warfighter states a need → industry builds). The new entrants
+  run technology-push (build it → show the warfighter → create the demand). Both
+  are political acts; knowing which game a program is playing tells you who has
+  leverage.
+
+---
+
+## 17. What an Engineer Should Actually Do With This
+
+You're not running for office — you're building autonomy and trying to get it
+fielded. Here's the engineer's distilled playbook for navigating the politics.
+
+- **Know which pathway and color of money fund your work.** When a manager says
+  "this is RDT&E on an OTA via DIU," you should *immediately* understand the
+  speed, risk tolerance, and fragility of your funding.
+- **Track the calendar.** Knowing you're in a CR (no new starts) or a POM build
+  (fight for your line) tells you whether to push for new scope now or wait.
+- **Make your capability easy to fund.** A working demo tied to a *validated
+  requirement* and a *named budget line* is what carries something across the
+  Valley of Death. Engineers who can connect their tech to all three triad legs
+  are disproportionately valuable.
+- **Brief honestly, especially to oversight.** GAO/IG/Congress remember. A
+  reputation for straight technical answers is career capital that compounds for
+  decades (see [19-career-leadership-growth.md](19-career-leadership-growth.md)).
+- **Speak the language in interviews.** Saying "we fielded via the Software
+  Acquisition Pathway and crossed the Valley of Death by aligning a JCIDS
+  requirement with a procurement line" instantly marks you as someone who gets it.
+  Pair it with the clearance fluency in
+  [16-career-security-clearance.md](16-career-security-clearance.md) and the offer
+  strategy in [11-career-defense-aerospace-playbook.md](11-career-defense-aerospace-playbook.md).
+- **Stay nonpartisan and spotless.** The Hatch Act and clearance guidelines mean
+  your integrity and discretion *are* your political brand. Don't spend that
+  capital cheaply.
+
+---
+
+## 18. Cross-Links
+
+- [07-foundations-defense-acquisition.md](07-foundations-defense-acquisition.md) — the mechanics of *how* the DoD buys (FAR, milestones, contract types); this file is the *politics around* that machinery.
+- [08-foundations-company-strategy-moat.md](08-foundations-company-strategy-moat.md) — why Anduril/SpaceX-style moats work against the iron triangle.
+- [11-career-defense-aerospace-playbook.md](11-career-defense-aerospace-playbook.md) — turning this fluency into offers.
+- [16-career-security-clearance.md](16-career-security-clearance.md) — the gatekeeper that this guide repeatedly references.
+- [17-career-interview-prep.md](17-career-interview-prep.md) — how to deploy this vocabulary in a loop.
+- [19-career-leadership-growth.md](19-career-leadership-growth.md) — building the durable reputation that is the real "politics."
+
+---
+
 ## Sources & Citations
 
 **Primary / official (free, unclassified)**
@@ -291,6 +478,11 @@ Software Pathway; primes dominate Major Capability Acquisition.
 - USAJOBS (federal hiring portal): https://www.usajobs.gov
 - Defense Acquisition University (free courses & glossary): https://www.dau.edu
 - DoD Adaptive Acquisition Framework: https://aaf.dau.edu
+- JCIDS / JROC requirements process (CJCSI 5123.01, Joint Staff J-8 materials).
+- Federal budget process & continuing resolutions — CRS primers (e.g., "The
+  Defense Budget and PPBE" / "Continuing Resolutions: Overview"): https://crsreports.congress.gov
+- OpenSecrets — defense-sector lobbying & campaign finance data: https://www.opensecrets.org
+- GAO — Defense Acquisitions annual assessments & Nunn-McCurdy reporting: https://www.gao.gov
 - Current National Defense Strategy & National Security Strategy (defense.gov / whitehouse.gov)
 - House & Senate Armed Services Committees (HASC/SASC) NDAA materials.
 - U.S. Office of Personnel Management (GS pay & hiring): https://www.opm.gov

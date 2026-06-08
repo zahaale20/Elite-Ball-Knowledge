@@ -41,17 +41,22 @@ curriculum is built around them:
 
 ## The modules
 
+Every module below is now **written**. The `#` column is the conceptual module
+number from the curriculum; the link points to the file that teaches it.
+
 | # | Module | What it makes you | Status |
 |---|---|---|---|
 | 00 | **This index** | A map of the whole field | this file |
-| 01 | First Principles & Systems Engineering | Decompose any system, reason about tradeoffs like a chief engineer | *planned* |
-| 02 | Modern C++ & Real-Time Embedded | Write/read the flight-software language these companies live in | *planned* |
+| 01 | [First Principles & Systems Engineering](01_first_principles_systems_engineering.md) | Decompose any system, reason about tradeoffs like a chief engineer | ✅ written |
+| 02 | [Modern C++ & Real-Time Embedded](04-foundations-modern-cpp-realtime.md) | Write/read the flight-software language these companies live in | ✅ written |
 | 03 | [Guidance, Navigation & Control (GNC)](28-autonomy-gnc.md) | Make a vehicle know where it is and go where it's told | ✅ written |
 | 04 | [Autonomy: Planning & Decision-Making](29-autonomy-planning-decision.md) | Turn "state of the world" into correct action | ✅ written |
-| 05 | Distributed Systems, Comms & Mesh | Make many vehicles + operators act as one system (the "Lattice" problem) | *planned* |
-| 06 | Simulation, Test & Verification | *Prove* a system works before it flies — the real moat | partial: see [24-autonomy-test-scaffold.md](24-autonomy-test-scaffold.md), [22-autonomy-px4-sitl.md](22-autonomy-px4-sitl.md) |
-| 07 | Defense Domain & Acquisition | Speak the customer's language: missions, the kill chain, how DoD buys | see [14-career-dod-politics.md](14-career-dod-politics.md) |
-| 08 | Company Strategy & The Moat | See *why* these companies win and where you create value | see [02-ten-year-mastery-plan.md](02-ten-year-mastery-plan.md) |
+| 05 | [Distributed Systems, Comms & Mesh](05_distributed_systems_comms_mesh.md) | Make many vehicles + operators act as one system (the "Lattice" problem) | ✅ written |
+| 06 | [Simulation, Test & Verification](06-foundations-simulation-test-verification.md) | *Prove* a system works before it flies — the real moat | ✅ written |
+| 07 | [Defense Domain & Acquisition](07-foundations-defense-acquisition.md) | Speak the customer's language: missions, the kill chain, how DoD buys | ✅ written |
+| 08 | [Company Strategy & The Moat](08-foundations-company-strategy-moat.md) | See *why* these companies win and where you create value | ✅ written |
+| M | [Mathematics for Autonomy](03-foundations-mathematics.md) | The linear algebra, probability, calculus & Lie theory under every layer | ✅ written |
+| S | [Safety Engineering & Assurance](09-foundations-safety-assurance.md) | Argue and prove "this is safe to fly" | ✅ written |
 
 ### Already-written companions (read alongside)
 - **ML / AI for autonomy** → [20-autonomy-ml-ai.md](20-autonomy-ml-ai.md)
@@ -62,8 +67,53 @@ curriculum is built around them:
   [29-autonomy-planning-decision.md](29-autonomy-planning-decision.md) (Module 04).
 - **Control theory** → [25-autonomy-control-theory.md](25-autonomy-control-theory.md).
 - **Career execution** → [11-career-defense-aerospace-playbook.md](11-career-defense-aerospace-playbook.md)
-  and the other `career-*` guides cover resume, interview, clearance, and the
-  human game. Modules 07–08 give you the *substance* those guides help you present.
+  and the other `career-*` guides cover resume
+  ([18](18-career-resume-portfolio.md)), interview
+  ([17](17-career-interview-prep.md)), clearance
+  ([16](16-career-security-clearance.md)), negotiation
+  ([15](15-career-negotiation-compensation.md)), and growth
+  ([19](19-career-leadership-growth.md)). Modules 07–08 give you the *substance*
+  those guides help you present.
+
+---
+
+## The full repository map (all 30 guides)
+
+The guides are numbered in bands: **01–09 foundations**, **10–19 career**,
+**20–29 autonomy**, **30 tooling**.
+
+| # | File | Band |
+|---|---|---|
+| 01 | [01-mastery-curriculum.md](01-mastery-curriculum.md) · [01_first_principles_systems_engineering.md](01_first_principles_systems_engineering.md) | Foundations |
+| 02 | [02-ten-year-mastery-plan.md](02-ten-year-mastery-plan.md) | Foundations |
+| 03 | [03-foundations-mathematics.md](03-foundations-mathematics.md) | Foundations |
+| 04 | [04-foundations-modern-cpp-realtime.md](04-foundations-modern-cpp-realtime.md) | Foundations |
+| 05 | [05_distributed_systems_comms_mesh.md](05_distributed_systems_comms_mesh.md) | Foundations |
+| 06 | [06-foundations-simulation-test-verification.md](06-foundations-simulation-test-verification.md) | Foundations |
+| 07 | [07-foundations-defense-acquisition.md](07-foundations-defense-acquisition.md) | Foundations |
+| 08 | [08-foundations-company-strategy-moat.md](08-foundations-company-strategy-moat.md) | Foundations |
+| 09 | [09-foundations-safety-assurance.md](09-foundations-safety-assurance.md) | Foundations |
+| 10 | [10-career-aerospace-engineering.md](10-career-aerospace-engineering.md) | Career |
+| 11 | [11-career-defense-aerospace-playbook.md](11-career-defense-aerospace-playbook.md) | Career |
+| 12 | [12-career-software-engineering.md](12-career-software-engineering.md) | Career |
+| 13 | [13-career-mechanical-engineering.md](13-career-mechanical-engineering.md) | Career |
+| 14 | [14-career-dod-politics.md](14-career-dod-politics.md) | Career |
+| 15 | [15-career-negotiation-compensation.md](15-career-negotiation-compensation.md) | Career |
+| 16 | [16-career-security-clearance.md](16-career-security-clearance.md) | Career |
+| 17 | [17-career-interview-prep.md](17-career-interview-prep.md) | Career |
+| 18 | [18-career-resume-portfolio.md](18-career-resume-portfolio.md) | Career |
+| 19 | [19-career-leadership-growth.md](19-career-leadership-growth.md) | Career |
+| 20 | [20-autonomy-ml-ai.md](20-autonomy-ml-ai.md) | Autonomy |
+| 21 | [21-autonomy-vtol-roadmap.md](21-autonomy-vtol-roadmap.md) | Autonomy |
+| 22 | [22-autonomy-px4-sitl.md](22-autonomy-px4-sitl.md) | Autonomy |
+| 23 | [23-autonomy-onboard-system.md](23-autonomy-onboard-system.md) | Autonomy |
+| 24 | [24-autonomy-test-scaffold.md](24-autonomy-test-scaffold.md) | Autonomy |
+| 25 | [25-autonomy-control-theory.md](25-autonomy-control-theory.md) | Autonomy |
+| 26 | [26-autonomy-gnss-jamming-spoofing.md](26-autonomy-gnss-jamming-spoofing.md) | Autonomy |
+| 27 | [27-autonomy-counter-uas-ew.md](27-autonomy-counter-uas-ew.md) | Autonomy |
+| 28 | [28-autonomy-gnc.md](28-autonomy-gnc.md) | Autonomy |
+| 29 | [29-autonomy-planning-decision.md](29-autonomy-planning-decision.md) | Autonomy |
+| 30 | [30-ai-power-prompts.md](30-ai-power-prompts.md) | Tooling |
 
 ---
 
@@ -72,7 +122,7 @@ curriculum is built around them:
 Pick the path that matches your next 6–12 months. Each is ordered.
 
 ### Path A — "I want to be an autonomy / robotics software engineer" (your default)
-`01 → 03 → 04 → ML_AI_AUTONOMY_GUIDE → 06 → 02 → 05`
+`01 → 03 → 04 → 20 → 06 → 02 → 05`
 Rationale: think in systems, master the estimation/control spine, then the
 decision layer and perception, then prove it with sim/test, then go deep on C++
 and the distributed problem.

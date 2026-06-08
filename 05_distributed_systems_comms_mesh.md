@@ -771,7 +771,7 @@ flowchart TD
 - **API-as-product** — the platform's value is its **open, typed, documented
   API** more than any one app on top. Anduril's strategic bet is that owning the
   *fabric + API* (the integration layer) is the durable moat — third parties and
-  autonomy alike build on it (see [Strategy](08_company_strategy_moat.md)). Your
+  autonomy alike build on it (see [Strategy](08-foundations-company-strategy-moat.md)). Your
   FastAPI server, with its REST + WebSocket surface, is a kindergarten version
   of exactly this idea: a *typed API over a fused picture*.
 
@@ -921,7 +921,7 @@ The bugs live in the *failures*, so you must **manufacture failures**:
   cheap** — pure functions are the only distributed logic you can test
   exhaustively.
 - **SITL / chaos in the loop** — run it all against simulated vehicles with an
-  injected-loss link (→ [Sim & Test](06_simulation_test_verification.md)).
+  injected-loss link (→ [Sim & Test](06-foundations-simulation-test-verification.md)).
 
 > The deepest lesson of the module: **you do not get a robust distributed system
 > by writing careful code; you get it by routinely breaking the system in test
@@ -999,18 +999,18 @@ simulation*.
 
 ## 11. Cross-links & further study
 
-- **[Autonomy](04_autonomy_planning_decision_making.md)** — *why* the edge
+- **[Autonomy](29-autonomy-planning-decision.md)** — *why* the edge
   decides: onboard planning and the local constitution are the response to a
   denied command link (§5.5). The auction (§4.2) only works because each agent
   enforces its own safety envelope.
-- **[Sim & Test](06_simulation_test_verification.md)** — *how* you prove any of
+- **[Sim & Test](06-foundations-simulation-test-verification.md)** — *how* you prove any of
   this: SITL, fault injection, partition testing, deterministic property tests
   for the pure swarm logic (§8.5).
-- **[Strategy](08_company_strategy_moat.md)** — *why it's a business*: the
+- **[Strategy](08-foundations-company-strategy-moat.md)** — *why it's a business*: the
   data-fabric + API-as-product moat (§6.1), and why owning the integration layer
   beats owning any single airframe.
-- **Sibling modules:** [03 GPS-denied / nav](03_gps_denied_navigation.md) and
-  [04 autonomy](04_autonomy_planning_decision_making.md) are the *local* half;
+- **Sibling modules:** [03 GPS-denied / nav](28-autonomy-gnc.md) and
+  [04 autonomy](29-autonomy-planning-decision.md) are the *local* half;
   this module is the *networked* half. Together they are the Lattice problem.
 
 ### Canonical references to go deeper
