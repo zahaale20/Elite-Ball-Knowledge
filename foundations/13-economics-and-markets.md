@@ -1,4 +1,4 @@
-# Module 118 — Economics & Markets (First Principles)
+# Module 13 — Economics & Markets (First Principles)
 
 > **Why this file exists.** Engineers are trained to optimize physical objective functions —
 > minimize mass, maximize thrust — and then are baffled when the "better" product loses, the

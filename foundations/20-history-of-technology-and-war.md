@@ -1,4 +1,4 @@
-# Module 125 — History of Technology & War (Strategic Context)
+# Module 20 — History of Technology & War (Strategic Context)
 
 > **Why this file exists.** Every system you will ever build sits at the end of a long causal chain
 > of prior technologies, doctrines, institutions, and wars — and the people who shape the future are

@@ -1,4 +1,4 @@
-# Module 115 — Learning How to Learn
+# Module 10 — Learning How to Learn
 
 > **Why this file exists.** Every other module in this curriculum is downstream of this one.
 > The whole premise of the repo — that the people at top-tier defense-tech companies have *access*, not

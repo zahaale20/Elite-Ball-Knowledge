@@ -1,4 +1,4 @@
-# Module 117 — Applied Statistics & Causal Inference
+# Module 12 — Applied Statistics & Causal Inference
 
 > **Why this file exists.** The probability module ([02](../mathematics/02-probability-and-stochastic.md))
 > gives you the formal machinery of random variables; this module is about the harder, dirtier,

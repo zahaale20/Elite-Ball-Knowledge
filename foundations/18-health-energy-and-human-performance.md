@@ -1,4 +1,4 @@
-# Module 123 — Health, Energy & Human Performance
+# Module 18 — Health, Energy & Human Performance
 
 > **Why this file exists.** Your body and brain are the one piece of hardware you can never replace,
 > and every other module in this curriculum runs *on* it. The most brilliant analytical mind operates

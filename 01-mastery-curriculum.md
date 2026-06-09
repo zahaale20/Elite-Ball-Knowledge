@@ -87,7 +87,10 @@ independently from `01`**. The folders are: **foundations** (`01–21`),
 **compute-and-hardware** (`01–04`), **mindset-and-society** (`01–17`),
 **general** (`01–14`), **space** (`01`), and **products** (`01`). The first table
 below lists the original foundations/career/autonomy/tooling/information-environment
-spine; the remaining folders are detailed in the sections that follow it.
+spine; the remaining folders — including the **Extended Foundations** (`foundations/10–21`),
+**Space**, and **Products** sections — are detailed in the sections that follow it. A
+separate **machine learning/** folder holds standalone course materials and is
+documented at the end of the repository map, not as part of the curriculum spine.
 
 | # | File | Band |
 |---|---|---|
@@ -202,7 +205,7 @@ and cross-link back into it.
 | 19 | [The New Defense-Tech Cohort](companies/19-new-defense-tech-cohort.md) | Map the live wave (Shield AI, Skydio, Saronic, Applied Intuition…) you'll join or fight |
 | 20 | [Netflix — Talent Density & Culture](companies/20-netflix-talent-density-culture.md) | Build a high-density, high-candor, context-led team that beats institutions |
 
-### Deep Autonomy & Robotics (`autonomy/11–25`)
+### Deep Autonomy & Robotics (`autonomy/11–29`)
 
 The full autonomy stack at research depth — perception, SLAM, estimation, planning,
 learning, swarms, and deployment. Extends [01-autonomy-ml-ai.md](autonomy/01-ml-ai.md),
@@ -219,12 +222,29 @@ learning, swarms, and deployment. Extends [01-autonomy-ml-ai.md](autonomy/01-ml-
 | 17 | [Reinforcement Learning](autonomy/17-reinforcement-learning.md) | | 25 | [Edge Inference & Deployment](autonomy/25-edge-inference-deployment.md) |
 | 18 | [Imitation Learning](autonomy/18-imitation-and-learning-from-demo.md) | | | |
 
+#### Autonomy extension (`autonomy/26–29`): the domain verticals the band was missing
+
+These four modules take the core stack into the specific operational domains an
+autonomy/defense engineer is most likely to be pulled into — the undersea world
+where GPS dies and sound rules, the terminal guidance of guided munitions, the
+speed-of-light fight of directed energy and the spectrum, and the human operator
+who is always part of the loop. They continue the band's house style and cross-link
+back into it. Everything is framed for **understanding and defense**, not for
+building weapons.
+
+| # | Module | What it makes you |
+|---|---|---|
+| 26 | [Maritime & Undersea Autonomy](autonomy/26-maritime-and-undersea-autonomy.md) | Design autonomy where sound replaces light — navigating GPS-denied underwater through currents, sonar, and traffic law |
+| 27 | [Missiles, Guided Munitions & Hypersonics](autonomy/27-missiles-guided-munitions-hypersonics.md) | Reason about guidance laws and seeker physics at the kill chain's terminal link — to understand, not build |
+| 28 | [Directed Energy & Electronic Warfare](autonomy/28-directed-energy-and-electronic-warfare.md) | Reason about systems that survive contested spectrum — lasers, microwaves, and the detect–deny–deceive–destroy fight |
+| 29 | [Human-Autonomy Teaming & Human Factors](autonomy/29-human-autonomy-teaming.md) | Design the whole human-plus-machine system — calibrating trust, workload, and autonomy levels to ship deployable autonomy |
+
 ### Engineering Across Domains (`engineering/01–16`)
 
 The hardware and physical-engineering breadth that makes you fluent across the whole
 vehicle — firmware, FPGAs, RF, power, propulsion, aero, structures, thermal,
-mechatronics, sensors, manufacturing, systems engineering, reliability, PCB, and
-batteries.
+mechatronics, sensors, manufacturing, systems engineering, reliability, PCB,
+batteries, and quantum technologies.
 
 | # | Module |  | # | Module |
 |---|---|---|---|---|
@@ -235,7 +255,7 @@ batteries.
 | 05 | [Propulsion](engineering/05-propulsion-and-electric-propulsion.md) | | 13 | [Reliability & Failure Analysis](engineering/13-reliability-and-failure-analysis.md) |
 | 06 | [Aerodynamics & Flight Mechanics](engineering/06-aerodynamics-and-flight-mechanics.md) | | 14 | [PCB & Electronics Design](engineering/14-pcb-and-electronics-design.md) |
 | 07 | [Structures & Materials](engineering/07-structures-and-materials.md) | | 15 | [Batteries & Energy Storage](engineering/15-batteries-and-energy-storage.md) |
-| 08 | [Thermal Management](engineering/08-thermal-management.md) | | | |
+| 08 | [Thermal Management](engineering/08-thermal-management.md) | | 16 | [Quantum Technologies](engineering/16-quantum-technologies.md) |
 
 ### Software, Compute & Infrastructure (`software/01–15`)
 
@@ -381,6 +401,55 @@ deep work ([career/16](career/16-productivity-deep-work.md)), the health substra
 decision math ([mathematics/11](mathematics/11-decision-and-game-theory.md)), and
 the cognition module in the information-environment band
 ([03](information-environment/03-cognitive-bias-attention-and-narratives.md)).
+
+---
+
+### Extended Foundations — Cross-Cutting Literacy (`foundations/10–21`)
+
+The spine table above lists the original foundations spine (`01–09`). These twelve
+modules extend the foundations folder into the **cross-cutting literacy** that makes
+every technical module land: how to learn, write, reason about data, money, decisions,
+ethics, negotiation, health, systems, history, and law. They are the bridge between
+the technical bands and the human-operating-system band, and several are referenced
+from the learning paths and the Human OS band above.
+
+| # | Module | What it makes you |
+|---|---|---|
+| 10 | [Learning How to Learn](foundations/10-learning-how-to-learn.md) | Reach working competence in any hard field in weeks, through deliberate practice |
+| 11 | [Writing & Technical Communication](foundations/11-writing-and-technical-communication.md) | Make complex ideas legible so your docs get approved and your reasoning earns authority |
+| 12 | [Applied Statistics & Causal Inference](foundations/12-applied-statistics-and-causal-inference.md) | Extract valid causal conclusions from messy real data and tell signal from noise |
+| 13 | [Economics & Markets](foundations/13-economics-and-markets.md) | See the incentives behind any behavior and build things that actually win markets |
+| 14 | [Personal Finance & the Math of Wealth](foundations/14-personal-finance-and-the-math-of-wealth.md) | Master compounding and optionality to buy back your freedom and take asymmetric bets |
+| 15 | [Decision-Making & Rationality](foundations/15-decision-making-and-rationality.md) | Reason in probabilities, defeat your biases, and be trusted with high-stakes ambiguous calls |
+| 16 | [Ethics of Force & Engineering Responsibility](foundations/16-ethics-of-force-and-engineering-responsibility.md) | Reason rigorously about lethal-capability work and keep capability tethered to conscience and law |
+| 17 | [Negotiation & Persuasion](foundations/17-negotiation-and-persuasion.md) | Win resources, compensation, and buy-in without burning relationships or your integrity |
+| 18 | [Health, Energy & Human Performance](foundations/18-health-energy-and-human-performance.md) | Sustain hard cognitive work at a high level for years without burning out |
+| 19 | [Systems Thinking & Complexity](foundations/19-systems-thinking-and-complexity.md) | Diagnose the structure driving a misbehaving system and find its high-leverage intervention points |
+| 20 | [History of Technology & War](foundations/20-history-of-technology-and-war.md) | Place any technology or strategic situation in its historical pattern and anticipate what's coming |
+| 21 | [Law, Contracts & IP for Builders](foundations/21-law-contracts-and-ip-for-builders.md) | Read contracts, protect your inventions, and know exactly when you need a lawyer |
+
+### Specialist Domains — Space & Products (`space/01`, `products/01`)
+
+Two single-module folders that round out the breadth of the curriculum: one takes the
+autonomy stack into orbit, the other treats your own tooling as a force multiplier.
+
+| Folder | Module | What it makes you |
+|---|---|---|
+| `space/01` | [Space Systems & Astronautics](space/01-space-systems-and-astronautics.md) | Reason from vis-viva to real missions — sizing orbits, constellations, link and power budgets for contested space |
+| `products/01` | [Twenty Underrated, High-Impact Products](products/01-twenty-underrated-high-impact-products.md) | Treat tooling as a force multiplier — smell 10× tools early and delete recurring friction permanently |
+
+### Separate Collection — Machine Learning Course Materials (`machine learning/`)
+
+The `machine learning/` folder is **not part of the mastery curriculum** above; it is a
+self-contained collection of university machine-learning course materials (CPSC 5310)
+kept in this repository for convenience. It includes weekly lecture decks (statistics,
+regression, classification, SVMs, ensembles, clustering, PCA, neural networks,
+attention/transformers, and GenAI systems), hands-on notebooks (CNN, RNN, Transformer,
+and RAG "course assistant"), and two review documents:
+[STUDY_GUIDE.md](machine%20learning/STUDY_GUIDE.md) and
+[FINAL_PRACTICE_EXAM.md](machine%20learning/FINAL_PRACTICE_EXAM.md). It complements the
+first-principles ML coverage in [autonomy/01](autonomy/01-ml-ai.md) and
+[general/04](general/04-how-ai-and-llms-actually-work.md) but is maintained separately.
 
 ---
 

@@ -1,4 +1,4 @@
-# Module 124 — Systems Thinking & Complexity
+# Module 19 — Systems Thinking & Complexity
 
 > **Why this file exists.** [Module 01](01-first_principles_systems_engineering.md) teaches you to
 > *decompose* a system into parts and reason about each. This module teaches the opposite and equally

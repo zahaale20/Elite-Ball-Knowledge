@@ -1,4 +1,4 @@
-# Module 122 — Negotiation & Persuasion (First Principles)
+# Module 17 — Negotiation & Persuasion (First Principles)
 
 > **Why this file exists.** Almost nothing important gets done alone. Every raise, every job offer,
 > every budget, every partnership, every cross-team dependency, every "yes" you need from someone who

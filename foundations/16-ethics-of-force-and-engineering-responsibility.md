@@ -1,4 +1,4 @@
-# Module 121 — Ethics of Force & Engineering Responsibility
+# Module 16 — Ethics of Force & Engineering Responsibility
 
 > **Why this file exists.** This curriculum trains you to build systems that can sense, decide, and
 > *act in the physical world* — and some of them, in a defense context, can contribute to the

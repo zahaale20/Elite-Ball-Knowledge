@@ -1,4 +1,4 @@
-# Module 119 — Personal Finance & the Math of Wealth
+# Module 14 — Personal Finance & the Math of Wealth
 
 > **Why this file exists.** You can master every technical domain in this curriculum and still spend
 > your life financially trapped — unable to take the risky job, start the company, walk away from a

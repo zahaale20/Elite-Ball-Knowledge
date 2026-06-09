@@ -1,4 +1,4 @@
-# Module 116 — Writing & Technical Communication
+# Module 11 — Writing & Technical Communication
 
 > **Why this file exists.** A brilliant analysis that no one understands has the same impact as no
 > analysis at all. In every organization that matters — the primes, a two-person startup,

@@ -1,4 +1,4 @@
-# Module 120 — Decision-Making & Rationality Under Uncertainty
+# Module 15 — Decision-Making & Rationality Under Uncertainty
 
 > **Why this file exists.** Engineering trains you to find the *right answer* to well-posed problems.
 > Life and leadership hand you ill-posed problems under irreducible uncertainty, where there is no
