@@ -1,4 +1,4 @@
-# Landing a Job at Boeing, SpaceX, or Anduril (2026 Edition)
+# Landing a Job at Boeing, SpaceX, or a Leading Defense-Tech Company (2026 Edition)
 
 A field guide for aerospace BS/MS graduates. This is opinionated, dense, and built
 to be acted on. Read it once end-to-end, then come back and use the checklists.
@@ -11,7 +11,7 @@ to be acted on. Read it once end-to-end, then come back and use the checklists.
   systems engineering, certification knowledge, security clearances, and stability.
 - **SpaceX** = fast, vertically integrated, hardware-rich, brutal pace. Values raw
   ability, hands-on building, first-principles thinking, and ownership.
-- **Anduril** = defense-tech startup energy at scale, software-defined hardware,
+- **Leading defense-tech companies** = defense-tech startup energy at scale, software-defined hardware,
   autonomy/AI. Values builders who ship, software fluency, and mission alignment.
 
 What they all reward in 2026: **you have actually built and flown/tested real
@@ -66,7 +66,7 @@ this is your study list.
 - Modern control: state-space, controllability/observability, LQR, pole placement.
 - Estimation: Kalman filter (and EKF/UKF), sensor fusion (IMU + GPS).
 - **Guidance, Navigation & Control (GNC)** is one of the hottest skill areas at
-  all three companies, especially SpaceX (landing) and Anduril (autonomy).
+  all three, especially SpaceX (landing) and leading defense-tech companies (autonomy).
 
 ### 1.5 Orbital Mechanics (Space track)
 - Two-body problem, Kepler's laws, orbital elements.
@@ -95,15 +95,15 @@ moved toward software, autonomy, and digital engineering.
 - **Python**: the universal glue. NumPy, SciPy, Matplotlib, Pandas, control,
   simulation, data analysis. Non-negotiable.
 - **C/C++**: embedded, flight software, performance-critical systems. SpaceX and
-  Anduril flight/avionics roles expect real C++ (modern C++17/20). Memory model,
+  defense-tech flight/avionics roles expect real C++ (modern C++17/20). Memory model,
   RAII, real-time constraints.
 - **MATLAB/Simulink**: still dominant for GNC and controls modeling, especially
   Boeing and legacy defense. Know it.
-- **Rust**: rising in defense-tech (Anduril uses it). A plus, not yet required.
+- **Rust**: rising in defense-tech (leading defense-autonomy companies use it). A plus, not yet required.
 - **Julia**: niche but appears in scientific computing.
 
 ### 2.2 Autonomy, AI & ML
-- This is the defining shift. Anduril is fundamentally an autonomy company;
+- This is the defining shift. Leading defense-tech companies are fundamentally autonomy companies;
   SpaceX uses ML for vision/landing/manufacturing; Boeing invests in autonomous
   systems and AI-assisted design.
 - Learn: linear algebra for ML, basic neural nets, computer vision (object
@@ -117,7 +117,7 @@ moved toward software, autonomy, and digital engineering.
   flight controllers (PX4/ArduPilot — relevant to drone/UAS work).
 - Hardware-in-the-loop (HIL) and software-in-the-loop (SITL) testing.
 - Hands-on: solder, wire, debug with an oscilloscope/logic analyzer, read a
-  datasheet, bring up a board. This impresses SpaceX and Anduril enormously.
+  datasheet, bring up a board. This impresses SpaceX and defense-tech companies enormously.
 
 ### 2.4 Digital Engineering & Tools
 - **CAD**: SolidWorks, CATIA (Boeing), NX, Fusion 360, Onshape.
@@ -183,12 +183,12 @@ Showing genuine commitment to engineering rigor and safety culture resonates.
 **Clearance**: generally requires U.S. person status (ITAR), though not always a
 formal clearance.
 
-### 3.3 Anduril
+### 3.3 Leading Defense-Tech Companies
 
 **Culture & what they want**
 - Defense-tech "startup at scale." Mission-driven (Western defense), software-first,
-  builds autonomous systems: Lattice (AI command software), Ghost/Altius drones,
-  Dive (underwater), counter-UAS, Roadrunner.
+  build autonomous systems: an integrated autonomy/C2 platform (AI command software),
+  attritable drones, underwater vehicles, counter-UAS, and interceptors.
 - Values builders who ship fast, strong software engineers, autonomy/AI/ML talent,
   and people aligned with the mission (this matters to them — they screen for it).
 - Less aerospace-traditional, more Silicon-Valley-meets-defense.
@@ -290,10 +290,10 @@ This trips up many candidates, so be clear-eyed.
 - **Know your own projects cold.** Every number, every decision, every failure.
 - Expect to derive fundamentals live. Practice on a whiteboard, out loud.
 - For software-adjacent roles, do **coding practice** (LeetCode easy/medium,
-  plus embedded/C++ specifics). SpaceX and Anduri screen for it.
+  plus embedded/C++ specifics). SpaceX and defense-tech companies screen for it.
 - Behavioral: ownership, dealing with failure, teamwork under pressure. Use
   STAR (Situation, Task, Action, Result).
-- Have sharp answers for: "Why this company?" and (for Anduril/defense) "Why
+- Have sharp answers for: "Why this company?" and (for defense-tech/defense) "Why
   defense?" Generic answers sink candidates.
 - Ask good questions. Show genuine curiosity about their hardware/mission.
 
@@ -349,7 +349,7 @@ If you're starting from "solid student, not job-ready," do this:
 - **First principles**: be the person who derives, not just recalls.
 - **Ownership**: speak in terms of what *you* did and decided.
 - **Honesty about failure**: every great project has failures; own and explain them.
-- **Mission/fit**: especially at SpaceX (intensity) and Anduril (defense) — they
+- **Mission/fit**: especially at SpaceX (intensity) and defense-tech companies (defense) — they
   screen hard for genuine alignment. Be real about what you want.
 
 The job market is competitive, but the formula is unglamorous and reliable:
@@ -370,7 +370,7 @@ the specific job listing before applying.*
   "fly, fail, fix" at scale; competitors (Blue Origin New Glenn, Rocket Lab
   Neutron, Stoke, Relativity) hire for rapid-iteration hardware engineers, not
   just analysts.
-- **Defense-tech funding surged.** Anduril, Shield AI, Saronic, and a wave of
+- **Defense-tech funding surged.** Shield AI, Saronic, and a wave of
   Series-B+ startups expanded autonomy/embedded headcount. The bar shifted
   toward shipping software-defined hardware.
 - **Autonomy + AI is now a first-class aerospace discipline,** not an add-on.
@@ -381,17 +381,17 @@ the specific job listing before applying.*
 ### 11.2 Emerging role families worth targeting
 | Track | What you do | Who hires |
 |---|---|---|
-| **GNC / autonomy** | Estimation, control, planning for vehicles | SpaceX, Anduril, Shield AI, Skydio |
+| **GNC / autonomy** | Estimation, control, planning for vehicles | SpaceX, Shield AI, Skydio |
 | **Flight software / avionics** | Real-time C++/Rust on the vehicle | All three + primes |
 | **Propulsion test** | Build, instrument, fire, analyze engines | SpaceX, Ursa Major, Stoke |
-| **Manufacturing / production eng** | Scale hardware from 1 to 1000s | SpaceX, Anduril, Boeing |
+| **Manufacturing / production eng** | Scale hardware from 1 to 1000s | SpaceX, defense-tech startups, Boeing |
 | **Systems / integration & test** | Prove the whole system works | Everyone; great entry point |
 | **Digital engineering / MBSE** | Model-based systems engineering | Boeing, primes |
 
 ### 11.3 The compensation & lifestyle reality (be honest with yourself)
 - **SpaceX:** strong equity-light cash + RSUs, intense hours (50–60+/wk common),
   high burnout but unmatched hardware velocity and resume value.
-- **Anduril/defense-tech startups:** competitive cash + meaningful equity,
+- **Defense-tech startups:** competitive cash + meaningful equity,
   startup intensity, mission-driven culture.
 - **Boeing/primes:** stable comp, better work-life balance, pension/benefits,
   slower pace, deep specialization. Clearance adds a durable salary premium.
@@ -428,6 +428,6 @@ the specific job listing before applying.*
 **Export control & hiring context**
 - U.S. Dept. of State, Directorate of Defense Trade Controls (ITAR): https://www.pmddtc.state.gov
 - U.S. Bureau of Industry and Security (EAR): https://www.bis.doc.gov
-- Company careers pages (authoritative for current requirements): SpaceX, Boeing, Anduril.
+- Company careers pages (authoritative for current requirements): SpaceX, Boeing, and leading defense-tech companies.
 
 *Compiled from the author's domain knowledge and the publicly available sources above. Standards (DO-178C, FAA Part 25), clearance rules, and tool stacks change — verify against primary sources before relying on them.*

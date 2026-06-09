@@ -225,7 +225,7 @@ Note the yield term: a 90% yield inflates effective cost by ~11%; scrap is real 
 The **learning curve** (Wright's law) captures cost falling with cumulative volume:
 $$ c(n) = c_1\,n^{\log_2(1-r)/\ ... } \;\Rightarrow\; c(2n) = (1-r)\,c(n) $$
 i.e., each doubling of cumulative production cuts cost by a fixed fraction $r$
-(typically 10–25%). This is why **volume is a moat** — SpaceX, Tesla, and Anduril ride
+(typically 10–25%). This is why **volume is a moat** — SpaceX, Tesla, and leading defense-tech manufacturers ride
 the learning curve down faster than competitors.
 
 **Supply chain** decisions — make vs buy, single vs dual source, COTS vs custom, domestic

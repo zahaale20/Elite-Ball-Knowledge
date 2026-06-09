@@ -2,7 +2,7 @@
 
 > *"A drone is a robot. Ten drones plus three operators plus a satellite feed
 > plus a ground radar is a **distributed system**. The senior engineers at
-> Anduril (Lattice), Shield AI (Hivemind), and the mesh-radio shops are not
+> a leading autonomy company (its command-and-control platform), Shield AI (Hivemind), and the mesh-radio shops are not
 > paid to fly one aircraft well — they are paid to make many vehicles, sensors,
 > and people behave as **one networked organism** that degrades gracefully when
 > the network is shot to pieces."*
@@ -24,7 +24,7 @@ repo:
 - MAVLink (via `pymavlink`/MAVSDK) as the **vehicle protocol**: UDP `14540` for
   offboard/onboard control, `14550` for the ground control station (GCS).
 
-The thesis of the whole module — call it **the Lattice problem**:
+The thesis of the whole module — call it **the integrated-autonomy problem**:
 
 > Make many vehicles + sensors + operators act as **one system**, over links
 > that are slow, lossy, intermittent, and actively jammed, without a central
@@ -733,7 +733,7 @@ single most important sentence connecting this module to the rest of the stack.
 
 ## 6. The "single pane of glass" / C2 problem
 
-This is the **Lattice archetype** stated as a product: take a chaos of vehicles,
+This is the **integrated-autonomy archetype** stated as a product: take a chaos of vehicles,
 sensors, and operators and present **one coherent, actionable picture** —
 **Command & Control (C2)**.
 
@@ -757,7 +757,7 @@ flowchart TD
 - **Sensor fusion across the network** — many partial views → one deduplicated
   track picture. **`merge_contacts()` is this exact operation, scaled down**:
   the same physical object seen by two aircraft collapses to one `SharedContact`
-  crediting both observers with a score-weighted fused position. The Lattice
+  crediting both observers with a score-weighted fused position. The productized
   version does it across *heterogeneous* sensors and thousands of tracks; the
   *principle* is identical — *data association across agents.*
 - **Common Operating Picture (COP)** — the single shared, consistent world view
@@ -769,7 +769,7 @@ flowchart TD
   consumers. Pub/sub (§2.1) is what makes the fabric scale: *N producers, M
   consumers, no N×M wiring.*
 - **API-as-product** — the platform's value is its **open, typed, documented
-  API** more than any one app on top. Anduril's strategic bet is that owning the
+  API** more than any one app on top. The platform owner's strategic bet is that owning the
   *fabric + API* (the integration layer) is the durable moat — third parties and
   autonomy alike build on it (see [Strategy](08-company-strategy-moat.md)). Your
   FastAPI server, with its REST + WebSocket surface, is a kindergarten version
@@ -1011,7 +1011,7 @@ simulation*.
   beats owning any single airframe.
 - **Sibling modules:** [03 GPS-denied / nav](../autonomy/28-gnc.md) and
   [04 autonomy](../autonomy/29-planning-decision.md) are the *local* half;
-  this module is the *networked* half. Together they are the Lattice problem.
+  this module is the *networked* half. Together they are the integrated-autonomy problem.
 
 ### Canonical references to go deeper
 

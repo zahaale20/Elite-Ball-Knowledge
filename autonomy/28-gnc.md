@@ -1,7 +1,7 @@
 # Module 03 — Guidance, Navigation & Control (GNC)
 
 > The crown-jewel module. This is the mathematics that senior state-estimation
-> and controls engineers at Anduril, Shield AI, Skydio, and Skunk Works carry in
+> and controls engineers at leading defense-autonomy companies like Shield AI, Skydio, and Skunk Works carry in
 > their heads. Everything else in autonomy — perception, planning, mission logic —
 > exists to feed numbers *into* the GNC loop and to consume the trajectory it
 > produces. If you master this module, you understand the load-bearing wall of the

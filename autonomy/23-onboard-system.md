@@ -1,7 +1,7 @@
 # Drone side — Pixhawk 6C + Raspberry Pi
 
 > **Why this project exists:** My primary motivation is to land a job at a
-> defense-autonomy company like **Anduril** (or a similar place such as
+> leading defense-autonomy company (such as
 > Shield AI, Skydio, or Auterion). This repo is a deliberate portfolio of the
 > exact skills those teams hire for: PX4/Pixhawk autopilots, MAVLink/MAVSDK,
 > onboard edge autonomy, real-time telemetry, and computer-vision targeting on

@@ -94,7 +94,7 @@ To "do politics" well, know the actors beyond the Pentagon:
 - **The White House / National Security Council (NSC):** Sets overall national security strategy. The **National Security Strategy (NSS)** cascades into the DoD's **National Defense Strategy (NDS)**.
 - **Congress:** The four defense committees (HASC, SASC, and the two Appropriations Defense subcommittees) hold the power of the purse and oversight. Their professional staff are enormously influential — often more durable than members.
 - **The Interagency:** State Department, intelligence community (ODNI, CIA, NSA), DHS. National security is a team sport; the DoD rarely acts alone.
-- **The Defense Industrial Base:** Primes (Lockheed, RTX, Boeing, Northrop, General Dynamics) and a growing wave of defense-tech startups (Anduril, Palantir, SpaceX). Lobbying, jobs-in-districts, and acquisition politics all live here.
+- **The Defense Industrial Base:** Primes (Lockheed, RTX, Boeing, Northrop, General Dynamics) and a growing wave of defense-tech startups (Palantir, SpaceX, and others). Lobbying, jobs-in-districts, and acquisition politics all live here.
 - **Think Tanks & FFRDCs:** CSIS, CNAS, RAND, Brookings, Heritage, AEI, MITRE, IDA. These shape ideas and are talent pipelines into and out of government ("the revolving door").
 
 **Key strategy documents to read (free, unclassified):**
@@ -258,7 +258,7 @@ The DoD no longer runs everything through one rigid process. Since 2020 the
 - **Defense Business Systems** and **Acquisition of Services**.
 
 Knowing *which pathway* a program uses tells you its speed, risk tolerance, and
-culture. Defense-tech startups (Anduril, Palantir) thrive on MTA and the
+culture. Defense-tech startups (Palantir and similar new entrants) thrive on MTA and the
 Software Pathway; primes dominate Major Capability Acquisition.
 
 ### 11.2 OTAs — the startup's favorite contract vehicle
@@ -371,12 +371,12 @@ why some technically inferior programs persist and some superior ones never fiel
 
 ---
 
-## 15. How Anduril, SpaceX, and the New Entrants Changed the Game
+## 15. How SpaceX and the New Defense-Tech Entrants Changed the Game
 
 For a decade the conventional wisdom was "you can't beat the primes." A wave of
 venture-backed defense-tech firms is rewriting that — and understanding *how* is
 essential career context if you're targeting
-[Anduril / SpaceX / Skydio / Shield AI](../foundations/08-company-strategy-moat.md).
+[leading defense-tech firms / SpaceX / Skydio / Shield AI](../foundations/08-company-strategy-moat.md).
 
 - **They fund themselves first.** Instead of waiting for a government program to
   pay for R&D (cost-plus), they raise private capital, **build the product on
@@ -385,7 +385,7 @@ essential career context if you're targeting
 - **They exploit the fast pathways.** OTAs, the **Middle Tier of Acquisition**,
   the **Software Acquisition Pathway**, SBIR/STTR, and DIU/AFWERX/SOFWERX are the
   on-ramps that let a non-traditional vendor field without the full FAR overhead
-  (see §11.1–11.2). Anduril and Palantir essentially weaponized these vehicles.
+  (see §11.1–11.2). Palantir and its defense-tech peers essentially weaponized these vehicles.
 - **They attack the Valley of Death directly.** By owning the product and the IP,
   they can self-fund the prototype-to-production gap and present Congress with a
   *working* system that's easy to fund — flipping the usual death trap.
@@ -394,7 +394,7 @@ essential career context if you're targeting
   deliver more capability per dollar than cost-plus — a cultural earthquake the
   whole building is still absorbing.
 - **Software-first, hardware-agnostic moats.** The new entrants treat the
-  *autonomy software and data* as the durable moat (Anduril's Lattice, Palantir's
+  *autonomy software and data* as the durable moat (integrated autonomy/C2 platforms, Palantir's
   platforms), with hardware as a refreshable shell. That is precisely the bet your
   own PX4/Pixhawk + onboard-autonomy stack is built around — you are training on
   the thesis these companies hire for.
@@ -462,7 +462,7 @@ fielded. Here's the engineer's distilled playbook for navigating the politics.
 ## 18. Cross-Links
 
 - [07-foundations-defense-acquisition.md](../foundations/07-defense-acquisition.md) — the mechanics of *how* the DoD buys (FAR, milestones, contract types); this file is the *politics around* that machinery.
-- [08-foundations-company-strategy-moat.md](../foundations/08-company-strategy-moat.md) — why Anduril/SpaceX-style moats work against the iron triangle.
+- [08-foundations-company-strategy-moat.md](../foundations/08-company-strategy-moat.md) — why defense-tech/SpaceX-style moats work against the iron triangle.
 - [11-career-defense-aerospace-playbook.md](11-defense-aerospace-playbook.md) — turning this fluency into offers.
 - [16-career-security-clearance.md](16-security-clearance.md) — the gatekeeper that this guide repeatedly references.
 - [17-career-interview-prep.md](17-interview-prep.md) — how to deploy this vocabulary in a loop.

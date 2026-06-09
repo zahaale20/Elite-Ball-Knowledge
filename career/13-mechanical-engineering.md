@@ -1,6 +1,6 @@
-# Mechanical Engineering for Boeing & Anduril: The Complete Playbook
+# Mechanical Engineering for Boeing & Defense-Tech: The Complete Playbook
 
-> A focused, job-oriented guide to the mechanical engineering (ME) knowledge, skills, and signals you need to be competitive for roles at aerospace/defense primes (Boeing) and defense-tech startups (Anduril). Use it as a study roadmap, an interview-prep checklist, and a portfolio guide.
+> A focused, job-oriented guide to the mechanical engineering (ME) knowledge, skills, and signals you need to be competitive for roles at aerospace/defense primes (Boeing) and defense-tech startups. Use it as a study roadmap, an interview-prep checklist, and a portfolio guide.
 
 ---
 
@@ -23,7 +23,7 @@ A realistic timeline to go from "knows some physics" to "interview-ready ME cand
 - **Key signals:** Solid fundamentals, FEA discipline, ability to follow standards (AS9100, MIL-SPEC), clear documentation, US person / clearance eligibility (ITAR).
 - **Pace:** Slower, deeper, more specialized. You own a narrow scope very rigorously.
 
-### Anduril (and defense-tech: SpaceX, Shield AI, Skydio, Saronic, etc.)
+### Defense-tech (SpaceX, Shield AI, Skydio, Saronic, etc.)
 - **Culture:** Startup speed, ownership, vertical integration, build-test-iterate, less hand-holding.
 - **What they hire ME for:** Full-stack mechanical design (concept → CAD → DFM → prototype → test → production), enclosures, thermal/airflow, structures, mechanisms, manufacturing ramp, hands-on prototyping.
 - **Key signals:** You can *ship hardware*. Strong CAD, DFM, hands-on fabrication, rapid iteration, scrappiness, broad ownership across disciplines.
@@ -71,7 +71,7 @@ If you can reason crisply about those four for any object you're handed, you thi
 
 ## 4. Core Mechanical Engineering Subjects
 
-This is the heart of an ME degree. For each: what it is, why it matters at Boeing/Anduril, and the competency check.
+This is the heart of an ME degree. For each: what it is, why it matters at Boeing and defense-tech companies, and the competency check.
 
 ### 4.1 Statics
 - **What:** Forces and moments on bodies in equilibrium. Free-body diagrams (FBDs), trusses, frames, friction, centroids, moments of inertia.
@@ -101,7 +101,7 @@ This is the heart of an ME degree. For each: what it is, why it matters at Boein
 
 ### 4.6 Heat Transfer
 - **What:** Conduction (Fourier), convection (Newton's law of cooling, Nusselt/Reynolds/Prandtl), radiation (Stefan-Boltzmann), thermal resistance networks, heat sinks, transient response.
-- **Why:** Electronics cooling (massive at Anduril for autonomy/compute payloads), avionics thermal management, hypersonics, engine hot sections.
+- **Why:** Electronics cooling (massive at defense-tech companies for autonomy/compute payloads), avionics thermal management, hypersonics, engine hot sections.
 - **Check:** Build a thermal resistance network for a power-dissipating chip → heat sink → ambient and estimate junction temperature.
 
 ### 4.7 Fluid Mechanics
@@ -128,7 +128,7 @@ This is the heart of an ME degree. For each: what it is, why it matters at Boein
 
 ## 5. Materials & Manufacturing (Where Designs Become Real)
 
-> Anduril especially screens hard on **Design for Manufacturing (DFM)**. This section is disproportionately valuable.
+> Defense-tech companies especially screen hard on **Design for Manufacturing (DFM)**. This section is disproportionately valuable.
 
 ### 5.1 Materials Science
 - Crystal structure, phases, **stress-strain curves**, elastic/plastic behavior, hardness, toughness, ductility.
@@ -157,7 +157,7 @@ This is the heart of an ME degree. For each: what it is, why it matters at Boein
 - **Check:** Take a CAD part and list five changes that reduce cost or improve manufacturability without hurting function.
 
 ### 5.4 Tolerances & GD&T (Geometric Dimensioning & Tolerancing) — **CRITICAL**
-- **Why it's critical:** GD&T (ASME Y14.5) is the universal language of mechanical drawings. Boeing lives on it; Anduril expects it. Misunderstanding it causes scrapped parts and failed assemblies.
+- **Why it's critical:** GD&T (ASME Y14.5) is the universal language of mechanical drawings. Boeing lives on it; defense-tech companies expect it. Misunderstanding it causes scrapped parts and failed assemblies.
 - **Learn:** datums, feature control frames, the 14 geometric characteristics (flatness, perpendicularity, position, profile, runout, etc.), **MMC/LMC**, bonus tolerance, **tolerance stack-up analysis** (worst-case and statistical/RSS).
 - **Check:** Read a real engineering drawing and explain every callout; perform a 1D tolerance stack-up to verify a clearance.
 
@@ -190,7 +190,7 @@ You will be judged heavily on tool fluency. Pick one CAD package and get *genuin
 ### 6.4 Programming & data (increasingly expected)
 - **Python** — automation, data analysis (NumPy, pandas, matplotlib), test data processing, scripting CAD/sim. The most valuable single coding skill for modern ME.
 - **MATLAB** — controls, signal processing, modeling; common in academia and aerospace.
-- **Git/version control** — basic literacy, especially at Anduril-style companies.
+- **Git/version control** — basic literacy, especially at defense-tech-style companies.
 - **Check:** Write a Python script that ingests CSV test data and produces plots + summary stats.
 
 ### 6.5 PLM/PDM & documentation
@@ -217,7 +217,7 @@ To stand out for *these* employers specifically, layer domain context on top of 
 
 ## 8. Test & Validation (Hardware Is Earned, Not Simulated)
 
-Real ME work is ~half analysis, ~half proving it in the lab. Especially at Anduril.
+Real ME work is ~half analysis, ~half proving it in the lab. Especially at defense-tech companies.
 
 - **Mechanical test:** tensile/fatigue testing, vibration (shaker tables), shock, thermal chambers, pressure/proof testing, modal/ping testing.
 - **Instrumentation:** strain gauges, accelerometers, thermocouples, load cells, DAQ systems, pressure transducers.
@@ -234,7 +234,7 @@ These often decide who gets hired and promoted.
 - **Engineering documentation:** clear drawings, analysis reports, design reviews (PDR/CDR), traceable decisions.
 - **Communication:** explain trade-offs to non-experts; defend a design in a review; write concisely.
 - **Trade studies:** structured decision-making (weighted criteria, Pareto) among competing designs.
-- **Project & ownership:** scoping, scheduling, risk management, driving to done. Anduril screens hard for ownership.
+- **Project & ownership:** scoping, scheduling, risk management, driving to done. Defense-tech companies screen hard for ownership.
 - **Teamwork across disciplines:** you'll constantly interface with EE, software, systems, manufacturing, and program management.
 - **Lean / Six Sigma / continuous improvement:** valued at Boeing-scale manufacturing.
 - **Judgment & intuition:** knowing when "good enough" is correct, and when it isn't (safety-critical).
@@ -260,9 +260,9 @@ These often decide who gets hired and promoted.
 - Be ready to talk for 30+ minutes about a project you built: the requirements, *your* decisions, trade-offs, failures, what you'd change. **Depth and ownership beat breadth.**
 
 ### 10.4 Behavioral
-- Ownership, conflict, failure/learning, working under ambiguity (especially Anduril), attention to detail and safety mindset (especially Boeing). Use **STAR** (Situation, Task, Action, Result).
+- Ownership, conflict, failure/learning, working under ambiguity (especially at defense-tech companies), attention to detail and safety mindset (especially Boeing). Use **STAR** (Situation, Task, Action, Result).
 
-### 10.5 Anduril-specific flavor
+### 10.5 Defense-tech-specific flavor
 - Bias toward *builders*. Expect questions probing whether you can take a thing from napkin sketch to working prototype quickly, work across disciplines, and operate with little structure.
 
 ### 10.6 Boeing-specific flavor
@@ -309,7 +309,7 @@ These often decide who gets hired and promoted.
 
 ## 12. Portfolio Projects That Get Interviews
 
-A degree opens the door; **projects that show you can build and validate hardware** get the offer — *especially* at Anduril.
+A degree opens the door; **projects that show you can build and validate hardware** get the offer — *especially* at defense-tech companies.
 
 Strong project archetypes:
 1. **Design + build + test a load-bearing structure** (e.g., a bracket/frame): set requirements, hand-calc, FEA with convergence, fabricate, load-test, and *correlate test to model*. This single project demonstrates the entire ME loop.
@@ -327,7 +327,7 @@ For each project, document: requirements → analysis → CAD → DFM decisions 
 - **Education:** A BS in Mechanical (or Aerospace) Engineering is the standard path; **ABET-accredited** programs matter. Adjacent degrees + strong portfolio can work, especially at startups.
 - **Eligibility (do not skip):** Defense work is **ITAR/EAR controlled** — you almost always must be a **US person** (citizen or permanent resident). A **security clearance** (Secret/TS) is a strong plus and sometimes mandatory; you generally need to be hired first to be sponsored.
 - **FE/PE licensure:** Less critical in aerospace/defense than civil/mechanical-plant work, but the **FE exam** is a credible fundamentals credential and good study forcing-function.
-- **Internships/co-ops:** The highest-leverage path into Boeing and Anduril. Apply early and often.
+- **Internships/co-ops:** The highest-leverage path into Boeing and defense-tech companies. Apply early and often.
 - **Resume signals they scan for:** CAD tool + FEA tool named with depth, GD&T, hands-on fabrication, a quantified project ("reduced mass 22%, validated to within 8% of FEA"), Python, US person status.
 - **Networking:** Referrals dramatically improve odds at both. Engage via projects, career fairs, and engineering communities.
 
@@ -357,7 +357,7 @@ Tick these off and you're genuinely interview-ready:
 ---
 
 ### Final Note
-Fundamentals get you in the door; **the ability to take hardware from requirements through design, manufacturing, and *validated test* is what makes you valuable.** Boeing rewards rigor and process depth; Anduril rewards speed, breadth, and ownership. Build real things, measure them, and be able to defend every decision — that's the whole game.
+Fundamentals get you in the door; **the ability to take hardware from requirements through design, manufacturing, and *validated test* is what makes you valuable.** Boeing rewards rigor and process depth; defense-tech companies reward speed, breadth, and ownership. Build real things, measure them, and be able to defend every decision — that's the whole game.
 
 ---
 
@@ -373,7 +373,7 @@ fog, altitude, and EMI — and *prove* it by test.
 - **Random vibration PSD**, sine-sweep, and shock-response spectrum (SRS) are the
   vocabulary of the shaker-table lab. Know what a PSD plot means.
 
-### 15.2 Thermal for compute payloads (Anduril-relevant)
+### 15.2 Thermal for compute payloads (defense-tech-relevant)
 Autonomy means power-dense compute (Jetson/NPUs) in sealed enclosures. The ME
 owns: junction-to-ambient resistance networks, heat-pipe/vapor-chamber selection,
 conduction vs. forced convection, derating at altitude (thinner air = worse

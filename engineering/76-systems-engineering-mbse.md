@@ -154,7 +154,7 @@ interact. The system is decomposed along three coordinated views:
 Good architecture maximizes **cohesion within** a module and minimizes **coupling
 between** modules — the same principle as software design, applied to whole systems. The
 payoff is *modularity*: a well-bounded subsystem can be designed, tested, and replaced
-independently. Anduril's productized approach and SpaceX's subsystem reuse both rest on
+independently. Modern productized-defense companies' approach and SpaceX's subsystem reuse both rest on
 clean architectural boundaries.
 
 The decomposition also defines the **work breakdown structure (WBS)** — who builds what —

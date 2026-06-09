@@ -18,7 +18,7 @@ one you're negotiating against — the levers are different.
 
 | World | Examples | Comp shape | Negotiation reality |
 |---|---|---|---|
-| **Defense-tech startups** | Anduril, Shield AI, Saronic, Applied Intuition | Base + meaningful **equity** + bonus | Equity is the real lever; bands are flexible early |
+| **Defense-tech startups** | Shield AI, Saronic, Applied Intuition | Base + meaningful **equity** + bonus | Equity is the real lever; bands are flexible early |
 | **Primes** | Lockheed, RTX, Northrop, Boeing, GD | Base + bonus, **pension/benefits**, little/no equity | Banded by job code; less flex, but relocation/sign-on negotiable |
 | **Big Tech (adjacent)** | for comparison/leverage | Base + large **RSUs** + bonus | Sets your outside-option number |
 
@@ -267,7 +267,7 @@ your alternatives, not your needs.**
 
 > Defense-tech reality: your clearance status, a published autonomy portfolio, and
 > a credible competing offer from a *different* world (a Big Tech RSU offer next
-> to an Anduril equity offer) are three independent sources of BATNA. Stack them.
+> to a defense-tech equity offer) are three independent sources of BATNA. Stack them.
 > See [11-career-defense-aerospace-playbook.md](11-defense-aerospace-playbook.md)
 > for generating multiple offers, and [16-career-security-clearance.md](16-security-clearance.md)
 > for why an active clearance is leverage.

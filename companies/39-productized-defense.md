@@ -1,6 +1,6 @@
-# Anduril — Productized Defense, Self-Funded R&D & Software-Defined Hardware
+# Productized Defense — Self-Funded R&D, Software-Defined Hardware & Owning the Integration Layer
 
-> **Why this exists.** Anduril is the most important strategic case study for anyone who wants to build defense technology *without* becoming a traditional prime. It didn't beat Lockheed, Raytheon, or General Dynamics at their own game — it refused to play their game and built a different business model that the incumbents structurally cannot copy. If your goal is autonomous systems for defense, Anduril is the proof that a venture-funded, product-company posture can win contracts that used to belong exclusively to cost-plus dinosaurs. Understanding *exactly how* is non-optional.
+> **Why this exists.** The "productized defense" business model is the most important strategic case study for anyone who wants to build defense technology *without* becoming a traditional prime. A new wave of venture-backed defense-tech companies didn't beat Lockheed, Raytheon, or General Dynamics at their own game — they refused to play that game and built a different business model that the incumbents structurally cannot copy. If your goal is autonomous systems for defense, this category is the proof that a venture-funded, product-company posture can win contracts that used to belong exclusively to cost-plus dinosaurs. Understanding *exactly how* is non-optional.
 
 > **What mastering it makes you.** Someone who reasons about defense as a *business-model* problem first and a technology problem second — who can spot where an incumbent's incentive structure forbids them from doing the obviously-right thing, and who knows how to own the integration/software layer that turns commodity hardware into a moat.
 
@@ -14,25 +14,25 @@ The single most important concept here is **counter-positioning** (Helmer, *7 Po
 
 Traditional primes operate on **cost-plus contracting**: the government pays their costs plus a guaranteed margin. This structure has a perverse incentive baked in — *lowering cost lowers profit*. A cost-plus contractor is literally paid more for spending more. They also do little R&D on their own dime; they wait for the government to fund a program of record, then bill labor-hours against it for a decade.
 
-Anduril inverted both:
+The productized-defense model inverts both:
 
-| Dimension | Traditional prime | Anduril |
+| Dimension | Traditional prime | Productized defense-tech |
 |-----------|-------------------|---------|
 | Contract type | Cost-plus (paid for inputs) | Fixed-price, productized (paid for outcomes) |
 | R&D funding | Government-funded programs of record | **Self-funded** with venture capital |
 | What they sell | Labor-hours & bespoke programs | Finished products off a roadmap |
 | Incentive on cost | Lower cost = lower profit | Lower cost = higher margin |
 | Time to field | Years to decades | Months |
-| Software | Subcontracted, fragmented | Owned core competency (Lattice) |
+| Software | Subcontracted, fragmented | Owned core competency (integrated C2 platform) |
 
-The prime *cannot* respond by becoming Anduril, because their entire business, cost structure, shareholder expectations, and contract base are built on cost-plus. To copy Anduril, they'd have to cannibalize their own profit engine. **That** is counter-positioning, and it is the heart of the whole story.
+The prime *cannot* respond by adopting this model, because their entire business, cost structure, shareholder expectations, and contract base are built on cost-plus. To copy it, they'd have to cannibalize their own profit engine. **That** is counter-positioning, and it is the heart of the whole story.
 
 ```
    COST-PLUS INCENTIVE (the trap)
    profit = cost × margin%     →   spending MORE earns MORE
                                     innovation is punished
 
-   PRODUCTIZED FIXED-PRICE (Anduril)
+   PRODUCTIZED FIXED-PRICE (the new model)
    profit = price − cost       →   spending LESS earns MORE
                                     innovation is rewarded
 ```
@@ -41,7 +41,7 @@ The prime *cannot* respond by becoming Anduril, because their entire business, c
 
 ## 2. Self-funded R&D: build the product *before* the contract
 
-The traditional model is "wait for the RFP, then bid." Anduril builds the product *first*, on its own (venture) money, then sells the finished capability. This flips the risk and the timeline.
+The traditional model is "wait for the RFP, then bid." The productized model builds the product *first*, on its own (venture) money, then sells the finished capability. This flips the risk and the timeline.
 
 Why this is powerful:
 
@@ -50,35 +50,35 @@ Why this is powerful:
 3. **Margin.** Fixed-price on a product you've already amortized R&D against is far more profitable than cost-plus labor.
 4. **Leverage.** One product (a tower, a counter-drone interceptor, an autonomous sub) can be sold many times, unlike a bespoke program built once.
 
-The financing reality that makes this possible: venture capital tolerant of long horizons and large losses, plus founders (Palmer Luckey and the Founders Fund network) with the credibility and capital to fund years of R&D before revenue. This is the *capital-strategy* mechanism from the band overview ([37](37-how-the-giants-win.md)) — choosing a funding structure your competitors cannot match.
+The financing reality that makes this possible: venture capital tolerant of long horizons and large losses, plus founders with the credibility and capital to fund years of R&D before revenue. This is the *capital-strategy* mechanism from the band overview ([37](37-how-the-giants-win.md)) — choosing a funding structure your competitors cannot match.
 
 ```
    TRADITIONAL:  RFP ──► bid ──► award ──► build (years) ──► field
                  │                                              ▲
                  └──────── government bears development risk ───┘
 
-   ANDURIL:      build product (own $) ──► demo ──► sell ──► field
+   PRODUCTIZED:  build product (own $) ──► demo ──► sell ──► field
                  │                                            ▲
                  └────── company bears dev risk, keeps upside ┘
 ```
 
 ---
 
-## 3. Lattice as a platform: own the integration layer
+## 3. The C2 platform: own the integration layer
 
-Anduril's deepest moat is not any single piece of hardware — towers, Ghost drones, Anvil interceptors, Dive-LD subs are all replaceable. The moat is **Lattice**, the software platform that fuses sensors, autonomy, and command into a single operating picture and lets all the hardware act as one system.
+The deepest moat in productized defense is not any single piece of hardware — towers, drones, interceptors, autonomous subs are all replaceable. The moat is **the integrated autonomy command-and-control (C2) platform**: the software that fuses sensors, autonomy, and command into a single operating picture and lets all the hardware act as one system.
 
 This is the platform/ecosystem pattern applied to defense. The strategic logic:
 
 - **Hardware is commoditizing.** Sensors, compute, and airframes are increasingly available off-the-shelf. Whoever owns the *integration and autonomy software* captures the durable value.
 - **The integration layer has switching costs.** Once a customer's sensors, effectors, and workflows run on your platform, ripping it out is enormously painful. (Same physics as Palantir's ontology — see [40](40-palantir-forward-deployed.md).)
-- **Software is where iteration is cheap.** You can ship a Lattice update overnight; a new airframe takes months. The platform lets you improve the whole fleet's behavior through software.
+- **Software is where iteration is cheap.** You can ship a platform update overnight; a new airframe takes months. The platform lets you improve the whole fleet's behavior through software.
 
 | Layer | Commoditizing? | Where the moat is |
 |-------|----------------|-------------------|
 | Sensors / airframes / effectors | Yes — increasingly off-the-shelf | Low |
 | Autonomy & sensor fusion | Hard, accumulates | Medium-high |
-| **Integration / C2 platform (Lattice)** | Very hard, sticky | **Highest** |
+| **Integration / C2 platform** | Very hard, sticky | **Highest** |
 
 The lesson: **in a world of commodity hardware, own the software that makes the hardware a system.** Hardware sells the first deal; the platform keeps the account.
 
@@ -98,33 +98,33 @@ This couples directly to the productized model: a software-defined product has a
 
 ---
 
-## 5. The Anduril flywheel
+## 5. The productized-defense flywheel
 
 ```
    self-funded product ──► fast fielding ──► real mission data
           ▲                                        │
           │                                        ▼
-   reinvest margin ◄── high-margin sales ◄── Lattice gets stickier
+   reinvest margin ◄── high-margin sales ◄── platform gets stickier
 ```
 
 - Build product on own money → field fast → earn margin and mission feedback.
-- Mission feedback → better autonomy/Lattice → stickier platform → more sales.
+- Mission feedback → better autonomy/platform → stickier platform → more sales.
 - Margin → fund the next product → broaden the portfolio → more of the customer's stack runs on you.
 
-Each new product (counter-UAS, autonomous subsea, EW — connect to [27-autonomy-counter-uas-ew.md](../autonomy/27-counter-uas-ew.md)) plugs into Lattice and increases switching cost across the whole account.
+Each new product (counter-UAS, autonomous subsea, EW — connect to [27-autonomy-counter-uas-ew.md](../autonomy/27-counter-uas-ew.md)) plugs into the C2 platform and increases switching cost across the whole account.
 
 ---
 
 ## 6. Why the incumbents can't just copy it
 
-This deserves its own section because it's the strategic crux. The primes have more engineers, more money, and deeper DoD relationships than Anduril. Why don't they win?
+This deserves its own section because it's the strategic crux. The primes have more engineers, more money, and deeper DoD relationships than the upstarts. Why don't they win?
 
 | Incumbent asset | Why it becomes a liability |
 |-----------------|----------------------------|
 | Cost-plus revenue base | Productizing cannibalizes the profit engine |
 | Decades of process | Slow decision latency; can't iterate at software speed |
 | Shareholder expectations | Can't absorb years of self-funded R&D losses quietly |
-| Subcontracted software | No in-house platform competency to build a Lattice |
+| Subcontracted software | No in-house platform competency to build an integrated C2 platform |
 | Program-of-record dependence | Can't build *before* the contract exists |
 
 Every one of those was an *advantage* in the old world and is a *chain* in the new one. That is the structural-weakness map from [37](37-how-the-giants-win.md) made concrete. A small, fast, software-first company exploits exactly the gaps the incumbent cannot close without self-harm.
@@ -133,7 +133,7 @@ Every one of those was an *advantage* in the old world and is a *chain* in the n
 
 ## 7. The risks and honest caveats
 
-Anduril's model is not magic, and the case study is incomplete without the failure modes:
+The productized model is not magic, and the case study is incomplete without the failure modes:
 
 - **Capital dependence.** Self-funded R&D only works with patient, deep capital. Lose access to it and the model breaks. This is a *fragile* precondition, not a universal one.
 - **The valley of death.** Productizing before a program of record means you can build something nobody ends up buying. The bet is that you understand the mission better than the requirements process does — sometimes you don't.
@@ -156,11 +156,11 @@ The transferable skill: **competing on business model and integration, not on ou
 
 ## Sources & further study
 
-- Hamilton Helmer, *7 Powers* — counter-positioning is the precise frame for the Anduril-vs-primes dynamic; read this chapter carefully.
-- Christian Brose, *The Kill Chain: Defending America in the Future of High-Tech Warfare* — the strategic argument for software-defined, attritable, networked systems (Brose later joined Anduril).
+- Hamilton Helmer, *7 Powers* — counter-positioning is the precise frame for the upstart-vs-primes dynamic; read this chapter carefully.
+- Christian Brose, *The Kill Chain: Defending America in the Future of High-Tech Warfare* — the strategic argument for software-defined, attritable, networked systems.
 - Clayton Christensen, *The Innovator's Dilemma* — why incumbents structurally can't chase disruptive, lower-margin-at-first models.
-- Public talks & interviews: Palmer Luckey and Trae Stephens (Founders Fund) on Anduril's thesis; Anduril's Lattice product briefings; a16z/Founders Fund essays on "American Dynamism."
+- Public talks & interviews from the venture-backed defense-tech wave and its investors on the productized-defense thesis; integrated C2 platform product briefings; a16z/Founders Fund essays on "American Dynamism."
 - Government reports on acquisition reform: the *Section 809 Panel* report and DIU (Defense Innovation Unit) commercial-solutions-opening (CSO) materials — context for *why* a productized model is viable now.
 - Steve Blank, "The Secret History of Silicon Valley" talk — the long entanglement of tech and defense.
 
-> Framing note: Anduril is simultaneously a brilliant strategic case study and a company building autonomous weapons — the analysis here is about the *mechanism*, not an endorsement of every product. Whether and how lethal autonomy should be built is a serious ethical question that the business model does not answer. Study the counter-positioning; keep your own moral reasoning about *what to build* fully engaged and independent.
+> Framing note: this category is simultaneously a brilliant strategic case study and an industry building autonomous weapons — the analysis here is about the *mechanism*, not an endorsement of every product. Whether and how lethal autonomy should be built is a serious ethical question that the business model does not answer. Study the counter-positioning; keep your own moral reasoning about *what to build* fully engaged and independent.

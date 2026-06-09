@@ -5,7 +5,7 @@
 > as the fleet flies, is a product. The gap between the two is **MLOps** — the infrastructure,
 > pipelines, and discipline that take a model from a researcher's laptop to a fielded,
 > monitored, continuously improving system. This is the machinery behind the data flywheel that
-> makes Tesla Autopilot and Anduril's perception hard to catch: it is not one brilliant model,
+> makes Tesla Autopilot and a leading defense-tech company's perception hard to catch: it is not one brilliant model,
 > it is a *loop* that turns fleet experience into better models faster than competitors can. The
 > engineer who owns this loop owns the compounding advantage.
 >
@@ -23,7 +23,7 @@ on the embedded edge. It inherits the safety burden of [09-foundations-safety-as
 the security concerns of [86-software-cybersecurity-engineering.md](86-cybersecurity-engineering.md),
 the engineering practice of [12-career-software-engineering.md](../career/12-software-engineering.md),
 and embodies the data-as-moat strategy of [41-companies-tesla-vertical-integration-data.md](../companies/41-tesla-vertical-integration-data.md)
-and [39-companies-anduril-productized-defense.md](../companies/39-productized-defense.md).
+and [39-productized-defense.md](../companies/39-productized-defense.md).
 
 ---
 
@@ -229,7 +229,7 @@ flowchart LR
 Each turn of the wheel makes the model better, which makes the vehicles more capable, which
 generates richer and harder data, which trains a better model. The competitive insight — central
 to [41-companies-tesla-vertical-integration-data.md](../companies/41-tesla-vertical-integration-data.md)
-and [39-companies-anduril-productized-defense.md](../companies/39-productized-defense.md) — is
+and [39-productized-defense.md](../companies/39-productized-defense.md) — is
 that the *speed* of the flywheel, not the cleverness of any single model, is the moat. A
 competitor can copy your architecture; they cannot copy the fleet-years of data and the
 infrastructure that turns it into models faster than you. MLOps is the discipline of spinning that

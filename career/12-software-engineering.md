@@ -1,6 +1,6 @@
-# Software Engineering for Defense & Aerospace: A Job-Readiness Guide (Boeing / Anduril)
+# Software Engineering for Defense & Aerospace: A Job-Readiness Guide (Boeing / Defense-Tech)
 
-A practical roadmap of the software knowledge, tools, and habits that get you hired and keep you effective at companies like **Boeing**, **Anduril**, **Lockheed Martin**, **Northrop Grumman**, **SpaceX**, **Skydio**, and **Shield AI**.
+A practical roadmap of the software knowledge, tools, and habits that get you hired and keep you effective at companies like **Boeing**, **Lockheed Martin**, **Northrop Grumman**, **SpaceX**, **Skydio**, and **Shield AI**.
 
 > You're already working with PX4/Pixhawk — that's directly relevant. This guide connects that experience to what these employers actually screen for.
 
@@ -10,7 +10,7 @@ A practical roadmap of the software knowledge, tools, and habits that get you hi
 
 The defense/aerospace software world splits into two very different cultures. Know which roles you're targeting.
 
-| | **"Old-space / Primes"** (Boeing, Lockheed, Northrop, Raytheon) | **"New defense-tech"** (Anduril, SpaceX, Skydio, Shield AI) |
+| | **"Old-space / Primes"** (Boeing, Lockheed, Northrop, Raytheon) | **"New defense-tech"** (SpaceX, Skydio, Shield AI) |
 |---|---|---|
 | Process | Heavy, certified, document-driven (DO-178C, AS9100) | Fast, iterative, startup-paced but still rigorous |
 | Languages | C, C++, Ada, MATLAB/Simulink, some Java | C++, Rust, Python, Go, TypeScript |
@@ -18,7 +18,7 @@ The defense/aerospace software world splits into two very different cultures. Kn
 | Interview style | Behavioral + domain + moderate coding | Hard data-structures/algorithms + systems design + take-home |
 | What impresses | Safety certification experience, real flight software | Shipped autonomy/robotics, performance optimization, ownership |
 
-**Bottom line:** Anduril/SpaceX interview much more like elite tech companies (LeetCode-hard + systems design). Boeing/Lockheed weigh domain experience, process maturity, and clearance more heavily.
+**Bottom line:** Top defense-tech companies and SpaceX interview much more like elite tech companies (LeetCode-hard + systems design). Boeing/Lockheed weigh domain experience, process maturity, and clearance more heavily.
 
 ---
 
@@ -30,7 +30,7 @@ This is often more decisive than your coding skill for defense roles.
 - **Clearance levels:** Public Trust → Secret → Top Secret → TS/SCI (with polygraph for some).
 - You usually **can't get a clearance yourself** — a sponsoring employer initiates it. So "clearable" (clean background, citizen) is the realistic entry state.
 - **What helps clearability:** clean criminal/financial history, limited foreign contacts, no drug issues, honesty on the SF-86 form.
-- **Anduril** sponsors clearances heavily; **Boeing** too. Having even a Secret clearance already makes you dramatically more hireable.
+- **Leading defense-tech companies** sponsor clearances heavily; **Boeing** too. Having even a Secret clearance already makes you dramatically more hireable.
 
 > Action: If you're a U.S. citizen with a clean record, you are "clearable." Say so on your resume. If not a citizen, target the (fewer) commercial/ITAR-exempt roles.
 
@@ -47,7 +47,7 @@ These get tested in interviews regardless of company.
 - Dynamic programming, recursion, backtracking
 - **Big-O analysis** — time and space, for everything
 
-> Practice: **LeetCode** (target 150–250 problems, focus on Blind 75 / NeetCode 150). Anduril and SpaceX ask genuinely hard problems. A* and graph search are *especially* relevant for autonomy/path-planning roles.
+> Practice: **LeetCode** (target 150–250 problems, focus on Blind 75 / NeetCode 150). Top defense-tech companies and SpaceX ask genuinely hard problems. A* and graph search are *especially* relevant for autonomy/path-planning roles.
 
 ### Operating Systems & Concurrency
 - Processes vs threads, scheduling, context switches
@@ -88,7 +88,7 @@ Prioritized for defense/aerospace:
 - This is what runs on the Pixhawk/STM32 microcontrollers you're using.
 
 ### Rust — **The rising star at new defense-tech**
-- Anduril uses Rust heavily. Memory safety without garbage collection.
+- Leading defense-tech companies use Rust heavily. Memory safety without garbage collection.
 - Ownership/borrowing, lifetimes, traits, `Result`/`Option`, async
 - Increasingly used where you'd traditionally use C++ but want safety.
 
@@ -100,7 +100,7 @@ Prioritized for defense/aerospace:
 ### Supporting
 - **MATLAB/Simulink** — huge at Boeing/Lockheed for control-law design & model-based development
 - **Ada/SPARK** — still in legacy avionics (Boeing, defense). Niche but valued.
-- **Go / TypeScript** — backend services and operator UIs at Anduril (Lattice platform)
+- **Go / TypeScript** — backend services and operator UIs at defense-tech companies (integrated autonomy/C2 platforms)
 
 ---
 
@@ -120,7 +120,7 @@ This is where your PX4/Pixhawk experience is **gold**. Lean into it.
 
 ---
 
-## 5. Robotics & Autonomy (Anduril / Skydio / Shield AI Core)
+## 5. Robotics & Autonomy (Defense-Tech / Skydio / Shield AI Core)
 
 - **ROS / ROS 2** — middleware, nodes, topics, services, DDS
 - **State estimation:** Kalman filters (EKF/UKF — PX4's EKF2), sensor fusion
@@ -179,7 +179,7 @@ If targeting Boeing/Lockheed/avionics, know these:
 
 ## 9. System Design (Senior / New-Defense Interviews)
 
-Anduril and SpaceX ask system design even for mid-level roles:
+Top defense-tech companies and SpaceX ask system design even for mid-level roles:
 
 - Designing a real-time telemetry pipeline (drone → ground station)
 - Multi-vehicle coordination / swarm architecture
@@ -238,7 +238,7 @@ Things that make a defense/aerospace resume pop:
 - **Lead with relevant keywords:** C++, embedded, real-time, RTOS, PX4, ROS 2, autonomy, sensor fusion
 - **State citizenship/clearability** clearly (defense recruiters filter on this first)
 - **Quantify:** "reduced control loop latency by X ms," "achieved Y Hz update rate"
-- **Tailor:** Anduril → emphasize shipping/ownership/systems; Boeing → emphasize rigor/safety/process
+- **Tailor:** defense-tech startups → emphasize shipping/ownership/systems; Boeing → emphasize rigor/safety/process
 - **Apply directly** on their career sites; defense recruiters use clearance/citizenship filters heavily
 - **Network:** veterans, alumni, conferences (AUVSI, AIAA), and open-source maintainers
 
@@ -291,7 +291,7 @@ Things that make a defense/aerospace resume pop:
 
 ### TL;DR
 1. **Master C++** (and pick up C or Rust). 
-2. **Grind LeetCode** for Anduril/SpaceX-tier interviews. 
+2. **Grind LeetCode** for defense-tech/SpaceX-tier interviews. 
 3. **Lean into embedded/real-time/autonomy** — your PX4 work is a genuine differentiator. 
 4. **Know the safety-cert vocabulary** (DO-178C) for the primes. 
 5. **Be clearable** (U.S. citizen, clean record) — it's the biggest gate. 

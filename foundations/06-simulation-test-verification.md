@@ -2,7 +2,7 @@
 
 > **Why this file exists.** Anyone can make a drone fly *once*, in good weather, with a
 > charged battery and a clear sky. The thing that separates a hobbyist from an engineer at
-> Anduril, Shield AI, or Skydio is the ability to **prove a system works before it flies** —
+> a leading defense-technology company, Shield AI, or Skydio is the ability to **prove a system works before it flies** —
 > and to prove it keeps working after every change. That proof is not a feeling. It is a
 > stack of simulations, tests, and verification arguments that each name a specific failure
 > mode and demonstrate the system survives it. This is the module the demo videos never

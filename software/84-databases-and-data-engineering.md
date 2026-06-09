@@ -4,7 +4,7 @@
 > what it decided, and what happened, and that record is the raw material for debugging, for
 > training the next model, and for proving the system did the right thing. A flight test
 > generates gigabytes per sortie; a fleet generates terabytes per day; the data flywheel that
-> makes Tesla and Anduril hard to beat is, underneath, a storage-and-pipeline problem. The
+> makes Tesla and leading defense-tech firms hard to beat is, underneath, a storage-and-pipeline problem. The
 > engineer who understands how databases actually store, index, and transact — and how to build
 > pipelines that move and shape data reliably at scale — is the one who turns a firehose of
 > telemetry into queryable truth and into training sets, instead of into an unsearchable swamp.

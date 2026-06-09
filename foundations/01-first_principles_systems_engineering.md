@@ -8,7 +8,7 @@
 > systems engineer is to keep the whole picture in their head while everyone else holds a
 > piece.
 >
-> **What "senior" actually means.** A senior engineer at Anduril, Shield AI, Skydio, or
+> **What "senior" actually means.** A senior engineer at a leading defense-technology company, Shield AI, Skydio, or
 > the Skunk Works is not someone who memorized more equations. They are someone who can
 > (a) reason from physics when the handbook runs out, (b) decompose a vague mission into
 > verifiable requirements, (c) reason about an entire system's failure modes before

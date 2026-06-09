@@ -1,4 +1,4 @@
-# Ten-Year Mastery Plan — From This Drone to Operating at an Elite Level at Anduril
+# Ten-Year Mastery Plan — From This Drone to Operating at an Elite Level at a Leading Defense-Technology Company
 
 **Author's situation (June 2026):** You have built a working onboard autonomy
 stack (FastAPI service, MAVSDK/pymavlink, IMX500 on-device inference, GPS-denied
@@ -7,14 +7,14 @@ tamper-evident decision log) and assembled a physical VTOL tilt-tricopter around
 a Pixhawk 6C + Raspberry Pi 5. You move fast with AI assistance.
 
 **The gap this plan closes:** Moving fast with AI gets you a *working* system.
-Operating at an elite level at a company like Anduril requires you to *own the
+Operating at an elite level at a leading defense-technology company requires you to *own the
 fundamentals* — to know why every layer works, to debug it at 3am when the AI
 is wrong, to design systems that are safe, real-time, testable, and that scale
 from one vehicle to a coordinated fleet. This plan makes you the engineer who
 can do that.
 
 > **How to read this document.** Each year has: (1) **Mission** — the one-line
-> objective; (2) **Why it matters at Anduril** — the connection to elite defense
+> objective; (2) **Why it matters at elite defense-tech companies** — the connection to elite defense
 > autonomy work; (3) **Topics to learn** — broken into fundamentals, depth, and
 > frontier; (4) **Concrete actions on THIS project**; (5) **Milestones /
 > exit criteria**; (6) **Proof of mastery** — what you must be able to do
@@ -28,7 +28,7 @@ can do that.
 > field a safety-critical, perception-driven, GPS-denied-capable, multi-vehicle
 > autonomous system — and explain and defend every layer of it.**
 
-Anduril's product surface (Lattice, autonomous air/ground/maritime vehicles,
+The product surface of top defense-autonomy companies (an integrated autonomy/C2 platform, autonomous air/ground/maritime vehicles,
 sensor fusion, counter-UAS, edge AI) maps almost one-to-one onto the
 capabilities you are already prototyping. This plan turns prototypes into
 mastery.
@@ -80,7 +80,7 @@ Turn your assembled airframe into a machine that flies *predictably and safely*,
 and rebuild the mathematical and systems fundamentals underneath everything you
 have been generating with AI.
 
-### Why it matters at Anduril
+### Why it matters at elite defense-tech companies
 Elite autonomy engineers are trusted because their systems don't surprise
 anyone. The path there starts with disciplined hardware bring-up, sensor
 calibration, failsafe design, and the math literacy to reason about every
@@ -152,7 +152,7 @@ plots, and explain the fix — without AI.
 Achieve *repeatable, predictable* flight across the full VTOL envelope, and
 learn the control theory that governs it.
 
-### Why it matters at Anduril
+### Why it matters at elite defense-tech companies
 Autonomous vehicles must behave identically across thousands of sorties.
 Control theory is the literacy that lets you tune, diagnose, and trust a vehicle
 — and later design controllers for novel airframes and payloads.
@@ -208,8 +208,8 @@ Turn your onboard stack from "works on my Pi" into a hardened, observable,
 reproducible system — and become genuinely fluent in C++ (the language of
 flight-critical autonomy).
 
-### Why it matters at Anduril
-Lattice and the vehicle autonomy stacks are large, real-time, C++/Rust
+### Why it matters at elite defense-tech companies
+An integrated autonomy/C2 platform and the vehicle autonomy stacks are large, real-time, C++/Rust
 codebases with rigorous engineering practices. Python prototyping gets you in
 the room; systems engineering keeps you there.
 
@@ -270,7 +270,7 @@ Make onboard perception (detection, tracking, classification) stable and
 reliable enough to *drive mission decisions*, and learn the deep-learning and
 computer-vision fundamentals underneath it.
 
-### Why it matters at Anduril
+### Why it matters at elite defense-tech companies
 Sensor fusion and perception are the core of modern defense autonomy. Detecting,
 tracking, and classifying objects reliably — at the edge, in degraded conditions
 — is the product.
@@ -331,7 +331,7 @@ Make GPS-denied navigation *real and trusted*: visual odometry + map-matching +
 filtering that keeps a usable pose when GPS degrades — and master the estimation
 theory behind it.
 
-### Why it matters at Anduril
+### Why it matters at elite defense-tech companies
 Operating in contested/GPS-denied environments is a defining requirement of
 defense autonomy. State estimation and sensor fusion are the deepest, most
 valued skills in the field.
@@ -386,7 +386,7 @@ bounds it, and demonstrate the aircraft navigating without GPS.
 Make the vehicle execute *complete missions* with minimal intervention: search,
 investigate, follow, patrol — with human-in-the-loop control and clean recovery.
 
-### Why it matters at Anduril
+### Why it matters at elite defense-tech companies
 Autonomy is the product. The value is a system that takes a high-level intent
 ("search this area, report what you find") and executes it safely, with the
 operator supervising rather than piloting.
@@ -445,7 +445,7 @@ LLM/VLM layer can never bypass a safety gate.
 Scale from a single drone to a coordinated *team*: shared world model, task
 allocation, deconfliction, fleet observability.
 
-### Why it matters at Anduril
+### Why it matters at elite defense-tech companies
 Multi-agent coordination (collaborative autonomy across many vehicles and
 sensors) is central to the product vision. The hard problems are distributed
 systems problems.
@@ -501,7 +501,7 @@ Turn the experimental stack into a *platform*: versioned configs, release
 discipline, hardware revisions, safety cases, documentation another engineer can
 build from.
 
-### Why it matters at Anduril
+### Why it matters at elite defense-tech companies
 Elite engineers don't just build — they ship maintainable, certifiable,
 team-scalable systems. This is the difference between a clever prototype and a
 fielded product.
@@ -556,7 +556,7 @@ Make the system produce *operational output*, not just flight: structured
 mission data, reports, audit trails, searchable history, decision-quality
 products.
 
-### Why it matters at Anduril
+### Why it matters at elite defense-tech companies
 The end value of autonomy is decision-quality information delivered to operators
 and commanders. Building the data products and the trustworthy record around
 them is where the system becomes genuinely useful.
@@ -608,7 +608,7 @@ Decide what this becomes — product, research platform, or fleet service — fr
 a stable architecture, isolate experiments, and build the smallest process that
 sustains growth.
 
-### Why it matters at Anduril
+### Why it matters at elite defense-tech companies
 Operating at the highest level isn't only technical — it's judgment: knowing
 what to build, what to cut, how to lead a system and (eventually) a team, and
 how to align engineering with a mission.
@@ -716,8 +716,8 @@ every major decision — and defend all of it.
 
 ---
 
-*This plan is intentionally demanding. Operating at an elite level at a company
-like Anduril is not a framework you install — it is fundamentals you own,
+*This plan is intentionally demanding. Operating at an elite level at a leading
+defense-technology company is not a framework you install — it is fundamentals you own,
 systems you can defend, and judgment you earn by building, breaking, and fixing
 real autonomous machines. You already have the machine. Now go own every layer
 of it.*

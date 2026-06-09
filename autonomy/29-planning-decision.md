@@ -545,7 +545,7 @@ The model is thus boxed: it can only *propose intents from a fixed vocabulary*, 
 
 ### 7.4 Why this is the senior skill
 
-Anyone can wire an LLM to a flight controller. The defensible thing — the thing Anduril/Shield AI/Skydio pay senior engineers for — is the **provable containment**: a small, auditable, fully-tested gate (`policy/intent.py` ~98% covered, `constitution.py` 99%) standing between unbounded reasoning and bounded action, with every decision logged. You can show a safety reviewer the *exact lines* where untrusted output is validated and where authority is enforced.
+Anyone can wire an LLM to a flight controller. The defensible thing — the thing companies like Shield AI and Skydio pay senior engineers for — is the **provable containment**: a small, auditable, fully-tested gate (`policy/intent.py` ~98% covered, `constitution.py` 99%) standing between unbounded reasoning and bounded action, with every decision logged. You can show a safety reviewer the *exact lines* where untrusted output is validated and where authority is enforced.
 
 ---
 

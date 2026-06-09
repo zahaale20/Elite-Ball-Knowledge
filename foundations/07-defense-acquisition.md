@@ -3,7 +3,7 @@
 > **Why this file exists.** You can build the most elegant autonomy stack in the world and
 > still build the *wrong thing*, because you don't understand the customer. The customer here
 > is the U.S. defense enterprise — a strange, slow, enormous, rule-bound machine with its own
-> language, its own clocks, and its own definition of "good." Engineers at Anduril, Shield AI,
+> language, its own clocks, and its own definition of "good." Engineers at a leading defense-technology company, Shield AI,
 > Skydio, and Palantir who get promoted are the ones who can translate between *what the
 > warfighter needs* and *what the code does* — and who understand how money, requirements, and
 > programs flow so they build something the system can actually buy and field. This file
@@ -114,7 +114,7 @@ The U.S. military's dynamic-targeting chain is **Find, Fix, Track, Target, Engag
 
 The strategic insight defense-tech sells on: **compressing the kill chain.** The side that can
 go Find→Assess faster, more reliably, and with fewer humans in the slow parts wins. Every
-autonomy pitch is, at bottom, "we shorten or harden a link of this chain." Anduril's Lattice,
+autonomy pitch is, at bottom, "we shorten or harden a link of this chain." A productized autonomy command-and-control platform,
 Shield AI's Hivemind — both are, in customer terms, *kill-chain compression engines.*
 
 ### 2.2 OODA — the cognitive version
@@ -410,7 +410,7 @@ program is a phased funding ladder:
                       (bigger $, ~2 yr)
 ```
 
-It is the classic on-ramp: many defense-tech companies (Anduril included, early on) used SBIR
+It is the classic on-ramp: many defense-tech companies (leading productized-defense firms included, early on) used SBIR
 dollars to fund initial development. For an engineer, the relevant fact is that SBIR Phase I/II
 work is *prototype-grade* funding — it gets you to a TRL where you can prove the capability, but
 the leap to fielding (Phase III / a PoR) is the Valley of Death.
@@ -491,7 +491,7 @@ uses.
 
 ## 11. Cost-plus vs productized: the model that changed everything
 
-This is the heart of why companies like Anduril exist and why an engineer's daily reality there
+This is the heart of why productized defense-tech companies exist and why an engineer's daily reality there
 differs from a legacy prime. (Strategy depth is in
 [08-foundations-company-strategy-moat.md](08-company-strategy-moat.md); the contrast
 matters here because it shapes *what you build*.)

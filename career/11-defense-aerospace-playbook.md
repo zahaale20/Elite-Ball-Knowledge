@@ -1,4 +1,4 @@
-# Landing a Job at Boeing, Anduril, or Defense/Aerospace Companies
+# Landing a Job at Boeing, a Leading Defense-Tech Company, or Defense/Aerospace Companies
 
 A practical, honest playbook for turning your drone/autonomy work into a job offer — plus the
 mental game of interviewing well. No manipulation, no tricks. The defense industry runs background
@@ -10,7 +10,7 @@ being genuinely strong *and* presenting it well.
 ## Part 1 — Understand the Landscape
 
 ### Who hires for autonomy / embedded / drone work
-- **Anduril** — fast-moving defense tech. Lattice (autonomy OS), Ghost/Anvil drones, counter-UAS.
+- **Leading defense-tech companies** — fast-moving defense tech. Integrated autonomy/C2 platforms (autonomy OS), attritable drones, counter-UAS.
   Values builders who ship. Strong software + systems integration culture.
 - **Boeing** — large primes (also Insitu/ScanEagle for UAS). More process, systems engineering,
   certification rigor (DO-178C, AS9100). Great for depth and stability.
@@ -23,7 +23,7 @@ archetypes, and they screen, interview, and reward differently:
 
 | Archetype | Examples | What they optimize for | How they interview | Where your work fits |
 |---|---|---|---|---|
-| **Defense-tech startups** | Anduril, Shield AI, Skydio, Saildrone | Shipping capability fast; full-stack builders; bias to action | Practical: build something, debug live, systems-design a real subsystem | Your end-to-end onboard stack is *exactly* their archetype of a strong hire |
+| **Defense-tech startups** | Shield AI, Skydio, Saildrone | Shipping capability fast; full-stack builders; bias to action | Practical: build something, debug live, systems-design a real subsystem | Your end-to-end onboard stack is *exactly* their archetype of a strong hire |
 | **Primes** | Boeing, Lockheed, Northrop, RTX, L3Harris | Process, traceability, certification (DO-178C, AS9100), program scale | Structured: behavioral + systems-engineering rigor, requirements traceability | Frame your SITL/test discipline and safety-case thinking, not raw velocity |
 | **Autonomy-tooling / adjacents** | Applied Intuition, Skydio enterprise, Zipline | Simulation, scale, software quality, data infra | Software-heavy: data structures, sim, distributed systems | Your SITL harness, replay/eval, and CI story are the headline |
 
@@ -467,7 +467,7 @@ health is safety-critical — you cannot fly the fixed-wing phase blind to airsp
   direction during hover. Getting that matrix wrong shows up as coupling —
   commanding yaw produces roll — which you'd catch in SITL before flight.
 
-### Distributed systems / multi-vehicle (the Lattice angle)
+### Distributed systems / multi-vehicle (the integrated autonomy/C2 platform angle)
 - Shared world model, task allocation, partition tolerance.
 
 **Q: Two vehicles see the same object — how do you avoid double-counting and
@@ -795,6 +795,6 @@ comfortable with it. Decide your own lines before you're in the room.
 - SF-86 / clearance adjudicative guidelines (SEAD 4), ODNI: https://www.dni.gov
 
 **Companies (authoritative for current reqs)**
-- Anduril, Shield AI, Skydio, Boeing, SpaceX, Lockheed Martin, Northrop Grumman careers pages.
+- Shield AI, Skydio, Boeing, SpaceX, Lockheed Martin, Northrop Grumman careers pages.
 
 *Repo-specific references (`navigation/`, `policy/`, `onboard/`, etc.) point to the author's own `pixhawk/drone/` codebase. Verify all standards and company requirements against primary sources before relying on them.*

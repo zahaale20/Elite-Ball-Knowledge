@@ -2,7 +2,7 @@
 
 > **Why this file exists.** Two engineers write the same function. One adds a few thousand
 > dollars of value; the other adds a few million. The difference is almost never the code — it
-> is *where the code sits in the value chain.* The engineers who rise at Anduril, Shield AI,
+> is *where the code sits in the value chain.* The engineers who rise at a leading defense-technology company, Shield AI,
 > Skydio, and Palantir are the ones who can see **why the company wins** and aim their technical
 > work at the parts of the system that compound. This file teaches you to think like the founder
 > reading your pull request: not "is this clever?" but "does this widen the moat?" Once you can
@@ -38,7 +38,7 @@ for the network-effect mechanics of mesh autonomy.
 6. [The data / autonomy flywheel](#6-the-data--autonomy-flywheel)
 7. [Vertical integration & owning the stack](#7-vertical-integration--owning-the-stack)
 8. [Switching costs & lock-in (the honest kind)](#8-switching-costs--lock-in-the-honest-kind)
-9. [The "Lattice as platform" pattern](#9-the-lattice-as-platform-pattern)
+9. [The "integration layer as platform" pattern](#9-the-integration-layer-as-platform-pattern)
 10. [Network effects in mesh autonomy](#10-network-effects-in-mesh-autonomy)
 11. [Assurance + integration: the real moat](#11-assurance--integration-the-real-moat)
 12. [Reasoning about where your work moves enterprise value](#12-reasoning-about-where-your-work-moves-enterprise-value)
@@ -112,7 +112,7 @@ existing business.* A legacy prime cannot simply "go productized," because its e
 cost structure, incentives, and shareholder expectations are built on cost-plus billing —
 adopting a fixed-price, self-funded product model would cannibalize the very thing that makes it
 profitable. So it *won't*, even when it sees the newcomer winning. The newcomer's model is safe
-precisely because copying it is suicide for the incumbent. That is why Anduril's model isn't just
+precisely because copying it is suicide for the incumbent. That is why the productized model isn't just
 *better* — it's *defensible.* (Deepened in Section 4.)
 
 ---
@@ -371,10 +371,10 @@ trust," not "we've trapped you" — and ironically that *trust* is the stickier 
 
 ---
 
-## 9. The "Lattice as platform" pattern
+## 9. The "integration layer as platform" pattern
 
 The single most important strategic pattern in defense autonomy is turning a product into a
-**platform** — and Anduril's Lattice is the archetype to study (publicly). The pattern generalizes
+**platform** — and a leading productized defense-tech company's integration platform is the archetype to study (publicly). The pattern generalizes
 far beyond any one company, and your stack is a seed of it. (Mesh/C2 mechanics live in
 [05_distributed_systems_comms_mesh.md](05-distributed_systems_comms_mesh.md).)
 
@@ -391,7 +391,7 @@ far beyond any one company, and your stack is a seed of it. (Mesh/C2 mechanics l
                                           and smarter because it's on our fabric"
 ```
 
-The "Lattice pattern" is: build an **open-ish integration layer / operating system for autonomy**
+The "integration-platform pattern" is: build an **open-ish integration layer / operating system for autonomy**
 that any sensor, vehicle, or effector can plug into, present the operator a single coherent
 picture (the "single pane of glass"), and let the *fusion of everything* be the product rather
 than any single device. The strategic genius is that the platform's value grows with every new
@@ -418,9 +418,9 @@ every device the customer owns (maximum switching cost, §8) and losing the fuse
 whole force now depends on. The platform owner doesn't have to build the best drone; it has to
 own the *integration*, which is more durable than any device.
 
-### 9.3 Your stack as a Lattice seed
+### 9.3 Your stack as a platform seed
 
-Your onboard service, world memory, and the (single-vehicle) shared picture are a micro-Lattice:
+Your onboard service, world memory, and the (single-vehicle) shared picture are a micro-platform:
 a layer that ingests perception, fuses it into a persistent world model, and presents/commands
 through one coherent interface gated by policy. Scaled from one vehicle to many (the swarm/mesh
 problem in [05_distributed_systems_comms_mesh.md](05-distributed_systems_comms_mesh.md)), that
@@ -506,7 +506,7 @@ encodes the precise properties that make real defense-autonomy companies defensi
 
 | Real-company moat | Your stack's mirror |
 |---|---|
-| Integration layer / Lattice pattern | onboard service + world memory fusing perception into one picture (§9.3) |
+| Integration layer / platform pattern | onboard service + world memory fusing perception into one picture (§9.3) |
 | Assurance / trust | constitution-gated command policy + hash-chained decision log |
 | Verification process power | `drone/test/` pyramid, SITL, fault injection, `.ulog` replay (Module 06) |
 | Data flywheel | `world_memory` + `.ulog` corpus: capture → replay → improve (§6.3) |
@@ -514,7 +514,7 @@ encodes the precise properties that make real defense-autonomy companies defensi
 | Auditability / accountability | tamper-evident decision log = the "prove what it decided" artifact |
 
 You are not just building a drone. You are building a *scale model of the moat*, and that is
-exactly why it's a credible portfolio piece for an Anduril-class company (see
+exactly why it's a credible portfolio piece for a leading defense-autonomy company (see
 [11-career-defense-aerospace-playbook.md](../career/11-defense-aerospace-playbook.md)): it
 demonstrates that you understand the integration + assurance discipline that *is* the business,
 not just that you can make something fly.
@@ -604,10 +604,10 @@ The code is the easy part; knowing which code matters is the career.
 3. **Design one flywheel improvement.** Pick one thing in `world_memory` or the `.ulog` pipeline
    that would make every future flight improve from past flights, and sketch it. That's
    moat-building infra (§6.3).
-4. **Write your "Lattice seed" paragraph.** One paragraph explaining how your single-vehicle
+4. **Write your "platform seed" paragraph.** One paragraph explaining how your single-vehicle
    fusion layer is the architecture that, scaled, becomes the platform pattern (§9.3). This is an
    interview-grade artifact.
-5. **Pick a public company and reverse-engineer its moat.** Take Anduril, Shield AI, Skydio, or
+5. **Pick a public company and reverse-engineer its moat.** Take a leading defense-tech company, Shield AI, Skydio, or
    Palantir; from public info, identify which of the seven sources it relies on and how its
    product builds them. Practicing this on real companies trains the lens.
 6. **Run the value checklist (§12.2) on your next feature** before you build it. Make the habit
@@ -637,8 +637,8 @@ difference between a coder and an engineer leadership trusts with strategy.
 
 **Articles & public material**
 - Warren Buffett's Berkshire Hathaway shareholder letters — the original "economic moat" framing.
-- Public Anduril material on Lattice as a software platform / "operating system for defense"
-  (company site, public talks) — used only as a publicly documented archetype of §9.
+- Public material on integrated-autonomy command-and-control platforms as a software platform / "operating system for defense"
+  (company sites, public talks) — used only as a publicly documented archetype of §9.
 - a16z and other public writing on "American Dynamism" and defense-tech business models.
 
 **Sibling guides (read alongside)**
@@ -651,7 +651,7 @@ difference between a coder and an engineer leadership trusts with strategy.
 - [09-foundations-safety-assurance.md](09-safety-assurance.md) — the safety case that
   *is* the assurance moat.
 - [05_distributed_systems_comms_mesh.md](05-distributed_systems_comms_mesh.md) — the engineering
-  behind the network effect and the Lattice pattern (§9, §10).
+  behind the network effect and the platform pattern (§9, §10).
 - [11-career-defense-aerospace-playbook.md](../career/11-defense-aerospace-playbook.md) — how to
   present your "scale model of the moat" to an employer.
 

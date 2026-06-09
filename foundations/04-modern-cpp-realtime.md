@@ -11,8 +11,8 @@
 > modules down onto the metal, you must think in C++ *and* in real-time systems. Mastering
 > this file makes you the person who can take the track-fusion filter you prototyped in
 > Python and ship it as a deterministic C++ module that hits its deadline every single cycle
-> — which is exactly the boundary between "hobbyist with a drone" and "engineer Anduril /
-> Shield AI / Skydio will hire."
+> — which is exactly the boundary between "hobbyist with a drone" and "engineer a leading
+> defense-technology company, Shield AI, or Skydio will hire."
 >
 > **What this makes you.** Fluent in the language flight software is written in; able to
 > reason about memory, cache, threads, and deadlines; and disciplined enough to know *why*
@@ -54,7 +54,7 @@ around the code), [25-autonomy-control-theory.md](../autonomy/25-control-theory.
 
 ### 1.1 The two-language reality of every autonomy company
 
-Walk into Anduril, Shield AI, Skydio, or the autonomy group at any prime and you find the
+Walk into a leading defense-technology company, Shield AI, Skydio, or the autonomy group at any prime and you find the
 same split your own repo already has by instinct:
 
 ```

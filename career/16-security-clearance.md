@@ -1,7 +1,7 @@
 # Security Clearance & the SF-86 Process
 
 > The clearance is the gate. For a huge fraction of defense autonomy work —
-> Anduril, Boeing, Lockheed, Northrop, the classified side of SpaceX, Shield AI —
+> a leading defense-technology company, Boeing, Lockheed, Northrop, the classified side of SpaceX, Shield AI —
 > your code, your drone stack, and your résumé don't matter until you can be
 > trusted with controlled information. This file is the operator's manual for
 > that gate: what clearances are, how the investigation actually works, what the
@@ -91,7 +91,7 @@ you're investigated to that level. Know the ladder so you can read job postings.
 - Common entry point for government IT and some contractor support roles.
 
 ### 3.2 Secret
-- The workhorse clearance for defense engineering. **Most** Anduril/Boeing
+- The workhorse clearance for defense engineering. **Most** defense-tech and prime
   engineering roles that need clearance start here.
 - Investigation tier: **Tier 3** (formerly NACLC). Reinvestigation historically
   every ~10 years; now folded into **continuous vetting** (see §7).
@@ -140,7 +140,7 @@ Two concepts trip up newcomers:
   entitle you to all TS material — only what your job requires. Compartments and
   SAPs enforce this.
 - **Special Access Programs (SAPs)** layer additional controls (special read-ins,
-  unacknowledged or "waived" programs). Anduril/Lockheed/Northrop run plenty of
+  unacknowledged or "waived" programs). Leading defense-tech firms and primes like Lockheed/Northrop run plenty of
   SAP work. You're "read in" to a program with a separate briefing and "read out"
   when you leave it.
 
@@ -401,7 +401,7 @@ copy-paste job instead of a two-week archaeology dig:
 - **You can't initiate a clearance.** A cleared **facility** (the employer, holding
   a facility clearance / FCL) sponsors you for a *specific position* with a
   validated **need**. No job, no sponsorship.
-- **Anduril** invests heavily in clearing engineers — it's core to their business
+- **A leading defense-tech company** invests heavily in clearing engineers — it's core to its business
   with the IC and DoD. **Boeing / Lockheed / Northrop** have mature security
   offices that process clearances at scale; expect a structured, paperwork-heavy
   but well-trodden path.
@@ -496,7 +496,7 @@ clearance status in screening calls without oversharing.
 **Days 61–90 — Position & signal.**
 - [ ] Add the correct **Clearance/U.S.-person line** to your résumé (§12).
 - [ ] Practice a 20-second, honest clearance answer for screening calls.
-- [ ] Target Secret-designated roles at sponsors (Anduril/Boeing/Lockheed) and let
+- [ ] Target Secret-designated roles at sponsors (top defense-tech companies, Boeing, Lockheed) and let
       your real drone stack (see [18-career-resume-portfolio.md](18-resume-portfolio.md))
       carry the technical case while your clearability carries the gate.
 

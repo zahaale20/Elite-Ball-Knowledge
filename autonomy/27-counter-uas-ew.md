@@ -87,7 +87,7 @@ Broadly, "soft kill" (electronic) and "hard kill" (kinetic):
   with collateral and cost-exchange problems.
 - **The cost-exchange problem** — the strategic crux: a $1,000 drone that forces
   a $1,000,000 interceptor is *winning economically* even when shot down. Cheap,
-  autonomous, attritable mass is the entire thesis behind companies like Anduril.
+  autonomous, attritable mass is the entire thesis behind modern productized-autonomy companies.
 
 ---
 
@@ -299,7 +299,7 @@ autonomous platform.
 **The cost-exchange problem (the strategic crux).** A $1,000 drone that forces a
 $1,000,000 interceptor is **winning economically even when it's shot down**. Cheap,
 autonomous, **attritable mass** is the entire thesis behind the modern defense-tech
-wave (Anduril, etc.). Directed energy exists largely to fix this exchange ratio —
+wave. Directed energy exists largely to fix this exchange ratio —
 trading cents of electricity per shot for a drone — which is why every serious
 C-UAS roadmap invests in it.
 
