@@ -47,32 +47,32 @@ number from the curriculum; the link points to the file that teaches it.
 | # | Module | What it makes you | Status |
 |---|---|---|---|
 | 00 | **This index** | A map of the whole field | this file |
-| 01 | [First Principles & Systems Engineering](01_first_principles_systems_engineering.md) | Decompose any system, reason about tradeoffs like a chief engineer | ✅ written |
-| 02 | [Modern C++ & Real-Time Embedded](04-foundations-modern-cpp-realtime.md) | Write/read the flight-software language these companies live in | ✅ written |
-| 03 | [Guidance, Navigation & Control (GNC)](28-autonomy-gnc.md) | Make a vehicle know where it is and go where it's told | ✅ written |
-| 04 | [Autonomy: Planning & Decision-Making](29-autonomy-planning-decision.md) | Turn "state of the world" into correct action | ✅ written |
-| 05 | [Distributed Systems, Comms & Mesh](05_distributed_systems_comms_mesh.md) | Make many vehicles + operators act as one system (the "Lattice" problem) | ✅ written |
-| 06 | [Simulation, Test & Verification](06-foundations-simulation-test-verification.md) | *Prove* a system works before it flies — the real moat | ✅ written |
-| 07 | [Defense Domain & Acquisition](07-foundations-defense-acquisition.md) | Speak the customer's language: missions, the kill chain, how DoD buys | ✅ written |
-| 08 | [Company Strategy & The Moat](08-foundations-company-strategy-moat.md) | See *why* these companies win and where you create value | ✅ written |
-| M | [Mathematics for Autonomy](03-foundations-mathematics.md) | The linear algebra, probability, calculus & Lie theory under every layer | ✅ written |
-| S | [Safety Engineering & Assurance](09-foundations-safety-assurance.md) | Argue and prove "this is safe to fly" | ✅ written |
+| 01 | [First Principles & Systems Engineering](foundations/01-first_principles_systems_engineering.md) | Decompose any system, reason about tradeoffs like a chief engineer | ✅ written |
+| 02 | [Modern C++ & Real-Time Embedded](foundations/04-modern-cpp-realtime.md) | Write/read the flight-software language these companies live in | ✅ written |
+| 03 | [Guidance, Navigation & Control (GNC)](autonomy/28-gnc.md) | Make a vehicle know where it is and go where it's told | ✅ written |
+| 04 | [Autonomy: Planning & Decision-Making](autonomy/29-planning-decision.md) | Turn "state of the world" into correct action | ✅ written |
+| 05 | [Distributed Systems, Comms & Mesh](foundations/05-distributed_systems_comms_mesh.md) | Make many vehicles + operators act as one system (the "Lattice" problem) | ✅ written |
+| 06 | [Simulation, Test & Verification](foundations/06-simulation-test-verification.md) | *Prove* a system works before it flies — the real moat | ✅ written |
+| 07 | [Defense Domain & Acquisition](foundations/07-defense-acquisition.md) | Speak the customer's language: missions, the kill chain, how DoD buys | ✅ written |
+| 08 | [Company Strategy & The Moat](foundations/08-company-strategy-moat.md) | See *why* these companies win and where you create value | ✅ written |
+| M | [Mathematics for Autonomy](foundations/03-mathematics.md) | The linear algebra, probability, calculus & Lie theory under every layer | ✅ written |
+| S | [Safety Engineering & Assurance](foundations/09-safety-assurance.md) | Argue and prove "this is safe to fly" | ✅ written |
 
 ### Already-written companions (read alongside)
-- **ML / AI for autonomy** → [20-autonomy-ml-ai.md](20-autonomy-ml-ai.md)
+- **ML / AI for autonomy** → [20-autonomy-ml-ai.md](autonomy/20-ml-ai.md)
   is the deep perception + learning module. Module 04 here links into it rather
   than repeating it.
-- **GNC & estimation** → [28-autonomy-gnc.md](28-autonomy-gnc.md) (the written
+- **GNC & estimation** → [28-autonomy-gnc.md](autonomy/28-gnc.md) (the written
   Module 03). **Planning & decision-making** →
-  [29-autonomy-planning-decision.md](29-autonomy-planning-decision.md) (Module 04).
-- **Control theory** → [25-autonomy-control-theory.md](25-autonomy-control-theory.md).
-- **Career execution** → [11-career-defense-aerospace-playbook.md](11-career-defense-aerospace-playbook.md)
+  [29-autonomy-planning-decision.md](autonomy/29-planning-decision.md) (Module 04).
+- **Control theory** → [25-autonomy-control-theory.md](autonomy/25-control-theory.md).
+- **Career execution** → [11-career-defense-aerospace-playbook.md](career/11-defense-aerospace-playbook.md)
   and the other `career-*` guides cover resume
-  ([18](18-career-resume-portfolio.md)), interview
-  ([17](17-career-interview-prep.md)), clearance
-  ([16](16-career-security-clearance.md)), negotiation
-  ([15](15-career-negotiation-compensation.md)), and growth
-  ([19](19-career-leadership-growth.md)). Modules 07–08 give you the *substance*
+  ([18](career/18-resume-portfolio.md)), interview
+  ([17](career/17-interview-prep.md)), clearance
+  ([16](career/16-security-clearance.md)), negotiation
+  ([15](career/15-negotiation-compensation.md)), and growth
+  ([19](career/19-leadership-growth.md)). Modules 07–08 give you the *substance*
   those guides help you present.
 
 ---
@@ -90,42 +90,42 @@ sections that follow it.
 
 | # | File | Band |
 |---|---|---|
-| 01 | [01-mastery-curriculum.md](01-mastery-curriculum.md) · [01_first_principles_systems_engineering.md](01_first_principles_systems_engineering.md) | Foundations |
-| 02 | [02-ten-year-mastery-plan.md](02-ten-year-mastery-plan.md) | Foundations |
-| 03 | [03-foundations-mathematics.md](03-foundations-mathematics.md) | Foundations |
-| 04 | [04-foundations-modern-cpp-realtime.md](04-foundations-modern-cpp-realtime.md) | Foundations |
-| 05 | [05_distributed_systems_comms_mesh.md](05_distributed_systems_comms_mesh.md) | Foundations |
-| 06 | [06-foundations-simulation-test-verification.md](06-foundations-simulation-test-verification.md) | Foundations |
-| 07 | [07-foundations-defense-acquisition.md](07-foundations-defense-acquisition.md) | Foundations |
-| 08 | [08-foundations-company-strategy-moat.md](08-foundations-company-strategy-moat.md) | Foundations |
-| 09 | [09-foundations-safety-assurance.md](09-foundations-safety-assurance.md) | Foundations |
-| 10 | [10-career-aerospace-engineering.md](10-career-aerospace-engineering.md) | Career |
-| 11 | [11-career-defense-aerospace-playbook.md](11-career-defense-aerospace-playbook.md) | Career |
-| 12 | [12-career-software-engineering.md](12-career-software-engineering.md) | Career |
-| 13 | [13-career-mechanical-engineering.md](13-career-mechanical-engineering.md) | Career |
-| 14 | [14-career-dod-politics.md](14-career-dod-politics.md) | Career |
-| 15 | [15-career-negotiation-compensation.md](15-career-negotiation-compensation.md) | Career |
-| 16 | [16-career-security-clearance.md](16-career-security-clearance.md) | Career |
-| 17 | [17-career-interview-prep.md](17-career-interview-prep.md) | Career |
-| 18 | [18-career-resume-portfolio.md](18-career-resume-portfolio.md) | Career |
-| 19 | [19-career-leadership-growth.md](19-career-leadership-growth.md) | Career |
-| 20 | [20-autonomy-ml-ai.md](20-autonomy-ml-ai.md) | Autonomy |
-| 21 | [21-autonomy-vtol-roadmap.md](21-autonomy-vtol-roadmap.md) | Autonomy |
-| 22 | [22-autonomy-px4-sitl.md](22-autonomy-px4-sitl.md) | Autonomy |
-| 23 | [23-autonomy-onboard-system.md](23-autonomy-onboard-system.md) | Autonomy |
-| 24 | [24-autonomy-test-scaffold.md](24-autonomy-test-scaffold.md) | Autonomy |
-| 25 | [25-autonomy-control-theory.md](25-autonomy-control-theory.md) | Autonomy |
-| 26 | [26-autonomy-gnss-jamming-spoofing.md](26-autonomy-gnss-jamming-spoofing.md) | Autonomy |
-| 27 | [27-autonomy-counter-uas-ew.md](27-autonomy-counter-uas-ew.md) | Autonomy |
-| 28 | [28-autonomy-gnc.md](28-autonomy-gnc.md) | Autonomy |
-| 29 | [29-autonomy-planning-decision.md](29-autonomy-planning-decision.md) | Autonomy |
-| 30 | [30-ai-power-prompts.md](30-ai-power-prompts.md) | Tooling |
-| 31 | [31-information-environment-systems.md](31-information-environment-systems.md) | Info Environment |
-| 32 | [32-social-media-platform-mechanics.md](32-social-media-platform-mechanics.md) | Info Environment |
-| 33 | [33-cognitive-bias-attention-and-narratives.md](33-cognitive-bias-attention-and-narratives.md) | Info Environment |
-| 34 | [34-information-operations-history-defense.md](34-information-operations-history-defense.md) | Info Environment |
-| 35 | [35-osint-verification-and-sensemaking.md](35-osint-verification-and-sensemaking.md) | Info Environment |
-| 36 | [36-trust-safety-opsec-and-digital-resilience.md](36-trust-safety-opsec-and-digital-resilience.md) | Info Environment |
+| 01 | [01-mastery-curriculum.md](01-mastery-curriculum.md) · [01_first_principles_systems_engineering.md](foundations/01-first_principles_systems_engineering.md) | Foundations |
+| 02 | [02-ten-year-mastery-plan.md](foundations/02-ten-year-mastery-plan.md) | Foundations |
+| 03 | [03-foundations-mathematics.md](foundations/03-mathematics.md) | Foundations |
+| 04 | [04-foundations-modern-cpp-realtime.md](foundations/04-modern-cpp-realtime.md) | Foundations |
+| 05 | [05_distributed_systems_comms_mesh.md](foundations/05-distributed_systems_comms_mesh.md) | Foundations |
+| 06 | [06-foundations-simulation-test-verification.md](foundations/06-simulation-test-verification.md) | Foundations |
+| 07 | [07-foundations-defense-acquisition.md](foundations/07-defense-acquisition.md) | Foundations |
+| 08 | [08-foundations-company-strategy-moat.md](foundations/08-company-strategy-moat.md) | Foundations |
+| 09 | [09-foundations-safety-assurance.md](foundations/09-safety-assurance.md) | Foundations |
+| 10 | [10-career-aerospace-engineering.md](career/10-aerospace-engineering.md) | Career |
+| 11 | [11-career-defense-aerospace-playbook.md](career/11-defense-aerospace-playbook.md) | Career |
+| 12 | [12-career-software-engineering.md](career/12-software-engineering.md) | Career |
+| 13 | [13-career-mechanical-engineering.md](career/13-mechanical-engineering.md) | Career |
+| 14 | [14-career-dod-politics.md](career/14-dod-politics.md) | Career |
+| 15 | [15-career-negotiation-compensation.md](career/15-negotiation-compensation.md) | Career |
+| 16 | [16-career-security-clearance.md](career/16-security-clearance.md) | Career |
+| 17 | [17-career-interview-prep.md](career/17-interview-prep.md) | Career |
+| 18 | [18-career-resume-portfolio.md](career/18-resume-portfolio.md) | Career |
+| 19 | [19-career-leadership-growth.md](career/19-leadership-growth.md) | Career |
+| 20 | [20-autonomy-ml-ai.md](autonomy/20-ml-ai.md) | Autonomy |
+| 21 | [21-autonomy-vtol-roadmap.md](autonomy/21-vtol-roadmap.md) | Autonomy |
+| 22 | [22-autonomy-px4-sitl.md](autonomy/22-px4-sitl.md) | Autonomy |
+| 23 | [23-autonomy-onboard-system.md](autonomy/23-onboard-system.md) | Autonomy |
+| 24 | [24-autonomy-test-scaffold.md](autonomy/24-test-scaffold.md) | Autonomy |
+| 25 | [25-autonomy-control-theory.md](autonomy/25-control-theory.md) | Autonomy |
+| 26 | [26-autonomy-gnss-jamming-spoofing.md](autonomy/26-gnss-jamming-spoofing.md) | Autonomy |
+| 27 | [27-autonomy-counter-uas-ew.md](autonomy/27-counter-uas-ew.md) | Autonomy |
+| 28 | [28-autonomy-gnc.md](autonomy/28-gnc.md) | Autonomy |
+| 29 | [29-autonomy-planning-decision.md](autonomy/29-planning-decision.md) | Autonomy |
+| 30 | [30-ai-power-prompts.md](tooling/30-ai-power-prompts.md) | Tooling |
+| 31 | [31-information-environment-systems.md](information-environment/31-information-environment-systems.md) | Info Environment |
+| 32 | [32-social-media-platform-mechanics.md](information-environment/32-social-media-platform-mechanics.md) | Info Environment |
+| 33 | [33-cognitive-bias-attention-and-narratives.md](information-environment/33-cognitive-bias-attention-and-narratives.md) | Info Environment |
+| 34 | [34-information-operations-history-defense.md](information-environment/34-information-operations-history-defense.md) | Info Environment |
+| 35 | [35-osint-verification-and-sensemaking.md](information-environment/35-osint-verification-and-sensemaking.md) | Info Environment |
+| 36 | [36-trust-safety-opsec-and-digital-resilience.md](information-environment/36-trust-safety-opsec-and-digital-resilience.md) | Info Environment |
 
 ### Band 31–36: Information Environment & Influence Systems
 
@@ -138,18 +138,18 @@ decision, **trust, and information** problems. Everything here is framed for
 
 | # | Module | What it makes you |
 |---|---|---|
-| 31 | [Information Environment Systems](31-information-environment-systems.md) | Understand how platforms, audiences, and incentives shape modern perception and conflict |
-| 32 | [Social Media Platform Mechanics](32-social-media-platform-mechanics.md) | Explain how feeds, recommendations, and engagement markets actually work (incl. how a company like Meta thinks) |
-| 33 | [Cognition, Attention & Narratives](33-cognitive-bias-attention-and-narratives.md) | Reason about human belief formation, bias, and analytic failure modes — and communicate clearly under uncertainty |
-| 34 | [Information Operations: History & Defense](34-information-operations-history-defense.md) | Recognize influence patterns and build resilience and detection (not conduct them) |
-| 35 | [OSINT, Verification & Sensemaking](35-osint-verification-and-sensemaking.md) | Turn noisy public information into disciplined, calibrated judgment — lawfully and ethically |
-| 36 | [Trust, Safety, OPSEC & Digital Resilience](36-trust-safety-opsec-and-digital-resilience.md) | Protect people, teams, and operations in contested information spaces |
+| 31 | [Information Environment Systems](information-environment/31-information-environment-systems.md) | Understand how platforms, audiences, and incentives shape modern perception and conflict |
+| 32 | [Social Media Platform Mechanics](information-environment/32-social-media-platform-mechanics.md) | Explain how feeds, recommendations, and engagement markets actually work (incl. how a company like Meta thinks) |
+| 33 | [Cognition, Attention & Narratives](information-environment/33-cognitive-bias-attention-and-narratives.md) | Reason about human belief formation, bias, and analytic failure modes — and communicate clearly under uncertainty |
+| 34 | [Information Operations: History & Defense](information-environment/34-information-operations-history-defense.md) | Recognize influence patterns and build resilience and detection (not conduct them) |
+| 35 | [OSINT, Verification & Sensemaking](information-environment/35-osint-verification-and-sensemaking.md) | Turn noisy public information into disciplined, calibrated judgment — lawfully and ethically |
+| 36 | [Trust, Safety, OPSEC & Digital Resilience](information-environment/36-trust-safety-opsec-and-digital-resilience.md) | Protect people, teams, and operations in contested information spaces |
 
-These connect back to [05_distributed_systems_comms_mesh.md](05_distributed_systems_comms_mesh.md)
-(message propagation), [07-foundations-defense-acquisition.md](07-foundations-defense-acquisition.md)
-(mission/stakeholder context), [29-autonomy-planning-decision.md](29-autonomy-planning-decision.md)
+These connect back to [05_distributed_systems_comms_mesh.md](foundations/05-distributed_systems_comms_mesh.md)
+(message propagation), [07-foundations-defense-acquisition.md](foundations/07-defense-acquisition.md)
+(mission/stakeholder context), [29-autonomy-planning-decision.md](autonomy/29-planning-decision.md)
 (decision-making under uncertainty), and
-[16-career-security-clearance.md](16-career-security-clearance.md) (security baseline).
+[16-career-security-clearance.md](career/16-security-clearance.md) (security baseline).
 
 ---
 
@@ -164,40 +164,40 @@ self-contained, extreme-depth course in the same house style.
 
 What the biggest companies actually do that makes them win — and the specific,
 transferable skills an ordinary person or small team needs to beat them. This is the
-strategic companion to [08-foundations-company-strategy-moat.md](08-foundations-company-strategy-moat.md).
+strategic companion to [08-foundations-company-strategy-moat.md](foundations/08-company-strategy-moat.md).
 
 | # | Module | What it makes you |
 |---|---|---|
-| 37 | [How the Giants Win](37-companies-how-the-giants-win.md) | See the recurring winning patterns across SpaceX, Anduril, Palantir, Apple, Amazon, Nvidia, Tesla, Google |
-| 38 | [SpaceX — Rapid Iteration](38-companies-spacex-rapid-iteration.md) | Operate a fly-test-break-fix, design-to-cost flywheel |
-| 39 | [Anduril — Productized Defense](39-companies-anduril-productized-defense.md) | Understand counter-positioning and software-defined hardware |
-| 40 | [Palantir — Forward-Deployed](40-companies-palantir-forward-deployed.md) | Own the data ontology and deploy into hard accounts |
-| 41 | [Tesla — Vertical Integration & Data](41-companies-tesla-vertical-integration-data.md) | Build a fleet data flywheel and manufacturing moat |
-| 42 | [Nvidia — Platform & Ecosystem](42-companies-nvidia-platform-ecosystem.md) | Build ecosystem lock-in and ride compute waves |
-| 43 | [Apple — Integration & Taste](43-companies-apple-integration-taste.md) | Integrate end-to-end and say no with taste |
-| 44 | [Amazon — Mechanisms & Customer Obsession](44-companies-amazon-mechanisms-customer-obsession.md) | Install working-backwards and narrative operating mechanisms |
-| 45 | [Google — Scale & Infrastructure](45-companies-google-scale-infra.md) | Get leverage from infrastructure and 10x thinking |
-| 46 | [Skunk Works — Small Elite Teams](46-companies-skunkworks-rapid-prototyping.md) | Run tiny, empowered, prototype-first teams |
-| 47 | [The Asymmetric Playbook](47-companies-startup-asymmetric-playbook.md) | Beat incumbents with speed, focus, and counter-positioning |
-| 48 | [Operating Mechanisms & Culture](48-companies-operating-mechanisms-and-culture.md) | Build the invisible machinery that compounds |
-| 49 | [The Skills to Beat Them](49-companies-skills-to-beat-them.md) | A personal operating system of the transferable skills |
+| 37 | [How the Giants Win](companies/37-how-the-giants-win.md) | See the recurring winning patterns across SpaceX, Anduril, Palantir, Apple, Amazon, Nvidia, Tesla, Google |
+| 38 | [SpaceX — Rapid Iteration](companies/38-spacex-rapid-iteration.md) | Operate a fly-test-break-fix, design-to-cost flywheel |
+| 39 | [Anduril — Productized Defense](companies/39-productized-defense.md) | Understand counter-positioning and software-defined hardware |
+| 40 | [Palantir — Forward-Deployed](companies/40-palantir-forward-deployed.md) | Own the data ontology and deploy into hard accounts |
+| 41 | [Tesla — Vertical Integration & Data](companies/41-tesla-vertical-integration-data.md) | Build a fleet data flywheel and manufacturing moat |
+| 42 | [Nvidia — Platform & Ecosystem](companies/42-nvidia-platform-ecosystem.md) | Build ecosystem lock-in and ride compute waves |
+| 43 | [Apple — Integration & Taste](companies/43-apple-integration-taste.md) | Integrate end-to-end and say no with taste |
+| 44 | [Amazon — Mechanisms & Customer Obsession](companies/44-amazon-mechanisms-customer-obsession.md) | Install working-backwards and narrative operating mechanisms |
+| 45 | [Google — Scale & Infrastructure](companies/45-google-scale-infra.md) | Get leverage from infrastructure and 10x thinking |
+| 46 | [Skunk Works — Small Elite Teams](companies/46-skunkworks-rapid-prototyping.md) | Run tiny, empowered, prototype-first teams |
+| 47 | [The Asymmetric Playbook](companies/47-startup-asymmetric-playbook.md) | Beat incumbents with speed, focus, and counter-positioning |
+| 48 | [Operating Mechanisms & Culture](companies/48-operating-mechanisms-and-culture.md) | Build the invisible machinery that compounds |
+| 49 | [The Skills to Beat Them](companies/49-skills-to-beat-them.md) | A personal operating system of the transferable skills |
 
 ### Band 50–64: Deep Autonomy & Robotics
 
 The full autonomy stack at research depth — perception, SLAM, estimation, planning,
-learning, swarms, and deployment. Extends [20-autonomy-ml-ai.md](20-autonomy-ml-ai.md),
-[28-autonomy-gnc.md](28-autonomy-gnc.md), and [29-autonomy-planning-decision.md](29-autonomy-planning-decision.md).
+learning, swarms, and deployment. Extends [20-autonomy-ml-ai.md](autonomy/20-ml-ai.md),
+[28-autonomy-gnc.md](autonomy/28-gnc.md), and [29-autonomy-planning-decision.md](autonomy/29-planning-decision.md).
 
 | # | Module |  | # | Module |
 |---|---|---|---|---|
-| 50 | [Perception Deep Dive](50-autonomy-perception-deep.md) | | 58 | [Multi-Agent & Swarm](58-autonomy-multi-agent-swarm.md) |
-| 51 | [SLAM & Mapping](51-autonomy-slam-and-mapping.md) | | 59 | [Computer Vision](59-autonomy-computer-vision.md) |
-| 52 | [Sensor Fusion](52-autonomy-sensor-fusion.md) | | 60 | [LiDAR & Radar](60-autonomy-lidar-radar-processing.md) |
-| 53 | [Advanced State Estimation](53-autonomy-state-estimation-advanced.md) | | 61 | [Visual-Inertial Odometry](61-autonomy-visual-inertial-odometry.md) |
-| 54 | [Motion Planning](54-autonomy-motion-planning.md) | | 62 | [Sim-to-Real](62-autonomy-sim-to-real.md) |
-| 55 | [Trajectory Optimization](55-autonomy-trajectory-optimization.md) | | 63 | [Foundation Models for Robotics](63-autonomy-foundation-models-robotics.md) |
-| 56 | [Reinforcement Learning](56-autonomy-reinforcement-learning.md) | | 64 | [Edge Inference & Deployment](64-autonomy-edge-inference-deployment.md) |
-| 57 | [Imitation Learning](57-autonomy-imitation-and-learning-from-demo.md) | | | |
+| 50 | [Perception Deep Dive](autonomy/50-perception-deep.md) | | 58 | [Multi-Agent & Swarm](autonomy/58-multi-agent-swarm.md) |
+| 51 | [SLAM & Mapping](autonomy/51-slam-and-mapping.md) | | 59 | [Computer Vision](autonomy/59-computer-vision.md) |
+| 52 | [Sensor Fusion](autonomy/52-sensor-fusion.md) | | 60 | [LiDAR & Radar](autonomy/60-lidar-radar-processing.md) |
+| 53 | [Advanced State Estimation](autonomy/53-state-estimation-advanced.md) | | 61 | [Visual-Inertial Odometry](autonomy/61-visual-inertial-odometry.md) |
+| 54 | [Motion Planning](autonomy/54-motion-planning.md) | | 62 | [Sim-to-Real](autonomy/62-sim-to-real.md) |
+| 55 | [Trajectory Optimization](autonomy/55-trajectory-optimization.md) | | 63 | [Foundation Models for Robotics](autonomy/63-foundation-models-robotics.md) |
+| 56 | [Reinforcement Learning](autonomy/56-reinforcement-learning.md) | | 64 | [Edge Inference & Deployment](autonomy/64-edge-inference-deployment.md) |
+| 57 | [Imitation Learning](autonomy/57-imitation-and-learning-from-demo.md) | | | |
 
 ### Band 65–79: Engineering Across Domains
 
@@ -208,14 +208,14 @@ batteries.
 
 | # | Module |  | # | Module |
 |---|---|---|---|---|
-| 65 | [Embedded Firmware](65-engineering-embedded-firmware.md) | | 73 | [Mechatronics & Actuation](73-engineering-mechatronics-and-actuation.md) |
-| 66 | [FPGAs & HW Acceleration](66-engineering-fpga-and-hardware-accel.md) | | 74 | [Sensors & Instrumentation](74-engineering-sensors-and-instrumentation.md) |
-| 67 | [RF & Comms Systems](67-engineering-rf-and-comms-systems.md) | | 75 | [Manufacturing & DFM](75-engineering-manufacturing-and-dfm.md) |
-| 68 | [Power Electronics](68-engineering-power-electronics.md) | | 76 | [Systems Engineering & MBSE](76-engineering-systems-engineering-mbse.md) |
-| 69 | [Propulsion](69-engineering-propulsion-and-electric-propulsion.md) | | 77 | [Reliability & Failure Analysis](77-engineering-reliability-and-failure-analysis.md) |
-| 70 | [Aerodynamics & Flight Mechanics](70-engineering-aerodynamics-and-flight-mechanics.md) | | 78 | [PCB & Electronics Design](78-engineering-pcb-and-electronics-design.md) |
-| 71 | [Structures & Materials](71-engineering-structures-and-materials.md) | | 79 | [Batteries & Energy Storage](79-engineering-batteries-and-energy-storage.md) |
-| 72 | [Thermal Management](72-engineering-thermal-management.md) | | | |
+| 65 | [Embedded Firmware](engineering/65-embedded-firmware.md) | | 73 | [Mechatronics & Actuation](engineering/73-mechatronics-and-actuation.md) |
+| 66 | [FPGAs & HW Acceleration](engineering/66-fpga-and-hardware-accel.md) | | 74 | [Sensors & Instrumentation](engineering/74-sensors-and-instrumentation.md) |
+| 67 | [RF & Comms Systems](engineering/67-rf-and-comms-systems.md) | | 75 | [Manufacturing & DFM](engineering/75-manufacturing-and-dfm.md) |
+| 68 | [Power Electronics](engineering/68-power-electronics.md) | | 76 | [Systems Engineering & MBSE](engineering/76-systems-engineering-mbse.md) |
+| 69 | [Propulsion](engineering/69-propulsion-and-electric-propulsion.md) | | 77 | [Reliability & Failure Analysis](engineering/77-reliability-and-failure-analysis.md) |
+| 70 | [Aerodynamics & Flight Mechanics](engineering/70-aerodynamics-and-flight-mechanics.md) | | 78 | [PCB & Electronics Design](engineering/78-pcb-and-electronics-design.md) |
+| 71 | [Structures & Materials](engineering/71-structures-and-materials.md) | | 79 | [Batteries & Energy Storage](engineering/79-batteries-and-energy-storage.md) |
+| 72 | [Thermal Management](engineering/72-thermal-management.md) | | | |
 
 ### Band 80–94: Software, Compute & Infrastructure
 
@@ -225,30 +225,30 @@ cloud, Rust, compilers, performance, system design, and testing.
 
 | # | Module |  | # | Module |
 |---|---|---|---|---|
-| 80 | [Distributed Systems Deep](80-software-distributed-systems-deep.md) | | 88 | [Observability & SRE](88-software-observability-and-sre.md) |
-| 81 | [GPU & Parallel Computing](81-software-gpu-and-parallel-computing.md) | | 89 | [Cloud & Kubernetes](89-software-cloud-and-kubernetes.md) |
-| 82 | [Real-Time Operating Systems](82-software-real-time-operating-systems.md) | | 90 | [Systems Programming in Rust](90-software-systems-programming-rust.md) |
-| 83 | [Networking & Protocols](83-software-networking-and-protocols.md) | | 91 | [Compilers & Languages](91-software-compilers-and-languages.md) |
-| 84 | [Databases & Data Engineering](84-software-databases-and-data-engineering.md) | | 92 | [Performance Engineering](92-software-performance-engineering.md) |
-| 85 | [MLOps & ML Infrastructure](85-software-mlops-and-ml-infrastructure.md) | | 93 | [API & System Design](93-software-api-and-system-design.md) |
-| 86 | [Cybersecurity Engineering](86-software-cybersecurity-engineering.md) | | 94 | [Testing & Verification Deep](94-software-testing-and-verification-deep.md) |
-| 87 | [Applied Cryptography](87-software-cryptography-applied.md) | | | |
+| 80 | [Distributed Systems Deep](software/80-distributed-systems-deep.md) | | 88 | [Observability & SRE](software/88-observability-and-sre.md) |
+| 81 | [GPU & Parallel Computing](software/81-gpu-and-parallel-computing.md) | | 89 | [Cloud & Kubernetes](software/89-cloud-and-kubernetes.md) |
+| 82 | [Real-Time Operating Systems](software/82-real-time-operating-systems.md) | | 90 | [Systems Programming in Rust](software/90-systems-programming-rust.md) |
+| 83 | [Networking & Protocols](software/83-networking-and-protocols.md) | | 91 | [Compilers & Languages](software/91-compilers-and-languages.md) |
+| 84 | [Databases & Data Engineering](software/84-databases-and-data-engineering.md) | | 92 | [Performance Engineering](software/92-performance-engineering.md) |
+| 85 | [MLOps & ML Infrastructure](software/85-mlops-and-ml-infrastructure.md) | | 93 | [API & System Design](software/93-api-and-system-design.md) |
+| 86 | [Cybersecurity Engineering](software/86-cybersecurity-engineering.md) | | 94 | [Testing & Verification Deep](software/94-testing-and-verification-deep.md) |
+| 87 | [Applied Cryptography](software/87-cryptography-applied.md) | | | |
 
 ### Band 95–106: Math, Science & Cross-cutting Foundations
 
 The mathematics and physics under every layer above — optimization, probability,
 linear algebra, numerical methods, signal processing, information theory, advanced
 control, mechanics, thermo/fluids, electromagnetics, decision/game theory, and
-algorithms. Deepens [03-foundations-mathematics.md](03-foundations-mathematics.md).
+algorithms. Deepens [03-foundations-mathematics.md](foundations/03-mathematics.md).
 
 | # | Module |  | # | Module |
 |---|---|---|---|---|
-| 95 | [Optimization](95-foundations-optimization.md) | | 101 | [Advanced Control](101-foundations-control-advanced.md) |
-| 96 | [Probability & Stochastic](96-foundations-probability-and-stochastic.md) | | 102 | [Physics for Engineers](102-foundations-physics-for-engineers.md) |
-| 97 | [Applied Linear Algebra](97-foundations-linear-algebra-applied.md) | | 103 | [Thermodynamics & Fluids](103-foundations-thermodynamics-and-fluids.md) |
-| 98 | [Numerical Methods](98-foundations-numerical-methods.md) | | 104 | [Electromagnetics](104-foundations-electromagnetics.md) |
-| 99 | [Signal Processing](99-foundations-signal-processing.md) | | 105 | [Decision & Game Theory](105-foundations-decision-and-game-theory.md) |
-| 100 | [Information Theory](100-foundations-information-theory.md) | | 106 | [Algorithms & Complexity](106-foundations-complexity-and-algorithms.md) |
+| 95 | [Optimization](mathematics/95-optimization.md) | | 101 | [Advanced Control](mathematics/101-control-advanced.md) |
+| 96 | [Probability & Stochastic](mathematics/96-probability-and-stochastic.md) | | 102 | [Physics for Engineers](mathematics/102-physics-for-engineers.md) |
+| 97 | [Applied Linear Algebra](mathematics/97-linear-algebra-applied.md) | | 103 | [Thermodynamics & Fluids](mathematics/103-thermodynamics-and-fluids.md) |
+| 98 | [Numerical Methods](mathematics/98-numerical-methods.md) | | 104 | [Electromagnetics](mathematics/104-electromagnetics.md) |
+| 99 | [Signal Processing](mathematics/99-signal-processing.md) | | 105 | [Decision & Game Theory](mathematics/105-decision-and-game-theory.md) |
+| 100 | [Information Theory](mathematics/100-information-theory.md) | | 106 | [Algorithms & Complexity](mathematics/106-complexity-and-algorithms.md) |
 
 ### Band 107–114: Hardware, AI Compute, Power & the Human Layer
 
@@ -260,14 +260,14 @@ life lessons that compound. Connects the hardware bands (65–79), the company b
 
 | # | Module | What it makes you |
 |---|---|---|
-| 107 | [Raspberry Pi Deep Dive](107-hardware-raspberry-pi-deep-dive.md) | Understand a real edge computer from SoC to fielded product |
-| 108 | [Building AI Data Centers](108-compute-building-ai-data-centers.md) | Reason about power, cooling, networking, and the speed-to-power gap |
-| 109 | [Distributed Data Centers & Startup Ideas](109-compute-distributed-data-centers-and-startup-ideas.md) | Critique the SPAN XFRA model and find better AI-compute bets |
-| 110 | [Hardware Foundations](110-hardware-foundations-no-software-without-hardware.md) | See why there is no software without hardware |
-| 111 | [Psychological Manipulation Defense](111-influence-psychological-manipulation-defense.md) | Recognize and defend against manipulation (never wield it) |
-| 112 | [Big Tech Politics](112-bigtech-politics-navigation.md) | Navigate organizational power with integrity and effectiveness |
-| 113 | [Big Tech Flaws & the Optimal Company](113-bigtech-flaws-and-the-optimal-company.md) | Diagnose structural flaws and design a better company |
-| 114 | [Life Lessons People Ignore](114-life-lessons-people-ignore.md) | Internalize the compounding truths most people never live |
+| 107 | [Raspberry Pi Deep Dive](compute-and-hardware/107-raspberry-pi-deep-dive.md) | Understand a real edge computer from SoC to fielded product |
+| 108 | [Building AI Data Centers](compute-and-hardware/108-building-ai-data-centers.md) | Reason about power, cooling, networking, and the speed-to-power gap |
+| 109 | [Distributed Data Centers & Startup Ideas](compute-and-hardware/109-distributed-data-centers-and-startup-ideas.md) | Critique the SPAN XFRA model and find better AI-compute bets |
+| 110 | [Hardware Foundations](compute-and-hardware/110-foundations-no-software-without-hardware.md) | See why there is no software without hardware |
+| 111 | [Psychological Manipulation Defense](mindset-and-society/111-psychological-manipulation-defense.md) | Recognize and defend against manipulation (never wield it) |
+| 112 | [Big Tech Politics](mindset-and-society/112-politics-navigation.md) | Navigate organizational power with integrity and effectiveness |
+| 113 | [Big Tech Flaws & the Optimal Company](mindset-and-society/113-flaws-and-the-optimal-company.md) | Diagnose structural flaws and design a better company |
+| 114 | [Life Lessons People Ignore](mindset-and-society/114-life-lessons-people-ignore.md) | Internalize the compounding truths most people never live |
 
 ---
 
@@ -316,8 +316,8 @@ the order in which a real vehicle is actually built and certified.
 
 ### Path H — "I want to beat the giants"
 `37 → 47 → 49 → 48`, plus the company deep-dives (`38–46`) for the ones you compete
-with. Pair with [08-foundations-company-strategy-moat.md](08-foundations-company-strategy-moat.md)
-and [02-ten-year-mastery-plan.md](02-ten-year-mastery-plan.md). This is the strategy
+with. Pair with [08-foundations-company-strategy-moat.md](foundations/08-company-strategy-moat.md)
+and [02-ten-year-mastery-plan.md](foundations/02-ten-year-mastery-plan.md). This is the strategy
 path: see the patterns, learn the asymmetric playbook, then install the skills and
 mechanisms in whatever you build.
 
@@ -368,10 +368,10 @@ This curriculum is a synthesis; the depth lives in the written modules and the
 canonical works they draw on.
 
 **Written modules in this folder**
-- [20-autonomy-ml-ai.md](20-autonomy-ml-ai.md) — perception & learning.
-- [28-autonomy-gnc.md](28-autonomy-gnc.md) — guidance, navigation & control.
-- [29-autonomy-planning-decision.md](29-autonomy-planning-decision.md) — planning & decision-making.
-- [25-autonomy-control-theory.md](25-autonomy-control-theory.md) — control deep dive.
+- [20-autonomy-ml-ai.md](autonomy/20-ml-ai.md) — perception & learning.
+- [28-autonomy-gnc.md](autonomy/28-gnc.md) — guidance, navigation & control.
+- [29-autonomy-planning-decision.md](autonomy/29-planning-decision.md) — planning & decision-making.
+- [25-autonomy-control-theory.md](autonomy/25-control-theory.md) — control deep dive.
 
 **Foundational works the modules build on**
 - Thrun, Burgard & Fox — *Probabilistic Robotics*, MIT Press.
