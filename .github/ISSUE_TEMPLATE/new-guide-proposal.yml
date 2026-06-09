@@ -1,0 +1,60 @@
+name: New guide proposal
+description: Propose a new guide to add to the library.
+title: "[Guide] <short title>"
+labels: ["new-guide"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a guide! You don't need to write it yet — this issue is
+        to align on scope and avoid duplication. See `CONTRIBUTING.md` for conventions.
+  - type: input
+    id: title
+    attributes:
+      label: Proposed guide title
+      placeholder: "Motion Planning — From Configuration Space to Real-Time Replanning"
+    validations:
+      required: true
+  - type: dropdown
+    id: folder
+    attributes:
+      label: Which folder (topic band) does it belong in?
+      options:
+        - foundations
+        - autonomy
+        - career
+        - companies
+        - engineering
+        - software
+        - mathematics
+        - mindset-and-society
+        - information-environment
+        - general
+        - compute-and-hardware
+        - space
+        - products
+        - tooling
+        - (proposing a brand-new folder)
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: What will it teach, and what does it make the reader?
+      description: A few bullet points on scope and the capability the reader gains.
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Sibling guides it connects to
+      description: Which existing guides does it build on or feed into?
+    validations:
+      required: false
+  - type: checkboxes
+    id: offer
+    attributes:
+      label: Are you offering to write it?
+      options:
+        - label: Yes, I'll open a PR.
+        - label: No, I'm proposing it for someone else to pick up.

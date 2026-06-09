@@ -35,6 +35,30 @@ Every folder is numbered **independently from `01`**. The library is grouped int
 See the [curriculum index](01-mastery-curriculum.md) for a per-module table of every
 guide and what it makes you.
 
+## Contributing
+
+**This library is open to everyone — you don't have to be the original author to add
+to it.** The structure is designed so contributions never collide: each folder is
+numbered independently, numbers are permanent (never renumbered), and you simply take
+the next free number when you add a guide.
+
+Fastest path to your first contribution:
+
+```bash
+./scripts/new-guide.sh <folder> "Your Guide Title"   # scaffolds the next-numbered file
+```
+
+Then write it, add one row to the [curriculum index](01-mastery-curriculum.md), and
+open a pull request. Full conventions, style guide, and the quality bar live in
+**[CONTRIBUTING.md](CONTRIBUTING.md)**. Prefer to start small? Open a
+[New guide proposal](.github/ISSUE_TEMPLATE/new-guide-proposal.yml) or a
+[Correction / improvement](.github/ISSUE_TEMPLATE/correction-or-improvement.yml) issue.
+
+- **How to contribute** → [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Guide template** → [templates/GUIDE_TEMPLATE.md](templates/GUIDE_TEMPLATE.md)
+- **Community standards** → [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- **License** → [CC BY 4.0](LICENSE) (content) — free to share and adapt with credit
+
 ## Separate collection — Machine Learning course materials
 
 The [`machine learning/`](machine%20learning) folder is **not part of the mastery

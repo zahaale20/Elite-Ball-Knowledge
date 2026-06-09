@@ -1,0 +1,33 @@
+name: Correction or improvement
+description: Report an error, or suggest an improvement to an existing guide.
+title: "[Fix] <file> — <short description>"
+labels: ["correction"]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: Which file?
+      placeholder: "autonomy/07-gnss-jamming-spoofing.md"
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Section or line (if known)
+      placeholder: "Section 3.2 / line 142"
+    validations:
+      required: false
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong or could be better?
+      description: Quote the current text if you can.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested fix
+      description: Your proposed correction or improvement, ideally with a source.
+    validations:
+      required: false
