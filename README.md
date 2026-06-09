@@ -1,4 +1,4 @@
-# Elite Defense-Tech Mastery Curriculum
+# Elite Ball Knowledge Curriculum
 
 A self-contained, first-principles study library — **177 in-depth guides across 14
 topic folders** — covering everything an autonomy / defense-technology engineer needs,
