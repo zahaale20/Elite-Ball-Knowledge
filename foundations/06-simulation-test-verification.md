@@ -17,8 +17,8 @@
 
 **Companion code.** This module is anchored to the real test infrastructure in this
 repository's `drone/` autonomy stack: the `drone/test/` scaffold (see
-[24-autonomy-test-scaffold.md](../autonomy/24-test-scaffold.md)), the PX4 SITL flow (see
-[22-autonomy-px4-sitl.md](../autonomy/22-px4-sitl.md)), the FastAPI onboard service
+[05-autonomy-test-scaffold.md](../autonomy/05-test-scaffold.md)), the PX4 SITL flow (see
+[03-autonomy-px4-sitl.md](../autonomy/03-px4-sitl.md)), the FastAPI onboard service
 (`onboard/server.py`), the constitution-gated command policy (`policy/constitution.py`),
 the hash-chained decision log (`policy/decisions.py`), the navigation filters, and the
 `.ulog` flight logs PX4 writes. Every abstract idea below ties to something you can open,
@@ -169,7 +169,7 @@ top.** Inverting it — relying mostly on end-to-end flights — is the classic 
 feedback, flaky results, and no idea *which* component broke when the whole mission fails.
 
 This repository's `drone/test/` directory implements exactly this pyramid (see
-[24-autonomy-test-scaffold.md](../autonomy/24-test-scaffold.md)):
+[05-autonomy-test-scaffold.md](../autonomy/05-test-scaffold.md)):
 
 ```
                          ▲  slower, broader, fewer, more "real"
@@ -290,7 +290,7 @@ autonomy that "worked in sim" dies on the range. You manage it by:
 2. **Domain randomization** for anything learned. If a model trained only on clean sim
    imagery, it will fail on the real sensor. Randomize lighting, noise, blur, and texture
    in sim so the model learns the *invariant*, not the sim's quirks. (See the perception
-   work in [20-autonomy-ml-ai.md](../autonomy/20-ml-ai.md).)
+   work in [01-autonomy-ml-ai.md](../autonomy/01-ml-ai.md).)
 3. **Anchoring sim to logs.** Replay real `.ulog` data through the algorithms (Section 6)
    so at least some of your "simulation" is literally recorded reality.
 
@@ -303,7 +303,7 @@ autonomy that "worked in sim" dies on the range. You manage it by:
 ## 5. PX4 SITL and Gazebo in practice
 
 This section grounds the abstractions in the exact flow this repo uses (full detail in
-[22-autonomy-px4-sitl.md](../autonomy/22-px4-sitl.md)).
+[03-autonomy-px4-sitl.md](../autonomy/03-px4-sitl.md)).
 
 ### 5.1 The loop
 
@@ -469,7 +469,7 @@ discover for you, in flight, over a populated area.
 
 This is the highest-leverage testing you can do for autonomy, because in the field the
 faults are not hypothetical. GPS *will* drop in an urban canyon or under jamming (see
-[27-autonomy-counter-uas-ew.md](../autonomy/27-counter-uas-ew.md)). The link *will* die. The
+[08-autonomy-counter-uas-ew.md](../autonomy/08-counter-uas-ew.md)). The link *will* die. The
 transition *will* sometimes brown out. The only question is whether your system has rehearsed
 its response.
 
@@ -570,7 +570,7 @@ Both metrics become CI gates: run the filter over a battery of SITL scenarios an
 `.ulog` replays, compute average NEES/NIS, and **fail the build if they leave their
 chi-squared confidence bounds.** This catches the silent killer — a "small" change to the
 process-noise tuning that makes the filter overconfident — before it ever flies. (Estimator
-theory lives in [28-autonomy-gnc.md](../autonomy/28-gnc.md); here we only verify it.)
+theory lives in [09-autonomy-gnc.md](../autonomy/09-gnc.md); here we only verify it.)
 
 ---
 
@@ -871,16 +871,16 @@ line.
 - Netflix Chaos Engineering / *Principles of Chaos*: https://principlesofchaos.org
 
 **Sibling guides**
-- [24-autonomy-test-scaffold.md](../autonomy/24-test-scaffold.md) — the concrete `drone/test/`
+- [05-autonomy-test-scaffold.md](../autonomy/05-test-scaffold.md) — the concrete `drone/test/`
   layout this module formalizes.
-- [22-autonomy-px4-sitl.md](../autonomy/22-px4-sitl.md) — the SITL flow used throughout Section 5.
+- [03-autonomy-px4-sitl.md](../autonomy/03-px4-sitl.md) — the SITL flow used throughout Section 5.
 - [09-foundations-safety-assurance.md](09-safety-assurance.md) — turns these tests
   into a safety case.
 - [08-foundations-company-strategy-moat.md](08-company-strategy-moat.md) — why this
   discipline is the business moat.
 - [01_first_principles_systems_engineering.md](01-first_principles_systems_engineering.md) —
   the requirements-decomposition discipline the V-model depends on.
-- [27-autonomy-counter-uas-ew.md](../autonomy/27-counter-uas-ew.md) — the real-world source of the
+- [08-autonomy-counter-uas-ew.md](../autonomy/08-counter-uas-ew.md) — the real-world source of the
   GPS-loss/jamming faults you inject.
 
 *Repository references (the `drone/` autonomy stack, `drone/test/` scaffold, PX4 SITL flow,

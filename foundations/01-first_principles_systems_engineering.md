@@ -1,8 +1,8 @@
 # Module 01 — First Principles & Systems Engineering
 
 > **Where this sits.** This is the foundation module of the MASTERY track. Everything
-> else — [Guidance, Navigation & Control](../autonomy/28-gnc.md),
-> [Autonomy Planning & Decision-Making](../autonomy/29-planning-decision.md) — is a
+> else — [Guidance, Navigation & Control](../autonomy/09-gnc.md),
+> [Autonomy Planning & Decision-Making](../autonomy/10-planning-decision.md) — is a
 > *specialization* of the way of thinking taught here. Read this first, then return to it
 > whenever a downstream module feels like a pile of disconnected facts. The job of a
 > systems engineer is to keep the whole picture in their head while everyone else holds a
@@ -21,7 +21,7 @@ modules referenced: `policy/constitution.py` (the command gate), `policy/decisio
 (the tamper-evident hash-chain log), `policy/intent.py` (the LLM safety gate),
 `onboard/geofence.py`, and the `navigation/` filters. See also the sibling docs
 [README](../README.md), [Mastery Curriculum](../01-mastery-curriculum.md), [Ten-Year Plan](02-ten-year-mastery-plan.md),
-and [ML/AI for autonomy](../autonomy/20-ml-ai.md).
+and [ML/AI for autonomy](../autonomy/01-ml-ai.md).
 
 ---
 
@@ -331,7 +331,7 @@ formats, units, rates, electrical pinouts, timing, coordinate frames, who owns w
 > **Coordinate frames are the #1 silent killer.** Is "down" positive (NED) or negative
 > (ENU)? Is the IMU mounted rotated 90°? A frame mismatch crashes aircraft. An ICD that
 > pins the frame convention prevents the single most common integration failure in
-> robotics. See [GNC §frames](../autonomy/28-gnc.md).
+> robotics. See [GNC §frames](../autonomy/09-gnc.md).
 
 In this repo, the constitution + the onboard service boundary *is* an ICD: every
 `/api/cmd/*` call has a defined contract (name, params, units in metres / 0–100 %), and
@@ -783,7 +783,7 @@ $\sqrt{1.56^2+0.9^2}=1.80\ \text{m}$ if you can argue the biases are also indepe
 random pool, so a better antenna or RTK buys more than tightening map-matching. This is the
 machinery the navigation filters in `navigation/` exist to manage; the full treatment —
 where each $\sigma$ comes from and how the Kalman filter fuses them — is in
-[GNC §error budgets](../autonomy/28-gnc.md). **Carry this discipline forward:
+[GNC §error budgets](../autonomy/09-gnc.md). **Carry this discipline forward:
 never quote an accuracy without being able to itemize its budget.**
 
 ### 6.4 Timing and control budgets
@@ -999,7 +999,7 @@ applied practice beats passive reading every time.
       evidence. Confirm `verify_chain()` actually detects a tampered record (try editing a
       line of the decision log and re-verifying).
 - [ ] **Write one position error budget** (§6.3) and identify the dominant term, then
-      cross-check against [GNC](../autonomy/28-gnc.md).
+      cross-check against [GNC](../autonomy/09-gnc.md).
 - [ ] **Record the systems narrative** (§7.2) out loud in under 3 minutes, failure-mode per
       stage included. Re-record until it's fluent — this is your interview answer.
 - [ ] **Write a one-page design doc** (§8.2 skeleton) for one improvement to the stack,
@@ -1011,11 +1011,11 @@ applied practice beats passive reading every time.
 ### Cross-links
 
 - Next, apply estimation and error budgets to real flight: [GNC — Guidance, Navigation &
-  Control](../autonomy/28-gnc.md).
+  Control](../autonomy/09-gnc.md).
 - Then study how the "decide" box plans and chooses: [Autonomy — Planning & Decision-
-  Making](../autonomy/29-planning-decision.md).
+  Making](../autonomy/10-planning-decision.md).
 - Repo context: [README](../README.md) · [Mastery Curriculum](../01-mastery-curriculum.md) ·
-  [Ten-Year Plan](02-ten-year-mastery-plan.md) · [ML/AI for autonomy](../autonomy/20-ml-ai.md).
+  [Ten-Year Plan](02-ten-year-mastery-plan.md) · [ML/AI for autonomy](../autonomy/01-ml-ai.md).
 
 > **One thing to remember from Module 01:** *Reason from physics, decompose into verifiable
 > requirements, budget every resource and every error, assume it will fail and design the

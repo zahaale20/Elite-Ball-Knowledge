@@ -246,7 +246,7 @@ compounding is.
 Your `drone/` design is software-defined by construction. The Pixhawk 6C + Pi 5 are a
 general-purpose substrate; the *capability* — GPS-denied nav, track fusion, the command policy —
 is software you can update without touching the airframe. A new threat (say, a new jamming
-profile, see [27-autonomy-counter-uas-ew.md](../autonomy/27-counter-uas-ew.md)) is answered with a
+profile, see [08-autonomy-counter-uas-ew.md](../autonomy/08-counter-uas-ew.md)) is answered with a
 software change, not a new vehicle. That is the right shape, and it's why your test/verification
 discipline (Module 06) is strategic: continuous software capability is only safe if you can
 continuously *re-prove* it. The update pipeline and the assurance pipeline are the same pipeline.
@@ -515,7 +515,7 @@ encodes the precise properties that make real defense-autonomy companies defensi
 
 You are not just building a drone. You are building a *scale model of the moat*, and that is
 exactly why it's a credible portfolio piece for a leading defense-autonomy company (see
-[11-career-defense-aerospace-playbook.md](../career/11-defense-aerospace-playbook.md)): it
+[02-career-defense-aerospace-playbook.md](../career/02-defense-aerospace-playbook.md)): it
 demonstrates that you understand the integration + assurance discipline that *is* the business,
 not just that you can make something fly.
 
@@ -652,7 +652,7 @@ difference between a coder and an engineer leadership trusts with strategy.
   *is* the assurance moat.
 - [05_distributed_systems_comms_mesh.md](05-distributed_systems_comms_mesh.md) — the engineering
   behind the network effect and the platform pattern (§9, §10).
-- [11-career-defense-aerospace-playbook.md](../career/11-defense-aerospace-playbook.md) — how to
+- [02-career-defense-aerospace-playbook.md](../career/02-defense-aerospace-playbook.md) — how to
   present your "scale model of the moat" to an employer.
 
 *Repository references (the `drone/` autonomy stack as a miniature of the integration + assurance

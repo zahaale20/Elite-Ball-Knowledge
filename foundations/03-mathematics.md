@@ -9,7 +9,7 @@
 > arithmetic*. Visual odometry is *SVD plus Gauss-Newton on SE(3)*. If you cannot
 > read those sentences and see the math underneath, you are a passenger in your own
 > stack. Mastering this file makes you the person who can open
-> [`navigation/`](../autonomy/28-gnc.md), see *why* the filter diverges, and fix it
+> [`navigation/`](../autonomy/09-gnc.md), see *why* the filter diverges, and fix it
 > from first principles instead of twiddling tuning constants until the demo
 > survives.
 >
@@ -26,9 +26,9 @@ navigation pipeline (visual odometry + map-matching), track fusion, a world-memo
 store, a constitution-gated command policy, and a hash-chained tamper-evident decision
 log. Key references: the `navigation/` EKF and VO modules, `perception/` track fusion,
 `policy/constitution.py`, and `policy/decisions.py`. Read this alongside
-[28-autonomy-gnc.md](../autonomy/28-gnc.md) (where the EKF lives),
-[25-autonomy-control-theory.md](../autonomy/25-control-theory.md) (where the dynamics
-live), and [20-autonomy-ml-ai.md](../autonomy/20-ml-ai.md) (where the statistics show up
+[09-autonomy-gnc.md](../autonomy/09-gnc.md) (where the EKF lives),
+[06-autonomy-control-theory.md](../autonomy/06-control-theory.md) (where the dynamics
+live), and [01-autonomy-ml-ai.md](../autonomy/01-ml-ai.md) (where the statistics show up
 again as learning).
 
 ---
@@ -146,7 +146,7 @@ For a square `A`, an eigenvector `v` satisfies `A v = λ v`: applying `A` only *
   eigenvalue) means the filter is *overconfident* in one direction — a classic
   divergence precursor.
 - **Stability.** A linear system `ẋ = A x` is stable iff every eigenvalue of `A` has
-  negative real part. This is the bridge to [control theory](../autonomy/25-control-theory.md):
+  negative real part. This is the bridge to [control theory](../autonomy/06-control-theory.md):
   pole placement *is* eigenvalue placement.
 - **Observability / conditioning.** If the observability Gramian has a near-zero
   eigenvalue, some combination of states is effectively unobservable — the filter can
@@ -295,7 +295,7 @@ with different assumptions about the distributions.
 **Where this shows up in your stack.** In `perception/` track fusion, when a new detection
 arrives you compute, for each existing track, `p(detection | track)` (the likelihood, a
 Gaussian on the predicted measurement) and weight it by the track's prior confidence. The
-hash-chained [`policy/decisions.py`](../autonomy/28-gnc.md) log then records *which* hypothesis
+hash-chained [`policy/decisions.py`](../autonomy/09-gnc.md) log then records *which* hypothesis
 won and why — a Bayesian decision made auditable.
 
 ### 3.4 Gaussian math you'll actually use
@@ -362,7 +362,7 @@ Stack the pieces and the Extended Kalman Filter falls out:
 Every line traces to something above: the Gaussian assumption (3.1), Bayes' rule (3.3),
 Gaussian fusion (3.4), and — for the nonlinear `f`, `h` — the **Jacobian** from calculus,
 which is the next section. The EKF is not a magic box; it is this module assembled. See it
-fully fleshed out in [28-autonomy-gnc.md](../autonomy/28-gnc.md).
+fully fleshed out in [09-autonomy-gnc.md](../autonomy/09-gnc.md).
 
 ---
 
@@ -426,7 +426,7 @@ integrate it over a timestep `dt`. Three methods, increasing cost/accuracy:
 
 > **Where this shows up.** The EKF prediction step integrates IMU data — usually plain
 > Euler or a simple trapezoid, because it runs at hundreds of Hz where `dt` is tiny and
-> speed matters. Your **SITL simulator** ([22-autonomy-px4-sitl.md](../autonomy/22-px4-sitl.md))
+> speed matters. Your **SITL simulator** ([03-autonomy-px4-sitl.md](../autonomy/03-px4-sitl.md))
 > integrates the full rigid-body dynamics with RK4, because there accuracy matters more than
 > speed. Same math, different accuracy/cost tradeoff — a textbook systems-engineering call.
 
@@ -475,7 +475,7 @@ This single distinction governs your engineering strategy:
 
 Walk downhill: `x ← x − α ∇f(x)`, with step size (learning rate) `α`. Simple, scales to
 millions of parameters, used to train every neural net in your
-[perception stack](../autonomy/20-ml-ai.md) (the IMX500 model was trained by a fancy variant —
+[perception stack](../autonomy/01-ml-ai.md) (the IMX500 model was trained by a fancy variant —
 Adam — of exactly this). Weaknesses: slow near flat valleys, sensitive to `α`, no use of
 curvature. For *small* problems with structure, you can do far better:
 
@@ -772,7 +772,7 @@ Do these in your own stack, not in a textbook. Each maps to a section.
 6. **Lie groups (§7).** Implement `exp`/`log` for SO(3) and verify `R ⊞ (R₂ ⊟ R) == R₂`.
    When that identity holds, you understand the error-state filter.
 
-When all six feel routine, re-read [28-autonomy-gnc.md](../autonomy/28-gnc.md) — the EKF and
+When all six feel routine, re-read [09-autonomy-gnc.md](../autonomy/09-gnc.md) — the EKF and
 VO derivations there will read like commentary on math you now own, which is exactly the
 point.
 

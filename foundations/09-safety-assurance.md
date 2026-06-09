@@ -590,7 +590,7 @@ You won't ship a DO-178C certification package. What you take from it:
 Adopt these and your prototype, while uncertified, is built like serious aviation software — which
 is precisely the signal that makes an aerospace or defense employer trust you (Module 08's
 assurance moat, again, and the credibility play in
-[11-career-defense-aerospace-playbook.md](../career/11-defense-aerospace-playbook.md)).
+[02-career-defense-aerospace-playbook.md](../career/02-defense-aerospace-playbook.md)).
 
 ---
 
@@ -806,9 +806,9 @@ flies, and convince them.
   assurance + integration is the durable moat (§11.2 there).
 - [01_first_principles_systems_engineering.md](01-first_principles_systems_engineering.md) — hazard
   analysis as applied systems thinking; reliability & margins.
-- [11-career-defense-aerospace-playbook.md](../career/11-defense-aerospace-playbook.md) — how the
+- [02-career-defense-aerospace-playbook.md](../career/02-defense-aerospace-playbook.md) — how the
   airworthiness mindset signals credibility to aerospace/defense employers.
-- [27-autonomy-counter-uas-ew.md](../autonomy/27-counter-uas-ew.md) — the GPS-denial/EW threat that
+- [08-autonomy-counter-uas-ew.md](../autonomy/08-counter-uas-ew.md) — the GPS-denial/EW threat that
   drives hazard H1 and the dissimilar-redundancy argument.
 
 *Repository references (the constitution-gated command policy as a run-time safety monitor, the

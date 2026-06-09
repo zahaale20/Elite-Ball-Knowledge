@@ -18,13 +18,13 @@
 
 **Companion code & scope.** This module is the *substance* behind the customer; it complements,
 and deliberately does **not** duplicate, the politics/hiring view in
-[14-career-dod-politics.md](../career/14-dod-politics.md) (which covers PPBE, JCIDS, OTAs, the
+[05-career-dod-politics.md](../career/05-dod-politics.md) (which covers PPBE, JCIDS, OTAs, the
 Valley of Death, COCOMs, and clearances from a *job-seeker's* angle). Read that for the human
 game; read this for *how to build the right thing*. Throughout, we anchor to the author's
 `drone/` autonomy stack — a GPS-denied-capable VTOL with onboard inference, track fusion, a
 constitution-gated command policy, and a tamper-evident decision log — and show where each piece
 maps onto a mission thread and a kill chain. See also
-[11-career-defense-aerospace-playbook.md](../career/11-defense-aerospace-playbook.md) for how to
+[02-career-defense-aerospace-playbook.md](../career/02-defense-aerospace-playbook.md) for how to
 present this fluency in interviews.
 
 ---
@@ -201,7 +201,7 @@ how much?"
 Two of these deserve emphasis because they are where *your* stack is differentiated:
 
 - **Track in GPS-denied** is hard and valuable. Anyone can track with GPS; holding custody when
-  the adversary has jammed GPS (see [27-autonomy-counter-uas-ew.md](../autonomy/27-counter-uas-ew.md))
+  the adversary has jammed GPS (see [08-autonomy-counter-uas-ew.md](../autonomy/08-counter-uas-ew.md))
   is a real-threat capability the customer will pay for.
 - **Target with a constitution gate + tamper-evident log** is your assurance story. The single
   biggest blocker to fielding autonomy is *trust* — the customer's fear of a black box doing
@@ -221,7 +221,7 @@ Two of these deserve emphasis because they are where *your* stack is differentia
 
 You don't need the org chart memorized, but you need the *shape*, because it explains why the
 buyer behaves the way it does. (The job-seeker's deep dive is in
-[14-career-dod-politics.md](../career/14-dod-politics.md); here is the engineer's minimum.)
+[05-career-dod-politics.md](../career/05-dod-politics.md); here is the engineer's minimum.)
 
 ### 5.1 Two halves that are constantly in tension
 
@@ -269,7 +269,7 @@ to satisfy that last row.
 ## 6. The money: PPBE and the color of money
 
 Money is the bloodstream, and it flows on a calendar that has nothing to do with your sprint.
-(Politics covered in [14-career-dod-politics.md](../career/14-dod-politics.md); engineering
+(Politics covered in [05-career-dod-politics.md](../career/05-dod-politics.md); engineering
 implications here.)
 
 ### 6.1 PPBE — the two-year heartbeat
@@ -631,9 +631,9 @@ promoted.
 - U.S. National Defense Strategy (public summary) — for the strategy-to-need flowdown.
 
 **Sibling guides (read alongside)**
-- [14-career-dod-politics.md](../career/14-dod-politics.md) — PPBE, JCIDS, OTAs, COCOMs, clearances
+- [05-career-dod-politics.md](../career/05-dod-politics.md) — PPBE, JCIDS, OTAs, COCOMs, clearances
   from the *job-seeker's* angle; this module is the *engineering substance* behind it.
-- [11-career-defense-aerospace-playbook.md](../career/11-defense-aerospace-playbook.md) — how to
+- [02-career-defense-aerospace-playbook.md](../career/02-defense-aerospace-playbook.md) — how to
   *present* this fluency in interviews and a portfolio.
 - [08-foundations-company-strategy-moat.md](08-company-strategy-moat.md) — why the
   productized model wins (Section 11 expanded).
@@ -641,7 +641,7 @@ promoted.
   the customer's T&E and safety officers demand.
 - [06-foundations-simulation-test-verification.md](06-simulation-test-verification.md)
   — the verification evidence behind your TRL claims.
-- [27-autonomy-counter-uas-ew.md](../autonomy/27-counter-uas-ew.md) — the GPS-denied/EW threat that
+- [08-autonomy-counter-uas-ew.md](../autonomy/08-counter-uas-ew.md) — the GPS-denied/EW threat that
   makes your "Track under jamming" capability valuable.
 
 *Repository references (the `drone/` autonomy stack and its mapping onto the kill chain, mission

@@ -25,9 +25,9 @@ on-sensor IMX500 inference, GPS-denied navigation (visual odometry + map-matchin
 fusion, world memory, a constitution-gated command policy, and a hash-chained
 tamper-evident decision log. The worked example in §8 rewrites your `perception/` track-fusion
 filter in C++ and binds it back to the Python service. Read alongside
-[12-career-software-engineering.md](../career/12-software-engineering.md) (the engineering craft
-around the code), [25-autonomy-control-theory.md](../autonomy/25-control-theory.md) and
-[28-autonomy-gnc.md](../autonomy/28-gnc.md) (the loops that demand real-time), and
+[03-career-software-engineering.md](../career/03-software-engineering.md) (the engineering craft
+around the code), [06-autonomy-control-theory.md](../autonomy/06-control-theory.md) and
+[09-autonomy-gnc.md](../autonomy/09-gnc.md) (the loops that demand real-time), and
 [06-foundations-simulation-test-verification.md](06-simulation-test-verification.md)
 (how you prove the rewrite is correct).
 
@@ -382,7 +382,7 @@ cmake -DCMAKE_BUILD_TYPE=Debug -B build && cmake --build build
 > TSan. A green test suite that has never been run under sanitizers is *not* evidence of
 > memory safety — it's evidence you haven't looked. This habit is what
 > [Module 06 (sim/test/verification)](06-simulation-test-verification.md) and
-> your [testing instincts](../career/12-software-engineering.md) demand, and it ties directly to
+> your [testing instincts](../career/03-software-engineering.md) demand, and it ties directly to
 > the safety case in [Module 09](09-safety-assurance.md).
 
 ### 6.3 Rust's pitch, restated
@@ -560,7 +560,7 @@ non-deterministic platform is a latent crash.
 | Metric | Meaning | Why it matters |
 |---|---|---|
 | **Deadline** | the time by which a result must be ready | miss it in a hard loop → instability |
-| **Latency** | input-to-output delay | adds phase lag → erodes control stability margin ([Module 25](../autonomy/25-control-theory.md)) |
+| **Latency** | input-to-output delay | adds phase lag → erodes control stability margin ([Module 25](../autonomy/06-control-theory.md)) |
 | **Jitter** | variation in latency cycle-to-cycle | unpredictability is *worse* than constant delay; controllers hate jitter |
 | **WCET** | Worst-Case Execution Time | the *only* number real-time cares about — you size for the worst, never the average |
 

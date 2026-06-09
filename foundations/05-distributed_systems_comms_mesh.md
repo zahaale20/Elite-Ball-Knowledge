@@ -999,7 +999,7 @@ simulation*.
 
 ## 11. Cross-links & further study
 
-- **[Autonomy](../autonomy/29-planning-decision.md)** — *why* the edge
+- **[Autonomy](../autonomy/10-planning-decision.md)** — *why* the edge
   decides: onboard planning and the local constitution are the response to a
   denied command link (§5.5). The auction (§4.2) only works because each agent
   enforces its own safety envelope.
@@ -1009,8 +1009,8 @@ simulation*.
 - **[Strategy](08-company-strategy-moat.md)** — *why it's a business*: the
   data-fabric + API-as-product moat (§6.1), and why owning the integration layer
   beats owning any single airframe.
-- **Sibling modules:** [03 GPS-denied / nav](../autonomy/28-gnc.md) and
-  [04 autonomy](../autonomy/29-planning-decision.md) are the *local* half;
+- **Sibling modules:** [03 GPS-denied / nav](../autonomy/09-gnc.md) and
+  [04 autonomy](../autonomy/10-planning-decision.md) are the *local* half;
   this module is the *networked* half. Together they are the integrated-autonomy problem.
 
 ### Canonical references to go deeper
