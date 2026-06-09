@@ -17,7 +17,7 @@
 > and the patience to let small consistent habits win over dramatic short-lived
 > ones.
 
-This pairs naturally with [../mindset-and-society/125-stoicism-emotional-self-governance.md](../mindset-and-society/125-stoicism-emotional-self-governance.md)
+This pairs naturally with [../mindset-and-society/115-stoicism-emotional-self-governance.md](../mindset-and-society/115-stoicism-emotional-self-governance.md)
 (managing stress is a health intervention), [125-productivity-focus-and-time-management.md](125-productivity-focus-and-time-management.md)
 (energy management is the hidden engine of focus), and
 [../mindset-and-society/114-life-lessons-people-ignore.md](../mindset-and-society/114-life-lessons-people-ignore.md)
@@ -219,7 +219,7 @@ The key distinction:
 Levers that genuinely lower chronic stress load: sleep, regular movement, time in
 nature and sunlight, social connection, and a practice of mentally "putting down"
 what you cannot control — which is exactly the domain of
-[../mindset-and-society/125-stoicism-emotional-self-governance.md](../mindset-and-society/125-stoicism-emotional-self-governance.md).
+[../mindset-and-society/115-stoicism-emotional-self-governance.md](../mindset-and-society/115-stoicism-emotional-self-governance.md).
 
 ---
 
