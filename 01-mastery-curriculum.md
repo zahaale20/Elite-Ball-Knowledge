@@ -83,7 +83,8 @@ The guides are numbered in bands: **01–09 foundations**, **10–19 career**,
 **20–29 autonomy**, **30 tooling**, **31–36 information environment**,
 **37–49 companies & beating the giants**, **50–64 deep autonomy & robotics**,
 **65–79 engineering across domains**, **80–94 software, compute & infrastructure**,
-and **95–106 math, science & cross-cutting foundations**. The first row table below
+and **95–106 math, science & cross-cutting foundations**, and
+**107–114 hardware, AI compute, power & the human layer**. The first row table below
 lists the original `01–36` spine; the expansion bands `37–106` are detailed in the
 sections that follow it.
 
@@ -248,6 +249,25 @@ algorithms. Deepens [03-foundations-mathematics.md](03-foundations-mathematics.m
 | 98 | [Numerical Methods](98-foundations-numerical-methods.md) | | 104 | [Electromagnetics](104-foundations-electromagnetics.md) |
 | 99 | [Signal Processing](99-foundations-signal-processing.md) | | 105 | [Decision & Game Theory](105-foundations-decision-and-game-theory.md) |
 | 100 | [Information Theory](100-foundations-information-theory.md) | | 106 | [Algorithms & Complexity](106-foundations-complexity-and-algorithms.md) |
+
+### Band 107–114: Hardware, AI Compute, Power & the Human Layer
+
+A mixed applied band: the silicon-and-power reality under all software, how AI data
+centers and distributed-compute startups actually work (and fail), and the human
+dimension — manipulation defense, organizational politics, company design, and the
+life lessons that compound. Connects the hardware bands (65–79), the company bands
+(37–49), and the information-environment band (31–36).
+
+| # | Module | What it makes you |
+|---|---|---|
+| 107 | [Raspberry Pi Deep Dive](107-hardware-raspberry-pi-deep-dive.md) | Understand a real edge computer from SoC to fielded product |
+| 108 | [Building AI Data Centers](108-compute-building-ai-data-centers.md) | Reason about power, cooling, networking, and the speed-to-power gap |
+| 109 | [Distributed Data Centers & Startup Ideas](109-compute-distributed-data-centers-and-startup-ideas.md) | Critique the SPAN XFRA model and find better AI-compute bets |
+| 110 | [Hardware Foundations](110-hardware-foundations-no-software-without-hardware.md) | See why there is no software without hardware |
+| 111 | [Psychological Manipulation Defense](111-influence-psychological-manipulation-defense.md) | Recognize and defend against manipulation (never wield it) |
+| 112 | [Big Tech Politics](112-bigtech-politics-navigation.md) | Navigate organizational power with integrity and effectiveness |
+| 113 | [Big Tech Flaws & the Optimal Company](113-bigtech-flaws-and-the-optimal-company.md) | Diagnose structural flaws and design a better company |
+| 114 | [Life Lessons People Ignore](114-life-lessons-people-ignore.md) | Internalize the compounding truths most people never live |
 
 ---
 
