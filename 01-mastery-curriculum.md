@@ -77,10 +77,15 @@ number from the curriculum; the link points to the file that teaches it.
 
 ---
 
-## The full repository map (all 30 guides)
+## The full repository map (all 100+ guides)
 
 The guides are numbered in bands: **01–09 foundations**, **10–19 career**,
-**20–29 autonomy**, **30 tooling**.
+**20–29 autonomy**, **30 tooling**, **31–36 information environment**,
+**37–49 companies & beating the giants**, **50–64 deep autonomy & robotics**,
+**65–79 engineering across domains**, **80–94 software, compute & infrastructure**,
+and **95–106 math, science & cross-cutting foundations**. The first row table below
+lists the original `01–36` spine; the expansion bands `37–106` are detailed in the
+sections that follow it.
 
 | # | File | Band |
 |---|---|---|
@@ -114,6 +119,135 @@ The guides are numbered in bands: **01–09 foundations**, **10–19 career**,
 | 28 | [28-autonomy-gnc.md](28-autonomy-gnc.md) | Autonomy |
 | 29 | [29-autonomy-planning-decision.md](29-autonomy-planning-decision.md) | Autonomy |
 | 30 | [30-ai-power-prompts.md](30-ai-power-prompts.md) | Tooling |
+| 31 | [31-information-environment-systems.md](31-information-environment-systems.md) | Info Environment |
+| 32 | [32-social-media-platform-mechanics.md](32-social-media-platform-mechanics.md) | Info Environment |
+| 33 | [33-cognitive-bias-attention-and-narratives.md](33-cognitive-bias-attention-and-narratives.md) | Info Environment |
+| 34 | [34-information-operations-history-defense.md](34-information-operations-history-defense.md) | Info Environment |
+| 35 | [35-osint-verification-and-sensemaking.md](35-osint-verification-and-sensemaking.md) | Info Environment |
+| 36 | [36-trust-safety-opsec-and-digital-resilience.md](36-trust-safety-opsec-and-digital-resilience.md) | Info Environment |
+
+### Band 31–36: Information Environment & Influence Systems
+
+A professional, **defense-oriented** band on how the modern information environment
+actually works — platforms, audiences, cognition, influence operations, open-source
+verification, and operational security. It exists because modern defense and autonomy
+problems are not only hardware and software problems; they are sensing, networking,
+decision, **trust, and information** problems. Everything here is framed for
+**understanding, analysis, and defense — never manipulation.**
+
+| # | Module | What it makes you |
+|---|---|---|
+| 31 | [Information Environment Systems](31-information-environment-systems.md) | Understand how platforms, audiences, and incentives shape modern perception and conflict |
+| 32 | [Social Media Platform Mechanics](32-social-media-platform-mechanics.md) | Explain how feeds, recommendations, and engagement markets actually work (incl. how a company like Meta thinks) |
+| 33 | [Cognition, Attention & Narratives](33-cognitive-bias-attention-and-narratives.md) | Reason about human belief formation, bias, and analytic failure modes — and communicate clearly under uncertainty |
+| 34 | [Information Operations: History & Defense](34-information-operations-history-defense.md) | Recognize influence patterns and build resilience and detection (not conduct them) |
+| 35 | [OSINT, Verification & Sensemaking](35-osint-verification-and-sensemaking.md) | Turn noisy public information into disciplined, calibrated judgment — lawfully and ethically |
+| 36 | [Trust, Safety, OPSEC & Digital Resilience](36-trust-safety-opsec-and-digital-resilience.md) | Protect people, teams, and operations in contested information spaces |
+
+These connect back to [05_distributed_systems_comms_mesh.md](05_distributed_systems_comms_mesh.md)
+(message propagation), [07-foundations-defense-acquisition.md](07-foundations-defense-acquisition.md)
+(mission/stakeholder context), [29-autonomy-planning-decision.md](29-autonomy-planning-decision.md)
+(decision-making under uncertainty), and
+[16-career-security-clearance.md](16-career-security-clearance.md) (security baseline).
+
+---
+
+## Bands 37–106: The Deep Expansion
+
+The original `01–36` guides give you the spine. The expansion bands below give you
+**elite, first-principles depth across every domain an autonomy/defense engineer
+touches** — plus the strategic literacy to out-compete the giants. Each module is a
+self-contained, extreme-depth course in the same house style.
+
+### Band 37–49: Companies & Beating the Giants
+
+What the biggest companies actually do that makes them win — and the specific,
+transferable skills an ordinary person or small team needs to beat them. This is the
+strategic companion to [08-foundations-company-strategy-moat.md](08-foundations-company-strategy-moat.md).
+
+| # | Module | What it makes you |
+|---|---|---|
+| 37 | [How the Giants Win](37-companies-how-the-giants-win.md) | See the recurring winning patterns across SpaceX, Anduril, Palantir, Apple, Amazon, Nvidia, Tesla, Google |
+| 38 | [SpaceX — Rapid Iteration](38-companies-spacex-rapid-iteration.md) | Operate a fly-test-break-fix, design-to-cost flywheel |
+| 39 | [Anduril — Productized Defense](39-companies-anduril-productized-defense.md) | Understand counter-positioning and software-defined hardware |
+| 40 | [Palantir — Forward-Deployed](40-companies-palantir-forward-deployed.md) | Own the data ontology and deploy into hard accounts |
+| 41 | [Tesla — Vertical Integration & Data](41-companies-tesla-vertical-integration-data.md) | Build a fleet data flywheel and manufacturing moat |
+| 42 | [Nvidia — Platform & Ecosystem](42-companies-nvidia-platform-ecosystem.md) | Build ecosystem lock-in and ride compute waves |
+| 43 | [Apple — Integration & Taste](43-companies-apple-integration-taste.md) | Integrate end-to-end and say no with taste |
+| 44 | [Amazon — Mechanisms & Customer Obsession](44-companies-amazon-mechanisms-customer-obsession.md) | Install working-backwards and narrative operating mechanisms |
+| 45 | [Google — Scale & Infrastructure](45-companies-google-scale-infra.md) | Get leverage from infrastructure and 10x thinking |
+| 46 | [Skunk Works — Small Elite Teams](46-companies-skunkworks-rapid-prototyping.md) | Run tiny, empowered, prototype-first teams |
+| 47 | [The Asymmetric Playbook](47-companies-startup-asymmetric-playbook.md) | Beat incumbents with speed, focus, and counter-positioning |
+| 48 | [Operating Mechanisms & Culture](48-companies-operating-mechanisms-and-culture.md) | Build the invisible machinery that compounds |
+| 49 | [The Skills to Beat Them](49-companies-skills-to-beat-them.md) | A personal operating system of the transferable skills |
+
+### Band 50–64: Deep Autonomy & Robotics
+
+The full autonomy stack at research depth — perception, SLAM, estimation, planning,
+learning, swarms, and deployment. Extends [20-autonomy-ml-ai.md](20-autonomy-ml-ai.md),
+[28-autonomy-gnc.md](28-autonomy-gnc.md), and [29-autonomy-planning-decision.md](29-autonomy-planning-decision.md).
+
+| # | Module |  | # | Module |
+|---|---|---|---|---|
+| 50 | [Perception Deep Dive](50-autonomy-perception-deep.md) | | 58 | [Multi-Agent & Swarm](58-autonomy-multi-agent-swarm.md) |
+| 51 | [SLAM & Mapping](51-autonomy-slam-and-mapping.md) | | 59 | [Computer Vision](59-autonomy-computer-vision.md) |
+| 52 | [Sensor Fusion](52-autonomy-sensor-fusion.md) | | 60 | [LiDAR & Radar](60-autonomy-lidar-radar-processing.md) |
+| 53 | [Advanced State Estimation](53-autonomy-state-estimation-advanced.md) | | 61 | [Visual-Inertial Odometry](61-autonomy-visual-inertial-odometry.md) |
+| 54 | [Motion Planning](54-autonomy-motion-planning.md) | | 62 | [Sim-to-Real](62-autonomy-sim-to-real.md) |
+| 55 | [Trajectory Optimization](55-autonomy-trajectory-optimization.md) | | 63 | [Foundation Models for Robotics](63-autonomy-foundation-models-robotics.md) |
+| 56 | [Reinforcement Learning](56-autonomy-reinforcement-learning.md) | | 64 | [Edge Inference & Deployment](64-autonomy-edge-inference-deployment.md) |
+| 57 | [Imitation Learning](57-autonomy-imitation-and-learning-from-demo.md) | | | |
+
+### Band 65–79: Engineering Across Domains
+
+The hardware and physical-engineering breadth that makes you fluent across the whole
+vehicle — firmware, FPGAs, RF, power, propulsion, aero, structures, thermal,
+mechatronics, sensors, manufacturing, systems engineering, reliability, PCB, and
+batteries.
+
+| # | Module |  | # | Module |
+|---|---|---|---|---|
+| 65 | [Embedded Firmware](65-engineering-embedded-firmware.md) | | 73 | [Mechatronics & Actuation](73-engineering-mechatronics-and-actuation.md) |
+| 66 | [FPGAs & HW Acceleration](66-engineering-fpga-and-hardware-accel.md) | | 74 | [Sensors & Instrumentation](74-engineering-sensors-and-instrumentation.md) |
+| 67 | [RF & Comms Systems](67-engineering-rf-and-comms-systems.md) | | 75 | [Manufacturing & DFM](75-engineering-manufacturing-and-dfm.md) |
+| 68 | [Power Electronics](68-engineering-power-electronics.md) | | 76 | [Systems Engineering & MBSE](76-engineering-systems-engineering-mbse.md) |
+| 69 | [Propulsion](69-engineering-propulsion-and-electric-propulsion.md) | | 77 | [Reliability & Failure Analysis](77-engineering-reliability-and-failure-analysis.md) |
+| 70 | [Aerodynamics & Flight Mechanics](70-engineering-aerodynamics-and-flight-mechanics.md) | | 78 | [PCB & Electronics Design](78-engineering-pcb-and-electronics-design.md) |
+| 71 | [Structures & Materials](71-engineering-structures-and-materials.md) | | 79 | [Batteries & Energy Storage](79-engineering-batteries-and-energy-storage.md) |
+| 72 | [Thermal Management](72-engineering-thermal-management.md) | | | |
+
+### Band 80–94: Software, Compute & Infrastructure
+
+The production-software depth behind any fielded autonomy system — distributed
+systems, GPUs, RTOS, networking, data, MLOps, security, crypto, observability,
+cloud, Rust, compilers, performance, system design, and testing.
+
+| # | Module |  | # | Module |
+|---|---|---|---|---|
+| 80 | [Distributed Systems Deep](80-software-distributed-systems-deep.md) | | 88 | [Observability & SRE](88-software-observability-and-sre.md) |
+| 81 | [GPU & Parallel Computing](81-software-gpu-and-parallel-computing.md) | | 89 | [Cloud & Kubernetes](89-software-cloud-and-kubernetes.md) |
+| 82 | [Real-Time Operating Systems](82-software-real-time-operating-systems.md) | | 90 | [Systems Programming in Rust](90-software-systems-programming-rust.md) |
+| 83 | [Networking & Protocols](83-software-networking-and-protocols.md) | | 91 | [Compilers & Languages](91-software-compilers-and-languages.md) |
+| 84 | [Databases & Data Engineering](84-software-databases-and-data-engineering.md) | | 92 | [Performance Engineering](92-software-performance-engineering.md) |
+| 85 | [MLOps & ML Infrastructure](85-software-mlops-and-ml-infrastructure.md) | | 93 | [API & System Design](93-software-api-and-system-design.md) |
+| 86 | [Cybersecurity Engineering](86-software-cybersecurity-engineering.md) | | 94 | [Testing & Verification Deep](94-software-testing-and-verification-deep.md) |
+| 87 | [Applied Cryptography](87-software-cryptography-applied.md) | | | |
+
+### Band 95–106: Math, Science & Cross-cutting Foundations
+
+The mathematics and physics under every layer above — optimization, probability,
+linear algebra, numerical methods, signal processing, information theory, advanced
+control, mechanics, thermo/fluids, electromagnetics, decision/game theory, and
+algorithms. Deepens [03-foundations-mathematics.md](03-foundations-mathematics.md).
+
+| # | Module |  | # | Module |
+|---|---|---|---|---|
+| 95 | [Optimization](95-foundations-optimization.md) | | 101 | [Advanced Control](101-foundations-control-advanced.md) |
+| 96 | [Probability & Stochastic](96-foundations-probability-and-stochastic.md) | | 102 | [Physics for Engineers](102-foundations-physics-for-engineers.md) |
+| 97 | [Applied Linear Algebra](97-foundations-linear-algebra-applied.md) | | 103 | [Thermodynamics & Fluids](103-foundations-thermodynamics-and-fluids.md) |
+| 98 | [Numerical Methods](98-foundations-numerical-methods.md) | | 104 | [Electromagnetics](104-foundations-electromagnetics.md) |
+| 99 | [Signal Processing](99-foundations-signal-processing.md) | | 105 | [Decision & Game Theory](105-foundations-decision-and-game-theory.md) |
+| 100 | [Information Theory](100-foundations-information-theory.md) | | 106 | [Algorithms & Complexity](106-foundations-complexity-and-algorithms.md) |
 
 ---
 
@@ -138,6 +272,39 @@ This is the technical-leadership / product / program path.
 Skim `01` and `08` for framing, drill the CS/coding parts of `02`, the EKF
 intuition in `03`, and rehearse one end-to-end story from your own repo using
 the **systems narrative** in `01 §7`.
+
+### Path E — "I want information-environment & contested-domain literacy"
+`31 → 32 → 33 → 34 → 35 → 36`
+Rationale: understand the information environment as a system, then platform
+mechanics, then the cognition they act on, then influence operations and their
+defense, then lawful OSINT verification, and finally OPSEC and resilience. This is
+the defense-oriented, *understanding-and-defense* path — pair it with `07` (mission
+context) and `16` (security baseline). It makes you fluent in the sensing, trust, and
+information dimensions of modern defense problems, not just the hardware/software ones.
+
+### Path F — "I want elite autonomy depth" (research-grade stack)
+`50 → 51 → 52 → 53 → 54 → 55 → 56 → 59 → 61 → 62 → 64`
+Rationale: build perception, then the estimation/SLAM spine, then planning and
+learning, then the vision/VIO/deployment skills that put it on real hardware. Pair
+with the math band (`95–100`) exactly when an equation stops making sense.
+
+### Path G — "I want full-stack hardware fluency"
+`65 → 74 → 73 → 68 → 78 → 71 → 72 → 70 → 69 → 76 → 77`
+Rationale: firmware and sensors first, then actuation and power, then board/structure/
+thermal/aero, then propulsion, finishing with systems engineering and reliability —
+the order in which a real vehicle is actually built and certified.
+
+### Path H — "I want to beat the giants"
+`37 → 47 → 49 → 48`, plus the company deep-dives (`38–46`) for the ones you compete
+with. Pair with [08-foundations-company-strategy-moat.md](08-foundations-company-strategy-moat.md)
+and [02-ten-year-mastery-plan.md](02-ten-year-mastery-plan.md). This is the strategy
+path: see the patterns, learn the asymmetric playbook, then install the skills and
+mechanisms in whatever you build.
+
+### Path I — "I want production-software depth"
+`80 → 83 → 82 → 81 → 92 → 90 → 88 → 89 → 86 → 94`
+Rationale: distributed systems and networking first, then real-time and GPU compute,
+then performance and Rust, then operations, security, and disciplined testing.
 
 ---
 
