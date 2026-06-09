@@ -41,7 +41,7 @@ The competitor *cannot buy their way out of this* with money alone; they'd have 
 
 ## 2. Over-the-air (OTA): the car is software-defined
 
-OTA updates turn the car from a depreciating static object into a platform that *improves after you buy it*. This is the same software-defined-hardware idea as Anduril ([39](39-productized-defense.md)), applied to consumer vehicles.
+OTA updates turn the car from a depreciating static object into a platform that *improves after you buy it*. This is the same software-defined-hardware idea as productized defense-tech ([39](39-productized-defense.md)), applied to consumer vehicles.
 
 Why OTA is strategically deep, not just convenient:
 

@@ -226,7 +226,7 @@ recruiter ever asks about money.
    Filter by company → level → location. Read the *median and the spread*, not
    one heroic data point.
 2. **Glassdoor / Blind** — noisier, but Blind ("teamblind") has candid threads on
-   Anduril, SkyDio, Shield AI offer ranges and negotiation outcomes.
+   top defense-tech firms, SkyDio, and Shield AI offer ranges and negotiation outcomes.
 3. **levels.fyi "Internal" / H1B disclosure data** — public LCA filings show real
    base salaries primes and startups paid sponsored workers. Searchable via
    h1bdata.info / myvisajobs. Base only, but it's *ground truth*.

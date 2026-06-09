@@ -1,7 +1,7 @@
-# The Mastery Curriculum — Everything the Top People at Anduril-Class Companies Know
+# The Mastery Curriculum — Everything the Top People at Elite Defense-Tech Companies Know
 
-> **Why this exists.** The people who run autonomy, GNC, and product at companies
-> like Anduril, Shield AI, Skydio, Palantir, and the elite groups inside the primes
+> **Why this exists.** The people who run autonomy, GNC, and product at the leading
+> defense-technology companies, and the elite groups inside the primes
 > (Skunk Works, Phantom Works) are not smarter than you. They have **access** —
 > to mentors, to programs, to a body of knowledge that is usually transmitted
 > verbally inside the building and never written down for outsiders. This
@@ -84,8 +84,9 @@ The guides are numbered in bands: **01–09 foundations**, **10–19 career**,
 **37–49 companies & beating the giants**, **50–64 deep autonomy & robotics**,
 **65–79 engineering across domains**, **80–94 software, compute & infrastructure**,
 and **95–106 math, science & cross-cutting foundations**, and
-**107–114 hardware, AI compute, power & the human layer**. The first row table below
-lists the original `01–36` spine; the expansion bands `37–106` are detailed in the
+**107–114 hardware, AI compute, power & the human layer**, and
+**115–124 career mastery & the meta-skills that move careers**. The first row table below
+lists the original `01–36` spine; the expansion bands `37–124` are detailed in the
 sections that follow it.
 
 | # | File | Band |
@@ -153,7 +154,7 @@ These connect back to [05_distributed_systems_comms_mesh.md](foundations/05-dist
 
 ---
 
-## Bands 37–106: The Deep Expansion
+## Bands 37–124: The Deep Expansion
 
 The original `01–36` guides give you the spine. The expansion bands below give you
 **elite, first-principles depth across every domain an autonomy/defense engineer
@@ -168,9 +169,9 @@ strategic companion to [08-foundations-company-strategy-moat.md](foundations/08-
 
 | # | Module | What it makes you |
 |---|---|---|
-| 37 | [How the Giants Win](companies/37-how-the-giants-win.md) | See the recurring winning patterns across SpaceX, Anduril, Palantir, Apple, Amazon, Nvidia, Tesla, Google |
+| 37 | [How the Giants Win](companies/37-how-the-giants-win.md) | See the recurring winning patterns across SpaceX, Palantir, Apple, Amazon, Nvidia, Tesla, Google |
 | 38 | [SpaceX — Rapid Iteration](companies/38-spacex-rapid-iteration.md) | Operate a fly-test-break-fix, design-to-cost flywheel |
-| 39 | [Anduril — Productized Defense](companies/39-productized-defense.md) | Understand counter-positioning and software-defined hardware |
+| 39 | [Productized Defense](companies/39-productized-defense.md) | Understand counter-positioning and software-defined hardware |
 | 40 | [Palantir — Forward-Deployed](companies/40-palantir-forward-deployed.md) | Own the data ontology and deploy into hard accounts |
 | 41 | [Tesla — Vertical Integration & Data](companies/41-tesla-vertical-integration-data.md) | Build a fleet data flywheel and manufacturing moat |
 | 42 | [Nvidia — Platform & Ecosystem](companies/42-nvidia-platform-ecosystem.md) | Build ecosystem lock-in and ride compute waves |
@@ -181,6 +182,24 @@ strategic companion to [08-foundations-company-strategy-moat.md](foundations/08-
 | 47 | [The Asymmetric Playbook](companies/47-startup-asymmetric-playbook.md) | Beat incumbents with speed, focus, and counter-positioning |
 | 48 | [Operating Mechanisms & Culture](companies/48-operating-mechanisms-and-culture.md) | Build the invisible machinery that compounds |
 | 49 | [The Skills to Beat Them](companies/49-skills-to-beat-them.md) | A personal operating system of the transferable skills |
+
+#### Band 37–49 extension: the highest-impact companies the band was missing
+
+These seven modules close the biggest gaps in the original band — the incumbents
+it never dissected (the primes), the platform/AI giants reshaping every market, the
+supply chain everything depends on, the live defense-tech cohort you'll actually
+join, and the culture system underneath it all. They continue the band's house style
+and cross-link back into it. (Numbered 116–122 only because the 37–49 slots were full.)
+
+| # | Module | What it makes you |
+|---|---|---|
+| 116 | [The Defense Primes — How Incumbents Win](companies/116-defense-primes-how-incumbents-win.md) | Read Lockheed/Northrop/RTX/GD/Boeing as a system of real moats — the counterweight to the new defense-tech entrants |
+| 117 | [Microsoft — Reinvention & Platform](companies/117-microsoft-reinvention-platform.md) | Escape your own moat; wield distribution, partnership, and culture-as-strategy |
+| 118 | [Frontier AI Labs — OpenAI/Anthropic/DeepMind](companies/118-frontier-ai-labs.md) | Reason about scaling laws, compute moats, and research-to-product |
+| 119 | [Meta — Open Source as Strategy](companies/119-meta-open-source-as-strategy.md) | Commoditize your complement; decide open vs. closed rigorously |
+| 120 | [Semiconductor Titans — TSMC & ASML](companies/120-semiconductor-titans-tsmc-asml.md) | See the physical substrate of all compute and its geopolitics |
+| 121 | [The New Defense-Tech Cohort](companies/121-new-defense-tech-cohort.md) | Map the live wave (Shield AI, Skydio, Saronic, Applied Intuition…) you'll join or fight |
+| 122 | [Netflix — Talent Density & Culture](companies/122-netflix-talent-density-culture.md) | Build a high-density, high-candor, context-led team that beats institutions |
 
 ### Band 50–64: Deep Autonomy & Robotics
 
@@ -254,9 +273,11 @@ algorithms. Deepens [03-foundations-mathematics.md](foundations/03-mathematics.m
 
 A mixed applied band: the silicon-and-power reality under all software, how AI data
 centers and distributed-compute startups actually work (and fail), and the human
-dimension — manipulation defense, organizational politics, company design, and the
-life lessons that compound. Connects the hardware bands (65–79), the company bands
-(37–49), and the information-environment band (31–36).
+dimension — manipulation defense, organizational politics, company design, the life
+lessons that compound, and the inner operating system beneath them all: emotional
+self-governance, how societies rise and fall, status and tribe, relationships, the
+psychology of money, resilience, power, and meaning. Connects the hardware bands
+(65–79), the company bands (37–49), and the information-environment band (31–36).
 
 | # | Module | What it makes you |
 |---|---|---|
@@ -268,6 +289,86 @@ life lessons that compound. Connects the hardware bands (65–79), the company b
 | 112 | [Big Tech Politics](mindset-and-society/112-politics-navigation.md) | Navigate organizational power with integrity and effectiveness |
 | 113 | [Big Tech Flaws & the Optimal Company](mindset-and-society/113-flaws-and-the-optimal-company.md) | Diagnose structural flaws and design a better company |
 | 114 | [Life Lessons People Ignore](mindset-and-society/114-life-lessons-people-ignore.md) | Internalize the compounding truths most people never live |
+
+### Band 115–124: Career Mastery — The Meta-Skills That Move Careers
+
+The original career band (`10–19`) covers the domains and the job-hunt mechanics
+(resume, interview, clearance, negotiation). This band covers the **highest-leverage
+career skills nobody writes down** — the relationship capital, communication,
+reputation, money, execution, entrepreneurship, adaptability, sustainability, and
+ethics that actually decide how far an engineer goes. It is the personal-operating-system
+companion to the [companies band](companies/37-how-the-giants-win.md) and
+[19-career-leadership-growth.md](career/19-leadership-growth.md).
+
+| # | Module | What it makes you |
+|---|---|---|
+| 115 | [Networking, Mentors & Sponsors](career/115-networking-mentors-sponsors.md) | Build the relationship capital that gets you chosen, not just considered |
+| 116 | [Technical Communication](career/116-technical-communication.md) | Make people understand, trust, and act on your work — the mid-career multiplier |
+| 117 | [Personal Brand & Public Presence](career/117-personal-brand-public-presence.md) | Manufacture luck with a public body of work that draws opportunity inbound |
+| 118 | [Job Search & Career Capital](career/118-job-search-career-capital.md) | Run your career as a portfolio of compounding capital, not a series of panics |
+| 119 | [Financial Literacy & Wealth](career/119-financial-literacy-wealth.md) | Turn a high income into real wealth, freedom, and equity you don't fumble |
+| 120 | [Productivity & Deep Work](career/120-productivity-deep-work.md) | Convert capability into shipped output sustainably, as an engineered system |
+| 121 | [Engineer to Founder](career/121-engineer-to-founder.md) | Cross from building someone's product to building your own — with managed risk |
+| 122 | [Career Pivots & the AI Era](career/122-career-pivots-ai-era.md) | Reinvent faster than the field changes; use AI as leverage, not threat |
+| 123 | [Health, Energy & Career Longevity](career/123-health-energy-career-longevity.md) | Stay excellent for decades; treat burnout as a system failure to prevent |
+| 124 | [Ethics, Export Control & Responsibility](career/124-ethics-export-control.md) | Stay far from the one mistake no technical brilliance can recover from (ITAR/EAR, classification, safety) |
+
+These connect back to the job-hunt mechanics in `15–19`, the strategy in the
+[companies band](companies/37-how-the-giants-win.md), the clearance baseline in
+[16-career-security-clearance.md](career/16-security-clearance.md), and the
+information-environment band (`31–36`).
+
+---
+
+### Band: General Knowledge (`general/`)
+
+A broad, accessible band for the questions almost everyone is curious about —
+money, the internet, AI, health, learning, and how the world around you works.
+These are written for a general reader (lighter on jargon) while staying
+first-principles and honest. They live in the `general/` folder; the numbering is
+folder-scoped, so it intentionally overlaps the career band above.
+
+| # | Module |  | # | Module |
+|---|---|---|---|---|
+| 115 | [How Money & Inflation Work](general/115-how-money-and-inflation-work.md) | | 122 | [Health Foundations](general/122-health-foundations-sleep-food-movement.md) |
+| 116 | [Personal Finance & Investing](general/116-personal-finance-and-investing.md) | | 123 | [The Electric Grid & Energy](general/123-how-the-electric-grid-and-energy-work.md) |
+| 117 | [How the Internet Works](general/117-how-the-internet-works.md) | | 124 | [Negotiation & Everyday Persuasion](general/124-negotiation-and-everyday-persuasion.md) |
+| 118 | [How AI & LLMs Actually Work](general/118-how-ai-and-llms-actually-work.md) | | 125 | [Productivity, Focus & Time](general/125-productivity-focus-and-time-management.md) |
+| 119 | [The Science of Learning](general/119-the-science-of-learning.md) | | 126 | [Statistics for Everyday Decisions](general/126-statistics-for-everyday-decisions.md) |
+| 120 | [Critical Thinking & Fallacies](general/120-critical-thinking-and-logical-fallacies.md) | | 127 | [How GPS Finds You](general/127-how-gps-and-your-phone-find-you.md) |
+| 121 | [How the Economy Works](general/121-how-the-economy-works.md) | | 128 | [Understanding Taxes](general/128-understanding-taxes.md) |
+
+---
+
+### Band 115–125: The Human Operating System (Inner Mastery)
+
+The technical bands above make you a world-class *engineer*. This band makes you a
+world-class *operator of yourself* — the internal stack that sits **underneath**
+every other module and decides whether all that knowledge ever becomes action. It
+extends the human-layer modules (`111–114`) with the inner operating system:
+emotional self-governance, resilience, the habit engine that converts knowing into
+doing, the judgment that makes every decision better, the trained attention that
+gates focus and learning, the creativity that produces asymmetric bets, and the
+knowledge system that keeps it all compounding. These are the highest-leverage
+subjects in the entire curriculum precisely because they **multiply the value of
+everything else**.
+
+| # | Module | What it makes you |
+|---|---|---|
+| 115 | [Stoicism & Emotional Self-Governance](mindset-and-society/115-stoicism-emotional-self-governance.md) | Govern your own mind under pressure — the inner OS beneath all the rest |
+| 120 | [Resilience, Failure & Antifragility](mindset-and-society/120-resilience-failure-antifragility.md) | Recover from, and grow through, hard things; design a life that gains from stress |
+| 121 | [Habits, Behavior Change & Self-Discipline](mindset-and-society/121-habits-behavior-change-and-discipline.md) | The engine that converts knowing into doing — the highest-impact module in the band |
+| 122 | [Rationality, Mental Models & Judgment](mindset-and-society/122-rationality-mental-models-and-judgment.md) | Think well when it counts; raise the quality of every decision you make |
+| 123 | [Meditation, Mindfulness & Flow](mindset-and-society/123-meditation-mindfulness-and-flow.md) | Train attention — the master resource under focus, learning, and regulation |
+| 124 | [Creativity & Idea Generation](mindset-and-society/124-creativity-and-idea-generation.md) | Manufacture the non-obvious, asymmetric bet on demand |
+| 125 | [Knowledge Management & the Second Brain](mindset-and-society/125-knowledge-management-and-second-brain.md) | Capture, connect, and retrieve everything you learn so it compounds *(stub)* |
+
+These connect to the science of learning ([foundations/115](foundations/115-learning-how-to-learn.md)),
+deep work ([career/120](career/120-productivity-deep-work.md)), the health substrate
+([general/122](general/122-health-foundations-sleep-food-movement.md)), the formal
+decision math ([mathematics/105](mathematics/105-decision-and-game-theory.md)), and
+the cognition module in the information-environment band
+([33](information-environment/33-cognitive-bias-attention-and-narratives.md)).
 
 ---
 
@@ -325,6 +426,16 @@ mechanisms in whatever you build.
 `80 → 83 → 82 → 81 → 92 → 90 → 88 → 89 → 86 → 94`
 Rationale: distributed systems and networking first, then real-time and GPU compute,
 then performance and Rust, then operations, security, and disciplined testing.
+
+### Path J — "I want to compound my career, not just survive it"
+`118 → 116 → 115 → 117 → 120 → 119 → 123`, plus `124` early and always.
+Rationale: first see your career as compounding capital, then build the
+communication and relationship capital that move it, then the public presence that
+makes opportunity inbound, then the execution and money systems that turn it into
+freedom — all riding on the health that sustains a multi-decade career, and fenced by
+the ethics/export-control discipline that protects all of it. Add `121` if founding
+is on the table and `122` to stay relevant as the field shifts. Pair with the
+job-hunt mechanics in `15–19` and the strategy in the company band (`37–49`).
 
 ---
 

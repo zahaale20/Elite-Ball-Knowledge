@@ -2,7 +2,7 @@
 
 > **Why this exists.** Every giant was once a small team that beat a bigger giant. Amazon beat
 > Barnes & Noble; Netflix beat Blockbuster; SpaceX beat Boeing and Lockheed at their own game;
-> Anduril is beating the primes; OpenAI productized the Transformer that Google invented. The
+> productized defense-tech is beating the primes; OpenAI productized the Transformer that Google invented. The
 > uncomfortable, liberating truth is that **size is as much a liability as an advantage.** A large
 > incumbent carries weight a small team doesn't: a profitable core it must protect, a brand it can't
 > risk, a process that slows every decision, customers it can't abandon, and a business model that
@@ -113,7 +113,7 @@ Canonical examples:
 - **SpaceX vs the primes.** Reusable rockets and fixed-price commercial contracting. The primes'
   entire business was *cost-plus* ([07-foundations-defense-acquisition.md](../foundations/07-defense-acquisition.md));
   reusability and fixed price attacked the model they profited from.
-- **Anduril vs traditional defense.** Self-funded productized hardware/software sold as a finished
+- **Productized defense-tech vs traditional defense.** Self-funded productized hardware/software sold as a finished
   good — counter-positioned against cost-plus primes who *make money from the slow process itself.*
 - **Dollar Shave Club vs Gillette.** Cheap subscription razors via a viral video; Gillette's
   retail-margin and brand-premium model couldn't follow downmarket fast.
@@ -269,7 +269,7 @@ Concrete forms of customer closeness only a small team can sustain:
 
 - **The founder does support.** Every complaint is a product insight, unfiltered.
 - **Ship to ten users, watch them use it.** Qualitative truth the incumbent's dashboards miss.
-- **Live in the customer's world.** Anduril engineers go to the field; SpaceX engineers watch
+- **Live in the customer's world.** Elite defense-tech engineers go to the field; SpaceX engineers watch
   launches; the best dev-tools founders *are* the developer they're selling to.
 - **Sell before you build** (the PR/FAQ instinct from [44](44-amazon-mechanisms-customer-obsession.md)) —
   validate the pain directly with the human who has it.
@@ -304,7 +304,7 @@ the incumbent ignores; talk to every early user personally; iterate twice as fas
 review a roadmap; own the niche completely; *then* expand into the adjacent space from a defended
 position. Each step fights where the giant is structurally forbidden, slow, or absent.
 
-This is not theory. It is, step for step, the path Netflix, Stripe, Figma, SpaceX, and Anduril
+This is not theory. It is, step for step, the path Netflix, Stripe, Figma, SpaceX, and productized defense-tech
 actually walked.
 
 ---

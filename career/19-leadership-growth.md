@@ -1,14 +1,13 @@
 # Leadership, Mentorship & Career Growth
 
 > Getting hired is the first game; *growing* is the longer one. The engineers who
-> reach senior, staff, and tech-lead in autonomy organizations aren't just the
-> best coders — they're the ones who multiply other people's output, drive
+> reach senior, staff, and tech-lead at serious engineering organizations aren't
+> just the best coders — they're the ones who multiply other people's output, drive
 > decisions without needing authority, and make the right things happen across
-> teams, programs, and customers. This file is the operating manual for that
-> climb, written for a builder who already ships a real PX4/Pixhawk autonomy stack
-> and now wants to turn deep technical ability into **scope, influence, and
-> leadership** at companies like Anduril, Boeing, Lockheed, Northrop, SpaceX,
-> Skydio, and Shield AI.
+> teams, projects, and customers. This file is the operating manual for that
+> climb, written for an engineer who already ships real, substantial software and
+> now wants to turn deep technical ability into **scope, influence, and
+> leadership** across startups, scale-ups, and large enterprises.
 
 It maps directly onto your long arc in
 [02-ten-year-mastery-plan.md](../foundations/02-ten-year-mastery-plan.md): the early years are
@@ -54,7 +53,7 @@ Key truths:
   staff/principal comp is real.)
 - **The switch is reversible** early; harder late. Many strong leaders do a tour on
   each side.
-- For a builder like you, the **IC track to Staff/Principal in autonomy** is the
+- For a deep technical builder, the **IC track to Staff/Principal** is often the
   natural high-leverage path — *plus* the people skills below, which both tracks
   require.
 
@@ -85,8 +84,8 @@ The most important leadership skill, and the one that defines Staff: **getting t
 right technical outcome when no one reports to you.** Influence, not command.
 
 ### 3.1 The sources of informal authority
-- **Credibility** — you've shipped hard things (your drone stack is *exhibit A*);
-  people trust your judgment because your track record earned it.
+- **Credibility** — you've shipped hard things; people trust your judgment because
+  your track record earned it.
 - **Clarity** — you can explain a complex tradeoff so a room aligns around it.
 - **Reliability** — you do what you say; your estimates and warnings prove out.
 - **Generosity** — you make others better and share credit; people *want* your
@@ -118,8 +117,8 @@ leadership is exercised in public.
 
 ### 4.1 Writing the design doc / RFC
 A good design doc (1–6 pages) typically contains:
-- **Context & problem** — what, why now, constraints (incl. real-time / safety /
-  certification for flight software).
+- **Context & problem** — what, why now, constraints (incl. performance, real-time,
+  safety, security, or compliance requirements where they apply).
 - **Goals & non-goals** — scope discipline.
 - **Proposed design** — architecture, interfaces, data flow, diagram.
 - **Alternatives considered** — with honest tradeoffs (this section earns trust).
@@ -140,10 +139,10 @@ A good design doc (1–6 pages) typically contains:
   contribution that marks you as a leader, not just a participant.
 
 ### 4.3 Use your real artifacts
-Your drone stack already generates leadership-grade writing material: the
-**architecture of the onboard FastAPI service**, the **constitution-gated policy
-design**, the **GPS-denied navigation fallback**, the **SITL test strategy**. Turn
-these into design docs and write-ups (see
+Whatever substantial system you've built already generates leadership-grade writing
+material: the **architecture of a service you own**, a **non-trivial design
+decision and its tradeoffs**, a **resilience or failure-handling strategy**, a
+**testing strategy** you stood up. Turn these into design docs and write-ups (see
 [18-career-resume-portfolio.md](18-resume-portfolio.md) §8) — they double
 as influence-building and as public proof of senior-level thinking.
 
@@ -192,8 +191,8 @@ Promotions follow **demonstrated scope and ownership**, not tenure or hours.
 
 > The trap: doing more *volume* at the same scope (more tickets, more hours) feels
 > like progress but isn't. Promotion comes from handling **bigger, fuzzier**
-> problems — not more small ones. Your self-built autonomous system is exactly the
-> kind of ambiguous, end-to-end ownership that signals readiness for scope.
+> problems — not more small ones. A self-built, end-to-end system is exactly the
+> kind of ambiguous, full-ownership work that signals readiness for scope.
 
 ---
 
@@ -201,10 +200,11 @@ Promotions follow **demonstrated scope and ownership**, not tenure or hours.
 
 As you climb, you shift from *executing* decisions to *shaping* them.
 
-- **Connect technical choices to business/mission outcomes.** "This architecture
-  lets us field the capability six months sooner" lands where "it's cleaner
-  code" doesn't — especially in defense, where *schedule and mission* dominate
-  (see [14-career-dod-politics.md](14-dod-politics.md)).
+- **Connect technical choices to business/product outcomes.** "This architecture
+  lets us ship the capability six months sooner" lands where "it's cleaner
+  code" doesn't — especially where *schedule and impact* dominate (mission- and
+  schedule-driven organizations such as defense are an extreme case; see
+  [14-career-dod-politics.md](14-dod-politics.md)).
 - **Bring data and options, not just opinions.** Decision-makers want a
   recommendation *and* the tradeoffs to own the call.
 - **Pick your battles.** Spend influence capital on the decisions that matter;
@@ -218,58 +218,59 @@ As you climb, you shift from *executing* decisions to *shaping* them.
 
 ## 8. Communicating to Non-Engineers & Stakeholders
 
-A defining senior skill, and *critical* in defense, where your audience includes
-program managers, contracts, customers in uniform, and executives.
+A defining senior skill: your audience includes product managers, executives,
+customers, and partners who don't share your technical context.
 
 ### 8.1 The translation skill
 - **Lead with the bottom line (BLUF — "bottom line up front").** State the
-  conclusion/ask first, then support it. Military and program audiences expect
-  this; engineers often bury the lede.
-- **Map tech → mission.** Don't say "we refactored the estimator"; say "we made the
-  drone hold position when GPS is jammed — here's what that enables operationally."
-  (Tie to [26-autonomy-gnss-jamming-spoofing.md](../autonomy/26-gnss-jamming-spoofing.md)
-  and [27-autonomy-counter-uas-ew.md](../autonomy/27-counter-uas-ew.md).)
+  conclusion/ask first, then support it. Busy audiences expect this; engineers
+  often bury the lede.
+- **Map tech → impact.** Don't say "we refactored the estimator"; say "the system
+  now keeps working when its primary input drops out — here's what that enables for
+  users."
 - **Quantify risk and schedule honestly.** Stakeholders forgive bad news delivered
   early; they punish surprises.
 - **Adjust altitude to audience.** An exec wants three sentences and a decision; a
   peer wants the design; a customer wants capability and reliability.
 
-### 8.2 The audiences in a defense org
+### 8.2 The audiences you translate for
 | Audience | What they care about | How to speak to them |
 |---|---|---|
 | Engineering peers | Correctness, design, tradeoffs | Deep, precise, design docs |
 | Eng management | Delivery, risk, dependencies | Status, blockers, clear asks |
-| Program / PM | Schedule, cost, milestones, deliverables | BLUF, milestones, risk register |
-| Customer (DoD) | Mission capability, reliability, security | Capability + assurance, plain language |
+| Product / PM | Schedule, cost, milestones, deliverables | BLUF, milestones, risk register |
+| Customers / users | Capability, reliability, security | Capability + assurance, plain language |
 | Executives | Strategic outcomes, big risks | One slide, one decision, the "so what" |
 
 ---
 
-## 9. Navigating Defense-Org Politics
+## 9. Navigating Organizational Politics
 
-Defense organizations have unique dynamics: matrixed teams, programs, primes vs.
-subs, classification boundaries, and government customers. Politics here isn't
-dirty — it's **how decisions and resources actually move.** Cross-link the
-institutional context in [14-career-dod-politics.md](14-dod-politics.md).
+Every organization has its own dynamics: matrixed teams, competing roadmaps,
+budget owners, and internal customers. Politics here isn't dirty — it's **how
+decisions and resources actually move.** (Highly regulated, mission-driven
+environments such as defense add their own layers; see
+[14-career-dod-politics.md](14-dod-politics.md) for that institutional context.)
 
-- **Understand the program structure.** Who holds the budget, the schedule, and the
-  customer relationship? Align your work to the program's milestones and you become
-  indispensable; ignore them and your best code stalls.
-- **Respect classification boundaries.** Need-to-know shapes who can collaborate;
-  plan around it (and never route around it). See
-  [16-career-security-clearance.md](16-security-clearance.md).
-- **Primes vs. new-defense culture.** At primes, process, requirements traceability,
-  and risk management *are* the leadership currency. At new-defense, speed,
-  ownership, and outcomes are. Read the room and lead in its language.
-- **Build cross-functional trust.** Systems, hardware, test, safety, contracts —
-  the engineer who's trusted across functions gets the hard, high-visibility
-  programs. (Your generalist range across
+- **Understand how work gets funded and prioritized.** Who holds the budget, the
+  roadmap, and the customer relationship? Align your work to what the organization
+  is committed to deliver and you become indispensable; ignore it and your best
+  code stalls.
+- **Respect information and access boundaries.** Need-to-know, data-handling, and
+  security boundaries shape who can collaborate; plan around them (and never route
+  around them). See [16-career-security-clearance.md](16-security-clearance.md).
+- **Read the culture you're in.** In process-heavy organizations, requirements
+  traceability, reviews, and risk management *are* the leadership currency. In
+  fast-moving ones, speed, ownership, and outcomes are. Read the room and lead in
+  its language.
+- **Build cross-functional trust.** Product, design, infra, QA, security, support —
+  the engineer who's trusted across functions gets the hard, high-visibility work.
+  (A generalist range across adjacent disciplines such as
   [10-career-aerospace-engineering.md](10-aerospace-engineering.md) and
-  [13-career-mechanical-engineering.md](13-mechanical-engineering.md) is an
-  asset here.)
-- **Integrity is a long-game strategy.** In a world of clearances, audits, and
-  multi-decade programs, reputation is everything. The honest, reliable engineer
-  wins over a 10-year horizon every time.
+  [13-career-mechanical-engineering.md](13-mechanical-engineering.md) is an asset
+  wherever your domain sits.)
+- **Integrity is a long-game strategy.** Reputation compounds; the honest, reliable
+  engineer wins over a multi-year horizon every time.
 
 ---
 
@@ -296,7 +297,7 @@ leverage.
 
 ### Years 0–2 — Earn credibility (Junior → Mid)
 - [ ] Ship reliably; become the person who *finishes* things.
-- [ ] Keep building the drone stack as public proof of end-to-end ownership.
+- [ ] Keep building a substantial system as public proof of end-to-end ownership.
 - [ ] Write your first **design docs**; start a **brag doc** of impact.
 - [ ] Begin **mentoring** the next person behind you (interns, new grads).
 
@@ -304,13 +305,13 @@ leverage.
 - [ ] Own a system end-to-end; drive a project across more than one person.
 - [ ] Run and improve **design reviews**; become a trusted reviewer.
 - [ ] Take the **unowned important problem** and own it visibly.
-- [ ] Practice **stakeholder communication** (BLUF, tech→mission translation).
+- [ ] Practice **stakeholder communication** (BLUF, tech→impact translation).
 - [ ] Assemble a **promotion packet** documenting next-level behavior.
 
 ### Years 4–7 — Multiply (Senior → Staff)
 - [ ] Set technical direction for a hard, cross-cutting problem.
 - [ ] **Sponsor** others, not just mentor; grow people who grow the org.
-- [ ] Influence strategy; connect technical bets to mission/program outcomes.
+- [ ] Influence strategy; connect technical bets to product/business outcomes.
 - [ ] Publish/speak (talks, write-ups) to build cross-org and external authority
       (see [18-career-resume-portfolio.md](18-resume-portfolio.md)).
 
@@ -318,11 +319,11 @@ leverage.
 - [ ] Own a domain the org bets on; de-risk its hardest technical questions.
 - [ ] Decide IC-deep (Principal) vs. management (Director) based on what energizes
       you — and you'll have done enough of both to choose well.
-- [ ] Be the engineer whose judgment programs and customers trust by name.
+- [ ] Be the engineer whose judgment teams and customers trust by name.
 
-> The through-line: **let the drone stack prove capability, then deliberately
-> trade capability for leverage** — docs, decisions, mentorship, direction. That
-> trade *is* the senior-and-beyond career.
+> The through-line: **let a real, shipped system prove capability, then
+> deliberately trade capability for leverage** — docs, decisions, mentorship,
+> direction. That trade *is* the senior-and-beyond career.
 
 ---
 
@@ -331,12 +332,12 @@ leverage.
 - **Write things down** — docs, decisions, post-mortems. Writing scales you.
 - **Make others better** — review to teach, sponsor publicly, share credit.
 - **Run toward ambiguity** — own the fuzzy important problem.
-- **Communicate up and out** — no surprises; translate tech to mission.
+- **Communicate up and out** — no surprises; translate tech to impact.
 - **Keep a brag doc** — evidence for promotions and negotiations
   ([15-career-negotiation-compensation.md](15-negotiation-compensation.md)).
 - **Stay technical enough to be credible**, even on the management track.
 - **Disagree and commit** — argue hard, then row hard.
-- **Protect integrity and reputation** — the defense world has a long memory.
+- **Protect integrity and reputation** — your professional world has a long memory.
 - **Sustainable pace** — leadership is a marathon; flameouts don't lead.
 
 ---
@@ -348,17 +349,16 @@ leverage.
   plan layers onto.
 - [12-career-software-engineering.md](12-software-engineering.md) — the
   technical capability that *earns* the right to lead.
-- [14-career-dod-politics.md](14-dod-politics.md) — the institutional and
-  political context you navigate as you gain scope.
+- [14-career-dod-politics.md](14-dod-politics.md) — institutional and political
+  context in highly regulated, mission-driven organizations.
 - [16-career-security-clearance.md](16-security-clearance.md) — the trust and
-  access boundaries that shape collaboration in defense orgs.
+  access boundaries that shape collaboration in regulated environments.
 - [18-career-resume-portfolio.md](18-resume-portfolio.md) — writing/speaking
   builds both your brand *and* your internal influence.
 - [15-career-negotiation-compensation.md](15-negotiation-compensation.md) —
   scope and level drive comp; document both to get paid for them.
-- Autonomy band ([23-autonomy-onboard-system.md](../autonomy/23-onboard-system.md),
-  [24-autonomy-test-scaffold.md](../autonomy/24-test-scaffold.md),
-  [26-autonomy-gnss-jamming-spoofing.md](../autonomy/26-gnss-jamming-spoofing.md)) —
+- Technical depth band ([23-autonomy-onboard-system.md](../autonomy/23-onboard-system.md),
+  [24-autonomy-test-scaffold.md](../autonomy/24-test-scaffold.md)) —
   the real technical work that backs your leadership credibility.
 
 ---

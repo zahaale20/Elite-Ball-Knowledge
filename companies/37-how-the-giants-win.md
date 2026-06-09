@@ -1,10 +1,12 @@
-# How the Giants Win — The Transferable Lessons Behind SpaceX, Anduril, Palantir, Apple, Amazon, Nvidia, Tesla & Google
+# How the Giants Win — The Transferable Lessons Behind SpaceX, Palantir, Apple, Amazon, Nvidia, Tesla & Google
 
 > **Why this exists.** The companies that dominate hard, capital-intensive, physics-bound markets are not lucky — they run a small number of *repeatable mechanisms* that compound. If you want to reach elite level in autonomous systems and defense-tech, you cannot afford to admire these companies as black boxes. You must dissect *which* mechanism each one actually runs, separate the mythology from the machinery, and extract the specific skill the mechanism implies for *you*. Most engineers study the products; the people who out-build them study the operating systems.
 
 > **What mastering it makes you.** Someone who can look at any market and ask "where is the flywheel, who owns the integration layer, what is the iteration cadence, and where does the data compound" — and then design a small-team strategy that attacks the giant where its size is a liability instead of an asset. That is the difference between being employable and being dangerous.
 
-This is the overview module for the **Companies & Beating the Giants** band (37–49). It connects directly to the strategy spine in [08-foundations-company-strategy-moat.md](../foundations/08-company-strategy-moat.md), the acquisition realities in [07-foundations-defense-acquisition.md](../foundations/07-defense-acquisition.md), the long arc in [02-ten-year-mastery-plan.md](../foundations/02-ten-year-mastery-plan.md), the people side in [19-career-leadership-growth.md](../career/19-leadership-growth.md), and the engineering mindset in [01_first_principles_systems_engineering.md](../foundations/01-first_principles_systems_engineering.md). The deep dives are: [38-companies-spacex-rapid-iteration.md](38-spacex-rapid-iteration.md), [39-companies-anduril-productized-defense.md](39-productized-defense.md), [40-companies-palantir-forward-deployed.md](40-palantir-forward-deployed.md), [41-companies-tesla-vertical-integration-data.md](41-tesla-vertical-integration-data.md), [42-companies-nvidia-platform-ecosystem.md](42-nvidia-platform-ecosystem.md), and [43-companies-apple-integration-taste.md](43-apple-integration-taste.md).
+This is the overview module for the **Companies & Beating the Giants** band (37–49). It connects directly to the strategy spine in [08-foundations-company-strategy-moat.md](../foundations/08-company-strategy-moat.md), the acquisition realities in [07-foundations-defense-acquisition.md](../foundations/07-defense-acquisition.md), the long arc in [02-ten-year-mastery-plan.md](../foundations/02-ten-year-mastery-plan.md), the people side in [19-career-leadership-growth.md](../career/19-leadership-growth.md), and the engineering mindset in [01_first_principles_systems_engineering.md](../foundations/01-first_principles_systems_engineering.md). The deep dives are: [38-companies-spacex-rapid-iteration.md](38-spacex-rapid-iteration.md), [39-companies-productized-defense.md](39-productized-defense.md), [40-companies-palantir-forward-deployed.md](40-palantir-forward-deployed.md), [41-companies-tesla-vertical-integration-data.md](41-tesla-vertical-integration-data.md), [42-companies-nvidia-platform-ecosystem.md](42-nvidia-platform-ecosystem.md), and [43-companies-apple-integration-taste.md](43-apple-integration-taste.md).
+
+> **Band extension (modules 116–122).** The original band studied the disruptors and a handful of giants. Seven later modules close its biggest gaps and should be read as part of this band: the incumbents it never dissected — [116-companies-defense-primes-how-incumbents-win.md](116-defense-primes-how-incumbents-win.md) (the deliberate counterweight to the new defense-tech entrants); the platform/AI giants reshaping every market — [117-companies-microsoft-reinvention-platform.md](117-microsoft-reinvention-platform.md), [118-companies-frontier-ai-labs.md](118-frontier-ai-labs.md), [119-companies-meta-open-source-as-strategy.md](119-meta-open-source-as-strategy.md); the supply chain underneath all of them — [120-companies-semiconductor-titans-tsmc-asml.md](120-semiconductor-titans-tsmc-asml.md); the live cohort you'll actually join or fight — [121-companies-new-defense-tech-cohort.md](121-new-defense-tech-cohort.md); and the culture system beneath high-performing teams — [122-companies-netflix-talent-density-culture.md](122-netflix-talent-density-culture.md).
 
 ---
 
@@ -46,8 +48,8 @@ Across the giants, eight mechanisms recur. Each company is *not* great at all ei
 | 4 | **Platform / ecosystem** | Let others build on you so switching cost grows without your spend | Nvidia (CUDA), Apple (App Store) | Network effects, developer lock-in |
 | 5 | **Customer obsession & working backwards** | Start from the customer outcome and reason back to the build | Amazon | Distribution & trust |
 | 6 | **Operating mechanisms** | Codify decision-making into rituals (narratives, reviews, metrics) | Amazon, Google | Organizational entropy |
-| 7 | **Talent density** | Hire fewer, far better; raise the average with every hire | Anduril, SpaceX, Netflix | Coordination overhead per head |
-| 8 | **Capital & business-model strategy** | Choose a funding/pricing structure rivals structurally cannot match | Anduril (self-funded R&D), Amazon (low-margin reinvest) | Incentive structure of incumbents |
+| 7 | **Talent density** | Hire fewer, far better; raise the average with every hire | Productized defense-tech, SpaceX, Netflix | Coordination overhead per head |
+| 8 | **Capital & business-model strategy** | Choose a funding/pricing structure rivals structurally cannot match | Productized defense-tech (self-funded R&D), Amazon (low-margin reinvest) | Incentive structure of incumbents |
 
 ---
 
@@ -58,7 +60,7 @@ This is the table to internalize. The right-hand column is the whole point of th
 | Company | Signature lesson | Mechanism family | The skill it implies for YOU |
 |---------|------------------|------------------|------------------------------|
 | **SpaceX** | Fly, break, fix — hardware-rich iteration drives cost down | Rapid iteration + vertical integration | Build test rigs so cheap you can afford to break things; design-to-cost; delete requirements |
-| **Anduril** | Productize defense, self-fund R&D, sell finished capability not labor-hours | Capital strategy + integration | Counter-position against incumbents' incentives; own the integration/software layer |
+| **Productized defense-tech** | Productize defense, self-fund R&D, sell finished capability not labor-hours | Capital strategy + integration | Counter-position against incumbents' incentives; own the integration/software layer |
 | **Palantir** | Put your best engineers *at the customer*; own the data ontology | Talent density + data moat | Forward-deployed problem solving; model the customer's domain as durable schema |
 | **Tesla** | The fleet teaches the car; manufacturing *is* the product | Data flywheel + vertical integration | Instrument everything; treat the factory/process as a designed system |
 | **Nvidia** | Own the developer ecosystem; be the picks-and-shovels of a boom | Platform/ecosystem | Build tools others depend on; bet on a wave a decade early |
@@ -130,7 +132,7 @@ The lesson for a small team: you have the *gift* of low $n$. Spend it on speed, 
 
 ## 7. Talent density as a force multiplier
 
-Anduril, SpaceX, Palantir, and Netflix all run a version of the same belief: **a small number of exceptional people outperform a large number of average ones, and the gap is super-linear.** If individual output varies and coordination cost grows with headcount, then for hard creative work:
+Productized defense-tech, SpaceX, Palantir, and Netflix all run a version of the same belief: **a small number of exceptional people outperform a large number of average ones, and the gap is super-linear.** If individual output varies and coordination cost grows with headcount, then for hard creative work:
 
 $$\text{Team output} \approx \sum_{i=1}^{n} o_i \;-\; k\binom{n}{2}$$
 
@@ -150,7 +152,7 @@ Each deep dive (38–43) is structured to extract *transferable skill*, not corp
 | Module | Giant | The one skill to walk away with |
 |--------|-------|---------------------------------|
 | [38](38-spacex-rapid-iteration.md) | SpaceX | Hardware-rich iteration & design-to-cost |
-| [39](39-productized-defense.md) | Anduril | Counter-positioning & owning integration |
+| [39](39-productized-defense.md) | Productized defense | Counter-positioning & owning integration |
 | [40](40-palantir-forward-deployed.md) | Palantir | Forward-deployed engineering & ontology |
 | [41](41-tesla-vertical-integration-data.md) | Tesla | Fleet data flywheel & manufacturing-as-product |
 | [42](42-nvidia-platform-ecosystem.md) | Nvidia | Ecosystem lock-in & long-horizon bets |
@@ -170,7 +172,7 @@ Before you claim you "understand how the giants win," you should be able to answ
 - [ ] If you had a 5-person team, where would you attack it?
 - [ ] What **skill** must you personally train to operate the same mechanism?
 
-If you can fill that out cold for SpaceX, Anduril, Palantir, Tesla, Nvidia, and Apple, you have extracted the value of this band.
+If you can fill that out cold for SpaceX, Palantir, Tesla, Nvidia, and Apple, you have extracted the value of this band.
 
 ---
 

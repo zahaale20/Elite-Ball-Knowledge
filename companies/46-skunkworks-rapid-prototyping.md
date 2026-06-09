@@ -240,11 +240,11 @@ maintain against organizational antibodies.
 ## 8. The modern defense-tech revival
 
 The 2020s defense-tech wave is, in large part, *the Skunk Works model rebuilt as venture-funded
-startups.* Companies like **Anduril**, **Shield AI**, **Skydio**, and **SpaceX** explicitly run small
+startups.* Companies like **Shield AI**, **Skydio**, and **SpaceX** explicitly run small
 elite teams, prototype hardware fast, hold aggressive schedules, and deliberately route *around* the
 slow cost-plus acquisition system ([07-foundations-defense-acquisition.md](../foundations/07-defense-acquisition.md)):
 
-- **Anduril** builds and *self-funds* products (Lattice, Ghost, Anvil), then sells the finished
+- **Productized defense-tech** builds and *self-funds* products (an integrated C2 platform, autonomous air vehicles, counter-UAS interceptors), then sells the finished
   article — the productized-vs-cost-plus inversion of
   [08-foundations-company-strategy-moat.md](../foundations/08-company-strategy-moat.md), executed at
   Skunk Works tempo.

@@ -44,7 +44,7 @@ Nvidia doesn't just sell a chip; it sells a stack — silicon, interconnect (NVL
 | Software (CUDA + libraries) | Yes | The moat |
 | Domain platforms (Omniverse, DRIVE, inference services) | Yes | Captures value up the stack |
 
-Owning the full stack means Nvidia captures value at *every* layer and controls the optimization across layers (hardware + software co-design). It also means a customer adopting Nvidia adopts an entire integrated world, deepening lock-in at each level. This is the same "own the integration layer" instinct as Anduril's Lattice ([39](39-productized-defense.md)) and Apple's hardware/software marriage ([43](43-apple-integration-taste.md)), applied to compute.
+Owning the full stack means Nvidia captures value at *every* layer and controls the optimization across layers (hardware + software co-design). It also means a customer adopting Nvidia adopts an entire integrated world, deepening lock-in at each level. This is the same "own the integration layer" instinct as a leading defense-tech company's integrated C2 platform ([39](39-productized-defense.md)) and Apple's hardware/software marriage ([43](43-apple-integration-taste.md)), applied to compute.
 
 ---
 
@@ -75,7 +75,7 @@ CUDA launched in 2006/2007 — *years* before deep learning made GPUs essential.
 
 Then the 2012 AlexNet moment proved that GPUs were the engine of deep learning, and Nvidia was the *only* company with a mature software ecosystem ready to capture it. The decade of unglamorous investment became an insurmountable head start overnight.
 
-The lesson — and it echoes SpaceX, Tesla, and Anduril — is about **structural patience**: the deepest moats are built *before* the market arrives, by people who can fund a long, lonely bet. The recurrence from [37](37-how-the-giants-win.md) applies: a low-decay advantage compounded over a decade is unreachable by a latecomer, no matter how much capital they throw at it *after* the wave breaks.
+The lesson — and it echoes SpaceX, Tesla, and productized defense-tech — is about **structural patience**: the deepest moats are built *before* the market arrives, by people who can fund a long, lonely bet. The recurrence from [37](37-how-the-giants-win.md) applies: a low-decay advantage compounded over a decade is unreachable by a latecomer, no matter how much capital they throw at it *after* the wave breaks.
 
 $$A_{\text{Nvidia, 2012}} = (1+g)^{\,\sim 6\text{ years of CUDA investment}} \cdot A_0 \;\gg\; A_{\text{latecomer starting in 2012}}$$
 

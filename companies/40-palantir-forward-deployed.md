@@ -4,7 +4,7 @@
 
 > **What mastering it makes you.** An engineer who can parachute into a domain you've never seen, model it correctly as a durable data structure, ship value in weeks, and turn that into a position competitors can't dislodge. The forward-deployed mindset is one of the most valuable and transferable skills in all of software.
 
-This deep dive sits under [37-companies-how-the-giants-win.md](37-how-the-giants-win.md). It pairs with the strategy spine in [08-foundations-company-strategy-moat.md](../foundations/08-company-strategy-moat.md), the defense-customer reality in [07-foundations-defense-acquisition.md](../foundations/07-defense-acquisition.md), and the people/leadership lessons in [19-career-leadership-growth.md](../career/19-leadership-growth.md). Its software-platform-in-defense story rhymes with Anduril's Lattice ([39-companies-anduril-productized-defense.md](39-productized-defense.md)) and its data-moat logic with Tesla's fleet ([41-companies-tesla-vertical-integration-data.md](41-tesla-vertical-integration-data.md)).
+This deep dive sits under [37-companies-how-the-giants-win.md](37-how-the-giants-win.md). It pairs with the strategy spine in [08-foundations-company-strategy-moat.md](../foundations/08-company-strategy-moat.md), the defense-customer reality in [07-foundations-defense-acquisition.md](../foundations/07-defense-acquisition.md), and the people/leadership lessons in [19-career-leadership-growth.md](../career/19-leadership-growth.md). Its software-platform-in-defense story rhymes with a leading defense-tech company's integrated C2 platform ([39-companies-productized-defense.md](39-productized-defense.md)) and its data-moat logic with Tesla's fleet ([41-companies-tesla-vertical-integration-data.md](41-tesla-vertical-integration-data.md)).
 
 ---
 
@@ -29,7 +29,7 @@ Why it works — and why it's so hard to copy:
         (one hop, full-fidelity, embedded)
 ```
 
-The FDE model is expensive and doesn't "scale" in the SaaS-purist sense — which is exactly *why* it's a moat. Competitors optimized for cheap, scalable, hands-off SaaS *cannot* serve the hard accounts that require this. Palantir went where the easy playbook refuses to go. (This is the same "go where the giants won't" logic as Anduril and SpaceX.)
+The FDE model is expensive and doesn't "scale" in the SaaS-purist sense — which is exactly *why* it's a moat. Competitors optimized for cheap, scalable, hands-off SaaS *cannot* serve the hard accounts that require this. Palantir went where the easy playbook refuses to go. (This is the same "go where the giants won't" logic as elite defense-tech companies and SpaceX.)
 
 ---
 
