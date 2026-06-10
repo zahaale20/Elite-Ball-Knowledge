@@ -20,7 +20,14 @@ If you read nothing else, read **[The 60-second version](#the-60-second-version)
 3. **Write it** following the [style guide](#style-guide). Anchor claims to sources.
 4. **Add one row** for your guide to the relevant table in
    [`01-mastery-curriculum.md`](01-mastery-curriculum.md).
-5. **Open a Pull Request** using the template. Done.
+5. **Run the validator** to catch broken links, numbering clashes, and a stale
+   guide count before you push:
+   ```bash
+   ./scripts/check-repo.py
+   ```
+   It exits cleanly when the library is consistent (cross-repo `drone/` code
+   references are reported as harmless warnings).
+6. **Open a Pull Request** using the template. Done.
 
 You do **not** need permission to start, and you do **not** need to touch anyone
 else's files. The structure below is designed so contributions never collide.
