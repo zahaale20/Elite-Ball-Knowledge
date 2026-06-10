@@ -117,6 +117,73 @@ The Fed controls **money and credit**, not spending (that's fiscal/Congress). It
 - A **weak dollar** helps US exporters, makes imports pricey.
 - **Balance of payments / trade deficit** — flows of money in/out of a country.
 
+### 1.7 The yield curve (one chart the exam expects you to read)
+
+Plot of yield vs. maturity for the same credit (usually Treasuries). Three shapes:
+
+- **Normal (positive/ascending)** — longer maturities yield **more** (you demand extra for tying
+  up money and bearing more rate risk). The healthy default.
+- **Inverted (negative/descending)** — short yields **exceed** long; a classic **recession
+  warning** (the market expects the Fed to cut rates later).
+- **Flat** — short ≈ long; transition signal.
+
+### 1.8 The new-issue (primary) market: underwriting
+
+How a security is *created* and sold to the public. This whole pipeline is the **Securities Act
+of 1933** in motion.
+
+**The players:**
+- **Issuer** — the company/government raising capital.
+- **Underwriter (investment bank)** — buys/markets the issue. The **lead/managing underwriter**
+  runs the deal and forms a **syndicate** (other firms sharing the risk) and a **selling group**
+  (firms that *sell* but take no underwriting risk — agent only).
+
+**The commitment types (who eats unsold shares?):**
+| Type | Underwriter's role | Risk |
+|---|---|---|
+| **Firm commitment** | **Buys the whole issue**, resells it | Underwriter (acts as **principal**) |
+| **Best efforts** | Sells what it can, returns the rest | Issuer (underwriter is **agent**) |
+| **All-or-none (AON)** | Cancels entire deal if not fully sold | Issuer |
+| **Standby** | Underwriter buys shares left over from a **rights offering** | Underwriter |
+
+**The timeline (the three windows):**
+1. **Pre-registration** — issuer files an S-1 **registration statement** with the SEC. **No
+   sales, no offers** of any kind.
+2. **Cooling-off period** (min **20 days**) — SEC reviews; selling is still illegal but you may:
+   - Distribute a **preliminary prospectus ("red herring")** — has price *range*, not final
+     terms; the red disclaimer warns it's not final.
+   - Take **indications of interest** (non-binding; can be withdrawn).
+   - Hold **due-diligence meetings**; publish a **tombstone** ad (bare facts only).
+3. **Effective date / post-registration** — SEC clears it; the **final prospectus** (with price)
+   must reach every buyer **at or before** confirmation. Now sales are legal.
+
+> **What SEC registration is NOT.** Clearing registration means the disclosure is *complete*, not
+> that the SEC *approves* the security or vouches for it. Claiming SEC approval is a violation.
+
+### 1.9 Exempt securities & exempt transactions (what skips registration)
+
+Registration is expensive, so the law carves out exemptions. The exam tests two buckets:
+
+**Exempt *securities* (the security itself is exempt):**
+- **US government & agency** securities.
+- **Municipal** securities.
+- **Bank** securities, **commercial paper** (≤270 days), **bankers' acceptances**.
+- **Non-profit / religious / charitable** issues, and securities of **regulated** carriers/
+  insurers.
+
+**Exempt *transactions* (the way it's sold is exempt):**
+- **Reg D — private placement:** sold to **accredited investors** (and ≤35 non-accredited), no
+  general solicitation (with carve-outs); resale-restricted. **The exam's favorite.**
+- **Reg A (A+):** "mini-IPO," smaller dollar tiers with lighter disclosure (an offering circular,
+  not a full prospectus).
+- **Rule 147 — intrastate:** issuer and all buyers in **one state**.
+- **Rule 144 — control/restricted stock resale:** governs when insiders/holders of restricted
+  stock may resell (volume limits, holding period, Form 144).
+
+> **Accredited investor (know the thresholds):** income **>$200k** (or **$300k** joint) for the
+> last two years, **or** net worth **>$1 million excluding primary residence**, or certain
+> licensed/insider statuses. Institutions qualify by size.
+
 ---
 
 ## Section 2 — Understanding Products and Their Risks (44%)
@@ -159,6 +226,34 @@ A share of stock = **ownership** = a residual claim (paid *last*, after all cred
 
 **Equity risks:** market (systematic), business/financial (unsystematic), liquidity.
 
+### 2.1a Dividend dates (the four-date sequence — frequently tested)
+
+When a board declares a dividend, four dates follow. Memorize the **order** and the **ex-date
+rule**:
+
+| Date | What happens |
+|---|---|
+| **Declaration date** | Board announces the dividend |
+| **Ex-dividend date** | **First day the stock trades WITHOUT the dividend.** Set by the exchange/FINRA, **1 business day before record** (under T+1). Buy on/after this date → you do **not** get the dividend |
+| **Record date** | You must be an owner of record this day to be paid |
+| **Payable date** | The cash actually goes out |
+
+> **The ex-date logic:** because regular-way stock settles **T+1**, to *own* by the record date
+> you must buy **before** the ex-date. On the ex-date the stock price typically **drops by about
+> the dividend amount** — you're no longer buying the upcoming payment. Sequence mnemonic:
+> **D-E-R-P** (Declaration, Ex, Record, Payable).
+
+- **Cash dividend** — taxable in the year received.
+- **Stock dividend / stock split** — more shares, **lower price per share**, **same total
+  value**; cost basis spreads across the new share count (not immediately taxable). A **2-for-1
+  split** doubles shares and halves price; a **reverse split** does the opposite.
+
+### 2.1b Worked equity numbers
+
+- **Current (dividend) yield** = annual dividend ÷ current price. *Stock at $40 paying $2/yr →
+  $2 ÷ $40 = **5%**.*
+- **After a 2:1 split:** 100 shares at $60 ($6,000) → **200 shares at $30** (still $6,000).
+
 ### 2.2 Debt securities (lending)
 
 A bond = **a loan**. You are a **creditor**, paid *before* equity. Defined by **par** (usually
@@ -186,6 +281,18 @@ $1,000), **coupon** (annual interest), and **maturity**.
 > - **Discount bond:** Nominal < Current < YTM < YTC (yields rise as you go).
 > - **Premium bond:** Nominal > Current > YTM > YTC (yields fall; **call is worst case → "yield
 >   to worst"**).
+
+**Worked yield example.** A 6% bond ($1,000 par → $60/yr coupon) trading at **$1,200** (premium):
+current yield = $60 ÷ $1,200 = **5%**. Because it's a premium, the order is **6% (nominal) > 5%
+(current) > YTM > YTC** — every step down. Buy it at a **discount** of $800 instead and current
+yield = $60 ÷ $800 = **7.5%**, with the order reversed (nominal < current < YTM < YTC).
+
+**Accrued interest (the buyer pays the seller for interest earned but not yet paid):**
+- **Corporate & municipal** bonds accrue on a **30/360** basis (every month = 30 days, year =
+  360). **Treasuries** accrue on **actual/actual** (real calendar days).
+- Interest accrues **up to but not including** settlement, and is **added to the price** the buyer
+  pays (then the buyer collects the full coupon at the next payment).
+- **Trades flat (no accrued interest):** bonds **in default** and **zero-coupon** bonds.
 
 **Bond risks:**
 - **Interest-rate risk** — bigger for **long maturity** and **low coupon** (measured by
@@ -223,9 +330,9 @@ $1,000), **coupon** (annual interest), and **maturity**.
 - **Tax-exempt** at the federal level (the defining feature) — and "triple-tax-free" if you
   live in the issuing state.
 - Therefore suited to **high-tax-bracket** investors. Compare via **tax-equivalent yield** =
-  muni yield ÷ (1 − tax bracket).
-- Two flavors:
-  - **GO (general obligation)** — backed by **taxing power**; needs **voter approval**.
+  muni yield ÷ (1 − tax bracket). *A 4% muni for an investor in the 32% bracket = 4% ÷ (1 −
+  0.32) = 4% ÷ 0.68 = **5.88%** taxable-equivalent — beat that with a corporate or it loses.*
+- Two flavors:  - **GO (general obligation)** — backed by **taxing power**; needs **voter approval**.
   - **Revenue** — backed by a specific project's **revenue** (toll road, stadium); no voter
     approval; riskier (depends on the project).
 - A muni is **inappropriate inside an IRA/401(k)** — you'd waste the tax exemption.
@@ -301,6 +408,13 @@ An option is a **contract**, not ownership. Standard contract = **100 shares**. 
 - **In/at/out of the money:** a **call** is *in the money* when stock **> strike**; a **put**
   is in the money when stock **< strike**. Intrinsic value never negative.
 - **Premium = intrinsic value + time value.** At expiration, only intrinsic value remains.
+- **Breakeven (memorize the two formulas):**
+  - **Call breakeven = strike + premium.** *Buy a 50 call for $3 → breakeven $53; you profit
+    above $53.* (Same breakeven for the call buyer **and** writer — they're zero-sum.)
+  - **Put breakeven = strike − premium.** *Buy a 50 put for $3 → breakeven $47; you profit
+    below $47.*
+  - Mnemonic: **Call = Strike + premium (Cadd); Put = Strike − premium.** One contract = ×100,
+    so a $3 premium = **$300** cash.
 - **Covered call** — writing a call against stock you own; generates income, caps upside.
 - **Protective put** — buying a put on stock you own; portfolio **insurance** (hedge).
 - Options are governed by the **OCC (Options Clearing Corporation)**; every buyer must receive
