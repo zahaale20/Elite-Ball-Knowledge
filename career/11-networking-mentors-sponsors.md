@@ -179,3 +179,72 @@ A network is a garden, not a trophy case. It dies without tending.
   networking that scales while you sleep.
 - [14-job-search-career-capital.md](14-job-search-career-capital.md) — turning
   the network into referrals and offers.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### Your fate is decided in rooms you'll never enter
+The sentence that determines your promotion, your staffing, your offer is spoken
+about you *in your absence* — in a calibration meeting, a promo committee, a
+staffing huddle, a hallway. You are never there. So the real deliverable of
+networking isn't a warm relationship; it's **the one-sentence summary a sponsor
+can say about you when you're not in the room** and have it land with a tough
+audience. Engineer that sentence on purpose. If the most senior person who knows
+your work can't compress it into something concrete and impressive in eight
+words, you have a legibility problem, not a skill problem.
+
+### Weak ties carry the opportunities; close friends can't
+Mark Granovetter's *strength of weak ties* is the most under-appreciated result
+in career mechanics. Your close friends share your information set — they know
+the same jobs you do. The acquaintance two hops away is the one plugged into a
+different pool. This is why the loosely-maintained network of 150 people you've
+actually helped beats the 5 people you text daily. It also means the highest-ROI
+maintenance is *breadth at low intensity*: a genuine two-line note once or twice
+a year keeps a tie alive and searchable.
+
+### The reciprocity ledger is one-directional — keep a "gave" list, never an "owed" list
+Adam Grant's *Give and Take* names the trap: the moment you start tracking what
+people owe you, you've become a matcher, and matchers cap out. The operators who
+win keep a private list of *favors given* and zero memory of debts. The five-
+minute favor — a forwardable intro, the right paper, a name — is the unit of
+account. And there is exactly one gift that flows *uphill* to high-status people:
+**ground truth they can't easily get** — what's really happening on the program,
+in the lab, on the floor. Information is the currency that buys you time with
+people far above your level.
+
+### Coffee-chat tradecraft
+- Never "pick your brain" with no ask — it offloads the cognitive work onto them.
+  Arrive with one *narrow, specific* question they're uniquely qualified to
+  answer in ten minutes.
+- The move that converts a mentor into a sponsor is the **follow-up that closes
+  the loop**: "You told me X; I did it; here's what happened." It proves you act
+  on advice, which makes betting on you cheap.
+- The mentor you actually want is **one to two levels up and adjacent to your
+  work** — close enough to vouch with specifics. The CEO mentor is a status
+  trophy that can't sponsor you because they can't see your output.
+- Double opt-in intros are the norm among people with good manners: ask both
+  sides before connecting. Forwarding a cold intro without permission is a tax on
+  the introducer's reputation, and they'll remember.
+
+### Sponsorship is fragile, perishable, and portable
+Your sponsor evaporates the day they leave — and good ones *take their people
+with them*, which is one of the best career events that can happen to you. Two
+corollaries the books skip: (1) never run a single-sponsor career; diversify
+across two or three so one departure or one falling-star doesn't sink you; (2) a
+warm referral *decays* — its potency is highest in the first ~72 hours, then the
+hiring manager's urgency and the introducer's goodwill both fade. Act on a warm
+intro immediately or you waste the capital someone spent on you.
+
+### The unwritten norms that quietly end careers
+The field is smaller than it looks and its memory is long. The agency recruiter
+you ghosted, the peer you took credit from, the junior you were curt to — they
+become the hiring manager, the reference call, the panel. **Never burn anyone in
+public, and never burn anyone you outrank.** The asymmetry: being known as
+gracious-under-pressure compounds silently for decades; one viral display of
+contempt follows you on the back channel forever. Reference checks are mostly
+off-the-record now precisely because the on-paper ones are useless — your real
+reference is the diffuse reputation you've built one interaction at a time. The
+loud operator working the room at the conference is usually the one getting the
+least; the quiet one who sent three useful things last month is getting the
+inbound.

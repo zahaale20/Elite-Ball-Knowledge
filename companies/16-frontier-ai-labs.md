@@ -179,3 +179,41 @@ Concretely, for someone building the kind of systems this curriculum targets:
 - Microsoft, Amazon, and Alphabet 10-Ks (the capital flows funding the labs).
 
 *This module is strategy, not hype: the frontier labs are best understood as a capital-and-compute flywheel governed by an empirical curve — extraordinary, but analyzable.*
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this exists.** The flywheel above is a clean strategic story; the public record is messier. A serious operator studies the litigation, the governance fights, and the labor reporting alongside the scaling laws, because those are where the labs' *real* constraints — legal, regulatory, and reputational — get set. Everything below is drawn from public record: court filings, on-the-record reporting, and the labs' own statements. Where a claim is contested, it is labeled.
+
+### Governance: the OpenAI board crisis and the for-profit fight
+
+The sharpest illustration that the "novel corporate structures" of §5 are *unresolved*, not solved, came in **November 2023**: OpenAI's nonprofit board abruptly removed CEO Sam Altman (Nov 17), saying he had not been "consistently candid." Within days, after a near-total employee revolt and pressure from Microsoft and investors, Altman was **reinstated (Nov 21)** and most of the board that fired him resigned. The episode publicly exposed the tension the capped-profit structure was built to manage — mission-governance vs. commercial momentum — and momentum won.
+
+That tension continued into the **for-profit-conversion controversy (2024–2025)**: OpenAI's plan to restructure its capped-profit arm toward a conventional for-profit / public-benefit corporation drew objections from former employees, legal scholars, and state attorneys general, plus a lawsuit from co-founder **Elon Musk (2024)** alleging the company had abandoned its founding nonprofit mission. As of this writing the governance question remains genuinely open.
+
+### Safety: departures, dissolution, and "safety-washing"
+
+In **May 2024**, chief scientist and co-founder **Ilya Sutskever** and alignment lead **Jan Leike** both left OpenAI, and the **Superalignment team was dissolved**. Leike said publicly that "safety culture and processes have taken a backseat to shiny products." Critics use this — and the broader pattern of safety staff exits — to charge the labs with **"safety-washing"**: marketing safety while deprioritizing it. The labs dispute the characterization; the departures and the team's dissolution are matters of record.
+
+### The non-disparagement / equity-clawback clauses
+
+Also in **May 2024**, reporting (notably by Vox's Kelsey Piper) showed OpenAI's offboarding agreements contained **non-disparagement clauses with the threat of clawing back vested equity** for departing employees who criticized the company. After the reporting, OpenAI **walked the provisions back**; Altman said he had been unaware of the specific clawback language. The reversal is documented in the company's own statements.
+
+### Copyright, data scraping, and the "Sky" voice
+
+| Matter | Year | Body / venue | Status (public record) |
+|--------|------|--------------|------------------------|
+| **NYT v. OpenAI & Microsoft** | 2023– | U.S. District Court, S.D.N.Y. | Ongoing copyright-infringement suit over training data |
+| **Authors Guild v. OpenAI** (Tremblay, Silverman et al.) | 2023– | Federal courts | Ongoing class actions by authors |
+| **Music publishers v. Anthropic** (Concord, Universal, ABKCO) | 2023– | U.S. courts | Suit over reproduction of copyrighted song lyrics |
+| **Authors v. Anthropic** (Bartz) | 2024–25 | N.D. Cal. | *Reported* settlement (~$1.5B) in 2025; pirated-books sourcing alleged |
+| **Scarlett Johansson "Sky" dispute** | 2024 | Public / pre-litigation | Johansson said the voice resembled hers after she declined; OpenAI **paused** Sky |
+
+Google DeepMind has likewise faced **data-scraping and copyright complaints** (e.g., consolidated U.S. consumer-privacy suits against Alphabet over AI-training data); these are largely contested and unresolved, and are noted here as allegations, not findings.
+
+### AI labor: the data-labeling supply chain
+
+A **2023 *Time* investigation** reported that OpenAI used an outsourcing firm (Sama) employing **Kenyan workers paid roughly $2/hour** to label and moderate disturbing content used to make ChatGPT safer. The reporting documents a human cost behind "alignment" work that the capability narrative omits.
+
+> **Why this matters for the operator.** The frontier labs are not just compute flywheels — they are **legally and politically contingent** institutions whose training-data, governance, and labor practices are now in court and in the press. If you build on these models, treat copyright exposure, governance instability, and supply-chain ethics as real dependencies: read the contracts, watch the litigation, and don't assume today's API terms or model lineage are durable. The strategy in §§1–9 is sound; this section is the risk register that belongs beside it (compare the moat-fragility discussion in [07-companies-apple-integration-taste.md](07-apple-integration-taste.md) and the governance-as-strategy thread in [03-companies-productized-defense.md](03-productized-defense.md)).

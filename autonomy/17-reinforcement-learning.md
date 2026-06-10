@@ -42,6 +42,7 @@ and every learned policy must be stress-tested per
 7. [Sim-to-real, reward design, and safety](#7-sim-to-real-reward-design-and-safety)
 8. [Practice this week](#8-practice-this-week)
 9. [Sources & further study](#9-sources--further-study)
+10. [The Insider Layer — what the field knows but rarely writes down](#-the-insider-layer--what-the-field-knows-but-rarely-writes-down)
 
 ---
 
@@ -307,3 +308,92 @@ research demo from a fieldable autonomous system.
 > engineers who deploy it safely are the ones who obsess over the reward as a
 > specification, who treat sim-to-real as the core problem, and who never remove the
 > verified guard between a learned policy and a real actuator.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+RL papers report a learning curve that goes up and to the right. The lab reality
+is a graveyard of seeds that diverged, rewards that got hacked, and policies that
+were superhuman in sim and useless on hardware. Here is the part the curves hide.
+
+### Reproducibility is genuinely bad, and everyone quietly knows it
+
+The same algorithm, same hyperparameters, same environment, *different random
+seed* can give you a champion or a failure. Deep RL is notoriously sensitive to
+seed, implementation details, and the dozens of un-reported tricks buried in a
+reference codebase (observation normalization, reward scaling, advantage
+normalization, gradient clipping, the exact network init). The well-known
+finding — that PPO's performance depends heavily on these "code-level
+optimizations" as much as on the algorithm in the paper — is the field's open
+secret. The practical consequence: **run multiple seeds and report the
+distribution, not the best run**, and never trust a result you can't reproduce
+from a known-good implementation (Stable-Baselines3, CleanRL). Anyone showing you
+one beautiful curve is, knowingly or not, cherry-picking.
+
+### Reward hacking is the default, not the exception
+
+You will not write the reward you meant on the first try. The agent optimizes the
+reward *literally*, and a literal reward is almost never your intent: the boat
+that spins in circles collecting power-ups instead of finishing the race, the
+robot that learns to vibrate against a sensor to farm reward, the locomotion
+policy that exploits a simulator physics bug to "swim" through the floor. The
+unwritten craft is **reward-shaping discipline**: add shaping terms and watch for
+the agent gaming them, prefer sparse-but-correct rewards plus curriculum over
+dense-but-exploitable ones, and treat the reward as a *specification you are
+debugging*, not a setting you configure. Most of an RL project's real time goes
+here, and no paper shows the twelve reward functions that produced absurd
+behavior before the thirteenth worked.
+
+### Sim-to-real is the entire problem for robotics RL
+
+A policy trained in sim that doesn't transfer is worthless, and naïve transfer
+almost always fails because the sim's contact dynamics, latency, actuator
+response, and sensor noise differ from reality (the *reality gap*). The technique
+that actually works — and that turned legged-robot RL from a curiosity into
+shipped controllers — is **domain randomization**: randomize masses, friction,
+latencies, sensor noise, and terrain so aggressively in training that the real
+world looks like just another sample from the training distribution. The
+counterintuitive insider point: you deliberately make the sim *harder and more
+varied than reality*, accepting lower sim performance to buy robustness. Add
+**actuator-network modeling** (learn the real motor's response and put it in the
+loop) and you get the Hwangbo-style results. Teams that skipped randomization and
+trained on a pretty, accurate sim got policies that worked once and never again.
+
+### Sample efficiency decides which algorithm you may use
+
+The choice between PPO and SAC is not aesthetic — it is dictated by where your
+samples come from. **On-policy PPO** is stable and forgiving but throws data away
+after each update, needing tens of millions of steps — fine in a massively
+parallel sim (Isaac Gym runs thousands of envs), suicidal on real hardware.
+**Off-policy SAC** reuses a replay buffer and is far more sample-efficient — the
+right tool when every sample costs wear on a real robot. The rule of thumb the
+field lives by: *PPO when samples are cheap and parallel; SAC/off-policy when
+samples are expensive and serial.* Getting this backward wastes either compute or
+hardware.
+
+### Norms, numbers, and the honest scope of RL
+
+- **RL is a last resort, not a default.** If you can model the dynamics and write
+  a cost, MPC or trajectory optimization will be more reliable, more
+  interpretable, and certifiable. RL earns its place only where modeling is hard
+  but evaluation is easy (contact-rich manipulation, recovery from arbitrary
+  states, racing at the envelope edge). Deploying RL where classical control
+  would do is malpractice, and senior people say so.
+- **The verified guard never comes off.** A learned policy in the field sits
+  behind a control-barrier-function or safety filter that can override it — the
+  policy proposes, the certified layer disposes. "We trust the network" is not a
+  sentence that survives a safety review.
+- **Off-policy methods can quietly diverge** (the deadly triad: function
+  approximation + bootstrapping + off-policy data). When your Q-values explode to
+  $10^6$, this is why — and target networks plus careful tuning are the patch,
+  not a cure.
+- **Wall-clock, not sample count, is the real budget.** "Solved in 10M steps"
+  means nothing without knowing it ran on thousands of parallel envs for two
+  hours on a GPU farm. Ask.
+
+The through-line the marketing omits: RL is powerful and brittle in equal
+measure. The people who deploy it safely obsess over the reward as a
+specification, treat sim-to-real as *the* engineering problem, report
+distributions over seeds, and keep a verified guard between the policy and any
+actuator that can hurt someone.

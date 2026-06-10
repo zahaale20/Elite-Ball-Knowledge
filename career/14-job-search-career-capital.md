@@ -159,3 +159,73 @@ The defense market has unique capital dynamics:
   once you have offers.
 - [11-networking-mentors-sponsors.md](11-networking-mentors-sponsors.md) — the
   referral channel that beats the application pile.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### The posting is often theater for a decision already made
+A large share of senior roles are filled through the network *before* a public
+posting exists, or are posted only to satisfy an internal/compliance requirement
+after a preferred candidate has been identified. The application pile is the
+slowest, lowest-yield channel — cold-apply-to-screen conversion sits in the low
+single-digit percent, while a credible referral converts at multiples of that.
+The practical consequence: spend your job-search hours *inverted* relative to
+instinct. Most people spend 90% polishing applications into the void; the
+operators spend 90% activating the warm graph (see
+[11-networking-mentors-sponsors.md](11-networking-mentors-sponsors.md)) and 10%
+on the pile. One good referral is worth a hundred cold submissions.
+
+### Switch for slope, and know the loyalty tax
+Reid Hoffman's *tours of duty* framing is right: think in two-to-four-year
+missions, not lifetime employment. The financial mechanics the loyal rarely
+compute: internal raises are typically capped at single-digit percentages, while
+an external move can reset comp 20–40%+ because the market re-prices you and the
+new employer pays to acquire you. Staying put is not neutral — it is a *loyalty
+tax* you pay in foregone compensation. But "slope" is the real variable, not
+salary: take the role where your *rate of learning and scope growth* is steepest,
+because that's what compounds into the next three offers. A flat, well-paid role
+is a slow leak of career capital.
+
+### Run the search as a parallel funnel from employed strength
+Never search from desperation or unemployment if you can avoid it — leverage
+flows to the candidate who can walk away. Run **six to ten processes in
+parallel**, deliberately, so they cluster into a tight offer window. This does
+two things no single process can: it creates a real BATNA for negotiation
+([06-negotiation-compensation.md](06-negotiation-compensation.md)), and it lets
+you compress timelines — "I have offers landing Friday" is a legitimate,
+powerful accelerant on every other process. Keep your current employer in the
+dark until you hold a signed offer. And the counteroffer is usually a trap: the
+majority who accept one leave within a year anyway, and you've permanently marked
+yourself as a flight risk.
+
+### Understand who the recruiter actually works for
+Agency/external recruiters are typically paid a commission of roughly 15–25% of
+your first-year base — which means they are motivated to *close a placement*, not
+to optimize your long-term trajectory or your comp. Internal recruiters are
+gatekeepers managing the company's funnel and budget bands. Neither is your
+advocate, and that's fine once you stop expecting it: be honest about your
+timeline, be easy to schedule, and use them for what they're good at — intel on
+the band, the process, and the competing candidates. Use published comp data
+(levels.fyi, Blind) to anchor the *band*, not a single number, and watch for
+down-leveling on lateral moves — a title can rise while real scope falls.
+
+### Tenure pattern is read as a risk signal
+Recruiters and hiring managers pattern-match on your *sequence* of stints.
+Three-plus jobs under ~18 months each starts reading as a flight risk regardless
+of your reasons, and the burden shifts to you to explain it. Conversely, a single
+endless tenure with no growth reads as comfortable and unambitious. The legible
+shape is a few multi-year arcs each showing a clear *level-up*. Curate the story
+so the trajectory — not the job-hopping — is what's salient.
+
+### Build career capital before you trade on it
+Cal Newport's *So Good They Can't Ignore You* names the deepest mechanic: rare
+and valuable skills are the currency that buys autonomy, scope, and the right to
+work on what you want. "Follow your passion" is backwards — you build the capital
+first, then *trade* it for the mission and the freedom. And you don't need to be
+top-1% at one thing: being top-25% in two or three *combinable* skills (Scott
+Adams' skill stack) — say, controls + ML + the ability to write a crisp doc — is
+rarer and more valuable than world-class narrowness, because the intersection has
+almost no competition. Finally, the resume bullet that survives the ~6-second
+scan has one shape: **did X, measured by Y, achieving Z.** Everything else is
+noise the reader's eye skips.

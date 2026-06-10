@@ -430,3 +430,82 @@ of discomfort.
 *Compensation figures, bands, and equity mechanics change constantly and vary by
 company, location, and year. Treat the structures here as durable and the
 numbers as something to verify against current market data before you negotiate.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The scripts above are the visible game. The hidden game is understanding what the
+person across the table is actually allowed to do, where the money is really
+hiding, and which "firm" constraints are theater.
+
+### The recruiter is a trained, repeat player and you are a one-off
+They run dozens of these a quarter; you do this every few years. They are
+*coached* to extract your number first, to present the band's floor as the offer,
+and to make soft deadlines sound hard. None of this is malice — it's their job to
+close you cheaply — but it means you should never improvise. Decide your
+walk-away, target, and anchor *before* the call, write them down, and treat the
+negotiation as the discipline of not abandoning numbers you set with a clear head.
+The recruiter's calm "that's just our band" is a move, not a law of physics.
+
+### Fight the level, not the base — that's where the real money lives
+The single biggest lever after the offer is **what level they slot you into**,
+because level sets the band, the equity, *and* every future raise's compounding
+base. Haggling $5K on base within a level is rounding error next to a level bump
+that moves the whole package. "Down-leveling" — slotting you one rung below your
+scope — is a silent tax you pay for years, so push hard on level even if it delays
+the offer a week. Argue scope ("the systems I've owned end-to-end are Senior
+work"), not seniority-by-tenure.
+
+### "Base is fixed" is usually true — and a redirect, not a dead end
+At primes especially, base really is locked to a job code. But that constraint is
+the *start* of the negotiation, not the end: the money reroutes into **sign-on
+bonus** (the easiest "yes" a company gives), **equity refresh timing**,
+**relocation**, **start date**, and **level**. When you hear "we can't move on
+base," the correct response is never to give up — it's "understood; then can we
+look at sign-on, the refresh, or level?" The lever they hand you by closing one
+door is the one to push.
+
+### Startup equity is a positive-EV lottery ticket, priced as if it were cash
+The headline "$250K total comp" at a Series A can be 60% illiquid options behind a
+**liquidation preference stack** that pays preferred holders first, diluted by
+future rounds, with a **90-day exercise window** that hands you a large tax bill
+the moment you leave. "10,000 shares" is meaningless without the fully-diluted
+denominator and the strike. The only honest way to evaluate it: take the offer
+*only if you'd still be happy with it if the equity went to zero*, then treat
+upside as a bonus. Ask the preference stack, the share count, and the exercise
+window out loud — a company that won't tell you is telling you something.
+
+### An active clearance is a hard, dollarable line item — name it
+A current clearance saves an employer 6–18 months and tens of thousands in
+investigation cost, so it's not a soft "nice to have" — it's quantifiable schedule
+value you should price into the ask: *"I bring a transferable active TS, which is
+real schedule value to you."* Niche skill premiums (RF/EW, GNC, flight-certified
+embedded) stack on top. The cleared-*and*-builds intersection is where above-band
+offers actually happen. See [07-security-clearance.md](07-security-clearance.md).
+
+### Leverage is your alternatives, not your needs — so manufacture alternatives
+Every script reduces to one idea: **BATNA**. A real competing offer is the
+strongest lever that exists, and the way to have one in the same two-week window
+is to run interview loops *in parallel* on purpose — one offer is a salary, two
+offers is a market. Never bluff a competing offer (it's checkable and ending
+trust ends the negotiation), and never reveal your floor (the moment they know
+your walk-away, the zone of agreement collapses onto it). Reveal your *target as a
+range*; keep your reservation price private.
+
+### The numbers are public if you know where to dig
+Don't anchor on data you don't have. **levels.fyi** and **Blind** leak band
+boundaries; **H-1B/LCA disclosure filings** (h1bdata.info, myvisajobs) are
+*ground-truth* base salaries employers actually paid sponsored workers — not
+self-reported guesses. One honest conversation with someone a level above you at
+the target company beats every website. Walk in knowing the band's midpoint and
+ask for mid-to-upper; the floor is for people who didn't do the homework.
+
+### Equity refreshers and the year-4 cliff are where multi-year money is won
+Almost nobody negotiates refreshers up front, and then their equity income falls
+off a cliff at year four when the initial grant fully vests. Strong companies stack
+annual refreshers from year 2–3 so vesting overlaps — so ask, *before signing*,
+"what's the typical refresh cadence and size for someone performing at this
+level?" Read the vesting schedule, not the headline (some firms back-load 5/15/40/40
+to handcuff you), and for restricted stock, know the unforgiving 30-day **83(b)**
+deadline. The offer letter is the cheapest time to fix all of this.

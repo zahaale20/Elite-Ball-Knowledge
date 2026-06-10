@@ -335,3 +335,62 @@ strategy*, not a permanent state.
 > process, and reviews between a trusted team and the metal, then hold them to a hard date. The
 > newcomers beating today's defense and tech giants didn't invent a new idea; they rebuilt Kelly
 > Johnson's tent. You can pitch one too.
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this section exists.** The memoir-driven Skunk Works story — tent, 143 days, U-2, Blackbird —
+> is true *and* incomplete. The honest question for an operator is not "was the 1960s shop
+> legendary?" (it was) but "does the *modern* Skunk Works still deliver Kelly-era results, and where
+> does the legend outrun the public record?" Below is the documented critique. It does not erase
+> [§3](#3-why-small-elite-teams-outperform--the-mechanics)'s mechanics; it tells you when invoking
+> the brand is marketing rather than evidence.
+
+### Myth vs. reality: the schedules no longer match the legend
+
+The defining Skunk Works claim is *speed* — XP-80 in 143 days. The most-cited critique is that the
+modern organization, operating inside today's classified, fixed-price, integration-heavy programs,
+**no longer ships on Kelly Johnson-era timelines.** Lockheed Martin Aeronautics' flagship of the era,
+the **F-35**, ran years late and far over early cost baselines (documented exhaustively by GAO; see
+the sustainment figures in [14-companies-defense-primes-how-incumbents-win.md](14-defense-primes-how-incumbents-win.md)).
+The F-35 is not a Skunk Works program per se, but it is the same company's modern reality — and a
+useful check on the assumption that "elite team" automatically means "fast."
+
+### Hypersonics: the gap between the press release and the fielded hardware
+
+| Item | Status (public record) | The critique |
+|------|------------------------|--------------|
+| **AGM-183 ARRW** (air-launched hypersonic, Lockheed) | Multiple **failed/incomplete test flights** 2021–2022; the Air Force signaled it would **not procure** ARRW in the FY2024 budget after the test record | "Move fast" did not translate into a fielded weapon on schedule |
+| **SR-72 / "speed is the new stealth"** | A Skunk Works *marketing* concept; **no fielded aircraft** exists | The slogan (attributed to a Skunk Works VP) outran any demonstrated hardware |
+
+The point is not that hypersonics are easy — they are brutally hard — but that the *branding* ("the
+shop that builds the impossible fast") has, in several reported cases, run well ahead of delivered,
+fielded systems.
+
+### Classified opacity defeats accountability
+
+Much of the modern Skunk Works portfolio is in **Special Access Programs**. Secrecy is operationally
+necessary, but it has a documented governance cost: GAO and congressional overseers have repeatedly
+noted that classification **limits independent cost/schedule scrutiny**. "Trust us, it's
+revolutionary, and we can't show you" is exactly the condition under which overruns hide — the mirror
+image of the transparency that made the *original* tent's results verifiable.
+
+### The cost-plus incentive critique
+
+The romantic story is "tiny team, ruthless schedule." The structural reality is that modern Skunk
+Works programs largely live inside the **cost-plus / classified franchise** model criticized in
+[14, §4](14-defense-primes-how-incumbents-win.md#4-the-cost-plus-contract-understood-honestly). When the
+contract reimburses cost plus a fee, the schedule-as-law-of-physics discipline of [§6](#6-schedule-discipline-as-a-design-constraint)
+is no longer reinforced by the *financial* incentive that disciplined Kelly Johnson's fixed-deadline
+deliveries. The method survives only where leadership *imposes* it against the grain of the contract.
+
+### Why this matters for the operator
+
+Use the Skunk Works model for what the *evidence* supports — small-team, co-located, prototype-driven
+*zero-to-one* work ([§9–10](#9-running-a-skunk-works-of-one)) — and stay skeptical of the *brand* as a
+guarantee of speed. When a program (or a startup pitch) invokes "Skunk Works," ask the operator's
+questions: Is there a hard external deadline with money behind it, or a cost-plus annuity? Is there a
+flying article, or a render and a slogan? Can the result be independently scrutinized, or does
+classification foreclose accountability? The tent's *discipline* is real and worth copying; the
+*mythology* is a thing to sell, and a thing to see through.

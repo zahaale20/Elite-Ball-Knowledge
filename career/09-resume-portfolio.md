@@ -398,3 +398,85 @@ repo + video does the vouching.
 available information. Résumé conventions, ATS behavior, and platform features
 change — verify against current sources, and always scrub any sensitive or
 proprietary material before publishing a portfolio.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The templates teach you formatting. What they don't tell you is that a résumé is a
+document read twice — once by software, once by a human in a hurry — and almost
+every rule that matters follows from those two brutal facts.
+
+### You get six to ten seconds and the top third of the page
+Recruiters skim, they don't read, and eye-tracking studies put the dwell time in
+seconds with attention concentrated on the **top third**. Everything follows from
+this: your strongest, most quantified bullet goes *first*, not buried under
+"Education"; your most impressive project leads the projects section; the
+bottom half of page one is nearly invisible. Design for the skim — if a stranger
+can't extract "what they did and how well" in one pass, the content quality is
+irrelevant because it was never read.
+
+### The ATS does literal string matching — mirror the posting's exact words
+Before a human sees it, an applicant-tracking system parses your résumé and scores
+keyword overlap against the job description. It is not semantic: it often won't
+equate "GNC" with "guidance, navigation, and control," or "C++" with "modern
+C++," so you must include the posting's *exact* nouns (spelled out *and*
+abbreviated). The defensible, non-gaming version of this: read the JD, and
+wherever you genuinely have the skill, use *their* phrasing for it. Fancy
+two-column templates with text in graphics frequently parse to garbage — a clean
+single-column layout is an ATS feature, not a lack of taste.
+
+### The impact bullet is the entire game: verb → what → quantified result
+The difference between a résumé that lands and one that dies is almost entirely
+bullet construction. "Responsible for flight software" is a job description;
+"Wrote the EKF attitude estimator in C++; cut heading drift 40% and flew it on a
+Pixhawk-class board" is *evidence*. Every bullet should answer **what did you do,
+and how do we know it mattered** — with a number wherever one can possibly be
+attached. Quantify scope when you can't quantify outcome ("across 12k LOC," "on a
+6-person team"). Bullets without numbers read as claims; bullets with numbers read
+as facts.
+
+### Green squares are a myth; a clean README is the real portfolio
+Nobody hiring you cares about your GitHub contribution graph — the "commit every
+day" advice is folklore. What a reviewer actually clicks is your *pinned repo's
+README*, and they decide in seconds whether you're serious: a crisp problem
+statement, an architecture diagram, a **GIF or short video of the thing working**,
+and setup instructions that run. One polished project with a demo beats twenty
+abandoned tutorials. The demo clip in particular is an unfair advantage because it
+collapses all the reviewer's doubt about whether you really built it — most
+candidates never make one.
+
+### One project, mined for many artifacts, beats many shallow projects
+A single substantial build — say, an autonomy stack — can legitimately generate a
+résumé bullet, a portfolio README, a demo video, a technical blog post, a
+conference-talk proposal, and a LinkedIn post. Depth is a *multiplier*: the same
+work, presented through five surfaces, looks like a body of work, while five
+half-finished repos look like a graveyard. Reviewers read depth as the ability to
+*finish*, which is the rarest and most valued signal of all.
+
+### LinkedIn is an inbound channel recruiters keyword-search — optimize it as one
+Most people treat LinkedIn as a static résumé mirror. Recruiters actually use it
+as a *search engine*, running boolean queries on skills, titles, and locations —
+so your headline and skills section are query bait, and "Open to Work" plus the
+right keywords turns it into passive inbound. The asymmetry is enormous: a strong
+LinkedIn presence makes opportunities come to *you*, inverting the entire outbound
+application grind. Fill the skills section with the literal terms your target
+roles search for.
+
+### The referral makes the résumé a formality — so optimize for the human, not the bot
+When someone inside refers you, your résumé stops being a gate and becomes a
+briefing document for an interviewer already inclined to like you. This flips the
+optimization: keyword-stuffing for the ATS matters less, and a *clear, compelling
+narrative* a human can act on matters more. The strategic implication for your
+whole job search is that effort spent earning one genuine referral often
+out-returns hours spent tuning bullets for software. See
+[08-interview-prep.md](08-interview-prep.md).
+
+### Scrub secrets before you publish — it's a clearance and ITAR tripwire
+A public portfolio is a permanent, indexed artifact, and pushing API keys, a
+former employer's proprietary data, or anything export-controlled is a genuine
+risk — not just embarrassing, but potentially an ITAR violation or a personal-conduct
+problem on a clearance file. Before any repo goes public: rotate and remove keys,
+confirm nothing traces to controlled technical data, and assume a future
+background investigator will read every commit. The discipline of *what you don't
+publish* is part of the professional signal.

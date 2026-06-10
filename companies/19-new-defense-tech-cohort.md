@@ -184,3 +184,46 @@ The cohort includes both genuine, world-class companies and well-funded vaporwar
 - The Ukraine drone war analyses (CSIS, RUSI) — the live proof of the "mass over exquisite" thesis.
 
 *Treat this map as perishable: verify the specifics, because in this category the landscape changes faster than any other in the band. The playbook is stable; the roster is not.*
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this section exists.** The module above is bullish — for good structural reasons. But the cohort is also the subject of serious, documented criticism: on ethics, on the gap between demos and fielded systems, on the politics of its money, and on whether venture-funded fixed-price startups can actually manufacture at scale. A builder deciding to *join or fight* this wave needs the critique, not just the pitch. Everything below is publicly reported; contested claims are labeled.
+
+### Hype vs. fielded reality
+
+The single most common substantiated criticism — voiced by GAO, by defense-acquisition analysts, and in trade press (Breaking Defense, DefenseScoop) — is that **funding rounds and demo reels outrun delivered, at-scale capability.** Several cohort companies have raised at multibillion-dollar valuations while their flagship systems are still in limited fielding or testing. This is not fraud; it is the structural risk of valuing defense startups on commercial-software multiples when the product is hardware that must survive a real contested environment. The module's own §7 substance-vs-hype test exists precisely because the hype is real and documented.
+
+### The lethal-autonomy / "killer robots" ethics debate
+
+The cohort builds toward autonomous systems that can apply force, which places it squarely inside a live, public ethics controversy:
+
+- **Human Rights Watch** (and the *Stop Killer Robots* coalition) and the **International Committee of the Red Cross (ICRC)** have for years publicly called for binding international limits on **lethal autonomous weapons systems (LAWS)**, arguing meaningful human control must be preserved. This is documented advocacy, ongoing at the UN CCW.
+- Cohort companies generally respond that a human remains "in or on the loop" and point to DoD Directive 3000.09 (autonomy in weapons) as their governing policy. **The disagreement is genuine and unresolved** — and it is a reputational, regulatory, and recruiting risk the admiring framing skips.
+
+### The money: concentration, politics, and the revolving door
+
+| Concern | What's documented | Label |
+|---------|-------------------|-------|
+| VC concentration | A small set of funds — Founders Fund, a16z "American Dynamism," 8VC, Lux — back much of the cohort, creating overlapping, interlocking interests across "competing" startups. | Reported / structural. |
+| Founder political entanglement | Several cohort principals and backers have been high-profile political donors and advisers; reporting has noted the overlap between defense-tech investors and policy influence. | Reported; significance contested. |
+| Revolving door | Movement of former DoD/Pentagon officials onto startup boards and advisory roles is documented and longstanding across the sector. | Reported; legal but criticized. |
+
+None of this is inherently illegal. The criticism — made in mainstream business and political journalism — is **conflict-of-interest and concentration risk**: the same investors funding the products are positioned to benefit from the policy shifts that create demand for them.
+
+### Can fixed-price startups actually manufacture?
+
+A serious, sympathetic critique from inside the defense world: the cohort's **fixed-price, productized model transfers cost and schedule risk onto the company.** That is the point — but it means a startup that misjudges manufacturing scale-up can be crushed by the same model that makes it attractive. Building hardware *at mass* (the cohort's own "mass over exquisite" thesis) is exactly where commercial-software-style companies historically struggle. This is an open question, not a settled failure — but it is the most credible bear case on the entire category.
+
+### Contract protests and procurement friction
+
+Where specific stumbles are on the public record, they belong here rather than in the celebration: **bid protests, recompetes, and program slips affect cohort companies as they do everyone**, and a glossy raise does not guarantee a program of record. Treat any specific company's win as verified only when it appears as an actual award (the §"Sources" scoreboard: DIU, DefenseScoop, Breaking Defense), not a press release.
+
+### Export control and ITAR exposure
+
+Almost everything this cohort builds — autonomy for weapons, ISR, EW, strike — is **ITAR- and EAR-controlled**. That creates documented, ongoing compliance burden and real legal jeopardy: the defense sector has a long history of ITAR enforcement actions and settlements against firms that mishandled controlled technical data or exports. For a fast-moving startup hiring foreign-national engineers and shipping internationally, this is a first-order legal risk, not a footnote ([20-career-ethics-export-control.md](../career/20-ethics-export-control.md)).
+
+### Why this matters for the operator
+
+If you join or found in this cohort, you are signing up for the *risks* alongside the mission: an ethics debate that may constrain your product, valuations that may not survive contact with manufacturing reality, investors whose interests may not align with yours, and an export-control regime that can turn an honest mistake into a federal matter. The bilingual engineer the module prizes (§6) should be bilingual in this too — fluent in the pitch *and* the critique. Admire the wave, then underwrite it: demand evidence of fielded capability, read the ethics and procurement record, and know whose money is behind the company before you bet your career on it.

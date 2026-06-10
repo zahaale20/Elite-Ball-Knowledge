@@ -152,3 +152,71 @@ Your career is the sum of your daily defaults far more than your occasional hero
   the energy that makes sustained focus possible.
 - [10-leadership-growth.md](10-leadership-growth.md) — scaling execution beyond
   yourself.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### You get two to four real deep blocks a day — stop pretending it's eight
+The single most liberating fact in execution: sustained, high-quality cognitive
+work runs in roughly 90-minute ultradian cycles, and almost nobody has more than
+*two to four* genuine deep blocks in a day before quality collapses. The 8-hour
+focused workday is a fiction; the rest is shallow work wearing a productivity
+costume. Once you accept the ceiling, the strategy inverts — you stop trying to
+grind more hours and start *protecting the few blocks you have* with ferocity.
+The morning block, before the meeting tide comes in, is usually the most valuable
+real estate you own; defend it like infrastructure.
+
+### Attention residue is the hidden tax on "just checking Slack"
+Sophie Leroy's research named the cost: when you switch tasks, part of your
+attention stays stuck on the previous one — *residue* — and for engineers the
+ramp back into flow after an interruption can run 20+ minutes. "I'll just check
+messages real quick" is therefore never quick; it's a quarter-hour crater in a
+finite budget of deep blocks. This is why notifications-off isn't a preference,
+it's arithmetic. Batch the shallow work — email, Slack, reviews, status — into
+walled windows, and let the deep blocks run uninterrupted. The maker's schedule
+(Paul Graham) and the manager's schedule are fundamentally incompatible; a single
+mid-morning meeting can fragment a maker's entire day.
+
+### Manage energy, not time — *when* beats *how long*
+Two hours at your circadian peak produce more than six at your trough, yet most
+people schedule their hardest creative work whenever the calendar has a gap. Map
+your own peak (most people have a clear window) and ruthlessly assign your single
+most cognitively demanding task to it — protect that slot from meetings even at
+social cost. Conversely, batch the low-stakes administrative work into your
+natural trough, where it does no harm. The afternoon crash is partially
+manageable with protein, light, and movement (see
+[19-health-energy-career-longevity.md](19-health-energy-career-longevity.md)),
+but the deeper fix is not fighting your biology in the first place.
+
+### "No" is the core senior productivity skill
+Early career, productivity is about doing more. Past a certain seniority it
+inverts entirely: every *yes* is a mortgage written against your future deep
+blocks, and your output is determined more by what you decline than by what you
+accept. Derek Sivers' "hell yeah or no" is the filter — if a commitment isn't a
+clear yes, it's a no, because a calendar full of lukewarm yeses has no room for
+the one thing that matters. The people who ship at scale are *protective* to the
+point of seeming rude about their attention; the people who say yes to everything
+are reliably busy and reliably unremarkable.
+
+### Tools are the most seductive form of procrastination
+The engineer re-architecting their Notion, evaluating the fifth task manager, or
+tweaking their dotfiles is *not shipping* — they're doing productivity theater
+that feels like work because it's adjacent to work. The honest minimal system is
+a short list of what matters, a default time for the keystone daily habit, and a
+way to not break the chain. Measure **output that matters** — shipped, decided,
+unblocked — not hours logged or tasks checked, because hours and checkmarks are
+vanity metrics you can maximize while accomplishing nothing. Parkinson's law is
+your friend here: deadlines and tight timeboxes force the compression that an
+open-ended to-do list never will.
+
+### Recovery and the diffuse mode are part of the engine
+The instinct to treat rest as the enemy of output is exactly backwards. The
+breakthrough on the hard problem famously arrives in the shower, on the walk,
+in the gap — because the brain's *diffuse mode* solves what focused grinding
+can't, and it only runs when you stop forcing. Deliberate rest and
+single-tasking aren't indulgences; they're the back half of the same cognitive
+cycle. And the macro version holds: sustained weeks past ~50–55 hours show
+declining and eventually *negative* marginal output — "hero mode" is borrowing
+productivity from next month at a punishing interest rate. The system that wins
+over decades is the sustainable one, not the heroic one.

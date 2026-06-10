@@ -262,3 +262,33 @@ problem is brutal underwater because radio is dead:
 - **Strategy:** the defense cohort ([19](../companies/19-new-defense-tech-cohort.md)),
   productized/attritable defense ([03](../companies/03-productized-defense.md)),
   safety assurance at sea ([09](../foundations/09-safety-assurance.md)).
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The air-and-ground autonomy world keeps wanting to treat the ocean as "the same stack, just wet." It isn't. Every cheap, fast assumption from the aerial domain inverts underwater, and the people who actually field marine systems live inside those inversions.
+
+### Navigation is dead reckoning married to acoustics, and bottom-lock is sacred
+
+Submerged, there is no GPS — so the entire game is bounding the drift of an inertial solution with whatever aiding you can get. The workhorse is the **Doppler Velocity Log (DVL)**: it pings the seafloor and measures velocity over ground, and a tightly-coupled INS+DVL with **bottom-lock** holds roughly $0.1\%$ of distance traveled. The dreaded transition is **losing bottom-lock** — go deeper than the DVL's range and you fall back to INS-only "water-mass" tracking, where drift balloons. Operationally you plan to **surface for a GPS fix** to reset the growing error, or you set acoustic beacons (LBL) or use a ship's **USBL** to get external position. The unwritten skill is *managing a drift budget over hours* — knowing how long you can stay down before the position is fiction.
+
+### You cannot teleoperate underwater — the comms physics forbid it
+
+Sound travels at ~1500 m/s, so a vehicle a kilometer away is a *second* of latency each way, and the channel carries **kilobits, not megabits**, with shallow-water multipath shredding even that. There is no live video, no joystick, no real-time intervention. This single fact makes **genuine autonomy mandatory** rather than optional: the vehicle must handle its own contingencies because help is, at best, a slow trickle of acoustic acknowledgements. Mission design centers on *disconnection as the default state* — you send compressed intent, the vehicle executes for hours, and you reconcile when it surfaces. Engineers from the drone world consistently underestimate how total this constraint is.
+
+### Sonar is the camera, and the sonar equation is your detection budget
+
+Light dies in meters; **sound is the sensing modality**. You trade the radar/LiDAR intuition for the **passive-vs-active dilemma**: active sonar gives you range and resolution but is a beacon announcing your presence; passive sonar is covert but only bears, not ranges. Detection is governed by the **sonar equation** ($SL - TL + TS - (NL - DI)$ versus a detection threshold) — the acoustic sibling of the radar equation, and the first thing a serious marine engineer learns to close. And the medium fights you: the **thermocline** bends sound rays (refraction by the vertical sound-speed gradient), creating **shadow zones** where a target below the layer is acoustically invisible to a sensor above it. Sound-speed profiles and ray tracing are not academic — they decide whether you detect the contact at all.
+
+### Buoyancy and energy are existential, which is why everything is slow
+
+An AUV that floods or loses buoyancy doesn't "land" — it is *gone*, beyond crush depth, unrecoverable. The pressure housing and its seals are the highest-consequence subsystem on the vehicle. And there is **no solar underwater**: battery is the entire energy economy, so vehicles cruise deliberately slow (a couple of knots) to conserve, and every watt of compute trades directly against endurance. The aerial reflex of "throw more sensors and compute at it" runs straight into a hard energy wall.
+
+### Surface vessels live or die on COLREGs and a moving ground plane
+
+For uncrewed surface vessels, the dominant hard problem isn't perception in the abstract — it's **legal-grade COLREGs compliance**: the system must give-way and stand-on like a crewed vessel, and *proving* that behavior to a classification society or the Coast Guard is a certification problem as much as an autonomy one. Add that the "ground plane" itself heaves with sea state, wakes confuse radar and vision, and salt spray fouls optics, and you have a domain where the rules of the road are a software requirement.
+
+### The environment is a slow adversary, and recovery is the dangerous part
+
+Nobody warns newcomers that **biofouling** — marine growth on the hull and sensor faces over weeks — and corrosion silently degrade the platform; a clean vehicle and a month-deployed vehicle are different machines. And the riskiest moment of most missions is not the autonomy at all — it's **launch and recovery** in sea state, where the vehicle and crew are most likely to be damaged. Field-time wisdom in marine autonomy is disproportionately about the boat, the deck, and the weather window, not the algorithm.

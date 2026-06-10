@@ -34,6 +34,7 @@
 10. [Worked error-budget example](#10-worked-error-budget-example)
 11. [Practice this week](#11-practice-this-week)
 12. [Cross-links & further study](#12-cross-links--further-study)
+13. [The Insider Layer — what the field knows but rarely writes down](#-the-insider-layer--what-the-field-knows-but-rarely-writes-down)
 
 ---
 
@@ -1272,3 +1273,31 @@ A concrete, hands-on checklist. Do the math *and* run the code.
 
 *End of Module 03. Re-derive the boxed equations until the Kalman gain feels
 obvious; then the rest of autonomy is commentary.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### EKF tuning is the field's real dark art
+
+Anyone can write the Kalman equations; almost no one can tune a filter that survives a real flight. The process- and measurement-noise matrices $Q$ and $R$ are *nominally* physical and *practically* fudge factors you tune until the innovations look right. Too-small $Q$ gives an overconfident filter that ignores reality and diverges; too-large $Q$ gives a filter that just follows the noisy sensor. The senior skill is reading the **innovation sequence** — it should be zero-mean, white, and live inside its own predicted covariance. That sequence is the filter telling you, in its own voice, whether it still believes itself.
+
+### Observability is why your filter silently lies
+
+A state you cannot observe from your measurements will drift no matter how elegant the math — and the covariance may *look* confident the whole way down. The classic trap: yaw is weakly observable without a magnetometer, GPS course, or visual heading, so it quietly wanders. Before you touch a tuning knob, ask whether the state is even observable given these sensors in *this* motion. Acceleration excites observability, which is why a filter that's rock-solid in aggressive flight can diverge in a calm hover — nothing is exciting the unobservable modes.
+
+### Frame and quaternion conventions are a tax everyone pays in blood
+
+NED versus ENU, body-FRD versus FLU, Hamilton versus JPL quaternions, active versus passive rotations, $q$ versus $-q$ — every one of these is a sign-flip waiting to flip your vehicle. PX4 is NED/FRD; ROS is ENU/FLU; the bridge between them is a notorious bug farm. The only defense is discipline: state the convention at the top of every file, never mix two libraries' quaternion orderings, and test every rotation on known vectors before you trust it with the airframe.
+
+### The error-state (indirect) KF is what's actually flown
+
+Real attitude estimators do not run a Kalman filter on the quaternion directly — quaternions live on a manifold, not a vector space, and a naive EKF breaks the unit-norm constraint. The **error-state / multiplicative EKF** estimates a small rotation *error* in the tangent space and multiplies it onto the nominal quaternion. This is the standard in PX4's EKF2 and essentially all serious inertial-navigation work. A candidate who can't explain *why* the error-state formulation exists hasn't actually shipped an estimator, and interviewers know to ask.
+
+### Time synchronization is half of sensor fusion
+
+Fusing a 200 Hz IMU with 5 Hz GPS and 30 Hz vision only works if you know *when each measurement physically happened*. Latency and clock skew between sensors corrupt the filter as surely as bad noise terms — a 50 ms timestamp error at 10 m/s injects a 0.5 m position error on every update. Timestamp at the source, compensate known sensor latencies explicitly, and never assume "arrival time equals measurement time." Half of the nastiest fusion bugs are really timing bugs in disguise.
+
+### The error budget separates pros from tinkerers
+
+Before writing a line of filter code, a senior estimation engineer writes the **error budget**: which sensor bounds which state, over what horizon, to what accuracy, and where the fallback comes from when each one fails. "GPS bounds horizontal position to ~2 m; on loss, VIO holds it to ~1% of distance traveled; on VIO loss, the IMU gives me ~10 s before I breach the geofence margin." Numbers, fallbacks, and time limits — not hopes. The document, not the code, is what makes the system trustworthy.

@@ -34,6 +34,7 @@ filler; every concept is anchored to a file in `drone/`.
 12. [Safety, assurance & the policy layer](#12-safety-assurance--the-policy-layer)
 13. [A concrete capability ladder for *this* drone](#13-a-concrete-capability-ladder-for-this-drone)
 14. [Glossary](#14-glossary)
+15. [The Insider Layer — what the field knows but rarely writes down](#-the-insider-layer--what-the-field-knows-but-rarely-writes-down)
 
 ---
 
@@ -800,3 +801,35 @@ tracking + world model, `policy/` constitution + decision log.*
 - PX4 EKF2 / vision fusion: https://docs.px4.io  ·  Ultralytics YOLO: https://docs.ultralytics.com
 
 *Repo references (`onboard/`, `navigation/`, `policy/`) point to the author's `pixhawk/drone/` codebase.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### "ML is the easy 10%" — the part nobody budgets for
+
+The model is a weekend. The pipeline that feeds it, labels it, versions it, monitors it, and retrains it is the year. Google's *Hidden Technical Debt in Machine Learning Systems* named this: the ML code is a tiny box in a diagram dominated by data plumbing. On a drone it's worse — your label distribution is whatever you happened to fly over, your test set leaks because consecutive video frames are near-duplicates, and your "95% mAP" evaporates the first time you fly at a new sun angle. The number that matters is field precision on *unseen days*, and nobody puts that on a slide.
+
+### The IMX500 is a sensor, not a GPU
+
+Sony's IMX500 runs the network *on-sensor* and emits tensors, not pixels — which is the whole point (you never pay the bandwidth or power of moving full frames off-chip) and the whole pain. You're constrained to what the converter toolchain supports: INT8 quantization only, a fixed input resolution, and a model small enough to fit on-sensor memory. Anything with dynamic shapes, exotic ops, or NMS-in-graph fails conversion or silently falls back to CPU. Rule of thumb: **design for the converter first, accuracy second.** A model that doesn't quantize is a model you can't fly, no matter how good its mAP.
+
+### Latency is a hard constraint, not a metric
+
+At 10 m/s the airframe moves 1 m every 100 ms, so perception-to-actuation latency *is* a position error. Budget the whole chain — sensor integration + inference + tracker + decision + MAVLink + PX4 loop — not just the detector. People quote model FPS and forget the tracker, the Python GIL stall, and the 50–100 ms offboard round-trip. A "30 FPS" detector inside a 250 ms pipeline is a 250 ms pipeline. Always measure end-to-end on the actual hardware, under thermal load.
+
+### Tracking beats detection
+
+The unglamorous secret: a mediocre detector plus a good tracker (Kalman + Hungarian assignment, the SORT/ByteTrack lineage) beats a great detector with no temporal model. Detection is per-frame and noisy; tracking gives persistence, velocity, and the ability to coast through missed frames and occlusion. Most "the AI lost the target" bugs are *association* bugs, not detection bugs — ID switches when two tracks cross, gating set too tight, or no motion model. Senior interviewers probe data association precisely because it's where juniors are weakest.
+
+### Classical first; ML only where it earns its place
+
+Good engineers are conservative about where ML goes. State estimation is an EKF, not a net. Control is PID/MPC. ML belongs in perception (high-dimensional, unmodelable input) and *parts* of decision — nowhere else by default. The failure mode of junior portfolios is reaching for deep RL where a 20-line state machine is more reliable, more debuggable, and actually certifiable. Knowing which problems are *not* ML problems is half of being good at this; the field lives that sentence.
+
+### Model rot and the silent-failure problem
+
+A classifier never throws an exception; it just gets quietly wrong. Models rot with season, hardware revision, lens swaps, even firmware changes to auto-exposure. Without a feedback loop you won't notice until something downstream acts on a hallucination. Fieldable practice: log inputs, outputs, and confidence; monitor the *distribution* of confidences over time (a collapsing or bimodal histogram is an early warning); and keep a held-out tripwire set you re-score every build. The absence of an error message is the danger, not the comfort.
+
+### The data flywheel is the moat
+
+Anyone can download YOLO weights. The defensible asset is *your* labeled data from *your* sensor in *your* environment, plus the loop that turns flights into labels into better models. That's why serious teams obsess over keeping data on-platform and instrumenting every sortie. Hard-mining — auto-flagging low-confidence or high-disagreement frames for human labeling — yields roughly an order of magnitude more value per label than random sampling. The model is a commodity; the flywheel is the company.

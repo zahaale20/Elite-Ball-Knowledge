@@ -231,3 +231,90 @@ def test_detector_abstains_under_blur():
 - **Kirillov et al. (2023), "Segment Anything" (SAM).**
 
 > Framing note: Computer vision for robotics is a humility discipline. Geometry will tell you, with provable residuals, where things are — but only if your calibration is honest. Deep networks will tell you what things are with superhuman skill — but they will also, occasionally and confidently, lie. The master engineer treats the camera as a precision instrument *and* the network as a fallible expert, and architects the system so that geometry can catch the network's hallucinations before they reach the actuators.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+Vision papers report accuracy on curated datasets in good light. Robots operate in
+the dark, the rain, and the glare — where the published numbers evaporate. Here is
+the part the benchmark leaderboards don't show.
+
+### Calibration is the silent dictator of everything downstream
+
+The single most common, most expensive, and least discussed failure in robot
+vision is **bad calibration that nobody notices.** A few-percent error in focal
+length or a millimeter of principal-point offset produces metric estimates that
+are confidently wrong, and the error propagates into VIO, SLAM, and depth forever.
+Worse, calibration *ages*: thermal cycling shifts the lens, vibration loosens the
+mount, autofocus silently changes the intrinsics frame to frame (which is why
+robotics cameras lock focus). Veterans treat calibration as a maintenance item,
+re-verify it with reprojection-error histograms (must be zero-mean, sub-pixel),
+and are instantly suspicious of any geometric estimate from a camera they didn't
+calibrate themselves. "Garbage calibration → garbage geometry forever" is the
+first law, and it is barely a footnote in most courses.
+
+### Deep networks hallucinate with total confidence — geometry is the lie detector
+
+A monocular depth network produces a beautiful, dense, **metrically meaningless**
+depth map — it has learned the statistics of typical scenes and will confidently
+report depth for a scene it has never seen, including textureless walls, mirrors,
+and reflections, exactly the cases where it is most wrong. Semantic segmentation
+hallucinates objects that aren't there and erases ones that are. The professional
+architecture rule: **never let a network's output reach an actuator without a
+geometric or physical check.** Stereo/structure-from-motion gives you *verifiable*
+depth with residuals you can test; the network gives you *semantics* you cannot
+trust blindly. Marry them so geometry vetoes the hallucination — the engineers who
+ship vision-driven autonomy are the ones who designed that veto in.
+
+### The datasets lie about your conditions, and the long tail is the job
+
+KITTI is daytime roads; COCO is well-lit consumer photos; most benchmarks exclude
+night, fog, snow, low sun directly in the lens, and motion blur — i.e. the
+conditions where robots most need to work. A network at 95% mAP on the benchmark
+can collapse at dusk or in rain because those frames were never in training. The
+unwritten work of fielded vision is **mining and labeling the long tail** of your
+*specific* deployment — the low-sun glare on your route, the reflective truck, the
+puddle that looks like a hole. Companies live on the loop: deploy → log the
+failures (especially human interventions) → relabel → retrain. Architecture
+changes move the needle far less than this data flywheel, which is why the best
+"vision" teams are really data-engineering teams.
+
+### Rolling shutter, exposure, and the physics the ISP hides from you
+
+Most cameras have a **rolling shutter** — rows are exposed sequentially — so a fast
+relative motion skews and wobbles the image ("jello effect"), and feeding that to a
+geometric estimator that assumes a global shutter injects systematic error that
+masquerades as noise. Auto-exposure and auto-white-balance, helpful for human
+viewing, are *enemies* of feature tracking: they change brightness frame to frame
+and break the brightness-constancy assumption that optical flow and direct methods
+rely on. The pros **lock exposure and white balance, prefer global-shutter sensors
+for VIO, and model rolling-shutter readout time as a parameter.** The ISP that
+makes pictures pretty is actively destroying the signal geometry needs — a tension
+the marketing never mentions.
+
+### Norms, numbers, and tools worth carrying
+
+- **Classical geometry + RANSAC still beats deep matching when texture exists and
+  speed matters** — and it comes with provable residuals. Learned matchers
+  (SuperPoint + SuperGlue/LightGlue) earn their keep in the *hard* cases (low
+  texture, wide baseline, day-night), not everywhere. Reach for the learned matcher
+  deliberately, not by default.
+- **NeRF and Gaussian Splatting are stunning and mostly offline.** They are
+  reconstruction/rendering tools, not real-time robot perception — know the
+  difference before you promise a product on them.
+- **Latency is a correctness property.** A perception result that is 100 ms late at
+  vehicle speed is wrong by the distance traveled in 100 ms; timestamp to the frame
+  and predict forward, never assume "now."
+- **The cheap image sensor is the richest, lightest input on the platform** — which
+  is exactly why over-relying on it in conditions it can't handle (darkness, glare,
+  fog) is the classic over-reach. Sensor diversity (radar/LiDAR) exists to cover
+  vision's blind spots; a camera-only stack is a marketing decision before it is an
+  engineering one.
+
+The through-line the leaderboards omit: computer vision for robotics is a humility
+discipline. Geometry tells you *where* with honest error bars — but only if your
+calibration is honest. Networks tell you *what* with superhuman skill — and
+occasionally, confidently, lie. The master engineer wires the two together so the
+provable layer can catch the learned layer's hallucination before it reaches the
+wheels.

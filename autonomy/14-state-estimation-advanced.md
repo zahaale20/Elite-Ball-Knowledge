@@ -39,6 +39,7 @@ The decision layer that consumes its estimates lives in
 7. [Robust estimation — surviving outliers](#7-robust-estimation--surviving-outliers)
 8. [Practice this week](#8-practice-this-week)
 9. [Sources & further study](#9-sources--further-study)
+10. [The Insider Layer — what the field knows but rarely writes down](#-the-insider-layer--what-the-field-knows-but-rarely-writes-down)
 
 ---
 
@@ -307,3 +308,88 @@ equivalent in spirit, sometimes easier to tune.
 > most capable autonomy stacks are the ones who think in factors and Jacobians, who
 > marginalize deliberately, and who never let a single outlier hold the whole
 > estimate hostage.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+Factor graphs are taught as a beautiful unification. They are. They are also a
+loaded gun, and the people who ship them know exactly where the recoil is.
+
+### Marginalization is where sparsity goes to die
+
+The textbook says: drop old states to bound compute, marginalize them out, done.
+The thing nobody writes in bold: **marginalizing a variable fills in dense
+constraints among all its neighbors.** Marginalize an old keyframe that saw
+twenty landmarks and you replace a sparse set of factors with a dense
+twenty-way prior. Do it carelessly across a sliding window and your once-sparse
+graph becomes a dense block that destroys the very speed you marginalized to
+gain. This is the central tension of fixed-lag smoothing, and the practical
+answers — selective marginalization, keeping only strong constraints, or just
+dropping (not marginalizing) weak ones — are folklore passed between teams more
+than they are written down. MSCKF's whole design is an answer to this problem.
+
+### Linearization point is a decision, and the wrong one makes you inconsistent
+
+The EKF's deepest sin — re-linearizing the *same* state at different points for
+different constraints — quietly injects spurious information along unobservable
+directions and makes the filter over-confident. This is the **observability-
+constrained EKF / FEJ (First-Estimates Jacobian)** story: you must fix the
+linearization point of certain states so the estimator's observable subspace
+matches reality's. It is responsible for a large fraction of "my VIO yaw is
+slowly biased and over-confident" bugs, and it is barely mentioned in
+introductory treatments because the math is unpleasant. Factor-graph relinearize-
+everything smoothers (iSAM2) sidestep much of this, which is half the reason they
+won.
+
+### Robust kernels are a confession that your front-end lies
+
+A Huber or Cauchy loss is sold as elegant robust statistics. In practice it is an
+admission that **your data association produces outliers and you cannot trust the
+front-end.** The insider knowledge is in the *details*: a robust kernel with a
+badly chosen scale either does nothing (threshold too high) or rejects good data
+(too low), and it has to be **annealed** — start loose, tighten as the estimate
+converges — or you get stuck in a local minimum where the kernel has down-
+weighted the very inliers you needed. Switchable constraints (carry a continuous
+0–1 switch per loop closure and let the optimizer turn it off) are often more
+robust than M-estimators for catastrophic outliers like false loop closures,
+because a single false constraint can fool a Huber loss but the switch can fully
+disable it.
+
+### Non-convexity: the optimizer believes your initial guess
+
+Bundle adjustment and pose-graph optimization are **non-convex**. Gauss-Newton
+and Levenberg-Marquardt find the nearest local minimum, not the global one, so
+**initialization is the whole ballgame.** A monocular system started before scale
+is observable, or a pose graph initialized with bad odometry, converges
+confidently to garbage. The field's hard-won practice — incremental
+initialization, good front-end odometry as the seed, dog-leg trust regions,
+sometimes a convex relaxation (SE-Sync) to certify global optimality — exists
+because "just run the optimizer" fails silently. The optimizer never tells you it
+found a local minimum; you find out when the map is folded.
+
+### Numbers, tools, and norms
+
+- **iSAM2 is the workhorse** because it re-solves only the part of the Bayes tree
+  that changed — smoothing accuracy at near-filtering cost. Know *why* it's
+  incremental, not just that it is.
+- **Ceres, GTSAM, g2o** are the three you will actually use. GTSAM thinks in
+  factor graphs; Ceres is a general NLLS hammer; g2o is the classic SLAM
+  back-end. Picking the wrong one for the problem wastes weeks.
+- **Always run NEES.** A smoother that reports a 2 cm covariance while the true
+  error is 20 cm is worse than useless — it will reject the corrections that
+  would save it.
+- **Analytic Jacobians beat autodiff for speed but are where the bugs live.** A
+  sign error in an on-manifold Jacobian produces an estimator that *almost*
+  works, which is the hardest kind to debug. Validate against numerical
+  differentiation before you trust hand-derived ones.
+- **Sparsity structure is the performance.** The difference between a 1 Hz and a
+  100 Hz back-end is almost always the variable ordering and fill-in, not the
+  linear solver. COLAMD ordering is not optional.
+
+The meta-point the literature underplays: factor-graph estimation is powerful
+precisely because it externalizes every assumption as a residual — and dangerous
+for the same reason, because the optimizer will faithfully satisfy a wrong
+residual. The engineers who build the best stacks think in factors and Jacobians,
+marginalize deliberately, guard the linearization point, and treat every outlier
+as a hostage-taker to be disarmed before it touches the solution.

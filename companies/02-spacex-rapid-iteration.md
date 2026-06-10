@@ -171,3 +171,34 @@ The skill you are building is not "rocket science." It is *the ability to conver
 - NASA "Faster, Better, Cheaper" program retrospectives — a cautionary counterpoint on when cutting cost goes wrong.
 
 > Framing note: SpaceX's iteration speed is genuinely admirable engineering, but "move fast and break things" is *only* responsible when the things you break are uncrewed test articles you chose to risk. The discipline that makes it work is matching cadence to consequence — fly-and-break for hardware tests, rigorous qualification for anything carrying people. Carry the cadence lesson; carry the consequence discipline even harder.
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this section exists.** The mechanism above is real and worth learning. But the admiring narrative — "fly, break, learn, repeat" — quietly externalizes some of the cost of that cadence onto workers, regulators, and the environment. An operator who copies the iteration loop without seeing the documented downsides is copying half the system. What follows is restricted to matters of public record: investigative reporting, regulatory action, and litigation. Where specifics are contested, that is flagged explicitly.
+
+### Worker safety
+
+In late 2023 **Reuters** published a multi-part investigation reporting that SpaceX worker injuries — including crushed limbs, amputations, a fractured skull, and at least one 2014 fatality — were occurring at rates above industry averages at several facilities, and alleging a culture that deprioritized standard safety practices in favor of Musk's pace. The reporting drew on company injury records and interviews with current and former employees. SpaceX has not published a point-by-point rebuttal of the dataset. The U.S. **OSHA** has issued citations to SpaceX over specific incidents in the years since. Treat the rate comparisons as *reported by Reuters* rather than as an adjudicated finding, but the underlying injury records and OSHA citations are documented.
+
+### Labor and the "open letter" firings
+
+In 2022, a group of employees circulated an internal letter criticizing Musk's public conduct and calling for the company to distance itself from his statements. SpaceX **fired several of the employees involved.** The **National Labor Relations Board (NLRB)** subsequently issued a complaint alleging the firings were unlawful retaliation that interfered with protected concerted activity. Separately, fired engineers filed suit; in 2024 SpaceX responded by **challenging the constitutionality of the NLRB itself** in federal court — a legal strategy (also pursued by other Musk entities and Amazon) that, as of the cases' progress, has produced injunctions pausing some NLRB proceedings. These matters are ongoing and unsettled; nothing here is a final liability finding.
+
+### Regulatory, environmental, and launch-site scrutiny
+
+| Area | What is documented |
+|------|--------------------|
+| **FAA** | Grounded Starship after the April 2023 first integrated flight test, which destroyed its launch pad and scattered debris; required a mishap investigation and corrective actions before re-flight. Has levied proposed fines over alleged license violations. |
+| **Environmental (Boca Chica/Starbase)** | The April 2023 launch sent pulverized concrete and particulate across the surrounding area, which includes federally protected wildlife refuge land; environmental groups sued the FAA over the launch-license approval. In 2024 the **Texas Commission on Environmental Quality (TCEQ)** and **EPA** scrutiny led to reporting of unpermitted water discharges from the launch-pad deluge system; SpaceX disputed the framing while pursuing the proper permits. |
+| **Discrimination** | The U.S. **Department of Justice** sued SpaceX in 2023 alleging it discriminated against asylees and refugees in hiring (the company argued export-control/ITAR rules required citizenship screening; this is genuinely contested law). Separate private suits and an NLRB-adjacent record include **sexual harassment** allegations reported by multiple outlets. |
+
+### Governance and customer-concentration risk
+
+SpaceX is privately held and tightly controlled by Musk, which means the usual public-company governance checks (independent board scrutiny, shareholder disclosure) are weaker. A large share of revenue depends on **NASA and U.S. national-security contracts**, making the business unusually exposed to political and procurement risk — and to Musk's own public conduct, which has repeatedly become a regulatory and reputational variable in its own right.
+
+### Why this matters for the operator
+
+The case study sells you a flywheel; this section shows you its *failure modes*. High cadence is purchased partly by compressing the slack that normally absorbs human and environmental risk — and when you compress that slack on a *crewed* system, a populated area, or a workforce without real recourse, the externalized cost shows up as injuries, lawsuits, and grounded programs. The transferable discipline is not "go faster regardless," it is **match cadence to consequence and account for who bears the risk you are choosing to take.** Admire the loop in [01-how-the-giants-win.md](01-how-the-giants-win.md); build the safety, labor, and environmental accounting *into* it rather than treating them as drag.
+

@@ -418,3 +418,31 @@ milestone on the [02-ten-year-mastery-plan.md](../foundations/02-ten-year-master
 *Threat cases are drawn from published academic and press accounts; specifics of
 ongoing conflicts evolve. Treat detection signatures as durable principles and
 verify against current literature.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### AGC and C/N₀ are your cheapest, most honest jam detectors
+
+Before the fix even drops, the receiver's **automatic gain control** swings to fight rising interference — so an AGC anomaly is an *earlier* warning than loss-of-fix. Pair it with per-satellite carrier-to-noise: normal C/N₀ sits around 35–50 dB-Hz; a uniform collapse across *all* satellites signals jamming, while selective oddities hint at spoofing. Many u-blox-class receivers expose both over their protocol. Logging and threshold-alarming these is the single highest-value, fully *legal* defensive thing you can build, and most amateur stacks simply don't.
+
+### Spoofing detection is mostly consistency-checking, not cryptography
+
+Civilian GPS is unauthenticated, so you detect spoofing by *contradiction*, not by decoding a signature. GPS says you teleported but the IMU, baro, and visual odometry disagree. C/N₀ is suspiciously high and uniform. All satellites suddenly share one apparent direction-of-arrival. The clock-bias estimate jumps. RAIM (receiver autonomous integrity monitoring) is the classical formalization. The robust architecture never "trusts GPS less" by a knob — it fuses GPS as *one* noisy sensor an EKF can reject as an outlier when the others outvote it.
+
+### The honest truth: you cannot beat jamming from the air
+
+A few-watt ground jammer outguns a satellite by orders of magnitude at your antenna — GNSS arrives near $-160$ dBW, below the thermal noise floor, and the jammer is millions of times closer. No airborne receiver "burns through" that. Every fieldable answer is about **graceful degradation**: detect denial early, fall back to inertial plus visual/terrain navigation, and execute a *coded* behavior (loiter, dead-reckon home, land) rather than reaching for a magic anti-jam box. Designing for "GPS is gone" as the *default* condition is the actual skill the market pays for.
+
+### Antenna and placement beat exotic processing on a budget
+
+A good RHCP antenna with a real ground plane, mounted with a clear sky view and kept away from the RF hash of the Pi and ESCs, buys more jam and multipath resistance than most software. **CRPA** — controlled-reception-pattern, null-steering antenna arrays — genuinely defeat jamming by spatially nulling the threat direction, but they are heavier, costlier, and the genuinely capable military variants are **export-controlled (ITAR/EAR)**. *That specific performance envelope is restricted; the public-domain understanding is simply that a phased-array antenna can place a spatial null on an interferer.*
+
+### Inertial coasting has a half-life — know yours
+
+When GPS drops you're on the IMU's clock. A consumer MEMS IMU drifts position on the order of meters within seconds to tens of seconds; tactical- and navigation-grade units do far better and are themselves largely export-controlled. The number that matters operationally isn't the Allan-variance plot — it's *how long can I dead-reckon inside my error budget before I must re-acquire or land?* Compute that time, then fly to it as a hard limit, not a hope.
+
+### Most of what "works" in conflict zones stays unpublished
+
+The genuinely effective, current counter-spoofing and anti-jam techniques used operationally are largely classified or vendor-proprietary, and detail evolves with each conflict. Treat published academic signatures (AGC, C/N₀, RAIM, multi-sensor consistency) as the durable, legal, open core — and don't infer restricted specifics from them.

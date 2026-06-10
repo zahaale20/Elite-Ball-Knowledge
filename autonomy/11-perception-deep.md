@@ -39,6 +39,7 @@ You cannot test what you cannot model, so pair it with
 7. [Uncertainty, calibration, and failure modes](#7-uncertainty-calibration-and-failure-modes)
 8. [Practice this week](#8-practice-this-week)
 9. [Sources & further study](#9-sources--further-study)
+10. [The Insider Layer — what the field knows but rarely writes down](#-the-insider-layer--what-the-field-knows-but-rarely-writes-down)
 
 ---
 
@@ -409,3 +410,89 @@ the single diagnostic every estimation engineer runs first.
 > The engineers who ship reliable autonomy are the ones who treat a bounding box
 > the way a surveyor treats a measurement — as a number with error bars — and
 > who run NIS on everything before they trust it.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The published metrics are a recruiting brochure. What follows is the part that
+lives in slack threads, postmortems, and the heads of people who have shipped a
+perception stack and then been paged at 3 a.m. when it failed.
+
+### mAP is a sales number; the long tail is the product
+
+Everyone benchmarks on mean Average Precision, and mAP is almost useless for
+fielded autonomy. It averages over a class distribution dominated by easy,
+common objects, so a detector can post a beautiful 0.55 mAP and still miss the
+one stroller, the one debris chunk, the one matte-black motorcycle at dusk that
+actually kills you. The field's real currency is **failure rate on the rare
+class under the rare condition** — what AV teams call the *long tail*. The dirty
+secret is that perception accuracy follows a power law: getting from 90% to 99%
+costs roughly what getting from 0% to 90% did, and 99% to 99.9% costs that
+again. Teams that promise "we're 95% done" are usually 50% done by effort.
+Nobody puts the per-condition disaggregated numbers (night + rain + occluded +
+small) in a paper because they are embarrassing.
+
+### Calibration and time sync silently eat more accuracy than the model
+
+Newcomers tune the network. Veterans suspect the *plumbing* first. A 5 ms
+timestamp error between camera and IMU at 30 m/s smears every projection by
+0.15 m — larger than most detector localization error. Extrinsic drift from
+thermal expansion and vibration is real: a rigidly bolted camera mount on a
+combustion vehicle walks by fractions of a degree as it heats, and a 0.5°
+rotation error at 50 m is a 0.44 m lateral shift. The unwritten rule: **before
+you blame the detector, run the NIS/innovation whitening test (§7.2) and check
+that your sensor latencies are measured, not assumed.** Most "the model is bad"
+tickets are actually "the clock is wrong" or "the calibration aged out."
+
+### Label noise sets your ceiling, and your labels are worse than you think
+
+Human bounding-box labels disagree with each other at the few-pixel level and
+disagree wildly on occluded, distant, or ambiguous objects. Inter-annotator
+IoU on hard examples routinely sits below 0.7. Your model cannot be more
+consistent than the labels it learned from, so a chunk of your "error" is
+actually the test set being wrong. The pros spend real money on **label
+audits and consensus relabeling of the hard slice**, and they treat
+auto-labeling (using a large offline model to pseudo-label) as the actual lever
+that moved the needle in the last few years — not architecture changes.
+
+### NMS, confidence thresholds, and the knobs that decide everything
+
+The single threshold that most affects a deployed system — the detection
+confidence cutoff and the NMS IoU — is rarely discussed in papers because it is
+"just engineering." In production it is a *policy decision*: lower the threshold
+and you flood the tracker with false positives (phantom braking); raise it and
+you drop real objects (the dangerous failure). The right operating point is set
+per-class, per-range, and is chosen against the downstream cost of each error
+type, not against F1. Soft-NMS and class-aware NMS matter far more in the wild
+than the latest backbone. And feed *calibrated* confidence into $R_k$ — raw
+softmax is confidence theater.
+
+### Radar and the "sensor everyone underrates"
+
+Marketing loves LiDAR and cameras. The people who keep cars from rear-ending
+stopped vehicles in fog love **radar** — it sees velocity directly via Doppler,
+punches through weather, and is cheap — but its data is sparse, multipath-ridden,
+and has poor angular resolution, so it is unglamorous and underpublished. Fusing
+a noisy radar Doppler track with a high-resolution but velocity-blind camera is
+where a lot of real safety margin comes from, and almost nobody writes it up
+because it is messy and product-specific.
+
+### Unwritten norms of the trade
+
+- **The detector is rarely the bottleneck; association and tracking are.** Spend
+  your last week of tuning on gating, IMM, and appearance re-ID, not on swapping
+  detector versions.
+- **Shadow-mode before you trust.** New perception code runs in the loop
+  producing logs but not commanding actuators for weeks, scored against the
+  shipping stack. This catches regressions no offline metric does.
+- **Disengagement and intervention logs are the real dataset.** The events where
+  a human took over *are* your hard-negative mine. Companies live or die on the
+  loop: deploy → collect failures → relabel → retrain.
+- **"It works in the demo" is the most dangerous sentence in the building.**
+  Demos are curated daylight on familiar routes; the tail is where the work is.
+
+What textbooks omit: perception is 20% modeling and 80% data engineering,
+calibration hygiene, and operating-point politics. The engineer who internalizes
+that — and who reaches for the innovation-consistency test before the GPU — is
+the one whose stack survives contact with the real world.

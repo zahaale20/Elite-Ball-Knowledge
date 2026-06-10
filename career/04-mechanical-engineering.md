@@ -425,3 +425,72 @@ and a resume line recruiters recognize.
 - ITAR/EAR eligibility: https://www.pmddtc.state.gov  ·  https://www.bis.doc.gov
 
 *Specific tolerances, allowables, and standards revisions change — always design to the controlling drawing and the current standard revision, and verify ITAR status per role.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+A degree teaches you to analyze parts. The job is about getting *real hardware
+made, on schedule, that survives*. Here's the tradecraft that separates the
+engineer who designs pretty CAD from the one who ships flight hardware.
+
+### GD&T literacy is the silent hire/no-hire filter
+Most new grads can run an FEA but cannot fully read a real production drawing —
+datums, feature control frames, MMC bonus tolerance, a worst-case *and* RSS stack-up.
+Interviewers know this, so handing you a marked-up drawing and asking "what does
+this callout mean and will it assemble?" is a fast, brutal sort. Genuine ASME
+Y14.5 fluency is rarer than CAD skill and signals that you've actually released
+parts to a shop, not just modeled them. It is the single highest-ROI thing to
+over-prepare relative to how little airtime it gets in school.
+
+### Talk to the machinist before you trust the simulation
+The most valuable relationship a mechanical engineer builds is with the people who
+actually cut metal. A five-minute conversation with a machinist about tool access,
+fixturing, and standard stock will save a design that an hour of FEA can't, because
+the part that's elegant on screen is often impossible or 4× the cost to make. The
+tell of a junior engineer is a drawing full of tight tolerances and internal
+geometry no tool can reach; the tell of a senior one is a design that's *boring to
+manufacture*. DFM isn't a checklist — it's humility about the floor.
+
+### Hardware lead time — not your CAD speed — governs the schedule
+The brutal arithmetic of physical engineering: a casting tool can be 16+ weeks, a
+forging longer, and a custom machined part weeks even when "rushed." Your design
+velocity is almost irrelevant next to procurement lead time. This is why senior
+MEs obsess over **make-vs-buy**, long-lead-item identification, and freezing the
+interface early — a one-day CAD change that triggers a re-tool can cost a quarter.
+New engineers optimize the model; experienced ones optimize the *critical path*.
+
+### FEA lies confidently, and pros assume it's wrong until proven right
+Finite-element results are seductive because they're colorful and precise-looking,
+but garbage boundary conditions produce garbage stresses to four decimal places.
+The discipline that marks a real analyst: *every* FEA gets a mesh-convergence study
+and a hand-calc sanity check before anyone believes it. In interviews, reaching
+for a back-of-envelope estimate *first* — and only then validating with a sim —
+reads as senior; opening ANSYS immediately reads as junior. The simulation is a
+hypothesis, not an answer.
+
+### Drawing release is a political and contractual act, not a formality
+At a prime, signing off and releasing a drawing puts your name on a document that
+flows into configuration management, supplier contracts, and certification
+evidence. Changing it later (an ECO/ECN) is expensive and visible, so the culture
+is deliberately slow and review-heavy — and that's not bureaucracy for its own
+sake, it's because an uncaught error becomes a fielded defect across a fleet.
+Understanding *why* the process is heavy (traceability under DO-254/AS9100, not
+laziness) is what lets you work with it instead of resenting it.
+
+### "Can you ship hardware?" is the real interview question at defense-tech
+Startups don't actually care whether you memorized Shigley; they want proof you
+can drive a part from napkin → CAD → DFM → prototype → *test data* → production.
+The portfolio project that includes a load test correlated back to your FEA beats
+ten projects that stop at "I modeled it," because the test/validation step is the
+one most candidates skip and the one that proves you've closed the loop on
+reality. Hardware is earned, not simulated — bring the test plots.
+
+### Environmental qualification is where careers and programs quietly die
+The part that looks done on the bench fails at the shaker table, in the thermal
+chamber, or in salt fog — and MIL-STD-810/461 qualification is a gate hobbyists
+never see. A compute payload that throttles in the field, a bracket that cracks
+at its resonant frequency, an enclosure that lets EMI in: each traces back to an
+ME who designed for the lab bench instead of the operating environment. Designing
+*to the environment*, and proving it by test, is the difference between a demo and
+a product.

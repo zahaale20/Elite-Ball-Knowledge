@@ -367,3 +367,23 @@ than charging the strong wall. This judgment is the most important skill in
 > game to one where its size, its profits, its brand, and its customers are *chains* instead of
 > weapons — and then by moving faster than it can possibly respond. The giant's strength is the map
 > to its weakness. Read the map, pick the forbidden fight, and go.
+
+---
+
+## The Dark Side — Documented Costs of These Playbooks
+
+This module is a winner's manual, and that is exactly its hidden danger. Almost every example here — Netflix, Stripe, SpaceX, Figma — is a *survivor*. The graveyards are silent, so the playbook reads as far more reliable than it is, and its most aggressive tactics ("blitzscale," "move fast and break things") have documented body counts. Read the wins, but read the failure modes with equal care.
+
+**Survivorship bias is baked into the genre.** For every counter-positioning triumph, thousands of teams ran the *same* moves — fast iteration, a sharp wedge, growth-at-all-costs — and died unremarked. The playbook is reconstructed from the handful that lived, which makes speed, focus, and asymmetry look like sufficient causes when they were necessary-at-best. The asymmetric campaign in §9 is real, but its base rate of success is low, and survivor stories systematically hide that.
+
+**Blitzscaling has a documented record of harm.** "Grow at any cost, fix it later" is not free:
+
+- **WeWork.** Adam Neumann's growth-über-alles narrative carried a private valuation near **$47B**; the September 2019 IPO collapsed on scrutiny of governance and losses, the valuation cratered toward ~$8B, SoftBank bailed it out, Neumann was ousted, and the company filed Chapter 11 bankruptcy in **November 2023**. The blitzscale was the cause of death, not a survivable stumble.
+- **Uber.** The "ask forgiveness, not permission" model produced real legal and labor battles: driver-misclassification fights (California AB5, 2019; Prop 22, 2020, later challenged in court), the **"Greyball"** tool built to identify and evade regulators (reported by *The New York Times*, March 2017), the 2017 Susan Fowler harassment memo, and Travis Kalanick's ouster. Externalities the playbook treats as "friction" were, to drivers and cities, the cost.
+- **Theranos** is the cautionary extreme of "fake it till you make it." Elizabeth Holmes was **convicted of fraud in January 2022** (sentenced to ~11 years); Ramesh "Sunny" Balwani was convicted separately. Counter-positioning a vial of blood against the whole diagnostics industry was a lie sold with charisma.
+
+**Move-fast-break-things externalizes the breakage.** Facebook's old motto produced the Cambridge Analytica scandal (2018) and well-documented misinformation harms; "break things" usually means *break other people's things*. The speed that §4 rightly prizes has no built-in conscience — that has to come from the operator.
+
+**Founder-worship is a known failure vector.** The same charisma that lets a wedge team rally and recruit also masks fraud and abuse — Holmes, Neumann, Kalanick, and Sam Bankman-Fried (FTX; convicted of fraud, November 2023) were all, at their peaks, *celebrated* as visionary asymmetric founders. Founder mythology is precisely what disarmed the people who should have asked harder questions.
+
+> **Why this matters for the operator.** Use the playbook, but inoculate yourself against its romance. Asymmetry, speed, and a wedge are how a small team *can* win — not proof that yours *will*, and never a license to externalize the costs onto users, workers, or regulators. The discipline of §10 ("when NOT to fight") has a sibling discipline: *how* to fight without becoming the next WeWork or Uber headline. The operators worth becoming move fast **and** own what they break.

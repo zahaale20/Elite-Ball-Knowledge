@@ -40,6 +40,7 @@ every trajectory in simulation per
 7. [Constraints, feasibility, and robustness](#7-constraints-feasibility-and-robustness)
 8. [Practice this week](#8-practice-this-week)
 9. [Sources & further study](#9-sources--further-study)
+10. [The Insider Layer — what the field knows but rarely writes down](#-the-insider-layer--what-the-field-knows-but-rarely-writes-down)
 
 ---
 
@@ -306,3 +307,88 @@ non-converged solve as a failure to be handled, not ignored.
 > constraints, who exploit flatness and sparsity for speed, and who hold feasibility
 > sacred: an optimizer that always returns a safe answer beats a brilliant one that
 > sometimes returns none.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The OCP is clean on paper. Real-time trajectory optimization is a knife fight
+with the solver clock, and the winners have a set of habits that rarely make it
+into the derivations.
+
+### Warm-starting is the whole game in MPC
+
+The reason MPC runs at 100+ Hz is *not* a fast solver from scratch — it is that
+consecutive problems are nearly identical, so you **seed each solve with the
+previous solution shifted by one step.** A cold-started NLP that takes 50 ms
+warm-starts in 2 ms. This single trick is the difference between MPC being a
+research toy and a shipped controller, and it carries a hidden danger: when the
+situation changes abruptly (a new obstacle, a mode switch), the warm start is now
+a *bad* guess and the solver stalls exactly when you need it most. Veterans keep a
+cold-start fallback and a watchdog. The literature presents the QP; the field
+presents the warm-start bookkeeping.
+
+### "Feasibility is sacred" means you ship a solver that always returns something
+
+The catastrophic real-time failure is a solver that, given a hard problem and a
+deadline, returns *nothing* (infeasible or not converged) while the vehicle is
+moving. So production trajectory optimizers are engineered to **always return a
+safe, suboptimal answer**: soft-constrain everything that can be soft-constrained
+(slack variables with high penalty so constraint violation is expensive but never
+makes the problem infeasible), cap iterations, and keep the last feasible
+trajectory as a fallback. An MPC that occasionally returns an ugly but safe plan
+beats one that returns the optimum 99% of the time and a fault the other 1%. This
+"always have an answer" engineering is underemphasized because it's inelegant.
+
+### Differential flatness is a cheat code, and quadrotors are the poster child
+
+For a flat system you can plan the trajectory in the **flat output space** (for a
+quadrotor: position + yaw) and recover the full state and controls by
+differentiation — no integration of the dynamics, no shooting, the whole
+trajectory becomes a polynomial QP. This is *why* minimum-snap quadrotor
+trajectories are a solved problem and why aggressive drone flight looks easy in
+videos. The non-obvious part: flatness is fragile — add a constraint the flat
+parameterization can't express (a thrust limit that depends on battery sag, an
+aero effect) and the trick degrades. Knowing whether *your* system is flat, and
+how flatness breaks, separates people who can reproduce the demo from people who
+think it's magic.
+
+### Collocation vs. shooting is a numerical-conditioning decision
+
+Single shooting is intuitive (integrate forward, optimize the controls) and
+**numerically terrible** for anything unstable or long-horizon — small early
+control changes blow up at the end, the Jacobian is ill-conditioned, the solver
+crawls. Direct collocation discretizes states *and* controls and enforces
+dynamics as constraints, trading a bigger but *sparse and well-conditioned*
+problem for vastly better convergence. The insider rule of thumb: **shooting for
+short, stable horizons; collocation for everything aggressive or unstable.**
+People who pick shooting for a rocket-ascent problem learn this the hard way when
+the solver won't converge and they blame the model.
+
+### Numbers and norms worth carrying
+
+- **Discretization (number of knot points) is a tax you pay in real time.** Too
+  few → the trajectory cheats between nodes (clips obstacles, violates dynamics
+  between collocation points); too many → you blow the solve-time budget. This
+  knob is tuned empirically per platform, never derived.
+- **OSQP / qpOASES for QPs; IPOPT / SNOPT / ACADO / acados for NLPs.** Knowing
+  which solver suits your structure (sparse QP vs. dense, SQP vs. interior-point)
+  saves orders of magnitude. acados exists specifically to make embedded NLP-MPC
+  real-time.
+- **MPC's prediction horizon is a stability-vs-cost trade.** Too short and the
+  controller is myopic and can drive itself into a corner it can't escape (loss
+  of recursive feasibility); too long and you can't solve in time. Terminal cost
+  and terminal constraint sets are how you buy stability without a long horizon —
+  the part of MPC theory people skip and then wonder why their controller goes
+  unstable.
+- **Convexify when you possibly can.** Sequential convex programming (SCP) and
+  successive convexification turned hard problems (powered rocket landing) into
+  things that solve reliably on embedded hardware. A convex problem has a global
+  optimum and a time bound; an NLP has neither.
+
+The meta-lesson the textbooks under-sell: trajectory optimization in the lab is
+about finding the optimum; in the field it is about *guaranteeing an answer
+inside the deadline, every cycle, forever.* The engineers who ship aggressive,
+reliable motion hold feasibility sacred, warm-start religiously, and pick the
+discretization and solver to match the physics — then let the controller track
+what the optimizer promised.

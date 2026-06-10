@@ -234,3 +234,33 @@ def test_p99_latency_under_thermal_soak():
 - **MLPerf Inference / MLPerf Tiny** benchmarks for edge performance methodology.
 
 > Framing note: Edge inference is where machine-learning ambition meets the unforgiving arithmetic of a battery and a heatsink. The model that wins a benchmark in the cloud is not the model that flies — the model that flies is the one that survives quantization without losing the rare critical case, fits the latency budget at its hottest and slowest, and never jitters past a deadline. Master this and you become the person who turns research into something that actually leaves the ground; neglect it and the smartest autonomy in the world stays stranded on a desktop GPU.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The quantization papers report top-1 accuracy and the vendor slides quote TOPS. Neither prepares you for the afternoon your INT8 model still recalls cars at 99% but drops night-time pedestrians, or the week your demo was fast on the bench and throttled to half speed inside the airframe.
+
+### You are memory-bandwidth bound, not compute bound
+
+The most useful mental model on the edge is the **roofline**: plot achievable performance against *operational intensity* (FLOPs per byte moved). At batch=1 — which is every real-time robot — inference is almost always **memory-bandwidth bound**, dominated by the time to stream weights from DRAM, not by the multiply-accumulates. This reframes everything: you quantize INT8/FP16 primarily to move *fewer bytes*, not to do cheaper math, and a model with fewer parameters can beat a model with fewer FLOPs. If you optimize FLOPs while ignoring bytes, you'll "speed up" a network and see no wall-clock improvement, then wonder why.
+
+### Quantization protects average accuracy and can quietly murder the tail
+
+Post-training INT8 with a good calibration set is usually fine for CNNs — *usually*. The trap is that aggregate accuracy can stay flat while the **rare safety-critical class collapses**: the pedestrian-at-night recall, the small-distant-object AP. Always evaluate quantization on the tail metric you actually care about, not top-1. Two more hard-won facts: the **calibration set must be representative** of deployment (calibrate on daytime, deploy at night, and you've built a cliff), and **transformers/LLMs/VLAs don't PTQ cleanly** because of outlier activation channels — you need per-channel schemes or SmoothQuant/AWQ/GPTQ, and you keep softmax, LayerNorm, and often the final layer in higher precision. On Jetson, reach for **FP16 first**: it's a near-free 2× with negligible accuracy loss and none of INT8's calibration drama.
+
+### Thermal throttling is the benchmark you didn't run
+
+The single most common way an edge demo lies is **peak vs. sustained**. The first 30 seconds run at full clocks; then the SoC hits its thermal limit and silently down-clocks, and your 30 ms inference becomes 60 ms — exactly when the mission is longest. **Benchmark at thermal steady state, inside the real enclosure, at the real ambient temperature**, not on the bench with a desk fan. Lock power mode (`nvpmodel`) and clocks (`jetson_clocks`) so you're measuring a defined operating point, and report the throttled number as the real one. A heatsink and airflow are part of the inference pipeline.
+
+### The p99.9, not the mean, is what the control loop feels
+
+Safety lives in the worst case. Average latency is a marketing number; a control loop that misses its deadline at the 99.9th percentile is an unstable control loop. **Jitter** comes from page faults, the CPU frequency governor, preemption by other processes, and garbage-collected runtimes. The countermeasures are systems hygiene, not ML: lock pages in memory (`mlock`), pin and isolate CPUs (`isolcpus`, thread affinity), pre-allocate everything, avoid the GIL in the hot path, and consider an RT kernel. Profile with **Nsight Systems**, never a Python `time.time()` — the latter measures the interpreter, not the GPU.
+
+### Pruning underdelivers; distillation overdelivers
+
+The lottery-ticket literature is beautiful and **unstructured pruning rarely buys real speed**, because commodity hardware can't exploit scattered zeros — you need structured sparsity the silicon actually supports (e.g., Ampere's 2:4) to see wall-clock gains. In practice **knowledge distillation** is the more reliable compressor: train a small student to mimic a big teacher and you often keep more accuracy per millisecond than pruning the big one. Structured channel pruning works, but budget time to fine-tune back the lost accuracy.
+
+### Trust nothing until you validate after conversion
+
+The phrase every edge engineer learns to fear: "it matches in PyTorch but TensorRT gives different outputs." Layer fusion, reduced-precision accumulation, and kernel autotuning all perturb numerics, and a **TensorRT engine is built for one specific GPU/driver — it does not transfer** between Jetson models, so build on target. Custom ops drag you into plugin hell. The non-negotiable habit: after every export/conversion, run an **end-to-end numerical diff** on a held-out set and gate on the tail metric. The model that flies is the one you re-verified on the silicon it will actually fly on — at its hottest, slowest, and most jittery.

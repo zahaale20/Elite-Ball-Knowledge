@@ -167,3 +167,72 @@ first step toward founding later.
   [05-dod-politics.md](05-dod-politics.md) — selling to the defense customer.
 - [15-financial-literacy-wealth.md](15-financial-literacy-wealth.md) — the runway
   that makes the leap survivable.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### The idea is overrated; the default failure is building what nobody wants
+Engineers fixate on the cleverness of the idea, but the graveyard is full of
+elegant products nobody needed. The dominant cause of startup death is not
+technical — it's the absence of demand. Rob Fitzpatrick's *The Mom Test* names
+the trap: customers will lie to be nice if you ask leading questions ("would you
+use this?"). The discipline is to ask only about their *past behavior and current
+pain* — what they actually do, what they've already paid to solve — never about
+your idea. Founder-market fit (you have unfair insight into a real problem) beats
+idea novelty every time. The technical risk you're comfortable with is rarely the
+risk that kills you.
+
+### In defense, the "color of money" decides whether you can get paid
+This is the mechanic that blindsides commercial founders entering defense. Federal
+funding comes in distinct appropriation categories — RDT&E, O&M, procurement —
+and each can only be spent on certain things in certain years. A program office
+that *loves* your product may have no *color* of money that can legally buy it
+this cycle. The path the experienced run: **SBIR/STTR** as non-dilutive capital
+*and* a structured customer-discovery funnel; OTAs (Other Transaction
+Authorities) to move faster than the FAR; and the long grind toward a **program
+of record**, which is the real moat because it means budgeted, recurring dollars
+— and which takes years, crossing the infamous "valley of death" between a
+successful prototype and sustained procurement. Selling to the government is a
+distinct sport with its own clock ([05-dod-politics.md](05-dod-politics.md)).
+
+### The cofounder relationship kills more startups than the market does
+The single highest-variance decision is who you start with, and cofounder
+conflict is a leading cause of early death. Two things the optimism skips: put
+**founder vesting with a cliff** in place from day one — yes, on yourselves — so
+a cofounder who leaves in month four doesn't walk with half the company; and have
+the brutally honest **equity-split conversation early**, because an unspoken
+resentment about a 50/50 split that didn't match contribution metastasizes into
+the fight that ends everything. Equal splits feel fair and are often wrong; what
+matters is that the split is *discussed*, not defaulted into to avoid discomfort.
+
+### Runway is psychology, and founder-led sales can't be delegated
+Paul Graham's *default alive vs default dead*: at every moment you should know
+whether, on current burn and growth, you reach profitability before the money
+runs out — most founders avoid computing this precisely because the answer
+frightens them. Raise for ~18–24 months; the round always takes longer and costs
+more than planned. And the founder *must* sell the first ten customers
+personally — "do things that don't scale" — because early sales are really
+product discovery in disguise, and the signal is too important to hand off. You
+are not too technical to sell; you are the only one who can.
+
+### The golden handcuffs and the foreign-investment gate
+Two structural realities. First, the higher your comp climbs, the *harder* the
+leap becomes — the freedom fund ([15-financial-literacy-wealth.md](15-financial-literacy-wealth.md))
+is what converts "someday" into a survivable decision; without runway, the
+handcuffs win. Second, a *defense* startup faces constraints a SaaS founder never
+meets: facility security clearances, ITAR/EAR export jurisdiction over your own
+technology, and CFIUS scrutiny that can gate **who is even allowed to invest in
+or acquire you** — foreign capital that would rescue a commercial startup can be
+disqualifying here. Factor these into the cap table from the start, not after a
+term sheet ([20-ethics-export-control.md](20-ethics-export-control.md)).
+
+### Intrapreneurship is the underrated on-ramp
+The binary "quit and found" framing hides the best first move for many engineers:
+build a new product or capability *inside* an existing company. You get real
+resources, a built-in first customer, a salary that removes the runway terror,
+and you acquire founder skills — selling internally, owning a P&L, recruiting —
+on someone else's dime. The psychological tax of founding is real (the same day
+oscillates between "genius" and "fraud," and founder isolation is a documented
+hazard); intrapreneurship lets you build tolerance for it before betting your own
+capital and reputation.

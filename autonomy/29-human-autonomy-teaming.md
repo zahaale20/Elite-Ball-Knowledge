@@ -241,3 +241,37 @@ and [121-ethics-of-force](../foundations/16-ethics-of-force-and-engineering-resp
   weapons authority ([27](../autonomy/27-missiles-guided-munitions-hypersonics.md)),
   honest influence
   ([01](../mindset-and-society/01-psychological-manipulation-defense.md)).
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The human-factors textbooks give you taxonomies and acronyms. What they underplay is that almost every one of those neat models has a *paradox* baked into it, and the paradoxes are where fielded systems actually break.
+
+### Levels of autonomy are a per-task fiction sold as a global dial
+
+The Sheridan-Verplank ten-level scale and SAE's L0–L5 are taught as if a system *has* a level. The practitioner truth is that **autonomy is task-and-context-specific**: the same drone is fully autonomous for attitude stabilization, supervised for navigation, and human-authorized for weapons release — all at once. Designing to a single global "level" produces interfaces that are wrong for most of the tasks they cover. The mature framing is **adjustable/adaptive autonomy**: the right authority allocation per function, per phase, per risk — and the hard part is making the *transitions* between them legible to the human.
+
+### The irony of automation: reliability is what disarms the human
+
+Lisanne Bainbridge named it in 1983 and it has aged perfectly: **the better the automation, the worse the human is positioned to take over.** A system that handles 99.9% of cases trains its operator to stop paying attention, lose manual skill, and lose situational awareness — so the human is *least* prepared at the exact 0.1% moment the machine throws control back. This is the through-line from Air France 447 to highway driver-assist disengagements. **Mode confusion** — "what is it doing now, and why?" — compounds it. The design implication is brutal: you cannot use "the human will catch it" as a cheap mitigation, because the automation you built is actively eroding that human's ability to catch it.
+
+### Calibrated trust beats maximized trust
+
+Newcomers try to make operators trust the system *more*. The real objective is **calibration** — trust that tracks actual reliability. Both failure directions are documented and dangerous: **over-trust / automation bias** (accepting a wrong machine recommendation over one's own correct judgment — measured in real studies as commission and omission errors) and **under-trust / disuse** (ignoring a good system, or switching it off). Transparency and explanation are engineering tools whose *purpose is calibration*, not decoration — you surface confidence and reasoning so the human knows *when* to trust, not so the UI looks friendly.
+
+### Handoffs need lead time; the "instant takeover" is a myth
+
+A human pulled from **out-of-the-loop** supervision does not regain situational awareness instantly — rebuilding it takes many seconds, and the literature on takeover requests treats that latency as a first-class design parameter. Systems that demand instant human intervention at the moment of crisis are designed to fail. The fix is **graceful, early, predictable** handoffs — warn before you need to, hand off on a schedule the human can anticipate, and design a safe-state fallback for when the human *won't* be ready in time.
+
+### Workload is a U-curve, and underload is the sneaky killer
+
+Yerkes-Dodson applies: both **overload** (too many alarms, too many vehicles) and **underload** degrade performance. Overload produces **alarm fatigue** — the boy-who-cried-wolf effect where operators silence nuisance alarms and then miss the real one. Underload is subtler: long, reliable autonomous missions create the **vigilance decrement**, where a bored, unstimulated monitor simply stops detecting events. Practitioners measure this for real — **NASA-TLX** for workload, **SAGAT** freeze-probes for situational awareness, validated trust scales — rather than asserting "the operator will manage."
+
+### Span of control flips piloting into management-by-exception
+
+One operator to many vehicles is not piloting scaled up — it's a different job: **supervising and intervening by exception**. The governing quantity is **fan-out**, bounded by the ratio of a vehicle's **neglect tolerance** (how long it runs safely unattended) to the **interaction time** each intervention costs (Goodrich/Olsen). Double the autonomy's neglect tolerance and you roughly double the swarm one human can hold. This is the concrete link to [19-multi-agent-swarm.md](19-multi-agent-swarm.md): swarm span-of-control is a human-factors equation as much as a coordination one.
+
+### Predictability outranks raw accuracy, and the human is a fragile mitigation
+
+Two closing truths the field knows. First, operators trust a **consistent, slightly-worse** autonomy over an **erratic, slightly-better** one — a predictable system lets the human build an accurate mental model and anticipate it, which is worth more than a few points of performance. Second, the certification reality nobody likes to say aloud: you certify the **human-plus-machine** system, and when the safety case leans on "the operator will intervene," it is leaning on the **least reliable component in the loop**. A safety argument whose load-bearing mitigation is human vigilance is a fragile argument — and the irony of automation is busy making it more fragile every flight.

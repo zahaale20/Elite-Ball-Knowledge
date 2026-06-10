@@ -174,3 +174,44 @@ You cannot understand modern strategy or defense without this: **the world's mos
 - U.S. BIS export-control rules (Oct 2022 and later updates) and the CHIPS and Science Act text.
 
 *The deepest moat in this entire band is also the most physical: a few atoms of tolerance, decades of un-writable knowledge, and the geopolitics that follow from a single point of failure for the world's compute.*
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this section exists.** The case study above is deliberately admiring — these moats are real and worth understanding. But a study guide that only celebrates is a marketing brochure. The same concentration that makes TSMC and ASML extraordinary also makes them magnets for litigation, regulatory scrutiny, and geopolitical risk that a builder leaning on this supply chain needs to price in. What follows is restricted to well-documented public record — lawsuits, government actions, and major reporting — with contested claims labeled as such.
+
+### TSMC — labor, discrimination, and the Arizona build-out
+
+| Item | Year(s) | Body / source | Status / outcome |
+|------|---------|---------------|------------------|
+| Arizona fab construction delays | 2023–2024 | TSMC public statements | TSMC publicly pushed first-fab production from 2024 into 2025, citing a shortage of skilled US workers; widely reported. |
+| Union / skilled-labor tensions | 2023 | Arizona Pipe Trades 469, trade press | TSMC's attempt to bring in additional Taiwanese workers drew public objection from US building-trades unions; reported, later partly walked back. |
+| *Chen et al.* discrimination class action | filed 2024 | US District Court (N.D. California) | Former and prospective US employees allege TSMC favored Taiwanese/Chinese nationals and discriminated against non-Taiwanese workers (anti-American/national-origin bias). **Allegations only; TSMC has denied wrongdoing; litigation ongoing as of last public record.** |
+
+These are reported allegations and a build-out that genuinely slipped — not proof of systemic misconduct. But they puncture the "flawless execution machine" framing: transplanting a tacit-knowledge culture (§5) across borders is exactly where the friction shows up, and it shows up as labor disputes and lawsuits.
+
+### TSMC — the Huawei chip-diversion investigation
+
+In 2024–2025 it was widely reported (Reuters, Bloomberg, and confirmed in part by TSMC's own disclosure) that a TSMC-manufactured die was found inside a **Huawei** AI processor, despite US export controls barring such supply. TSMC said it had not knowingly supplied Huawei, halted shipments to the suspected intermediary, and notified US and Taiwanese authorities. The US Commerce Department/BIS opened scrutiny of the diversion. **Outcome unresolved at last public record; the relevant point is that even a compliant, sophisticated firm cannot fully police where its chips end up** — a structural enforcement gap, not (on current evidence) deliberate evasion.
+
+### ASML — export controls as a revenue chokepoint pointed *at* ASML
+
+ASML is the case study's hero monopoly — but that monopoly sits inside a policy vise:
+
+- The **Dutch government, under sustained US pressure, restricted ASML's exports to China** — first EUV (never licensed to China), then, from 2023–2024, advanced **DUV** systems and servicing. ASML has repeatedly disclosed that China is a large share of its backlog/revenue and that tightening rules create a real, quantified exposure. This is documented in ASML's own filings and Dutch government licensing decisions.
+- The strategic irony for an operator: the same export regime that protects allied chip supremacy (§7) is a **demand-side risk to ASML's own numbers** and a reminder that the apex monopoly is still a price-taker on geopolitics.
+
+### ASML — trade-secret theft litigation
+
+ASML has been on the receiving end of documented IP-theft cases:
+
+- **ASML / Cymer v. XTAL (Dongfang/"XTAL")**: in a California state court case decided around 2018–2019, a jury found XTAL — a startup tied to former ASML/Cymer employees and reported China-linked backing — liable for misappropriating ASML trade secrets; ASML was awarded a judgment in the hundreds of millions and XTAL went into bankruptcy. ASML has separately disclosed (2023) additional instances of **IP data theft by a former employee in China**, reported to authorities. These are *adjudicated or company-disclosed* events, not speculation — and they show the knowledge moat (§5) is under continuous, active attack.
+
+### Both — environmental and water-use criticism
+
+Leading-edge fabs are among the most **water- and energy-intensive** industrial sites on Earth. TSMC's consumption has been a documented flashpoint during **Taiwan's drought years (notably 2021)**, when the government diverted agricultural water to keep fabs running — reported by major outlets and acknowledged in sustainability disclosures. The Arizona fabs raised similar water-stress questions in a desert state. This is a genuine, sourced sustainability and community-cost critique the triumphant version omits.
+
+### Why this matters for the operator
+
+If you build hardware, you are a tenant in this supply chain (§8) — which means you inherit its *risks*, not just its capabilities. Export-control enforcement gaps (Huawei), allied-policy swings that can strand demand (ASML/China), active IP-theft campaigns against the knowledge moat, transplant-friction labor disputes, and water/energy exposure are all live variables that can hit lead times, prices, and the legality of your sourcing. The disciplined move is the same one [09-foundations-safety-assurance.md](../foundations/09-safety-assurance.md) teaches for systems: admire the moat, then map its failure modes — because the deepest single point of capability is also the deepest single point of risk.

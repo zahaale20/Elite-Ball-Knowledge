@@ -279,3 +279,96 @@ Real systems and references: **ROS 2** with multi-robot DDS domains, **Gazebo / 
 - **Brambilla, Ferrante, Birattari & Dorigo (2013), "Swarm Robotics: A Review"** — engineering taxonomy.
 
 > Framing note: A swarm is not a fleet you command; it is a *field* you shape. You write the local rules and the network substrate, then the global behavior is *grown*, not authored. The engineers who win this domain think like physicists studying an emergent phase — they reason about densities, connectivity, and stability margins — while still shipping code that runs on a 200-gram drone with a flaky radio. Hold both views at once.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+Swarm demos are gorgeous and swarm products are scarce — that gap is the whole
+story. The papers prove convergence under assumptions the field cannot afford. Here
+is what separates a viral light-show video from a system that survives contact.
+
+### The light-show swarms you've seen are centrally choreographed — not autonomous
+
+The single most important thing to know, because marketing blurs it: the famous
+drone-logo and ceremony swarms are **pre-choreographed trajectories with
+centralized planning, RTK-GPS positioning, and a ground station commanding every
+vehicle.** That is a beautiful synchronization-and-comms achievement and a
+*completely different problem* from decentralized autonomy where agents decide on
+local information with no central brain. When someone says "1000-drone swarm,"
+the first question is: choreographed or autonomous? The honest answer collapses
+most hype. True decentralized swarms in the wild are far smaller (tens) and far
+less photogenic.
+
+### Comms is the binding constraint, and bandwidth scales against you
+
+Every elegant consensus proof assumes a connected graph and timely messages.
+Real radios give you packet loss, latency, hidden-node collisions, and a shared
+medium whose contention grows with $N$. The cruel arithmetic: naïve all-to-all
+information sharing is $O(N^2)$ messages, which saturates the channel exactly when
+the swarm gets interesting. So real systems are built around **gossip / local
+broadcast only**, accept stale neighbor state, and are engineered to **degrade
+gracefully when half the mesh drops** — which is precisely the property no clean
+benchmark tests. The unwritten rule: design for the partition, the dropout, and
+the stale message, because in the field they are the common case, not the edge
+case.
+
+### Emergence is a double-edged sword — local bugs become global pathologies
+
+The seductive promise is "simple local rules → robust global behavior." The
+under-discussed flip side: a subtle local rule produces a global pathology no
+single agent can see — flock fragmentation that never re-merges, formation
+oscillation that builds instead of damps, gridlock when two sub-swarms meet in a
+doorway, or a feedback loop where everyone chasing the centroid implodes. These
+are emergent, so they don't show up in unit tests of a single agent; they appear
+only at scale, intermittently, and they are murder to reproduce. The field's hard
+lesson is that **you verify the *collective*, not the node** — and most teams lack
+the tooling to do it, which is why swarm validation is an open problem rather than
+a checkbox.
+
+### The $N{=}2$ deadlock and the boundary cases that actually break things
+
+Counterintuitively, two agents are harder than fifty in one specific way: symmetric
+collision avoidance creates a **deadlock** (both step the same way, mirror,
+repeat) that a larger asymmetric crowd breaks naturally. The boundary cases that
+matter most — and that the convergence theorems quietly exclude — are: a partition
+healing and two stale world-models merging, an agent joining late with old state,
+the agent that never receives the one critical message, and the transition when
+connectivity drops below the threshold the proof assumed. Production swarms are
+mostly made of the handling for these cases; the consensus update itself is a few
+lines.
+
+### Robustness to the adversarial and the Byzantine
+
+A swarm is a distributed system, so it inherits distributed-systems failure modes:
+a single malfunctioning or spoofed agent broadcasting bad state can drag a naïve
+average-consensus to an arbitrary value. The defense — **W-MSR / resilient
+consensus** (discard the most extreme neighbor values before averaging) — exists
+precisely because one liar breaks vanilla consensus, and it requires sufficient
+graph connectivity ($2f{+}1$ robustness to tolerate $f$ adversaries) that real
+sparse meshes often don't have. In any contested setting, assume some fraction of
+your own nodes are compromised. This is where defense-relevant swarm work lives,
+and the specifics of military counter-swarm and anti-jam waveforms are
+export-controlled — the public-domain understanding is W-MSR-style robust
+consensus plus frequency-hopping mesh, but the operational details are restricted.
+
+### Norms, numbers, and tools worth carrying
+
+- **Algebraic connectivity $\lambda_2$ (the Fiedler value) is your health metric.**
+  It governs how fast consensus converges and whether the graph is even connected;
+  watch it, not just average degree. When $\lambda_2 \to 0$ the swarm is about to
+  fragment.
+- **Centralized is fine until it isn't.** For tens of agents with good comms, a
+  central planner is *better* — optimal, verifiable, simple. Go decentralized when
+  scale, jamming, or single-point-of-failure concerns force it, not for ideology.
+- **Crazyswarm/Crazyflie indoors, PX4 + MAVLink mesh outdoors, ROS 2/DDS for the
+  middleware, Gazebo/Isaac for sim.** This is the actual research stack;
+  reinventing it wastes months.
+- **Test fragmentation-under-dropout explicitly** (union-over-time connectivity,
+  worst-served agent stays in cohesion radius) — it is the failure that ends real
+  missions.
+
+The meta-lesson the field internalizes the hard way: a swarm is a *field you
+shape*, not a fleet you command, and its behavior lives in the interactions over a
+flaky network — so you engineer for the partition, verify the collective, and treat
+every clean convergence proof as describing a world your radios don't live in.

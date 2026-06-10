@@ -390,3 +390,89 @@ leverage.
 available information. Career ladders, level definitions, and promotion criteria
 vary by company and change over time — calibrate against your own organization's
 published engineering levels and your manager's guidance.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The ladder documents describe levels as if promotion were a reward for past work.
+The actual mechanism is stranger and more political than any HR page admits — and
+understanding it is the difference between waiting to be noticed and being
+undeniable.
+
+### You're promoted *after* you're already operating at the next level
+The single most counterintuitive truth of career growth: titles lag behind
+behavior. You don't get promoted to Senior and *then* do Senior work — you do
+Senior-scope work for two or three quarters while still holding the Mid title, and
+the promotion *ratifies* a reality your peers already see. The corollary is
+liberating and uncomfortable: waiting until you're promoted to act at the next
+level guarantees you never will be. Find the next-level work and start doing it
+while under-titled — that *is* the strategy, not a prelude to it.
+
+### Promotion is a committee reading a packet — so the packet is the product
+At most scaled companies you are not promoted by your manager's goodwill; you're
+promoted by a **committee of senior people who don't know you**, reading a written
+**promotion packet** of evidence. This means your manager's real job is to be your
+*advocate assembling a case*, and your job all year is to generate the artifacts
+that case is built from. The brutal implication: brilliant work that produces no
+legible evidence — no design doc, no metric, no visible launch — is nearly
+invisible to the committee. Keep a **brag document** updated continuously; nobody
+reconstructs a year of impact from memory the week before packets are due.
+
+### Sponsorship beats mentorship — and they are not the same thing
+A mentor *talks to you*; a sponsor *talks about you in the room where decisions
+are made and you aren't*. Mentorship gives you advice; sponsorship spends real
+political capital to put your name on the opportunity, the promotion, the visible
+project. Careers are made by sponsors, and you earn one not by asking but by
+making a senior person's bet on you pay off publicly. Most people over-invest in
+collecting mentors and under-invest in giving a potential sponsor a *reason* and
+an *occasion* to advocate for them.
+
+### The design doc / RFC is the highest-leverage influence tool you have
+As you grow, your impact stops scaling with your code and starts scaling with how
+many people's work you can *redirect*. The instrument for that is the written
+design document: a well-argued RFC that aligns a team is worth more than weeks of
+your own keystrokes, because it multiplies through everyone who follows it. Senior
+and staff engineers are, functionally, people who write the documents others
+execute. Learning to write a crisp, persuasive technical proposal — BLUF, options,
+tradeoffs, recommendation — is the most underrated leadership skill there is.
+
+### Glue work is a trap for the junior and the job for the senior
+"Glue work" — the unblocking, coordinating, documenting, and reviewing that holds a
+team together — is genuinely valuable and genuinely *under-rewarded for junior
+engineers*, because at that level promotion committees want to see *technical*
+scope, and glue work is often invisible and uncreditable. The senior trap is the
+inverse: at staff level, glue and influence *become* the job, and clinging to
+solo coding caps you. Know which side of that line you're on. If you're junior and
+drowning in glue, deliberately reserve capacity for a legible technical win; the
+coordination won't promote you alone. (Keren L. Carter Morais's essay on glue work
+and Will Larson's *Staff Engineer* archetypes map this terrain well.)
+
+### IC and management are different jobs, not a hierarchy — choose, don't drift
+The parallel ladder is real: a Staff/Principal IC is paid and respected like a
+manager, and "becoming a manager" is a *career change* into a people-and-priorities
+job, not a promotion for being a good coder. The failure mode is *drifting* into
+management because it seemed like the only way up, then discovering you miss
+building and resent the meetings. Pick deliberately based on what energizes you —
+shipping systems or growing people — and know you can usually switch back once.
+Many of the best engineers stay IC by choice and out-earn their managers.
+
+### Visibility is not vanity — invisible work doesn't compound
+The meritocratic myth says good work speaks for itself. It doesn't: work nobody
+sees can't be sponsored, can't enter a promotion packet, and can't build the
+reputation that brings the *next* opportunity. This isn't a license to grandstand —
+it's a duty to make real impact *legible*: demo your launches, write the postmortem,
+present at the team review, name the metric you moved. The engineers who plateau
+often aren't worse — they're quieter. Pair genuine substance with deliberate
+visibility and the two compound; substance alone too often just accumulates,
+unwitnessed.
+
+### Managing up means *no surprises* — that's the whole contract
+The fastest way to lose a manager's trust is to surprise them with bad news they
+could have relayed upward earlier; the fastest way to earn it is to be the report
+who flags risk early, brings the problem *with* a proposed option, and never lets
+them get blindsided in front of *their* boss. "No surprises" is the entire
+implicit contract of managing up, and the engineer who honors it gets autonomy,
+advocacy, and the benefit of the doubt. Over a career, being reliably honest —
+including about your own slips — is the compounding asset that outlasts any single
+job.

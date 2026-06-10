@@ -431,3 +431,78 @@ the specific job listing before applying.*
 - Company careers pages (authoritative for current requirements): SpaceX, Boeing, and leading defense-tech companies.
 
 *Compiled from the author's domain knowledge and the publicly available sources above. Standards (DO-178C, FAA Part 25), clearance rules, and tool stacks change — verify against primary sources before relying on them.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The brochures sell you a meritocracy of GPA and coursework. The actual hiring
+machine sorts on dimensions the career office never mentions. Here is the part
+engineers learn three years in.
+
+### The funnel filters in an order nobody tells you
+A defense aerospace requisition is screened roughly in this sequence: **U.S.-person
+status (ITAR) → clearance/clearability → ATS keyword match → human skim**. The
+engineering doesn't get evaluated until the last step. This is why a non-citizen's
+brilliant résumé silently evaporates on the classified side, and why a mediocre
+candidate with an active clearance gets a callback the same afternoon. The single
+highest-leverage line on a defense résumé is not a project — it's *"U.S. Citizen,
+active Secret"*. An active clearance is worth roughly a full seniority level in
+practice, because it removes 6–18 months of carrying cost the employer would
+otherwise eat before you can bill to the contract.
+
+### Internships are the front door; the new-grad req is the back alley
+The dominant path into Boeing, SpaceX, and the primes is **intern-to-full-time
+conversion**, not the public job board. Conversion offers face a far smaller,
+friendlier funnel; the open new-grad req is a meat grinder where qualified
+candidates routinely see single-digit response rates. New-grad and college reqs
+also open in *bursts* tied to the fiscal-year budget and to program wins — apply
+the day a posting goes live, because recruiters work the top of the stack and ATS
+timestamps are real. A referral that lands you on a hiring manager's desk bypasses
+the entire keyword gauntlet.
+
+### SpaceX interviews like an oral qualifying exam, not a coding shop
+The folklore is true: expect first-principles vivas — *derive the rocket equation,
+size this pressure vessel, walk me through a Brayton cycle on the whiteboard, what
+have you physically built and broken.* They are probing whether you *understand*
+versus *memorized*, and they reward people who've gotten their hands dirty on real
+hardware. The unwritten trade: you exchange a few years of 50–60-hour weeks and
+high churn for a launchpad-grade brand on your résumé. Go in clear-eyed about the
+price, not just the prestige.
+
+### At primes, the "charge number" governs your week and your job security
+You don't really work for Boeing or Lockheed — you work for a **contract charge
+number**. When your program's funding runs thin you get "benched," reassigned, or
+laid off, almost independently of your performance reviews. Layoffs track
+**program wins and losses on recompetes**, not individual output. The practical
+move: read *Defense News* and *Breaking Defense* like a ticker for your own
+employer, and learn enough budget literacy (RDT&E vs. procurement "color of
+money") to know whether your seat sits on stable, multi-year money or on a
+fragile line that Congress can zero in a markup.
+
+### Prime compensation is paid in stability, not cash or equity
+Comp is banded to a job code; equity is essentially nonexistent and base growth is
+slow. The *real* compensation is the benefit stack — strong retirement, 9/80
+schedules (every other Friday off), tuition reimbursement, and, crucially, the
+**clearance and certification experience you accumulate and carry elsewhere**. The
+common wealth-building play is: get cleared and trained at a prime, then jump to a
+defense-tech startup or contractor body-shop for a 20–40% raise the prime's bands
+could never authorize. There's no real "up or out" — you can plateau comfortably
+for a decade, and the genuine risk is skill atrophy on a single program rather
+than being managed out.
+
+### ITAR controls what you're even allowed to read
+Export control isn't an HR formality — it physically gates rooms, wikis, and
+repositories. As a non-U.S.-person you can be barred from the technical data
+altogether, and even green-card holders hit walls at SAP and full clearance tiers.
+This is the mechanical reason "U.S. Person" appears on nearly every defense req,
+and why naturalization timing is a legitimate, deliberate career lever rather than
+a paperwork afterthought.
+
+### The résumé is read by a machine, then by a human in eight seconds
+Mirror the posting's exact nouns — *"composite layup," "GD&T," "DO-178C,"
+"thermal," "6-DOF"* — because the ATS does literal string matching and the human
+skims only the top third. Quantify or it didn't happen: "reduced mass 22%,
+validated within 8% of FEA" survives a skim where "worked on structures" dies.
+The people who get hired aren't the ones who know the most aerodynamics; they're
+the ones who made their evidence *legible to a stranger in a hurry*.

@@ -260,3 +260,33 @@ assesses — the **F2T2EA** kill chain of
   tracking ([01](../space/01-space-systems-and-astronautics.md)), human authority
   ([29](29-human-autonomy-teaming.md)), ethics/ITAR
   ([20](../career/20-ethics-export-control.md)).
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+*Scope note, repeated deliberately.* Everything below stays at the **openly published, conceptual** level found in standard graduate texts (Zarchan's *Tactical and Strategic Missile Guidance*, Siouris, Shneydor) and unclassified aerospace papers. The specifics that actually make a real weapon work — seeker designs, ECCM, fuzing, autopilot gains, and performance numbers — are **export-controlled (ITAR/EAR)** and are *not* here. This is defender's and systems-engineer's literacy, not a build guide.
+
+### Proportional navigation is public, elegant, and counterintuitive
+
+The core guidance law is openly taught and worth internalizing: command lateral acceleration proportional to the **line-of-sight rotation rate**, $a_c = N\,V_c\,\dot{\lambda}$, where $\dot\lambda$ is the LOS rate, $V_c$ the closing velocity, and $N$ a unitless gain (textbooks use $N \approx 3$–$5$). The non-obvious insight that separates someone who *gets* guidance from someone who doesn't: a missile does **not** chase the target's current position. "Pure pursuit" — always pointing at the target — is provably inferior, forcing an ever-tightening tail chase and enormous terminal demands. PN instead **drives the LOS rate to zero**, which geometrically means flying the constant-bearing, decreasing-range "collision triangle" — the same instinct a sailor uses to judge a collision course. The missile *leads*. That's the whole trick, and it's in every textbook.
+
+### The fight is decided in the endgame, and the math of that is open
+
+Most of a long-range engagement is **midcourse** — inertial flight with periodic updates — because the seeker only acquires the target late, and the midcourse job is to deliver the weapon into the seeker's acquisition "basket" with energy to spare. The decisive, openly-analyzed phase is the **terminal endgame**, where **miss distance** is set by the interaction of target maneuver, finite control authority, seeker/glint noise, and system time constants. The public analytical tool here is the **adjoint method** (Zarchan): a linear-systems technique for computing miss-distance sensitivity to each error source without Monte-Carlo-ing forever. The headline result every defense engineer should carry: a target's **well-timed step maneuver** late in the engagement is the classic miss-distance driver — which is exactly *why* terminal guidance is hard and why countermeasures aim at the seeker and the timeline.
+
+### Seekers and countermeasures are a matched pair — conceptually
+
+At the public level, seekers come in families: **RF/radar** (active, semi-active, or passive anti-radiation), **infrared**, and **dual-mode**. Each has a textbook countermeasure logic, which is the bridge to [28-directed-energy-and-electronic-warfare.md](28-directed-energy-and-electronic-warfare.md): chaff and DRFM-style false targets against RF seekers, flares and trajectory against IR, terrain and notch against Doppler. The *engineering* point — not the *recipe* — is that seeker and counter-seeker co-evolve, and that a seeker's real-world performance is dominated by its rejection of clutter and deception, **not** by raw sensitivity. The actual ECCM techniques are restricted; the existence of the cat-and-mouse is not.
+
+### Why hypersonics break the existing architecture (strategic, public)
+
+The open strategic literature is clear that the disruption is **not just speed**. Ballistic missile defense is optimized against a *predictable* arc; a hypersonic glide vehicle pairs high speed with **in-flight maneuver** and a **depressed/lofted, non-Keplerian trajectory**, so early-warning and interceptor fire-control built around a computable ballistic path lose their prediction. Layer on two openly-described engineering hells: **aerothermodynamics** (sustained flight in the atmosphere at high Mach produces extreme heating — a thermal-protection and materials problem, see [07-structures-and-materials](../engineering/07-structures-and-materials.md)) and the **plasma sheath** that can disrupt seeker and communications during portions of flight. These are discussed in academic aero journals as *grand-challenge problems*, which is exactly the level to hold them at.
+
+### Systems-engineering literacy: it's all a mass-volume tradeoff
+
+Stripped of secrecy, a guided weapon is a brutal optimization inside a fixed mass and volume budget, dominated by the **rocket equation** and drag: range trades against maneuverability trades against seeker aperture trades against warhead and fuel. "More of everything" is not on the menu. This is also why **salvo and probability-of-kill ($P_k$)** thinking — many cheaper shots vs. one exquisite one — drives force structure (the link to [03-productized-defense](../companies/03-productized-defense.md) and attritable mass).
+
+### The ethics live upstream because the timeline is too fast for a human
+
+The uncomfortable, honest point: terminal-phase guidance operates faster than human reaction, so the *engagement* is autonomous by physics. That is precisely **why** the meaningful human judgment — authorization, rules of engagement, target identification — must be designed **upstream** of terminal flight, the theme of [29-human-autonomy-teaming.md](29-human-autonomy-teaming.md) and [20-ethics-export-control](../career/20-ethics-export-control.md). An engineer who understands the kill chain understands that "a human in the loop" is a statement about *where* in the timeline the human's authority is exercised, not a claim that someone is steering the last second.

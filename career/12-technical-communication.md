@@ -174,3 +174,68 @@ organization.
   communication at scale, in public.
 - [10-leadership-growth.md](10-leadership-growth.md) — communication as the core of
   leadership.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### Prose forces thinking; slides hide its absence
+The deepest reason Amazon banned PowerPoint in favor of the six-page narrative
+memo (read in silence for the first 20 minutes of the meeting) is not aesthetic.
+**Bullets let you skip the connective tissue** — the "therefore," the
+"because," the "but only if." Full sentences expose a broken argument the way a
+failing test exposes broken code. When you find a section impossible to write in
+prose, you've usually found the part of your reasoning that doesn't actually hold
+together. Writing is debugging for thought. This is why the strongest engineers
+write the doc *before* building — not to communicate the decision, but to *make*
+it.
+
+### The real audience is a skeptic today and a committee in 18 months
+A design doc has two readers nobody mentions. First, the one hostile reviewer
+whose objection, if unaddressed, kills the project — write the doc to disarm
+*them*, by naming their strongest counter-argument before they do. Second, the
+promotion committee a year and a half from now that will use this artifact as
+evidence of your scope and judgment. **Write docs you can cite at promo.** The
+corollary tell: a circulated design doc with *zero* comments wasn't trusted or
+wasn't read; a doc drowning in nit-level comments usually means reviewers engaged
+the formatting because they couldn't engage — or didn't buy — the core idea.
+Comment density is a sentiment signal, not just feedback.
+
+### State the conditions under which you'd change your mind
+"Strong opinions, weakly held" is repeated to death and practiced by almost no
+one. The actually-disarming move in a contentious review is to give your
+recommendation *and* the explicit conditions that would flip it: "I'd choose A,
+but if the write rate exceeds 50k/s I'd switch to B." This does three things at
+once — it proves you considered the alternative, it converts an argument into a
+shared search for the threshold, and it makes disagreement feel like
+collaboration rather than combat. It is the written form of *disagree and
+commit*.
+
+### Executives interrupt — if you have 20 slides, you have 3
+The higher the audience, the more they will hijack your agenda within the first
+two minutes, because their job is to find the decision and the risk, not to
+admire your build-up. Plan for it: **headline, one number, one risk, the ask** —
+and have the supporting 17 slides in an appendix you may never reach. Answer the
+exact question asked, then *stop talking*; the engineer's instinct to add the
+caveat and the sub-caveat reads as not knowing what matters. Brevity at the top
+is a status signal: it says you've already done the compression.
+
+### Always ship the denominator and the baseline
+"30% faster" is a sentence that means nothing and quietly destroys your
+credibility with anyone numerate. Faster than what, measured how, at what
+percentile, from what base? $\text{p99: } 80\text{ms} \rightarrow 12\text{ms}$
+carries information; "improved latency" carries a vibe. The unwritten rule among
+senior reviewers: a number without a baseline and a denominator is treated as
+marketing, not measurement — and once they catch one inflated figure, they
+discount every number you ever present. Precision is a trust deposit; vagueness
+is a withdrawal.
+
+### The name you give a thing becomes its political reality
+Projects with confusing or grandiose internal names die in committee; a clear,
+modest, memorable name lets sponsors repeat it accurately in rooms you're not in
+(see the legibility point in
+[11-networking-mentors-sponsors.md](11-networking-mentors-sponsors.md)). Naming
+is communication at its most leveraged — one word that travels. And calibrate
+your *register* to the reader: over-explaining to a principal engineer is a
+micro-insult, under-explaining to a program manager loses the decision. Same
+facts, different encoding, every time.

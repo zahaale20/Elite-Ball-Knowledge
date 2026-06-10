@@ -233,3 +233,33 @@ hand-tuned waveforms, which is precisely where the rest of this repo re-enters:
   ([11](../mathematics/11-decision-and-game-theory.md)), the asymmetric playbook
   ([11](../companies/11-startup-asymmetric-playbook.md)), space spectrum
   ([01](../space/01-space-systems-and-astronautics.md)).
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+*Scope note.* This stays at the **publicly published physics-and-systems** level — the link budget, the radar/laser range equations, propagation, and open EW doctrine taxonomies. Specific frequencies, power levels, platform vulnerabilities, and real ECCM techniques are classified/CUI/ITAR and are deliberately **not** here. The goal is the conceptual fluency to design systems that *survive* contested spectrum, not to operate a weapon.
+
+### The laser's pitch is economic, and the brochure hides the caveats
+
+The openly-stated case for directed energy is **cost-per-shot**: a laser's marginal shot is electricity (dollars), against an interceptor missile costing six figures. Against $500 drones that asymmetry is, in DoD leaders' own public words, decisive. But the marketing leaves off the physics that practitioners obsess over. A laser is strictly **line-of-sight**, kills **one target at a time**, and needs **dwell** — it deposits energy over seconds to burn through, it is not a phaser. And the atmosphere is the adversary: absorption and scattering cut range, and **thermal blooming** is the self-defeating one — the beam heats the air in its own path, the warm air defocuses the beam, and the effect *worsens with more power and more humidity*. Raw wattage is the number on the slide; the number that matters is the **spot irradiance on target**, set by beam quality ($M^2$), pointing jitter, and adaptive optics. Rain, fog, and dust crush all of it.
+
+### Laser vs. high-power microwave is a different weapon, not a bigger one
+
+The field treats **HPM** as a separate animal from lasers. A laser is a precise, structural-damage, one-target tool; **high-power microwave** is a wide-area effect that attacks **electronics** (upset or burnout) rather than structure, making it attractive against **swarms**. The catch practitioners raise: coupling RF energy into a specific target through its apertures and seams is **unpredictable**, and the same wide beam threatens **your own** electronics — fratricide and EMI on friendly systems is a first-order design constraint, not an afterthought.
+
+### EW is a doctrine taxonomy worth memorizing — detect, deny, deceive, destroy
+
+The open organizing frame is the spectrum-operations triad: **Electronic Attack (EA)**, **Electronic Protection (EP)**, and **Electronic Support (ES)** — roughly deny/deceive, survive, and sense. Jamming is fundamentally a **power game**: success is set by the **jam-to-signal ratio** at the victim receiver and the resulting **burn-through range** (the distance at which the real signal finally overpowers the jammer). The public conceptual distinctions matter: **barrage** (wideband, brute) vs. **spot** (narrow, efficient) vs. **deceptive** jamming, the last of which — conceptually realized by **DRFM**, digital RF memory that captures and replays a coherent, modified copy of a radar pulse — is *deception, not noise*. It makes the victim's own processing build a false but believable target. The DRFM concept is openly described in textbooks; specific implementations are not.
+
+### Deception beats brute force — the GNSS lesson generalizes
+
+The sharpest unwritten principle, and the link to [07-gnss-jamming-spoofing.md](07-gnss-jamming-spoofing.md): **spoofing is more dangerous than jamming** because it exploits trust rather than denying signal. A jammed receiver *knows* it's blind; a spoofed one confidently reports a lie. Across EW, the highest-leverage attacks are the ones that make a sensor or a network believe something false while it still feels healthy. Designing for this means assuming your inputs may be **coherently deceptive**, not merely noisy — authentication, plausibility cross-checks, and multi-modal agreement, not just signal-to-noise margin.
+
+### Cognitive EW is why machine learning shows up in the spectrum
+
+The modern, openly-published worry is **agility**: adversary waveforms can change faster than a human can analyze a signal and reprogram a jammer. **Cognitive/adaptive EW** applies machine learning and RL ([17-reinforcement-learning.md](17-reinforcement-learning.md)) to recognize a novel emitter and synthesize a response inside the engagement timeline. This is a genuine research frontier in the unclassified literature — and a reminder that the EW fight is increasingly an autonomy fight.
+
+### The first rule is emission control — if you can be detected, you can be targeted
+
+The norm that dominates real operations and rarely appears in the algorithm papers: **every emitter is a beacon.** A radar that's transmitting, a datalink that's chattering, a GPS receiver leaking — each is a thing an ES sensor can find, classify, and cue a weapon onto. The best EW posture is often to **stay silent** (EMCON) or to hide in **low-probability-of-intercept/detection (LPI/LPD)** waveforms. If you design autonomy that emits — and almost all of it does — the survival question is not only "can I close my link?" but "what did I just reveal by closing it?"

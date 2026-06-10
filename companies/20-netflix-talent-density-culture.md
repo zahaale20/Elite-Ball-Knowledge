@@ -169,3 +169,38 @@ This is the band's most directly *usable* module for a builder. Concrete applica
 - Netflix's current public "Culture" memo (it is deliberately public — read the source).
 
 *Netflix's lesson is that culture is not the soft accompaniment to strategy — it is the engineered system that decides whether your strategy is executable at all. Density first; everything else follows.*
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this exists.** §7 admitted the model "strains," but the public record is more pointed than that. The same system that produces density and candor has also produced documented layoffs, a public "culture of fear" critique, and several specific controversies. A serious student of the culture reads these alongside the admiring account — not to dismiss the system, but to see its actual edges. Everything below is public record; where contested, it is labeled.
+
+### The "Keeper Test" and candor, read as ruthlessness
+
+The Keeper Test (§2) and radical candor (§3) are admired internally and criticized externally as **engineered insecurity**. Reporting and ex-employee accounts describe a "culture of fear" in which constant evaluation and the threat of generous-but-immediate severance keep people anxious rather than free. A **2018 *Wall Street Journal*** account documented practices such as openly discussing — internally, "sunshining" — why people were let go, which supporters frame as transparency and critics frame as public humiliation. Even the sympathetic primary source, Hastings and Meyer's *No Rules Rules*, concedes the "team, not family" framing is divisive by design. The criticism is not that the test is incoherent; it is that "humane" and "brutal" are, in practice, hard to keep apart.
+
+### 2022: the layoffs that contradicted the brand image
+
+| Event | Date | What happened (public record) |
+|-------|------|-------------------------------|
+| First subscriber loss in a decade | Q1 2022 | Netflix reported a net loss of ~200k subscribers and forecast losing ~2M more in Q2 |
+| Stock collapse | Apr 2022 | Shares fell ~35% in a single day on the news |
+| Mass layoffs | May–Jun 2022 | Roughly **450 employees** cut across two rounds, plus contractors |
+
+For a company whose brand is **"freedom and responsibility,"** the speed and scale of the 2022 cuts struck many observers as a reminder that talent-density rhetoric coexists with conventional, market-driven layoffs — the "pro sports team" can also bench the roster when the stock turns.
+
+### Password-sharing crackdown (2023)
+
+After years of tacitly tolerating shared passwords, Netflix **began enforcing paid-sharing limits in 2023**, charging for "extra members" outside a household. The rollout drew widespread public backlash and cancellation threats; Netflix later reported it nonetheless drove subscriber growth. Both the backlash and the eventual growth are documented — a case where the company's interests and its stated user-friendliness visibly diverged.
+
+### Specific personnel and content controversies
+
+- **2018 — slur in a meeting.** Chief Communications Officer **Jonathan Friedland** left the company after using a racial slur in internal meetings while, by his account, discussing sensitive language. Hastings called the decision clear; it became a public test of the candor culture's limits.
+- **2021 — Dave Chappelle walkout.** After the special *The Closer* was criticized as transphobic, Netflix faced an internal **employee walkout (Oct 2021)** organized by trans staff and allies. A lead organizer was briefly **fired** (the company cited an unrelated data-disclosure reason and later acknowledged missteps), and another employee was suspended then reinstated — an episode read by critics as candor running one direction.
+
+### Tax incentives and content criticism
+
+Netflix, like its peers, has drawn **documented criticism over public film/TV production tax incentives** and over specific content decisions; these are noted here only where reported, and many such criticisms are contested or framed as ordinary industry practice rather than wrongdoing.
+
+> **Why this matters for the operator.** The Netflix system is genuinely powerful — but the public record shows its costs are real and fall on people: anxiety as a feature, layoffs that don't spare the "elite team," and candor that can read as one-sided when power is unequal. If you adopt density and candor (§§8–9), adopt the *whole* system honestly: name the insecurity it creates, apply the Keeper Test as prevention rather than theater, and remember that "freedom and responsibility" is a claim your layoffs and enforcement decisions will test in public. The discipline of [12-companies-operating-mechanisms-and-culture.md](12-operating-mechanisms-and-culture.md) applies here too — culture is machinery, and machinery has failure modes worth auditing.

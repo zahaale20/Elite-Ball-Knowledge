@@ -42,6 +42,7 @@ fusion claim in simulation per
 8. [Observability — what the fused system can and cannot know](#8-observability--what-the-fused-system-can-and-cannot-know)
 9. [Practice this week](#9-practice-this-week)
 10. [Sources & further study](#10-sources--further-study)
+11. [The Insider Layer — what the field knows but rarely writes down](#-the-insider-layer--what-the-field-knows-but-rarely-writes-down)
 
 ---
 
@@ -313,3 +314,101 @@ most common cause of a fusion estimate that is confident *and wrong*.
 > and calibration, and bounded by what the motion actually makes observable. The
 > engineers who ship robust navigation are the ones who ask "is this state even
 > observable right now?" before they ask "why is my filter wrong?"
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+Fusion is the discipline where the math is elegant and the bugs are physical.
+Textbooks give you the Kalman update; the field gives you the reasons it diverges
+in the parking lot. Here is what the second category looks like.
+
+### Time synchronization is the silent killer, not the math
+
+If you ask a seasoned navigation engineer where fusion bugs come from, the first
+answer is *timestamps*, not algorithms. Every sensor stamps with a different
+clock, a different latency, and a different jitter. A camera frame is timestamped
+at end-of-exposure on some boards and at start-of-readout on others; USB and
+Ethernet add tens of milliseconds of variable transport delay; the IMU's "now"
+and the GPS's "now" differ by an unknown bias. At vehicle speeds a 10 ms sync
+error is a centimeters-to-decimeters position error injected *every update*, and
+it looks exactly like sensor noise so you tune $R$ up to hide it and quietly
+destroy your accuracy. The professional move is **hardware time sync (PPS/PTP) or
+estimating the temporal offset as a state** (Kalibr does this offline). The
+heuristic: if your filter is consistent when stationary but degrades with
+dynamics, suspect timing before you suspect the model.
+
+### Extrinsic calibration ages, and nobody budgets for it
+
+The lever-arm and rotation between IMU and camera/LiDAR are treated as constants
+in every derivation. In the field they drift — thermal cycling, vibration, a
+technician bumping the sensor pod, a chassis that flexes under load. A 1 cm
+lever-arm error or a 0.5° rotation error produces a *velocity-dependent* bias
+that no amount of noise tuning fixes. Shops that ship reliable navigation run
+**online extrinsic estimation** (carry the calibration as slowly-varying states)
+and **periodic recalibration as scheduled maintenance**. The unwritten rule:
+calibration is not a one-time setup step, it is a consumable.
+
+### The standstill paradox and observability you can feel
+
+The classic counterintuitive failure: a visual-inertial estimate that is rock
+solid while moving "walks away" the moment the vehicle stops. The reason is deep
+— at zero acceleration the accelerometer bias and the gravity-aligned states
+become **unobservable**, and the filter, getting no information, lets bias and
+velocity estimates random-walk. Veterans recognize this signature instantly and
+either inject a **zero-velocity update (ZUPT)** when they detect standstill or
+constrain the unobservable subspace. The lesson textbooks underplay: *fusion
+quality is a function of the motion, not just the sensors*. Excitation is
+information. A figure-eight at startup is not superstition; it is making your
+biases observable.
+
+### Don't average sensors — propagate information, and watch for double-counting
+
+The naïve mental model "fusion = weighted average" causes a specific, common bug:
+**correlated measurements counted as independent**. If two estimators both
+consumed the same GPS fix, fusing their outputs as if they were independent makes
+the filter wildly over-confident (this is the whole reason covariance
+intersection exists for decentralized fusion). The error-state/indirect KF and
+factor graphs are popular precisely because they keep the information accounting
+honest. If your covariance is shrinking faster than physics allows, you are
+double-counting something.
+
+### Tuning $Q$ and $R$ is empirical, and the diagnostic is NIS
+
+No one derives the process-noise matrix $Q$ from first principles in production —
+it is the knob that absorbs all your unmodeled dynamics, and it is tuned by
+**making the Normalized Innovation Squared (NIS) sit inside its $\chi^2$ band**.
+Too-small $Q$/$R$ → over-confident filter that rejects good measurements and
+diverges; too-large → sluggish, noisy estimate. The pro skill is reading the NIS
+trace like an EKG: a spike at every turn means your motion model (often constant-
+velocity) is too weak — reach for an IMM or higher-order model rather than just
+inflating noise.
+
+### Gating, outliers, and the GPS that lies in cities
+
+A single bad measurement can corrupt the estimate for seconds. Multipath GNSS in
+urban canyons produces fixes that are *confidently wrong* by tens of meters —
+the receiver reports a tight covariance for a reflected signal. Mahalanobis
+gating (reject measurements with NIS above a $\chi^2$ threshold) is mandatory,
+and chi-square innovation tests plus RAIM-style consistency checks are how the
+field survives spoofing and multipath. Trusting a sensor's self-reported
+covariance without an independent gate is a rookie mistake with expensive
+consequences.
+
+### Norms worth carrying
+
+- **Build the error-state filter, not the direct one**, for anything with
+  attitude — it keeps the covariance in the tangent space and avoids quaternion
+  normalization headaches.
+- **Log innovations and NIS always.** They are free and they are the truth serum
+  of estimation.
+- **Smoothing beats filtering** when latency allows; a fixed-lag smoother buys
+  accuracy a filter cannot (see the factor-graph module).
+- **The integration software is harder than the algorithm.** Most real fusion
+  effort is buffering, interpolation to a common timestamp, and out-of-order
+  measurement handling — not deriving a Jacobian.
+
+The through-line: fusion fails for physical reasons — clocks, mounts, motion —
+that hide behind clean equations. The engineers who ship robust navigation debug
+the plumbing first and ask "is this state even observable right now?" before
+they touch a gain.

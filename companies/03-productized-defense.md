@@ -164,3 +164,36 @@ The transferable skill: **competing on business model and integration, not on ou
 - Steve Blank, "The Secret History of Silicon Valley" talk — the long entanglement of tech and defense.
 
 > Framing note: this category is simultaneously a brilliant strategic case study and an industry building autonomous weapons — the analysis here is about the *mechanism*, not an endorsement of every product. Whether and how lethal autonomy should be built is a serious ethical question that the business model does not answer. Study the counter-positioning; keep your own moral reasoning about *what to build* fully engaged and independent.
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this exists.** The case study sells the productized-defense model as a clean break from the cost-plus dinosaurs. The honest record is messier: the leading exemplar of the model still runs on government relationships, lobbying, and political ties, and the products themselves sit at the center of unresolved ethical debates. Below is public-record and well-reported material, labeled where contested. It uses Anduril as the named exemplar because it is the most documented; the critiques generalize to the venture-backed defense-tech wave.
+
+### "Productized" still runs on relationships and lobbying
+
+The pitch is that you sell a finished product, not a beltway relationship. In practice, the model still depends heavily on **lobbying and government access** (federal lobbying disclosures are public record), on congressional plus-ups, and on DoD demand signals such as the **Replicator** initiative (announced 2023) that the company publicly courted. The productized framing changes *how* you sell — it does not remove the dependence on a single, political customer. The procurement system is still built for cost-plus primes (see [§6](#6-the-incumbents-structural-weaknesses) and [05-career-dod-politics.md](../career/05-dod-politics.md)).
+
+### Founder and investor political ties (revolving door)
+
+- **Palmer Luckey** departed Facebook in 2017 after 2016 *Daily Beast* reporting that he had funded **"Nimble America,"** a pro-Trump group — a widely documented episode.
+- Anduril's early backing came through **Founders Fund** (Peter Thiel) and co-founder **Trae Stephens**, investors with overt political engagement. The broader "American Dynamism" thesis is explicitly political as well as financial. *Documented; interpretation contested.*
+
+### Lethal autonomy and the ethics debate
+
+Anduril-style systems (Lattice C2, Anvil/Roadrunner counter-drone interceptors, Ghost, Barracuda) push toward greater on-board autonomy. **Human Rights Watch**, the **Campaign to Stop Killer Robots**, and the **ICRC** have all publicly argued for binding limits and "meaningful human control" over lethal autonomous weapons. The company says a human stays in the loop; critics question how durable that line is under operational pressure. *This is an open, genuinely unsettled debate — not a settled wrong.*
+
+### Demos vs. fielded performance
+
+A recurring critique from analysts and defense reporters is that polished **demonstrations** in the venture-defense sector can outrun **fielded, at-scale performance**, and that VC-funded growth incentives reward narrative. A concrete, documented test case to watch: Anduril **took over the U.S. Army's IVAS** mixed-reality headset program from Microsoft (announced early 2025) — a troubled program that will publicly test whether the product company delivers where the prime stumbled. *Skepticism is reported; verdicts are pending.*
+
+### Procurement, protests, and incentive risk
+
+| Risk | Public-record reality |
+|------|------------------------|
+| **Bid protests** | GAO bid protests are routine across defense awards; fast-moving entrants both file and draw them as they displace incumbents. |
+| **Capital dependence** | The self-funded-R&D model assumes patient capital; a funding-market shift is an existential precondition, not a guarantee. |
+| **VC incentives vs. battlefield reality** | Venture timelines reward rapid revenue and exits, which can pull against the slow, unglamorous work of sustainment, logistics, and reliability that actually wins wars. |
+
+**Why this matters for the operator.** The counter-positioning move in [§1](#1-the-core-move-counter-positioning-against-the-cost-plus-prime) is real, but "product company, not a beltway shop" is partly branding: you will still lobby, still depend on one political customer, and still own the moral weight of what your software commands. Treat the lethal-autonomy question as a live engineering-and-ethics constraint, not a marketing footnote, and judge any vendor (including a future you) on **fielded** performance, not the demo. Carry this alongside the ethics and export-control discipline in [20-career-ethics-export-control.md](../career/20-ethics-export-control.md).

@@ -627,3 +627,31 @@ grow.
 
 *Equations are standard textbook results. The mapping to PX4 modules reflects the
 PX4 `main` architecture; verify module names against your checked-out version.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### PX4 defaults are a starting point people ship as a finish line
+
+The stock gains are tuned for a generic airframe. They'll fly a *wrong* airframe well enough to look fine and badly enough to bite — sloppy on a heavy build, twitchy on a light one. The tells: low-frequency wallow (P too low, or too much filtering eating your phase margin) versus hot-motor high-frequency buzz (D amplifying prop noise). Auto-tune is a good first pass, never a final answer. The engineers who ship know their airframe's signature in the logs before they touch a slider.
+
+### The D term is a noise amplifier wearing a damping costume
+
+Derivative acts on the *rate of change* of error, so it multiplies sensor and prop-vibration noise straight into the motors — hot ESCs, gritty audio, mechanical wear. The real-world fix is almost never "less D"; it's *filtering*: PX4's gyro low-pass plus **notch filters** tuned to the prop blade-pass frequency. Most "I can't add enough D before it buzzes" problems are unfiltered vibration, not control theory. Soft-mount the FC, measure the noise spectrum, and place the notch *before* you blame the gains.
+
+### Integral windup is the silent killer of takeoffs and transitions
+
+When actuators saturate — full throttle on takeoff, holding attitude against a gust — the integrator keeps accumulating, then overshoots violently when authority returns. Anti-windup (clamping or back-calculation) is not optional on any vehicle that saturates, and VTOLs saturate constantly. The signature is a lurch *after* the saturation clears, not during it. If you see a post-saturation overshoot, you have a windup bug, full stop.
+
+### Control allocation is where multi-actuator vehicles get interesting
+
+A tilt-tricopter has no fixed mixer: tilt angle changes which actuator produces which moment, so allocation is *configuration-dependent*. Get one sign wrong and the vehicle is unstable in exactly one regime — often only after transition — which is the nastiest bug class because hover looks perfect. This is precisely why control allocation earns its own PX4 module and its own program milestone, not a line in a config file.
+
+### Cascade structure: tune inner loops first, always
+
+PX4 is nested — rate (fast) inside attitude inside velocity inside position — with each outer loop roughly 3–5× slower than the one it wraps. Tune from the inside out. An outer loop wrapped around an untuned rate loop will chase ghosts forever. Most "position hold is bad" complaints trace to an untuned rate loop two levels down; fix the foundation and the upper floors often fix themselves.
+
+### Gain scheduling is honesty about nonlinearity
+
+One PID set can't be optimal across hover, transition, and 25 m/s cruise — the plant genuinely changes (dynamic pressure scales control effectiveness with $v^2$). Gain scheduling, or PX4's airspeed-scaled gains, simply admits this. The unwritten norm: keep schedules as simple as the airframe allows. Every breakpoint is one more thing to maintain, mis-tune, and explain at 2 a.m. after a crash.

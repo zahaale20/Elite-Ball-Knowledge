@@ -360,3 +360,31 @@ permission to move to the bench — never as permission to fly.
 - Companion guides: roadmap [02-autonomy-vtol-roadmap.md](02-vtol-roadmap.md), onboard [04-autonomy-onboard-system.md](04-onboard-system.md), tests [05-autonomy-test-scaffold.md](05-test-scaffold.md), sim/test foundations [06-foundations-simulation-test-verification.md](../foundations/06-simulation-test-verification.md).
 
 *SITL ports, model names, and setup scripts track PX4 `main`; verify against the current PX4 docs for your checked-out version.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### Lockstep is a feature and a trap
+
+SITL runs in **lockstep**: the simulator clock and PX4 clock step together, so timing is deterministic and bugs are reproducible. That's the gift. The trap is that lockstep *hides an entire class* of real-world timing and jitter bugs — starved setpoint streams, sensor-arrival jitter, scheduler stalls — that only appear with a real serial link and a real OS. "Works perfectly in SITL" for anything timing-sensitive means almost nothing until you've run HITL.
+
+### The sim/hardware parameter gap is where confidence goes to die
+
+SITL and your Pixhawk share *firmware* but not *parameters* or *airframe*. EKF2 noise terms, control allocation, sensor calibration, and failsafe thresholds all differ. People tune in SITL, flash hardware, and are shocked when it flies differently. Treat SITL as a **logic validator** — does the mission state machine, the mode transition, the offboard handshake work? — not as a **tuning validator**. Tuning happens on the airframe.
+
+### EKF2 needs to warm up — respect it
+
+EKF2 won't declare a valid position or attitude until it has converged with consistent sensors. Arming gates, GPS-fix requirements, and `EKF2_*` health checks exist for good reason. The classic SITL frustration — "it won't arm" — is almost always EKF health, not your code. Read the rejected-arming reason in the console; PX4 tells you exactly why, and beginners ignore it.
+
+### uORB inside, MAVLink outside — know which bus you're on
+
+Internally PX4 is a publish/subscribe message bus (uORB); externally it speaks MAVLink. Your companion and MAVSDK talk MAVLink only. A large fraction of "missing telemetry" bugs are a uORB topic that was never bridged to a MAVLink stream, or a stream-rate request that never got sent. The `listener <topic>` command in the pxh shell is your microscope — learn it before you guess.
+
+### Offboard mode drops you the instant you blink
+
+PX4 offboard requires setpoints faster than ~2 Hz (stream at 10–50 Hz to be safe). Miss the deadline and it failsafes straight out of offboard into hold. Every "it randomly switched to Hold" report is a starved setpoint stream — a Python GIL stall, a slow log flush, or a garbage-collection pause on the companion. The fix is architectural: keep the setpoint loop off the critical-path of anything that can block.
+
+### `gz_tiltrotor` is a stand-in, and your tricopter isn't free
+
+Stock PX4 VTOL airframes assume four motors; a 3-motor tilt-tricopter with a V-tail is a *custom* control-allocation and mixer problem. SITL with `gz_tiltrotor` validates the state machine and the end-to-end pipeline — not your airframe's allocation. The airframe-accurate SDF plus mixer is its own milestone, and getting a mixer sign wrong is a guaranteed flip on first hover, with hover looking perfect right up until it doesn't.

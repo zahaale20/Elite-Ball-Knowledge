@@ -164,3 +164,38 @@ The transferable skill: **build systems that get better by running, drive cost d
 - Eric Ries, *The Lean Startup* — for the build–measure–learn loop the data flywheel automates.
 
 > Framing note: Tesla's fleet-learning model is a genuine engineering marvel and also an experiment running on public roads with real lives at stake. Admire the flywheel; never lose sight that "learning from the long tail" means the long tail is sometimes learned *from a crash*. The mechanism is transferable to your work — instrument, learn, improve — but in safety-critical autonomy the duty to be conservative about deployment is part of the engineering, not separate from it.
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this section exists.** The flywheel above is real, and the data moat is real. But the admiring framing — "each car teaches every car" — glosses over the fact that the teaching sometimes happens *through collisions on public roads*, that the marketing has run ahead of the capability, and that the same company has a documented record of labor and discrimination litigation. An operator who studies only the mechanism inherits the blind spots too. Everything below is public record: regulatory action, court verdicts, and official settlements. Where a claim is contested, it is flagged.
+
+### Autopilot / "Full Self-Driving" — investigations, recalls, and marketing
+
+| Year(s) | What is documented |
+|---------|--------------------|
+| 2021–present | **NHTSA** opened a formal investigation into Autopilot after a series of crashes in which Teslas struck **stationary emergency vehicles**; it later escalated to an Engineering Analysis covering hundreds of crashes. |
+| Dec 2023 | Tesla **recalled ~2 million vehicles** in the U.S. — effectively every Autopilot-equipped car — after NHTSA concluded the driver-monitoring/engagement safeguards were insufficient; the fix was delivered as an OTA software update. NHTSA later opened a query into whether that remedy was adequate. |
+| Ongoing | NHTSA has separately probed **FSD (Supervised)** behavior, including reports of running red lights and crashes in low-visibility conditions. |
+| Marketing | The California **DMV** filed actions alleging Tesla's "Autopilot" and "Full Self-Driving" naming constitutes **false/misleading advertising** because the systems are SAE Level 2 (driver must supervise), not autonomous. Critics — including in NTSB crash reports — have long argued the branding encourages over-reliance. |
+
+Tesla maintains its systems improve overall safety and disputes some methodologies. The crash counts and recall, however, are official NHTSA/Tesla records, not allegations. A wrongful-death/product case (e.g., the 2023–2024 *Huang* and other Autopilot suits) has produced large reported jury verdicts and settlements; outcomes vary and some are under appeal, so treat individual verdict figures as case-specific rather than settled doctrine.
+
+### The 2018 SEC settlement ("funding secured")
+
+In August 2018 Musk tweeted he was considering taking Tesla private at $420/share with **"funding secured."** The **SEC charged him with securities fraud.** The matter settled: **Musk and Tesla each paid $20 million**, Musk **stepped down as chairman** for a period, and Tesla agreed to **pre-approve (oversee) certain of his tweets** — the so-called "Twitter sitter." This was settled *with* charges filed and penalties paid; it is one of the clearest public records of governance/communications risk attached to a founder-CEO.
+
+### Labor and discrimination at Fremont
+
+| Matter | What is documented |
+|--------|--------------------|
+| **Diaz v. Tesla** | A Black former contract worker alleged a racially hostile environment at the Fremont factory. A federal jury initially awarded ~$137M (2021), later **reduced to ~$3.2M** on retrial (2023). The verdict itself is a matter of court record. |
+| **California CRD/DFEH suit** | California's civil-rights regulator sued Tesla in 2022 alleging systemic **racial discrimination and harassment** at Fremont; the litigation is ongoing. The **EEOC** filed its own suit on similar grounds in 2023. |
+| **NLRB** | The NLRB found Tesla **violated labor law**, including a ruling that a 2018 Musk tweet unlawfully threatened employees' stock options for unionizing, and findings around an unlawfully overbroad confidentiality policy and the firing/treatment of union supporters. |
+
+Tesla has denied the systemic characterizations and is appealing or contesting several of these; the *findings and verdicts cited* are nonetheless on the public record.
+
+### Why this matters for the operator
+
+The case study teaches you to instrument, learn, and ship continuously. This section is the reminder that **OTA cadence and bold branding are the same lever pointed at a safety-critical system** — the very thing that lets you push improvements overnight is the thing that lets a marketing claim or an under-validated behavior reach millions of cars at once. The documented pattern is consistent: capability claims ("Full Self-Driving") outran validated capability, the regulator caught up, and the correction came as a fleet-wide recall. The transferable lesson is to **separate what your system *can* do from what you *say* it can do, and to treat deployment to a large fleet as an act requiring conservatism proportional to the consequences** — plus a sober read that a data-and-manufacturing moat does not immunize you from labor, discrimination, or securities law. Keep the flywheel from [01-how-the-giants-win.md](01-how-the-giants-win.md); attach the governance and safety accounting to it.

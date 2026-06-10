@@ -202,3 +202,33 @@ def test_fusion_trusts_radar_in_fog():
 - **nuScenes, KITTI, Waymo Open, and adverse-weather datasets (CADC, RADIATE)** for benchmarking fusion.
 
 > Framing note: LiDAR draws the world's geometry with a laser pencil; radar feels its motion through the storm. Cameras understand meaning but go blind when it matters most. The engineer who masters this band stops thinking of "the perception sensor" and starts thinking in *complementary failure modes* — architecting a system that always has at least one sensor it can trust, and that knows, at every instant, which one that is.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The papers describe networks and the datasheets quote beam counts. Neither tells you why a perception stack that scored 70 mAP on Waymo falls apart the first time it leaves the lab. The real work lives in calibration, timing, and the unglamorous physics of returns.
+
+### Calibration and timing are the job; the algorithm is the easy part
+
+Most "perception bugs" are extrinsics or time-sync bugs wearing a costume. A LiDAR-to-camera extrinsic that is $0.5°$ off projects a point a full pedestrian-width away at 40 m, and that error is invisible on a calibration target but lethal in traffic. Worse, extrinsics *drift* — thermal cycling, vibration, and a single pothole walk your calibration out of spec, and nobody re-calibrates a fleet on schedule. **Time synchronization matters more than spatial calibration.** A point cloud is captured over a full sweep (≈100 ms at 10 Hz); at 20 m/s the sensor moves 2 m *during* the scan, so a raw cloud is smeared. **Deskewing** — undistorting each point back to a common instant using IMU/odometry — is the step beginners skip and then spend a week debugging "ghosting." Use hardware PTP/PPS sync, not software timestamps; the OS jitter alone will cost you centimeters.
+
+### Intensity lies, and so does the beam count on the box
+
+Return intensity is *uncalibrated* and falls with $1/r^2$ and incidence angle — treat it as a hint, never a feature, unless you normalize per-sensor. Retroreflectors (license plates, road signs, safety vests) saturate and *bloom*, creating phantom dense blobs. The "128-line" marketing number hides that vertical resolution is non-uniform and most beams are wasted on sky and near-ground; the figure that matters is **points-on-target at range**, where a pedestrian at 60 m may be 3–5 points — too few for most detectors. A model trained on a 64-beam sensor mounted at 1.8 m will silently fail on a 32-beam sensor at 1.2 m, because density and mounting geometry are baked into what it learned.
+
+### Radar gives you clusters and ghosts, not objects
+
+The field's quiet truth: automotive radar's angular resolution is poor and its output is a noisy point set, not tracks. CFAR thresholding is a black art — too low and you drown in clutter, too high and you miss the motorcycle. Most cheap radars are **2D (no elevation)**, so an overhead sign or a bridge looks exactly like a stopped car in your lane; this is the documented root cause of highway "phantom braking," and the standard hack is to discard stationary returns entirely — which also discards the stopped vehicle you actually needed to see. Multipath conjures targets that don't exist (the classic ghost car beside a guardrail). The genuine signal radar gives you for free is **radial velocity via Doppler** — lean on that, and on **micro-Doppler** signatures (a walking human's limbs, a drone's rotors) for classification, rather than expecting clean geometry.
+
+### Weather makes its own points
+
+Rain, snow, fog, and dust generate *real* LiDAR returns from the air itself — false positives that look like a sparse obstacle. You need clutter filters (dynamic-radius outlier removal and similar) tuned per condition, and you must validate on adverse-weather sets (CADC, RADIATE), not just sunny KITTI. Direct sun in the field of view can blind a receiver outright. This is precisely where radar earns its seat: it sails through the weather that kills the laser.
+
+### ICP's dirty secret is geometric degeneracy
+
+ICP and NDT are taught as if convergence is the only worry. The failure that bites in production is **degeneracy**: in a long tunnel, a straight corridor, or an open field, the geometry doesn't constrain motion *along* the corridor, and ICP happily slides — your map drifts meters with a low residual telling you everything is fine. The fixes are practical: detect degeneracy from the information-matrix eigenvalues and lock the unobservable direction; fuse with IMU/wheel odometry to constrain it; prefer point-to-plane (faster, better-conditioned convergence) and NDT (more robust to bad initialization) over vanilla point-to-point. And never run ICP without a decent prior — give it odometry as the initial guess or watch it find a confident wrong local minimum.
+
+### What deploys vs. what wins benchmarks
+
+The accuracy leaderboard and the deployment reality diverge sharply. **PointPillars** keeps winning in the field not because it is the most accurate but because it pillarizes the cloud into a bird's-eye pseudo-image and runs as a 2D convolution that TensorRT loves — it fits the latency budget on a Jetson. Sparse-convolution voxel nets (Minkowski, spconv) score higher but are a porting nightmare onboard. Ground segmentation by plain RANSAC plane-fit breaks on slopes and curbs (it eats the curb or hallucinates a wall); production stacks use terrain models (Patchwork-style) instead. And the cost nobody budgets for up front: **3D box annotation is slow and expensive**, which quietly dictates how much data — and therefore how much generalization — you can actually buy.

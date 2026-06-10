@@ -244,3 +244,42 @@ Per the band's discipline, every giant's strength names a capability you can tra
 - J. Ronald Fox — *Defense Acquisition Reform, 1960–2009* (DAU historical study).
 
 *The framing here is analytical, not adversarial: the primes are world-class at a hard, real game. Beating them starts with refusing to caricature them.*
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this section exists.** Everything above explains why the primes are *good at their game*. Honesty requires the other ledger: the documented overruns, safety failures, and legal settlements that the admiring case study omits. None of this negates §3's moats — but a strategist who only studies the strengths will misprice the risk of joining, partnering with, or trusting an incumbent. Everything below is public record (GAO, the DoD Inspector General, DOJ/SEC, court filings). Where a matter is contested it is labeled as such.
+
+### The flagship: F-35 cost and readiness
+
+The F-35 is simultaneously the primes' greatest integration achievement and the most-documented cost story in modern procurement. GAO and the DoD Cost Assessment office have repeatedly put the program's **estimated lifecycle cost above ~$1.7 trillion** (acquisition plus ~60 years of sustainment). GAO's sustainment work (e.g., its 2023–2024 reports) found **mission-capable rates well below targets** — fleet-wide availability around the mid-50% range and "full mission capable" rates far lower — driven by spare-parts shortfalls and an engine/cooling redesign. The aircraft works; the *sustainment economics and readiness* are the documented weakness, exactly the cost-plus/assurance tradeoff §4 describes, taken to its extreme.
+
+### Boeing: safety, fraud plea, and fixed-price losses
+
+| Matter | Year(s) | Body | Outcome |
+|--------|---------|------|---------|
+| 737 MAX MCAS crashes — Lion Air 610 (189 dead) and Ethiopian 302 (157 dead) | 2018–2019 | NTSB / DOJ | DOJ **Deferred Prosecution Agreement**, Jan 2021, ~$2.5B (fraud against the FAA) |
+| Breach of the DPA after the Alaska Airlines door-plug blowout | 2024 | DOJ | Boeing **agreed to plead guilty** to conspiracy to defraud the United States (agreement litigated/revised in court) |
+| KC-46 tanker (fixed-price) | 2011– | — | Boeing has absorbed **billions in reported pre-tax charges** on cost overruns |
+| Starliner crewed flight test | 2024 | NASA | Returned **uncrewed**; crew brought back on a different vehicle |
+
+Boeing's defense unit has reported multi-billion-dollar program losses across KC-46, T-7, MQ-25, and the VC-25B (Air Force One) fixed-price programs — a documented cautionary tale about firm-fixed-price contracting on developmental work.
+
+### RTX/Raytheon: a ~$950M+ settlement year
+
+In **October 2024**, RTX resolved parallel DOJ and SEC matters for **more than $950 million** combined, covering: **FCPA foreign-bribery** conduct (improper payments related to Qatar), **defective-pricing** violations (knowingly providing false cost data on radar/missile contracts, overcharging the DoD), and **ITAR/export-control** violations. The resolutions included deferred-prosecution agreements; RTX entered them to settle. This is the cleanest recent example of the monopsony's enforcement teeth.
+
+### Spare-parts pricing and B-21 charges
+
+- **TransDigm:** DoD IG audits (2019 and 2021) found the supplier earned **excess profit on spare parts** — the 2019 audit identified roughly **$16M** in excess profit, which the company voluntarily refunded after congressional pressure. Component-level price-gouging is a recurring IG theme.
+- **Northrop Grumman B-21:** Northrop disclosed a reported **~$1.56B pre-tax charge** (2023–2024) on the early fixed-price B-21 production lots, attributed to inflation and macro assumptions — fixed-price discipline cutting *against* the prime for once.
+
+### Structural critiques
+
+- **Reduced competition.** The DoD's own **February 2022** report, *State of Competition Within the Defense Industrial Base*, documented how post-1990s consolidation (the "Last Supper" of §2) shrank competition and raised buyer risk.
+- **Revolving door & lobbying.** Watchdogs (POGO, GAO) have long documented senior-official-to-prime employment flows and heavy lobbying spend — legal, but a persistent governance criticism.
+
+### Why this matters for the operator
+
+These are not reasons to dismiss the primes — they are the *price of admission to the game §1 describes*, and most were caught precisely because the monopsony audits relentlessly. But they reset your expectations: fixed-price developmental work can sink even a prime ([04](#4-the-cost-plus-contract-understood-honestly)); compliance failures carry nine-figure penalties; and "world-class at integration" coexists with "documented sustainment and safety failures." Price that risk into any decision to join, sub to, or compete against an incumbent — and read this section *against* the strengths in [§3](#3-the-five-real-moats-of-an-incumbent-prime), never instead of them.

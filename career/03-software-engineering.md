@@ -367,3 +367,68 @@ Good luck. You're closer than most candidates because you're already building re
 - PX4 / ArduPilot forums & Discord; AUVSI, AIAA professional orgs.
 
 *Repo references (`onboard/`, `navigation/`, `policy/`, `sitl.md` → now [03-autonomy-px4-sitl.md](../autonomy/03-px4-sitl.md)) point to the author's `pixhawk/drone/` project. Standards evolve — verify against primary sources.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The guide above lists what to learn. This is the part working flight-software
+engineers know that the curriculum and the marketing both omit — where the real
+leverage, the real pain, and the real money actually sit.
+
+### "I shipped flight software" beats every certificate
+No bootcamp badge, no online course, no acronym list competes with one true
+sentence: *"I wrote code that ran on a real vehicle and controlled real
+actuators."* Hiring managers in this space have been burned by candidates who can
+recite DO-178C DALs but have never debugged a race condition on hardware at 3 a.m.
+The entire value of your PX4/Pixhawk work is that it's *real* — guard that framing
+and resist diluting your résumé with course completions that signal the opposite.
+
+### The embedded tax is real and it's why embedded engineers are scarce
+Debugging on a microcontroller is roughly an order of magnitude slower than
+debugging a web service: you can't just add a `print` and rerun in two seconds —
+you're flashing firmware, attaching a JTAG/SWD probe, reading a logic analyzer,
+and reasoning about timing you can't pause. Most software engineers quietly refuse
+this pain, which is exactly why people who *tolerate* it are scarce and well-paid.
+The scarcity isn't intelligence; it's stamina for slow, physical feedback loops.
+Lean into it — it's a moat.
+
+### MATLAB/Simulink is the secret backbone of the primes (and it's underrated)
+New grads chase Rust and ignore Simulink, then discover that at Boeing, Lockheed,
+and most GNC/controls organizations, the control laws are *designed in Simulink and
+auto-coded* to flight C. Model-based development (DO-331) is a whole career niche
+with real demand and thin supply because it's unfashionable. If you can bridge
+hand-written embedded C *and* model-based Simulink workflows, you're fluent in both
+tribes — a genuinely rare and valuable position the cool-kid stack won't get you.
+
+### Rust is real but smaller than the hype implies
+The defense-tech firms genuinely use Rust, and it's worth learning — but the
+installed base of flight-critical, certified, and legacy code is overwhelmingly
+**C and C++**, with pockets of **Ada** in avionics. The pragmatic reality: C++ is
+still the language that maximizes the number of doors you can open in this
+industry. Learn Rust to ride the trend; master C++ to actually get hired across
+the widest set of teams.
+
+### Safety-certification expertise is a lucrative, low-glamour career lane
+Few engineers *want* to specialize in DO-178C verification, MC/DC coverage, and
+requirements traceability — it's meticulous and unsexy — so the people who do are
+perennially in demand and command premiums (independent V&V, DER-adjacent work,
+static-analysis tooling). If the startup-velocity life doesn't suit you, the
+certification lane is a stable, well-paid, durable niche that automation has
+repeatedly failed to eliminate because the *judgment* is the hard part.
+
+### The clearance premium stacks on top of the skill premium
+In this corner of software, an active clearance can add a substantial premium to
+otherwise-identical compensation, because cleared software engineers who can also
+*build* are a tiny intersection of two scarce sets. The career cheat code is the
+intersection itself: **cleared + ships real autonomy/embedded code**. Most
+candidates are one or the other; being both is what lets you name your number.
+See [06-negotiation-compensation.md](06-negotiation-compensation.md).
+
+### SpaceX and the top defense-tech firms run genuinely hard algorithm loops
+Don't believe the comforting myth that "defense doesn't LeetCode." The elite
+defense-tech employers interview much like top consumer-tech: medium-to-hard data
+structures, real systems design, and a take-home. The *primes* weigh domain and
+process more, but if your targets include SpaceX, Shield AI, or Applied
+Intuition, you grind algorithms to a high bar the same as anyone else — graph
+search (A\*/Dijkstra) especially, because it doubles as autonomy domain signal.

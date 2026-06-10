@@ -369,3 +369,60 @@ clearly and moving fast — not a license to treat people as inputs.
 > Framing note: Amazon's real lesson is not *what* to build but *how to keep deciding well at scale*.
 > You are a one-person company; you can install the same operating system this week. Don't admire the
 > mechanisms — run them, inspect them, and discard the parts that cost more than they're worth.
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this exists.** §10 named the *abstract* failure modes — process metastasis, frugality as
+> cruelty, metrics tyranny. This section grounds them in the **public record**: lawsuits, regulator
+> actions, and labor-board findings. The same mechanisms that make Amazon decisive at scale are the
+> ones that, by documented account, externalize costs onto workers, sellers, and customers. Study
+> both halves or you've studied a brochure.
+
+### Antitrust & the FTC
+
+| Matter | Year(s) | Body | Status / outcome |
+|---|---|---|---|
+| *FTC v. Amazon* (monopoly maintenance) | Filed Sept 2023 | US FTC + 17 state AGs | Ongoing; alleges Amazon unlawfully maintains monopoly power over online marketplaces via anti-discounting and seller-coercion tactics. Not yet adjudicated. |
+| Prime "dark patterns" enrollment/cancellation | Suit filed June 2023; settlement Sept 2025 | US FTC | Amazon agreed to a **$2.5B settlement** ($1B civil penalty + $1.5B in customer refunds) over allegedly tricking users into Prime sign-ups and obstructing cancellation (the "Iliad" cancellation flow). |
+| EU marketplace commitments | Dec 2022 | European Commission | Amazon gave **legally binding commitments** over use of third-party seller data and Buy Box / Prime fairness, closing the Commission's investigations without a fine. |
+| UK (CMA) seller-data & Buy Box | 2022–2023 | UK CMA | Accepted binding commitments mirroring the EU package. |
+
+The third-party-data issue was first surfaced by *Wall Street Journal* and *Reuters* investigative
+reporting alleging Amazon used aggregated and (per the reporting) individual seller data to build
+competing **private-label** products — the conflict of interest baked into being both the marketplace
+*and* a seller on it. The EU/UK commitments were the regulatory response.
+
+### Labor, safety & unions
+
+- **Warehouse injuries & OSHA.** Federal **OSHA** issued citations in 2022–2023 for ergonomic
+  hazards at multiple fulfillment centers, and the DOL referred Amazon for "willful" exposure of
+  workers to musculoskeletal-injury risk. Amazon contested several findings. Reporting (and Amazon's
+  own released data) has repeatedly shown injury rates above warehousing-industry averages.
+- **Union organizing.** At **Bessemer, AL** (RWDSU, 2021) the union vote failed, but the **NLRB**
+  found Amazon's conduct improperly tainted the election and ordered a re-run. At **JFK8 (Staten
+  Island)**, the independent **Amazon Labor Union won the first successful US Amazon union vote in
+  April 2022**; the NLRB has since issued multiple complaints and findings of unlawful anti-union
+  conduct (captive-audience meetings, retaliation), several contested or on appeal.
+- **Delivery / DSP model.** Reporting documented pressure on Delivery Service Partner drivers; in
+  2021 Amazon publicly **acknowledged and apologized** for drivers being unable to take adequate
+  breaks after initially denying the "urinating in bottles" reporting.
+
+### Customers & sellers
+
+- **Counterfeits & safety.** Long-running criticism (and product-liability litigation in several US
+  states) over counterfeit and unsafe third-party goods and Amazon's contested liability as the
+  "seller." Outcomes vary by jurisdiction.
+- **Seller dependency.** Critics and the FTC argue fee structures (FBA, advertising, referral fees)
+  plus Buy Box mechanics leave sellers structurally dependent — the flip side of the §7 flywheel.
+
+### Why this matters for the operator
+
+The mechanisms in §1–§9 are genuinely worth stealing — *and* the public record shows what happens
+when "Customer Obsession" and "Frugality" run without a countervailing check on the humans inside the
+loop. The mature read, consistent with §10's "steal the mechanisms, audit the externalities," is to
+install the *thinking tools* while explicitly pricing in the costs Amazon was made — by courts,
+regulators, and labor boards — to answer for. When you build your own flywheel, ask the question the
+case study omits: *who pays for the momentum?* For the contrast culture and its own documented
+failures, see [09-companies-google-scale-infra.md](09-google-scale-infra.md).

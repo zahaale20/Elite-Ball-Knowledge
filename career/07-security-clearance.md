@@ -547,3 +547,89 @@ available, unclassified information. It is not legal advice. Clearance policy,
 forms, timelines, and systems (e-QIP → eApp/NBIS, Trusted Workforce 2.0) change —
 verify every specific against the primary DCSA/ODNI/OPM sources above, and when in
 doubt, **tell the truth on the form.***
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+Everything below is drawn from public policy — SEAD 4's adjudicative guidelines,
+the SF-86, and DCSA/ODNI guidance. *The non-public mechanics of polygraph sessions
+and the internal deliberations of adjudicators are deliberately out of scope here;
+where this guide would have to speculate about closed processes, it stops and says
+so rather than invent.* What follows is the published reality that nonetheless
+surprises almost everyone going through it the first time.
+
+### The cover-up sinks more clearances than the conduct
+The single most counterintuitive, publicly documented truth: people lose
+clearances over **Guideline E (Personal Conduct)** — lying on the form or in the
+interview — far more often than over the underlying behavior they were hiding.
+Past marijuana use, a long-ago arrest, a debt: these are frequently *mitigable*
+under the whole-person concept. A deliberate omission is much harder to mitigate,
+and a knowing false statement on the SF-86 is its own federal exposure under
+18 U.S.C. § 1001. The entire system is engineered to reward candor and punish
+concealment — so the dominant strategy is radical, complete disclosure, even when
+it's embarrassing.
+
+### Finances are the number-one reason clearances are denied
+Year after year, the published statistics put **Guideline F (Financial
+Considerations)** at the top of the denial list — above drugs, above foreign
+contacts. The logic is documented and pragmatic: unmanaged debt is treated as a
+vulnerability to coercion and as a window into judgment and reliability. The
+mitigation is equally documented — a debt you're *actively addressing* on a
+written plan adjudicates very differently from one you're ignoring. Practical,
+public-knowledge takeaway: pull your own credit report before you ever submit, and
+walk in with a paper trail for anything adverse.
+
+### Recency runs the clock on drugs — and marijuana is still federally illegal
+Under Guideline H, *when* matters as much as *whether*. Published guidance treats
+distant, discontinued use very differently from recent use, and a credible,
+written intent not to use again is part of the mitigation framework. The trap that
+catches people: **marijuana remains a Schedule I substance federally**, so state
+legalization is irrelevant to a federal clearance, and casual "it's legal here"
+reasoning has ended candidacies. The clean public move is simply to stop well
+before you apply and document the date.
+
+### Continuous Vetting changed the game from a snapshot to a movie
+**Trusted Workforce 2.0 / Continuous Vetting** replaced the old periodic
+reinvestigation with ongoing automated monitoring of records — a publicly
+announced shift. The practical consequence most people miss: your **continuous
+duty to self-report** (new foreign contacts, certain financial events, arrests)
+is now the live mechanism, not a once-every-five-years cleanup. Cleared status is
+a standard you maintain daily, not a credential you earn once. Self-reporting
+promptly is itself favorable conduct; getting flagged by the system first is not.
+
+### "Clearable" is a real, nameable résumé asset — use it
+You cannot sponsor your own clearance, which creates the well-known chicken-and-egg.
+The public workaround is to be *demonstrably clearable* — U.S. citizen, clean
+finances, no current drug use, declarable (not disqualifying) foreign ties — and to
+say exactly that on your résumé and in screens. An **interim clearance** can be
+granted relatively quickly on a clean preliminary review, letting you start work
+while the full investigation runs, which is why a tidy background is effectively a
+schedule asset an employer can price. See
+[06-negotiation-compensation.md](06-negotiation-compensation.md).
+
+### Reciprocity is policy, not a guarantee — expect friction
+In principle a clearance transfers between agencies and contractors; in published
+practice **reciprocity has gaps**, especially across the line into SCI access or
+where a polygraph is required by the gaining program. A Secret or even a TS does
+not automatically carry every access you held, and crossover can take time. The
+realistic expectation — supported by ODNI's own reciprocity guidance — is that
+moving between programs is usually *smoother*, not instant or frictionless.
+
+### The mental-health stigma is largely outdated — by design
+A persistent myth says seeking counseling tanks a clearance. The SF-86's mental
+health question (historically Section 21) has been *deliberately narrowed* and now
+explicitly carves out grief, family, and most routine counseling, and policy has
+been public-messaged to encourage care. What's actually adjudicated under
+Guideline I is a *condition that affects judgment or reliability* — not the act of
+responsibly getting help. The documented, government-endorsed position is that
+seeking treatment is generally viewed as a sign of strength, not a red flag.
+
+### Keep a clearance binder — the SF-86 is an exercise in documentation, not memory
+The form demands 10 years of addresses, employments, foreign travel, and contacts,
+and it is verified. The people who breeze through it keep a running file:
+residences with dates, supervisors, every foreign trip, foreign-national contacts.
+The people who struggle try to reconstruct a decade from memory under time
+pressure and create inconsistencies that *look* like deception even when they
+aren't. Start the binder before you need it — accuracy and consistency are the
+whole game.

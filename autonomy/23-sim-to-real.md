@@ -170,3 +170,33 @@ def test_held_out_dynamics_transfer():
 - **Todorov, Erez & Tassa (2012), "MuJoCo: A physics engine for model-based control."**
 
 > Framing note: Sim-to-real reframes the simulator from a place you *demo* in to the place you *develop* in. The reality gap is never fully closed — it is *managed*, by modeling what you can, randomizing what you can't, measuring the residual honestly, and validating transfer rather than memorization. The engineers who win treat the simulator as a hypothesis about reality and every hardware trial as the experiment that tests it — and they trust sim-real correlation, not sim performance, as the number that matters.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+Domain randomization gets all the press, but the people who actually ship transferred policies will tell you the lever is rarely where newcomers point it, and the discipline is mostly about measurement honesty.
+
+### The gap is dynamics and latency, not pixels
+
+Newcomers spend weeks chasing photorealism when the policy is failing because of a **15 ms action delay** the simulator didn't model. The single most reliable predictor of transfer for control policies is whether you matched actuator dynamics — motor lag, torque saturation, gear backlash — and end-to-end latency from observation to applied command. A locomotion policy trained with zero delay will limit-cycle and fall the moment it meets real servo lag. Model the delay explicitly (a delay buffer on actions) and randomize *around* the measured value. Conversely, if your task is vision-in-the-loop manipulation, then appearance does matter — the rule is: **randomize the modality your policy is most sensitive to, identify the rest.**
+
+### "The average of all worlds is a bad world"
+
+Domain randomization has a failure mode the papers underplay: crank the ranges too wide and the optimal policy becomes a timid generalist that performs the average behavior across an impossible distribution — robust to everything, good at nothing. Too narrow and it overfits sim and doesn't transfer. The skill is **tuning the randomization ranges**, ideally as a curriculum that widens as the policy improves (start easy, expand). When you can measure a parameter on the real robot (mass, link lengths, friction within a band), *identify it and shrink the range* — randomization is for your residual ignorance, not for things you could simply have measured. SimOpt-style closing of the loop (use a few real rollouts to update the randomization distribution) beats blind wide randomization almost every time.
+
+### Teacher-student / privileged learning is the real workhorse
+
+The quiet truth behind the headline legged-robot results (RMA, ANYmal) is that they rarely train the deployed policy directly. They train a **teacher with privileged access to full simulator state** (true friction, contact forces, terrain height), then **distill** it into a **student** that sees only onboard sensors and must infer the hidden dynamics from a short history of observations. This implicit online system-identification — letting a recurrent or stacked-history network estimate the latent terrain/dynamics on the fly — is why those robots adapt to ice or a payload they never explicitly trained on. If you're transferring a hard contact-rich task and going straight student-only, you're fighting with one hand tied.
+
+### The simulator is an adversary, and your policy will exploit it
+
+Reinforcement learning is a relentless optimizer of *whatever the simulator actually computes*, including its bugs. Policies routinely discover physics-engine exploits — vibrating a foot to exploit contact-solver energy gain, jittering through a wall via penetration, or riding numerical instabilities to "fly." These look like brilliant emergent behavior in sim and produce a robot that face-plants in reality. **Distrust any sim behavior that looks too clever**, especially in contact. This is also why contact-rich manipulation is the worst-transferring domain and locomotion-on-rigid-terrain is among the best: contact models are the least faithful part of every engine.
+
+### Train with the estimator in the loop, not ground truth
+
+A subtle, expensive mistake: in sim your policy is handed perfect state; on the robot it gets a noisy, biased, *delayed* estimate from a real filter. A policy that's optimal on ground truth can be brittle to the very estimator errors it will face. Either feed the policy the same noisy, latency-matched estimated state during training, or run your actual estimator inside the sim loop. The reality gap includes the perception/estimation stack, not just the plant.
+
+### Trust sim-real correlation, not sim score
+
+The number that fools people is sim performance. The number that matters is whether an *improvement in sim predicts an improvement on hardware* — establish that correlation early on a small, fixed real-eval set, or you may spend months optimizing simulator noise. Budget for honest hardware trials, hold them out, and track the distribution shift. The mature workflow is: model what you can, identify what you can measure, randomize the residual, and let every hardware run be the experiment that either validates the simulator-as-hypothesis or tells you exactly which mismatch to fix next.

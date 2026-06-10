@@ -43,6 +43,7 @@ validated against distribution shift per
 7. [Practice and pitfalls in the real world](#7-practice-and-pitfalls-in-the-real-world)
 8. [Practice this week](#8-practice-this-week)
 9. [Sources & further study](#9-sources--further-study)
+10. [The Insider Layer — what the field knows but rarely writes down](#-the-insider-layer--what-the-field-knows-but-rarely-writes-down)
 
 ---
 
@@ -266,3 +267,88 @@ Two hard-won disciplines:
 > engineers who ship it understand that the real problem is not copying the expert but
 > covering the distribution the policy creates for itself, and they never deploy a
 > cloned policy without recovery data and a verified guard behind it.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+Imitation learning looks like the easiest thing in robotics — collect demos, fit
+a network, done. It is the easiest thing to *start* and one of the hardest to
+*ship*, for reasons the demos never reveal.
+
+### Compounding error is quadratic, and that's why BC drifts off the road
+
+The fatal arithmetic, due to Ross & Bagnell: a behavioral-cloning policy with
+per-step error $\epsilon$ accumulates regret that grows like $T^2\epsilon$ over a
+horizon $T$, not $T\epsilon$, because each mistake moves the agent into states
+*less* like the training data, where it makes bigger mistakes — a feedback loop.
+This is why a cloned driving policy looks perfect for five seconds and then drifts
+to the shoulder and never recovers: it never saw a recovery, because the expert
+never made the mistake that required one. The insider mantra: **the expert's
+flawless demos are exactly the problem.** You must deliberately inject the
+failures the expert never made.
+
+### The whole trade is collecting recovery data, not more clean demos
+
+Newcomers respond to drift by collecting *more* clean demonstrations. It barely
+helps — you're adding density to a distribution the policy already leaves. What
+works is **on-policy correction**: DAgger (roll out the current policy, have the
+expert label the states it actually visited, aggregate, retrain) directly fixes
+the distribution mismatch, and the cheaper field versions are *intervention-based*
+— a human safety driver takes over exactly when the policy drifts, and those
+intervention states are gold. NVIDIA's PilotNet trick of synthesizing off-center
+camera views to fake recovery data is the same idea by other means. The unwritten
+rule: **your dataset must contain the mistakes, or the policy will discover them
+at deployment.**
+
+### Multimodality breaks naïve regression, and that's why diffusion policies won
+
+If the expert sometimes goes left and sometimes right around an obstacle, a
+network trained with mean-squared error learns the *average* — straight into the
+obstacle. This **mode-averaging** failure is subtle, common, and invisible in
+aggregate loss numbers. It is the deep reason the field moved to **action
+distributions that can represent multimodality**: discretized action tokens (as
+in some autoregressive policies), mixture models, action chunking (ACT), and
+especially **diffusion policies**, which sample from a multimodal action
+distribution and sidestep averaging entirely. If your BC policy "freezes" or
+"splits the difference" at decision points, you have a mode-averaging problem, not
+a capacity problem — more parameters won't fix it.
+
+### Causal confusion and the "more information hurts" paradox
+
+A genuinely counterintuitive result: giving the policy *more* context can make it
+*worse*. The classic example — a driving policy with access to its own past
+actions or a dashboard brake-light indicator learns the spurious shortcut
+"predict brake when the brake light is on" instead of "brake when there's a
+pedestrian," because the indicator perfectly predicts the action in the demos.
+The policy latches onto the **effect** of the expert's decision as its cause. This
+*causal confusion* (de Haan et al.) means feature selection in IL is a
+correctness issue, not just efficiency — and it's why you strip proprioceptive
+"tells" that leak the action out of the observation.
+
+### Norms, numbers, and the honest scope
+
+- **IL bypasses reward design — that's the entire selling point.** When the
+  behavior is easy to demonstrate but hard to score (a graceful merge, a delicate
+  grasp), IL beats RL. When you can write a clean reward and simulate cheaply, RL
+  or MPC may dominate. Pick IL because demonstration is the natural interface, not
+  because it's trendy.
+- **Demonstration quality is your ceiling, and humans are inconsistent
+  teleoperators.** Latency, jerky inputs, and a human "correcting" mid-motion all
+  poison the data. Curate ruthlessly; a few clean demos beat many sloppy ones.
+- **IRL recovers the *reward*, BC copies the *actions* — different products.** If
+  you need to generalize to new environments or out-perform the demonstrator, you
+  want the reward (IRL/GAIL); if you just need to reproduce the skill in a similar
+  setting, BC is simpler and usually enough. IRL is data-hungry and an
+  ill-posed inverse problem (many rewards explain the same behavior), so reach for
+  it deliberately.
+- **The verified guard stays on.** Like RL, a cloned policy gets a safety filter
+  and recovery behaviors behind it — distribution shift *will* eventually put it
+  somewhere it's never been.
+
+The through-line: imitation learning is seductive because the demonstration is so
+easy to give and treacherous because the policy must perform in the states its own
+imperfection creates. The people who ship it understand the real task is not
+copying the expert but **covering the policy's self-induced distribution** — with
+DAgger, recovery data, multimodal action models, and a guard that catches the day
+the drift finally wins.

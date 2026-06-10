@@ -798,3 +798,67 @@ comfortable with it. Decide your own lines before you're in the room.
 - Shield AI, Skydio, Boeing, SpaceX, Lockheed Martin, Northrop Grumman careers pages.
 
 *Repo-specific references (`navigation/`, `policy/`, `onboard/`, etc.) point to the author's own `pixhawk/drone/` codebase. Verify all standards and company requirements against primary sources before relying on them.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The playbook above tells you how to present. This is the part nobody puts in a
+recruiting deck: how defense-tech hiring *actually* moves, why it's lumpy, and the
+unwritten norms that separate the people who get the offer from the people who
+look good on paper.
+
+### "Builders who ship" is a literal screen, not a slogan
+At Shield AI, Skydio, Saronic, and their peers, the take-home and the live-debug
+round exist to answer one question: *can you make a real thing work under
+ambiguity, today?* The fastest disqualifier is a candidate who can discuss
+architecture beautifully but freezes when handed a broken repo and told "get the
+drone to arm in SITL." The corollary norm: **demo or it didn't happen.** A 40-second
+clip of your own autonomy stack flying — even badly, even in sim — outperforms a
+page of bullet points, because it collapses the reviewer's uncertainty about
+whether you really built it. Lead with the artifact.
+
+### The industry is a small town with a long memory
+The serious autonomy/defense-tech world is a few thousand people who all interview
+at, leave, and rejoin each other's companies. Your reputation — for shipping, for
+integrity, for being decent in a code review — is a tradeable asset that follows
+you across the whole sector. One burned bridge or one bluffed competing offer
+(both checkable) can quietly cost you the *next* three opportunities. Today's
+"no" from a hiring manager is frequently next year's referral, so decline
+gracefully and stay warm.
+
+### Hiring is lumpy because the funding is lumpy
+Defense-tech startups live on a jagged mix of venture rounds, OTAs, SBIR/STTR
+phases, and a handful of programs of record. When a big contract lands or a round
+closes, they hire in a sprint; when a program slips or a raise is delayed, reqs
+freeze overnight regardless of how strong you are. This is why timing and
+persistence beat polish: the same résumé that's ignored in a freeze gets a fast
+yes three weeks later when the OTA is signed. Don't read a slow response as a
+verdict on you — re-apply when the trade press signals a win.
+
+### The forward-deployed / field engineer role is the hidden fast track
+Startups disproportionately need people who will take the system *to the field* —
+a test range, a ship, a degraded-comms environment — and make it work in the rain
+at 5 a.m. It's less glamorous than "autonomy research," the travel is real, and
+burnout is a risk, but it is the highest-trust, highest-visibility way in for
+someone with hands-on bring-up discipline. Field engineers see the whole system
+fail in every possible way, which makes them the people who later *design* it.
+Your Pixhawk/PX4 bring-up experience maps directly onto this archetype.
+
+### Clearance is a chicken-and-egg you solve by being boring and a citizen
+You can't sponsor your own clearance, and many of the best roles are gated on one
+you don't have yet. The way through is to be *demonstrably clearable* (citizen,
+clean finances, no current drug use, declarable foreign ties) and to say so
+plainly, then let an employer sponsor you into a Secret-designated seat and grow
+you up the ladder. An interim Secret can land in weeks for a clean background, so
+the practical bottleneck is usually your paperwork hygiene, not the government.
+See [07-security-clearance.md](07-security-clearance.md) for the full mechanics.
+
+### Read the verbs; mirror the culture; don't fake the one you're not
+The playbook's archetype table is the real tell. A posting full of *own, ship,
+prototype* wants velocity and will be repelled by certification jargon; one full
+of *verify, trace, certify, document* wants safety-case discipline and distrusts
+"move fast." Candidates lose offers by pitching prime-style rigor to a startup
+(reads as slow) or startup-style velocity to a prime (reads as reckless). Pick the
+archetype you actually fit and speak its dialect — the worst outcome is
+mis-sorting yourself into a culture that will grind you down.

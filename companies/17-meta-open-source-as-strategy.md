@@ -175,3 +175,38 @@ Applying the framework to the kind of work this curriculum targets:
 - Apple's App Tracking Transparency disclosures (the ~$10B/yr Meta impact that shaped the strategy).
 
 *Meta's lesson is that generosity can be the sharpest competitive weapon in the arsenal — but only for the player whose money is somewhere else.*
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this exists.** The sections above study Meta as a strategist. The public record also documents that the advertising engine financing all that "free" generosity (§3) has repeatedly collided with privacy law, child-safety regulators, antitrust enforcers, and — in at least one UN-documented case — mass violence. Everything below comes from court filings, regulator settlements, a US whistleblower's disclosed documents, and UN/Amnesty International findings. Contested or unproven items are labeled.
+
+### Privacy and the advertising engine
+
+| Matter | Year(s) | Authority | Outcome (public record) |
+|--------|---------|-----------|-------------------------|
+| Cambridge Analytica | 2018–2019 | US FTC; US SEC | A consultancy harvested data on ~87M users. The FTC imposed a **$5B penalty (2019)** — then the largest privacy fine in US history — plus new privacy-oversight obligations; Facebook separately paid **$100M to the SEC** over disclosures. |
+| GDPR data transfers | 2023 | Irish Data Protection Commission (EU) | **€1.2B fine** over EU–US transfers of user data — the largest GDPR fine to date — plus an order to suspend transfers (later eased by a new EU–US framework). Additional GDPR fines (€390M, €405M for Instagram) were levied in 2022–2023. |
+| Discriminatory ad delivery | 2022 | US DOJ (Fair Housing Act) | Meta settled DOJ allegations that its housing-ad targeting/delivery enabled discrimination; it agreed to **build a new "Variance Reduction System"** for ad delivery and pay a penalty. Settled to resolve the claims. |
+
+### Child safety and the Haugen disclosures
+
+- **Frances Haugen whistleblower (2021).** A former product manager disclosed thousands of internal documents (the basis of the *Wall Street Journal*'s "Facebook Files" and US Senate testimony). The documents included **internal research indicating Instagram worsened body-image and mental-health issues for some teen girls**, alongside disclosures about the company's handling of misinformation and engagement-ranking effects.
+- **State attorneys-general youth-harm suit (2023).** **More than 40 US states sued Meta in October 2023**, alleging its products are designed to be addictive to minors and that it misrepresented their safety — citing violations including the federal Children's Online Privacy Protection Act (COPPA). The litigation is ongoing; Meta disputes the claims.
+
+### Antitrust
+
+- **FTC monopoly suit.** The FTC sued Meta (2020, refiled 2021) seeking to **unwind the Instagram (2012) and WhatsApp (2014) acquisitions**, alleging a "buy-or-bury" strategy to neutralize competitors. The case proceeded to trial in 2025; Meta denies the allegations.
+
+### Content-moderation failure with mass-violence consequences
+
+- **Myanmar / Rohingya.** The **UN Independent International Fact-Finding Mission on Myanmar (2018) found Facebook had played a "determining role"** in spreading hate speech that contributed to violence against the Rohingya; the company itself commissioned a human-rights assessment acknowledging it had not done enough. **Amnesty International (2022)** went further, arguing Meta's engagement-optimizing algorithms "substantially contributed" to atrocities; related litigation has been filed. Meta has said it was "too slow" to act.
+
+### The closed bet's bill
+
+- **Reality Labs losses.** The vertically integrated metaverse/AR–VR bet (§6) has accumulated **operating losses well in excess of $40B since 2020**, disclosed each quarter in Meta's own 10-K/10-Q filings, with markets repeatedly punishing the spend.
+
+### Why this matters for the operator
+
+§1 frames "free" as the sharpest price; the record here is the reminder that the *engine* funding that generosity is an advertising/engagement machine whose externalities regulators, whistleblowers, and a UN mission have all formally challenged. The strategy you are studying to admire is inseparable from a $5B privacy penalty, the largest GDPR fine ever levied, a sweeping antitrust attempt to dismantle its own acquisitions, and a documented role in real-world harm. If you build engagement-optimizing or data-harvesting systems — or open-source models that adversaries can repurpose (§7) — treat these as the *predictable* cost structure of the model, not as bad luck. Generosity at one layer does not absolve the core; the operator's job is to weigh both ledgers.

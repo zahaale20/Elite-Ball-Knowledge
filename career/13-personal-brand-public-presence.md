@@ -159,3 +159,71 @@ This is the band where you must be most disciplined.
 - [09-resume-portfolio.md](09-resume-portfolio.md) — converting presence into offers.
 - [20-ethics-export-control.md](20-ethics-export-control.md) — the guardrails on
   what you can publish.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### A brand is being *pre-vetted before the call*
+Strip the influencer connotation and a public brand is a single mechanism: when
+your name is typed into a search box — by a recruiter, a forward-deployed
+engineer, a potential cofounder, a program lead — something credible and specific
+appears. Hiring is a problem of *uncertainty reduction*, and a body of public
+work is the cheapest uncertainty-reducer there is. The person with three good
+blog posts and one deep repository walks into the room already 60% trusted. The
+person with a blank search result starts from zero every single time. You are not
+building fame; you are pre-loading trust so opportunity arrives *inbound* instead
+of being chased.
+
+### Specificity beats reach, and the B+ post beats the unpublished A
+The instinct to wait until the work is perfect is the single biggest waste in
+this game. The asymmetry is brutal in your favor: the downside of a mediocre post
+is bounded (a few people shrug), the upside of the right post is unbounded (the
+one that lands you a job, a cofounder, a conference invite). **Publish at B+.**
+And optimize for *the right 200 readers, not 50,000 random ones* — depth and
+specificity attract the exact people who can act on your work, while broad,
+shallow content attracts an audience that can do nothing for you. Austin Kleon's
+"show your work" is correct, but the operative variant is *show the work only the
+right people would care about.*
+
+### The expertise sandwich — teach what you learned six months ago
+The paralyzing myth is that you must be the world authority to publish. You
+don't. The highest-value teaching is from the person *one step ahead* to the
+person one step behind, because you still remember the confusion the expert
+forgot. Document the thing you just figured out — the build that finally worked,
+the failure mode that cost you a week, the mental model that clicked. This is
+infinitely renewable; you are always six months ahead of someone.
+
+### Own the asset; don't rent your entire audience
+Reach built purely on a platform is reach the platform can delete, throttle, or
+de-rank overnight. The one *owned* asset in personal presence is a direct channel
+— an email list, your own domain, a portfolio you control. Consistent cadence
+matters more than virality (algorithms punish gaps), but don't contort your work
+to feed the algorithm; optimize for the **search-and-share long tail**, where a
+single good artifact gets found for years. Inbound that compounds beats a viral
+spike that evaporates. Use a consistent handle and name across platforms so the
+trust accrues to *one* identity.
+
+### In the cleared world, the "gray man" is itself a brand
+This is the part the generic personal-branding advice gets dangerously wrong for
+defense and autonomy people. You can build a powerful reputation entirely on
+**fundamentals, methods, open datasets, and published research** — the math, the
+algorithm, the open-source tool — without ever touching a program specific. Many
+of the most respected engineers in this field are deliberately low-profile, and
+in cleared circles a quiet, discreet presence is *read as a credential*: it
+signals you understand OPSEC and can be trusted with sensitive things. Run every
+publishable artifact through the export-control and OPSEC filter *first* (see
+[20-ethics-export-control.md](20-ethics-export-control.md)); the aggregation
+problem means even unclassified specifics can become a problem in combination.
+When in doubt, abstract to the general principle and publish that.
+
+### Reputation is slow to build and instant to contaminate
+The ledger here is asymmetric in the worst way: credibility accrues over years of
+consistent, honest work and can be destroyed in one association with hype or
+grift. Lending your name to something you didn't verify, overselling a result,
+claiming credit that wasn't yours — each is a withdrawal you can't easily redeposit,
+because the cleared and technical worlds both have long memories and active back
+channels. Generosity is the dominant strategy: teach freely, credit others
+precisely, amplify work better than yours. The reputation you want is not
+"famous" — it's *"reliable and honest,"* which is the rarest and most bankable
+brand an engineer can hold.

@@ -191,3 +191,25 @@ If you can fill that out cold for SpaceX, Palantir, Tesla, Nvidia, and Apple, yo
 - Public talks: Jeff Bezos shareholder letters (1997–2020); Jensen Huang keynote talks; Andrej Karpathy on Tesla's data engine.
 
 > Framing note: Study these companies as *systems to understand*, not as moral exemplars. Each has real ethical liabilities — labor practices, privacy, defense entanglements, market power. Extract the transferable mechanism, but keep your own judgment about *what* you build and *for whom* fully intact. Understanding how power compounds is exactly what lets you decide, deliberately, how to use it.
+
+---
+
+## The Dark Side — Documented Costs of These Playbooks
+
+The mechanisms in this module are real, and so is their downside. The same loops that make a giant unbeatable — network effects, switching costs, ecosystem lock-in, scale — are also the machinery by which market power, once won, gets *abused*. This is not editorializing; it is the public record. Read it as part of the playbook, because the costs are as repeatable as the wins.
+
+**Monopoly is not a metaphor — courts have found it as fact.** In *United States v. Google* (search), Judge Amit Mehta ruled on August 5, 2024 that "Google is a monopolist, and it has acted as one to maintain its monopoly," citing the ~$20B/year in default-placement payments to Apple that foreclosed rivals. In a separate ad-tech case, Judge Leonie Brinkema (E.D. Va., April 2025) found Google had illegally monopolized publisher ad servers and ad exchanges. A December 2023 jury in *Epic v. Google* found the Play Store an illegal monopoly. Two decades earlier, *United States v. Microsoft* (D.C. Circuit, 2001) upheld findings that Microsoft illegally maintained its OS monopoly through browser bundling — the case where the internal "embrace, extend, extinguish" strategy entered the public record. The EU has fined Google three times — €2.42B (Shopping, 2017), €4.34B (Android, 2018), €1.49B (AdSense, 2019) — and the FTC sued both Amazon (September 2023) and Meta (2020) on monopoly-maintenance theories.
+
+**The recurring pattern: embrace, then extract.** Platforms win developers and users with a generous, open early phase, then — once switching costs are load-bearing — raise the take. The 30% App Store / Play commission, climbing Amazon Marketplace seller fees, and anti-steering rules that block merchants from naming a cheaper checkout are all the *extraction* phase of the same flywheel that §4 celebrates. The moat that protects the incumbent is, from the locked-in customer's side, the wall of a cage. Spotify's complaint produced a €1.84B EU fine against Apple in March 2024; the EU's Digital Markets Act now designates these firms "gatekeepers" precisely because the lock-in worked too well.
+
+| Winning mechanism (this module) | Its documented dark side | Public-record example |
+|---|---|---|
+| Platform / ecosystem (§2.4) | Lock-in becomes anti-steering & rent extraction | *Epic v. Apple/Google*; EU DMA; Spotify €1.84B |
+| Scale economies (§4) | Monopoly-maintenance findings | *US v. Google* (2024); FTC v. Amazon (2023) |
+| Data flywheel (§2.3) | Privacy & surveillance harms | EU GDPR actions; see [05](05-tesla-vertical-integration-data.md), [09](09-google-scale-infra.md) controversy sections |
+| Talent density / "fire fast" (§7) | Labor & union-suppression backlash | NLRB actions; see [08](08-amazon-mechanisms-customer-obsession.md), [12](12-operating-mechanisms-and-culture.md) |
+| Vertical integration (§2.2) | Foreclosure of suppliers/rivals | EU Android case (2018) |
+
+Each per-company study in this band now carries its own honest counterweight — the "Controversies, Criticisms & Risks" sections in [02](02-spacex-rapid-iteration.md), [03](03-productized-defense.md), [04](04-palantir-forward-deployed.md), [05](05-tesla-vertical-integration-data.md), [06](06-nvidia-platform-ecosystem.md), [07](07-apple-integration-taste.md), [08](08-amazon-mechanisms-customer-obsession.md), [09](09-google-scale-infra.md), [15](15-microsoft-reinvention-platform.md), and [17](17-meta-open-source-as-strategy.md). Read the mechanism and its liability together; they are the same machine.
+
+> **Why this matters for the operator.** The point of this band is to *operate* these mechanisms at small scale, not to launder them. If you build a flywheel, you are building the exact engine that — at scale, under quarterly pressure — produced the Google search ruling and the Microsoft consent decree. Knowing where the playbook curdles into antitrust, lock-in, and labor backlash is not moralizing; it is risk management and product design. The operators worth becoming are the ones who can run the loop *and* see, years ahead, the regulator and the worker on the other side of it.

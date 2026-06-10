@@ -150,3 +150,35 @@ The transferable skill: **win hard customers by owning the model of their realit
 - Eric Evans, *Domain-Driven Design* — the engineering bible on modeling a domain as an ontology; this is the FDE skill in textbook form.
 
 > Framing note: Palantir's mechanism — owning the unified model of an institution's data — is genuinely brilliant *and* genuinely dangerous, because the same capability that fights fraud or coordinates a mission also enables surveillance. Study the ontology-as-moat lesson; carry an active, independent conscience about *whose* reality you choose to model and to what end. The engineering skill is neutral; the application never is.
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this exists.** The case study above admires the *mechanism*. A serious operator also studies where that mechanism has drawn lawsuits, investigations, and sustained public criticism. The same ontology-and-embedding power that makes Palantir sticky is exactly what makes its deployments contested. Everything below is drawn from public record — court filings, government contracts, regulator actions, and major investigative reporting — and is labeled where contested.
+
+### Immigration enforcement (ICE)
+
+Palantir's **Investigative Case Management (ICM)** and **FALCON** systems have been under contract with U.S. Immigration and Customs Enforcement and its Homeland Security Investigations (HSI) arm since the mid-2010s (contracts are public via USASpending and FOIA). Investigative reporting — notably *The Intercept*, WNYC, and the 2018 Mijente *"Who's Behind ICE?"* report — alleged the tools supported enforcement operations, including reporting that tied them to the 2019 Mississippi workplace raids and to operations involving families of unaccompanied minors. This triggered employee protests, investor letters, and campus pushback. Palantir publicly defended the work and drew a distinction between HSI investigations and deportation (ERO) operations. *Contested framing; contracts are documented fact.*
+
+### The UK NHS data platform
+
+- **2020 COVID-19 datastore.** Palantir's Foundry ran the NHS COVID-19 datastore under an emergency contract initially valued at a nominal **£1**, later expanded (reported in the low tens of millions). Transparency groups **openDemocracy** and **Foxglove** pursued legal action over the secrecy; the government released contract terms in 2021 after that pressure.
+- **2023 Federated Data Platform (FDP).** In November 2023 NHS England awarded a Palantir-led consortium the FDP, a contract reported at up to **£330m over seven years**. Privacy and clinical groups (Foxglove, medConfidential, and elements of the BMA) opposed it over patient-data governance and consent; legal and political challenges have continued. *Outcome ongoing.*
+
+### Predictive policing & bias
+
+| Program | What happened | Status |
+|---------|---------------|--------|
+| **New Orleans** | *The Verge* (Feb 2018) revealed a roughly six-year predictive-policing partnership that some city council members said they had not been told about. | Program ended 2018. |
+| **LAPD** | Palantir underpinned data-driven programs (e.g., "LASER"). The LAPD Inspector General's 2019 audit criticized such programs; civil-liberties groups (Stop LAPD Spying Coalition) alleged feedback-loop bias. | LASER discontinued 2019. |
+
+### Financial-model criticism
+
+Palantir ran **years of net losses**, went public via direct listing in **September 2020**, and has leaned heavily on **stock-based compensation** — a recurring analyst critique about diluted "real" profitability. It reached its first full year of GAAP profitability only in **2023**. The flip side of the government moat is **revenue concentration**: a large share of revenue is government-derived, exposing it to political and budget cycles.
+
+### Opacity & privacy advocacy
+
+Groups including **EPIC** and the **ACLU** have criticized the opacity around *how* Palantir's software is used downstream and what oversight exists — a structural problem when the vendor owns the institution's data layer (the very moat praised in [§2](#2-the-ontology-the-real-durable-moat)).
+
+**Why this matters for the operator.** Every controversy here is the dark mirror of a strength in the case study: deep embedding produces switching cost *and* accountability gaps; owning the ontology fights fraud *and* powers surveillance; government concentration is a moat *and* a single point of political failure. If you build in this mold, assume your most admired capability will also be your most litigated one — and design for transparency, consent, and exit *before* a regulator or a journalist designs it for you. Pair this with the ethics spine in [20-career-ethics-export-control.md](../career/20-ethics-export-control.md).

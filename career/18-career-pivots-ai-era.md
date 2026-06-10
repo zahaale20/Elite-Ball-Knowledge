@@ -137,3 +137,69 @@ most of your capital with you.
   capital transfers, not resets.
 - [24-foundation-models-robotics.md](../autonomy/24-foundation-models-robotics.md) —
   a concrete example of where the field (and your skills) are heading.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### A pivot is a capital *transfer*, never a reset
+The word "pivot" sounds like starting over, and that framing makes people too
+afraid to move and too clumsy when they do. The operators treat it as a *transfer
+of career capital* — you carry your domain expertise, your network, your judgment,
+and your reputation into the new tool or role, and only the surface layer
+changes. The controls engineer moving into learned control isn't a beginner;
+they're a controls expert who now also speaks ML, which is *rarer and more
+valuable* than either pure specialist. The high-yield move is the **adjacent
+step**, where most of your capital still applies, not the cold jump into an
+unrelated field where you're genuinely starting from zero.
+
+### The durable layer is fundamentals; tools are the perishable surface
+The half-life of a specific framework or library keeps shrinking, but the
+fundamentals — linear algebra, probability, systems thinking, control theory,
+first-principles reasoning — don't go obsolete; they are the *API into every new
+tool*. This is why someone with deep foundations absorbs a new stack in weeks
+while someone who only learned the mechanical surface has to re-learn everything
+each cycle. The investment that compounds is therefore *down* into the
+fundamentals, not *across* into the tool of the month. The curriculum's deep
+material is precisely the part the next technology shift can't erode.
+
+### AI raises the floor — which makes judgment the scarce skill
+The centaur model is the accurate one: AI dramatically increases throughput on
+the mechanical layer, which means the bottleneck moves *up* to taste, judgment,
+and **verification**. The engineers who win pair domain expertise with AI
+leverage; the ones who are threatened are those whose entire value *was* the
+mechanical layer the model now does for free. Critically, you can only trust
+AI output if you can verify it — and verification requires exactly the
+fundamentals above. So "AI replaces engineers" is wrong in a specific way: it
+replaces engineers who can't tell when it's confidently wrong, and it
+supercharges the ones who can. Be the verifier, not the typist.
+
+### Don't anchor identity to a tool
+The career-limiting move is welding your identity to a technology — "I'm a C++
+guy," "I'm a TensorFlow person." When that tool fades, your sense of self and your
+market value fade with it. Anchor instead to *"I solve hard problems well,"* which
+survives every shift. This is also a hiring signal: the engineer who reinvented
+their stack twice without drama is read as adaptable and durable; the one defending
+a dying tool reads as a liability who'll be expensive and replaceable in five
+years. Re-tooling senior engineers are *rare*, which is exactly why they're
+valuable — most coast and become legacy.
+
+### Pivot from strength, and read the field's leading indicators
+The time to move is *before* you're forced — from a position of relevance and
+runway, not from a layoff. The field telegraphs its shifts years ahead if you
+watch where research attention and funding flow; the production reality lags the
+arXiv frontier by a few years, which is your window to skate to where the puck is
+going. And beware the survivorship inside the hype: many "AI-era" job titles
+(the pure "prompt engineer" being the cautionary case) evaporated as fast as they
+appeared, while the *durable* value settled into the unglamorous layers —
+evaluation, systems integration, data and reliability — not the part that demoed
+well on launch day. Learn the layer that's still there after the cycle turns.
+
+### Learning velocity is the actual meta-skill
+Underneath every successful pivot is one capability: the rate at which you can go
+from zero to competent in a new domain. Treat that as your real job. The
+multipliers are well-known and underused — *build to learn* (a real project beats
+twenty tutorials), *teach to learn* (forcing the explanation exposes the gaps),
+and spaced repetition for the durable substrate. The engineers with thirty-year
+careers didn't predict the right tools; they got *fast at re-tooling* and did it
+calmly, again and again.

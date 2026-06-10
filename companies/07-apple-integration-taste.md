@@ -150,3 +150,45 @@ The transferable skill: **integrate the few decisive things deeply, cultivate th
 - Public talks: Steve Jobs's 1997 "focus is saying no" WWDC Q&A; the 2007 iPhone introduction; Jony Ive design documentary interviews.
 
 > Framing note: Apple's integration and taste produce genuinely better products *and* a tightly controlled ecosystem that raises real questions about openness, repairability, and platform power. Learn the lessons — integration, taste, the discipline of no — as craft; keep separate, active judgment about when "control of the experience" tips into control *over the user*. The best builders steal Apple's discipline without inheriting its walls.
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this section exists.** The case study admires the walled garden from the inside. But §6 already conceded that "integration can curdle into control" — and courts, regulators, and labor investigators have spent the last decade documenting exactly where that line is crossed. The same end-to-end control that produces the M-series and the App Store experience is what antitrust authorities on two continents now treat as a chokepoint. Everything below is public record: court judgments, regulatory fines, and settlements.
+
+### App Store antitrust: Epic, the DMA, and anti-steering
+
+- **Epic v. Apple (US, 2020–2024).** Epic sued over the 30% commission and the ban on alternative payment systems. In 2021 the district court rejected most of Epic's federal antitrust claims but issued a **nationwide injunction under California's UCL requiring Apple to allow developers to steer users to outside payment options**. The Supreme Court declined to hear further appeals in 2024. In 2025 a judge found Apple had **willfully violated** that injunction with its compliance scheme and referred the matter for possible criminal contempt — sharply tightening the steering rules.
+- **EU Digital Markets Act.** Designated a "gatekeeper," Apple was forced to permit third-party app stores and sideloading in the EU (2024). In April 2025 the Commission **fined Apple €500M** for anti-steering violations under the DMA (under appeal).
+- **EU Spotify / music-streaming case (2024).** Following Spotify's complaint, the Commission **fined Apple ~€1.8B** in March 2024 for abusing its dominant position by restricting developers from informing users of cheaper subscriptions outside the App Store (under appeal).
+
+### The Irish tax state-aid case (2016–2024)
+
+The EU Commission ruled in 2016 that Ireland had granted Apple illegal state aid via tax arrangements. After years of appeals, the **European Court of Justice in September 2024 issued a final ruling that Apple owed Ireland ~€13B** in back taxes — reversing a lower court and siding with the Commission. This is settled at the EU's highest court, not merely alleged.
+
+### The 2024 US DOJ antitrust suit
+
+In March 2024 the **US DOJ and 16 states sued Apple** alleging it illegally monopolizes the smartphone market through tactics that lock in users and lock out rivals — citing super-apps, cloud streaming, messaging interoperability (iMessage), smartwatches, and digital wallets. The case is **ongoing and unproven**; it directly targets the integration-as-lock-in mechanics this module celebrates.
+
+### "Batterygate" throttling (2017–2024)
+
+Apple acknowledged in 2017 it **throttled performance on iPhones with aging batteries** without clear disclosure. Outcomes: a **US class-action settlement of up to ~$500M** (2020); a **$113M settlement with ~34 US state attorneys general** (2020); and regulatory penalties abroad, including a **€25M fine from France's DGCCRF** (2020) for failing to inform consumers.
+
+| Controversy | Year(s) | Authority / venue | Outcome |
+|-------------|---------|-------------------|---------|
+| EU music-streaming abuse | 2024 | EU Commission | ~€1.8B fine (under appeal) |
+| DMA anti-steering | 2025 | EU Commission | €500M fine (under appeal) |
+| Irish tax state aid | 2016–2024 | EU Court of Justice | ~€13B owed (final ruling) |
+| US smartphone monopoly | 2024– | US DOJ + states | Ongoing, unproven |
+| Batterygate | 2017–2024 | US courts / state AGs / France | ~$500M + $113M + €25M settlements/fines |
+
+### Supply-chain labor, repair, and tracking
+
+- **Foxconn / supply-chain conditions.** Long-running investigative reporting (and Apple's own supplier-responsibility audits) has documented **excessive overtime, underage-labor findings, and worker-safety concerns** at assembly partners such as Foxconn, including the 2010 suicides that prompted scrutiny. Apple publishes audits; critics argue enforcement lags.
+- **Right to repair / parts pairing.** Apple drew sustained criticism over **parts-pairing** that limited third-party repairs; under legislative and regulatory pressure it launched Self Service Repair (2022) and **publicly backed a California right-to-repair bill** (2023) — a partial reversal critics still call insufficient.
+- **App Tracking Transparency self-preferencing.** Privacy advocates praised ATT (2021), but **competitors and regulators (including Germany's Bundeskartellamt and France's Autorité) opened scrutiny** into whether Apple applied stricter tracking rules to rivals than to its own advertising — a self-preferencing complaint that remains contested.
+
+### Why this matters for the operator
+
+The discipline this module teaches — integrate the decisive things, control the experience — is genuinely powerful, and the lessons stand. But Apple is the live demonstration that **control of the experience and control *over the user* sit on one continuum**, and that courts and regulators draw the line, not the company. As a builder, the takeaway is twofold: steal the craft (integration, taste, saying no) *and* design your own platforms so that the steering, repair, and gatekeeping choices you make would survive a regulator reading them aloud. Read this against the openness debate in [01-how-the-giants-win.md](01-how-the-giants-win.md), the platform-power shadow in Nvidia's counterweight ([06](06-nvidia-platform-ecosystem.md)), and the export-control/ethics framing in [20-career-ethics-export-control.md](../career/20-ethics-export-control.md).

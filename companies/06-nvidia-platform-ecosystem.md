@@ -140,3 +140,42 @@ The transferable skill: **build moats out of other people's dependencies, and be
 - Acquired podcast, Nvidia episodes — long-form narrative of the strategic bets, well-sourced.
 
 > Framing note: Nvidia's ecosystem dominance concentrates enormous power over the infrastructure of AI in one company — that is a strategic reality worth being clear-eyed about, both as a builder who depends on it and as a citizen who should care about compute concentration and export politics. Learn the ecosystem-moat mechanism; also notice that *your* dependence on it is exactly the lock-in this module describes from the inside.
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this section exists.** The case study above admires the moat. But a moat that wide attracts regulators, lawsuits, and partner resentment — and the same lock-in mechanics that make Nvidia great are exactly what antitrust authorities now investigate. An honest operator studies the shadow as carefully as the light. Everything below is public record: regulatory actions, an SEC settlement, a blocked acquisition, and well-reported partner-program reversals.
+
+### The blocked Arm acquisition (2020–2022)
+
+Nvidia announced a ~$40B deal to buy chip-IP designer Arm from SoftBank in September 2020. It collapsed in February 2022 after sustained opposition from regulators worldwide: the **US FTC sued to block it** (December 2021), the **UK CMA** raised competition and national-security concerns, and the **EU Commission** opened an in-depth Phase 2 investigation. The core objection was that Nvidia owning Arm — whose designs license to nearly every chipmaker, including Nvidia's rivals — would give it the power and incentive to disadvantage competitors. The deal was abandoned; Nvidia forfeited a prepaid deposit reported at roughly $1.25B.
+
+### SEC settlement over crypto-mining disclosure (2022)
+
+In May 2022 the **US SEC charged Nvidia with inadequate disclosures** about how much of its gaming-segment revenue during the 2017–2018 crypto boom was actually driven by cryptocurrency mining rather than gaming demand. Nvidia **settled for $5.5M without admitting or denying** the findings. The SEC's point: investors couldn't see how exposed "gaming" revenue was to a volatile, unrelated market.
+
+### Antitrust scrutiny of GPU/AI-chip dominance and CUDA lock-in (ongoing)
+
+As Nvidia's AI-accelerator share and CUDA lock-in became dominant, antitrust attention followed across multiple jurisdictions:
+
+| Jurisdiction | Reported action | Status |
+|--------------|-----------------|--------|
+| US DOJ | Reported to be leading antitrust scrutiny of Nvidia's AI-chip practices (bundling, allocation, CUDA) from 2024 | Reported investigation; no charges adjudicated |
+| EU Commission | Reported preliminary review of possible abuse of dominance in AI chips | Reported / preliminary |
+| China (SAMR) | Opened a probe (2024) and in 2025 reportedly found preliminary antitrust violations tied to conditions of the 2020 Mellanox acquisition | Probe ongoing; findings contested |
+| France (Autorité de la concurrence) | Raided Nvidia offices (2024) as part of cloud-computing/AI-chip inquiry | Investigative stage |
+
+The recurring allegation — **not adjudicated against Nvidia as of this writing** — is that the very CUDA lock-in this module celebrates may function as an anticompetitive barrier, and that GPU *allocation* during shortages amounted to favoritism.
+
+### The GeForce Partner Program reversal (2018)
+
+Nvidia launched the **GeForce Partner Program (GPP)** in 2018, asking board partners to align their primary gaming brands exclusively with Nvidia. After investigative reporting (notably by *HardOCP*) and partner/community backlash over what critics called pressure tactics that could disadvantage AMD, **Nvidia cancelled GPP** within months. Nvidia framed it as a transparency program; critics framed it as coercion. Either way, it is a documented case of partner-pressure allegations forcing a reversal — and it pairs with long-running reporting that reviewers and partners felt pressure over sampling and messaging.
+
+### Export controls and chip diversion (ongoing)
+
+US export-control rules (from 2022, tightened 2023 and after) restricted sales of Nvidia's most capable AI chips to China. Nvidia responded with **compliance-tuned variants** (e.g., A800/H800, later H20). Reporting and US government attention have since focused on **smuggling and diversion of restricted chips to sanctioned buyers** through third countries — an enforcement and reputational entanglement Nvidia operates inside, even where it is not the accused party. Label honestly: Nvidia states it complies with all rules; the diversion problem is documented at the ecosystem level.
+
+### Why this matters for the operator
+
+If you build on CUDA, you are building on a stack whose owner is simultaneously the subject of antitrust scrutiny on three continents, has had a major acquisition blocked, and sits inside contested export politics. None of this means Nvidia is "bad" — most charges are unadjudicated, and one was settled without admission — but it means your dependency carries *regulatory and geopolitical tail risk*, not just technical lock-in. The same flywheel from [§1](#1-the-core-mechanism-the-developer-ecosystem-as-moat) that makes Nvidia hard to leave is what makes it a target. Plan for a world where allocation, export rules, or a remedy could change your access — and read this against the openness/concentration framing in [01-how-the-giants-win.md](01-how-the-giants-win.md) and the platform-power shadow in Apple's counterweight ([07](07-apple-integration-taste.md)).

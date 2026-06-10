@@ -377,3 +377,30 @@ leadership transition described in [10-career-leadership-growth.md](../career/10
 > and copyable; the operating mechanisms underneath are invisible and *that's* where the durable
 > advantage lives. Learn to see the machinery, then install the smallest set of it that makes your
 > team fast, honest, and self-correcting — and prune it before it rots.
+
+---
+
+## The Dark Side — Documented Costs of These Playbooks
+
+The mechanisms in this module are double-edged. "Talent density," "radical candor," the "keeper test," and "frugality" are lauded as the machinery of excellence — but the same mechanisms, run without restraint or pointed at the wrong incentive, have produced some of the most documented culture failures in modern business. The gap between the *culture deck* and the *lived experience* is where these playbooks go bad, and it is well-evidenced.
+
+**"Frugality" + input metrics can become worker harm.** Amazon is the canonical case. The Strategic Organizing Center's analyses of OSHA data have repeatedly reported Amazon warehouse injury rates running roughly *double* the warehousing-industry average; federal **OSHA issued citations in 2022–2023** for ergonomic hazards at multiple facilities. The 2015 *New York Times* "Inside Amazon" exposé (Jodi Kantor and David Streitfeld) documented a bruising white-collar culture; Amazon itself **acknowledged in 2021** the widely reported claim that some drivers urinated in bottles to hit delivery quotas. The metric that looks elegant on the §4 dashboard ("packages per hour") is, downstream, a body under strain.
+
+**The "keeper test" has a documented fear cost.** Netflix's "adequate performance gets a generous severance" and the keeper-test ritual (§5) are credited for talent density — but critics and ex-employees describe a culture of *constant insecurity*, where the same mechanism that removes weak performers also keeps strong ones anxious. The 2022 layoffs sharpened that critique. Density and fear are produced by the *same* lever; the deck advertises only the first.
+
+**"Radical candor" gets weaponized.** Kim Scott herself has warned that her framework is most often *misused* — people remember "challenge directly" and forget "care personally," landing in what she calls **obnoxious aggression**. In practice, "we're just being radically candid" becomes cover for cruelty and for protecting "brilliant jerks," the exact opposite of the §6 intent.
+
+**Culture decks routinely diverge from reality.** The pattern is consistent enough to be a warning: Uber's published values sat beside the abuses in Susan Fowler's 2017 memo; Away's "kindness"-led brand was contradicted by *The Verge*'s December 2019 reporting on a punishing internal Slack culture. A values poster is a *claim*, not a mechanism — and §1's whole point is that only inspected mechanisms are real.
+
+**Union suppression shows up in the legal record.** NLRB findings are not allegations from one side:
+
+| Company | Documented finding |
+|---|---|
+| Starbucks | NLRB judges found *hundreds* of labor-law violations during the Starbucks Workers United campaign |
+| Amazon | NLRB complaints over conduct during the JFK8 (Staten Island) unionization, which workers won in April 2022 |
+| SpaceX | NLRB complaint filed **January 2024** alleging unlawful firing of employees who circulated a letter critical of Musk (SpaceX is contesting and has challenged the NLRB's constitutionality) |
+| Apple | NLRB found Apple violated labor law via coercive rules/statements during retail organizing |
+
+These connect directly to the per-company counterweights in [08-companies-amazon-mechanisms-customer-obsession.md](08-amazon-mechanisms-customer-obsession.md) and the talent-culture critique in [20-companies-netflix-talent-density-culture.md](20-netflix-talent-density-culture.md).
+
+> **Why this matters for the operator.** You are going to *install* these mechanisms — so you are also choosing their failure modes. A keeper test without psychological safety (§6) manufactures fear; radical candor without the "care personally" half manufactures cruelty; an input metric without a human guardrail (§4) manufactures injury. The maintenance discipline of §9 ("is this still producing the result — *including the result I didn't intend*?") is the only thing standing between a high-performing culture and a litigated one. Build the machinery; inspect what it does to the people inside it.

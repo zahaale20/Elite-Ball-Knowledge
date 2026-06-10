@@ -170,3 +170,75 @@ Money is a tool for buying time, security, and optionality — not a scoreboard.
   fund that enables bold career moves.
 - [17-engineer-to-founder.md](17-engineer-to-founder.md) — the runway that makes
   entrepreneurship survivable.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+> Still literacy, not advice — the disclaimer at the top of this file governs
+> everything below. These are the mechanics so you can ask a CPA and a fiduciary
+> the right questions.
+
+### Savings *rate* dominates returns for the first decade
+The single number that determines when you reach financial independence is your
+savings rate, not your income or your portfolio's cleverness. The math is
+stark: at a ~50% savings rate you reach work-optional in roughly $17$ years
+*regardless of salary*, because a high rate simultaneously builds the pile faster
+and shrinks the pile you need. A defense-tech salary with 10% saved is a slower
+path to freedom than a teacher saving 40%. Early on, the contribution swamps the
+compounding; the returns only take over the wheel after the pile is large. Fix
+your spending the *day a raise is announced*, not after lifestyle creep has
+quietly absorbed it — that's where the gap is won or lost.
+
+### Equity literacy is where six-figure mistakes hide
+The vocabulary that separates the informed from the wiped-out: ISOs vs NSOs vs
+RSUs, strike price vs the 409A valuation, vesting cliff. Two traps recur every
+cycle. First, the **AMT trap on ISO exercise**: exercising incentive stock
+options creates a phantom "bargain element" that's taxable under the Alternative
+Minimum Tax *even though you sold nothing and hold illiquid paper* — the classic
+dot-com wipeout was engineers who exercised, owed cash on a paper gain, then
+watched the stock crater while the tax bill stayed real. Second, the **83(b)
+election**: on early-exercised or restricted stock you generally have *30 days*
+to elect to be taxed now on a tiny value rather than later on the appreciation —
+miss the window and you can be taxed at each vest on the full gain. These are
+calendar deadlines with no mercy; this is exactly where you pay the CPA.
+
+### Price startup equity like a lottery ticket
+Most startup equity is worth zero, and even "good" exits can crush common
+stockholders through **liquidation preferences** — a 1x participating preferred
+stack means investors get their money back *plus* a share of the rest before
+common sees a dollar. So negotiate the *base salary* hard (it's the part that's
+real) and treat the options as an asymmetric ticket: bounded downside, lottery
+upside, priced at roughly nothing in your planning. If the equity is the only
+reason the offer is competitive, you are being paid in hope.
+
+### Fees and behavior are the two silent wealth-killers
+Over a 15-year horizon, low-cost index funds beat the large majority of active
+managers (the SPIVA scorecards have shown this for years), and the reason is
+mostly cost. A 1%-of-assets annual fee sounds trivial and is catastrophic: over a
+full career it can quietly consume on the order of a quarter to a third of your
+terminal wealth through lost compounding. The other killer is *you* — selling in
+a panic at the bottom. The defense against your own psychology is automation:
+automatic contributions, automatic rebalancing, and not checking the balance
+during a crash. A roughly sensible order of operations for tax-advantaged space:
+capture the full 401(k) *match* first (it's an instant ~50–100% return), then the
+HSA (the only triple-tax-advantaged account), then Roth space, then taxable —
+with attention to *asset location*.
+
+### "F-you money" is a career instrument, not just a safety net
+Three to twelve months of liquid expenses changes your *behavior*, which changes
+your career. It's what lets you walk from a toxic manager, decline the
+counteroffer, hold out for the role with the right slope, or take the founder
+leap ([17-engineer-to-founder.md](17-engineer-to-founder.md)). Do not confuse net
+worth with *accessible* runway — home equity and illiquid startup stock are not
+months of rent. The freedom fund must be boring, liquid, and untouchable for
+anything else.
+
+### Financial discipline is also clearance security
+The part that surprises people entering defense: per the published adjudicative
+guidelines, *financial considerations* are among the most common reasons security
+clearances are denied or revoked — unmanaged debt, unexplained affluence, a
+pattern of irresponsibility. The same discipline that builds wealth also protects
+your access and therefore your earning power in this field
+([07-security-clearance.md](07-security-clearance.md)). Here, being boringly
+solvent is a professional asset, not just a personal virtue.

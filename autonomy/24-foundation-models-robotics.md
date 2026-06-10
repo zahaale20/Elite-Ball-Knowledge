@@ -191,3 +191,33 @@ def test_safety_layer_vetoes_hallucinated_grasp():
 - **Vaswani et al. (2017), "Attention Is All You Need"** — the transformer foundation.
 
 > Framing note: Foundation models give robots something they never had — open-world common sense and the ability to be *told* what to do in plain language. But they give it wrapped in confident opacity, with no native sense of physics or its own ignorance. The mature engineer is neither a skeptic who dismisses the generality nor an enthusiast who pipes logits to motors. They build a two-layer machine: an untrusted genius proposing, a trusted guardian disposing — and they spend their hardest engineering not on the genius, but on the guardian.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The demo reels are dazzling and the success rates in the tables are real — for the tasks, objects, and camera angles that were tested. Behind the excitement is a field that knows its own bottlenecks intimately and rarely foregrounds them in the abstract.
+
+### The data wall is the whole game
+
+Language models scaled because the internet is a free corpus of text. Robotics has no such corpus — **there is almost no internet-scale robot *action* data**, and the action you need (joint torques, gripper commands, contact events) is not lying around to be scraped. Open X-Embodiment stitched together demonstrations across dozens of labs and embodiments, but it is heterogeneous in robot, action space, camera, and frequency, which makes it powerful and messy at once. The real bottleneck is **teleoperation**: every hour of training data costs an hour of a human driving a robot, and that does not scale like a web crawl. When you read "foundation model for robotics," read "a model starved for the one modality it most needs." Whoever solves scalable action-data collection — sim, play data, human video with learned embodiment transfer — wins the decade.
+
+### Latency forces an architecture, and that architecture is action chunking
+
+A 7B-parameter VLA runs at a handful of hertz; a stable controller needs hundreds. You cannot close a 100 Hz loop on a model that thinks five times a second. The field's answer is **action chunking**: the big model emits a *sequence* of future actions (a chunk) at low frequency, and a fast, dumb low-level controller executes/interpolates them. This isn't just a performance hack — chunking also reduces the compounding error of single-step prediction and smooths the multimodal jitter of token-by-token decoding (the insight behind ACT and Diffusion Policy). If you architect a VLA as a per-timestep oracle, you will be defeated by latency before you reach the lab.
+
+### Diffusion vs. tokenized policies — the field hasn't converged
+
+Two camps, both legitimate. **Tokenized autoregressive** policies (RT-2 lineage) discretize actions into tokens and reuse the entire LLM/VLM stack and its web-scale pretraining — cheap to build on, but discretization is coarse and decoding multimodal actions is awkward. **Diffusion policies** model the action distribution directly, handle multimodality (several valid ways to do a task) gracefully, and produce smooth trajectories — but add denoising compute and lose the clean reuse of language pretraining. Picking one is a real engineering decision with no settled winner; treat anyone who tells you it's obvious with suspicion.
+
+### Generalization is real but oversold, and the failure modes are mundane
+
+The headline claim is open-world generalization; the field-tested reality is that success rates on genuinely novel objects, scenes, and **camera viewpoints** are modest and brittle. Move the camera 20 cm, add a distractor object, change the lighting, and watch the number fall. Most deployed systems quietly **fine-tune on a few hundred in-domain demonstrations** (often with LoRA) rather than running zero-shot — zero-shot is largely a paper posture. And the evaluation situation is a genuine crisis: there is no standard physical benchmark, real-robot eval is slow and irreproducible, and every group reports different tasks, so cross-paper number comparisons are close to meaningless. Be the engineer who runs their own eval on their own robot.
+
+### Hallucinated affordances and why LLM-as-planner deploys first
+
+These models will **confidently emit an action for something they cannot actually do** — grasp an object that's out of reach, "open" a drawer that's locked — because they have no native grounding in physics or their own capability. The conceptual fix (SayCan) is to multiply the model's *semantic* proposal by a learned *value/affordance* estimate of whether it can be executed now: say what's helpful **and** feasible. This is why, in 2025-era practice, the **LLM-as-planner** pattern (decompose language into a sequence of *verified* skill primitives, à la SayCan / Code as Policies) is more deployable than end-to-end VLA: the language layer is auditable text you can read and gate, and the skills underneath are tested code with their own safety envelopes.
+
+### The product is the guardian, not the genius
+
+The hard, unsexy engineering — and the thing that separates a viral clip from a fielded system — is the **safety layer between the model and the actuators**: workspace and joint limits, force/torque ceilings, collision checking, watchdog timeouts, and a human-reachable e-stop. Never pipe logits to motors. Budget your best people for the runtime monitor that catches the confident hallucination before it reaches the world; the foundation model is the easy half to integrate.

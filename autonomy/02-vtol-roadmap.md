@@ -383,3 +383,31 @@ stages fill it out.
 - Companion guides: SITL [03-autonomy-px4-sitl.md](03-px4-sitl.md), onboard [04-autonomy-onboard-system.md](04-onboard-system.md), tests [05-autonomy-test-scaffold.md](05-test-scaffold.md), assurance [09-foundations-safety-assurance.md](../foundations/09-safety-assurance.md).
 
 *This roadmap documents the author's own VTOL program; stage definitions are the author's. Hardware/firmware specifics track the vendor docs above.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### Transition is where VTOLs die
+
+The hover→forward transition — and especially the back-transition — is the single most dangerous regime and where most prototype VTOLs crash. In back-transition the wing sits at high angle of attack, lift collapses, the vehicle sinks, and the controller is blending two allocation modes at once. Budget the majority of your flight-test risk here, not in cruise. PX4's transition is largely **open-loop on airspeed**: if the pitot is bad, the transition logic is flying blind. A clogged pitot tube has killed more VTOLs than any software bug.
+
+### Your airspeed sensor is the keystone
+
+Multirotors don't need airspeed; fixed-wing and VTOL live or die on it. Pitot tubes clog with dust and insects, ice up, and read garbage in rain. PX4 will refuse or botch transition without trustworthy airspeed. Pros treat pitot calibration as a hard pre-flight gate, carry a synthetic-airspeed fallback, and never transition on a sensor they haven't sanity-checked on the ground that day.
+
+### Sizing: the brutal arithmetic
+
+A VTOL pays a permanent weight tax for lift motors that do nothing in cruise — dead mass plus parasitic drag. Rules of thumb: hover wants thrust-to-weight $\geq 2$ for control margin; cruise wants a high-$L/D$ wing; the two rarely share a happy battery. Most amateur VTOLs end up over-propped for hover and under-winged for cruise, yielding an embarrassing 8-minute "endurance." LiPo energy density (~250 Wh/kg) is the wall every optimistic spec sheet is quietly leaning against.
+
+### Stage slip is information, not failure
+
+Roadmaps slip at *integration boundaries* — SITL→HITL, HITL→tethered hover, hover→transition — because each boundary surfaces a class of bug the previous stage structurally cannot produce. The discipline that separates programs that fly from programs that don't: hard, observable exit criteria per stage, and an absolute refusal to skip the tether. The first untethered hover should be *boring* because everything that could fail already failed safely on the bench.
+
+### The thin-link architecture is combat doctrine, not a UX choice
+
+Shaping telemetry on the edge and sending only curated state is exactly how fielded systems survive contested, low-bandwidth links. The instinct to "just stream raw MAVLink to the GCS" works beautifully on the bench and dies in the field the moment bandwidth drops or the link is jammed. Treat the JSON/WS contract as the product; the GCS is replaceable, the edge node is not.
+
+### BVLOS is a paperwork problem, not a tech problem
+
+The gap to beyond-visual-line-of-sight operations is mostly regulatory (Part 107 waivers and national CAA equivalents), not code. Detect-and-avoid, command-link assurance, and a credible written safety case are what actually gate real operations. Building the autonomy is necessary and nowhere near sufficient — the people who ship learn to write the safety case in parallel with the firmware, not after.

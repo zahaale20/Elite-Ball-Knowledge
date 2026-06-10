@@ -40,6 +40,7 @@ it in simulation per [06-foundations-simulation-test-verification.md](../foundat
 8. [Drift, observability, and consistency](#8-drift-observability-and-consistency)
 9. [Practice this week](#9-practice-this-week)
 10. [Sources & further study](#10-sources--further-study)
+11. [The Insider Layer — what the field knows but rarely writes down](#-the-insider-layer--what-the-field-knows-but-rarely-writes-down)
 
 ---
 
@@ -338,3 +339,88 @@ above the bound is over-confident and will reject correct loop closures.
 > contract of constraints-with-covariances. The engineers who ship it are the ones
 > who treat a loop closure as a *hypothesis* to be verified, never a fact to be
 > trusted — because the back-end will believe whatever the front-end tells it.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+SLAM papers report ATE on EuRoC and KITTI and call it a day. Shipping SLAM is a
+different sport. Here is what the people who run it on real robots actually
+worry about.
+
+### One bad loop closure destroys everything — and it will happen
+
+The back-end is a credulous optimizer: it minimizes the residuals you give it,
+so a single false loop closure (perceptual aliasing — two different corridors
+that look identical) folds the entire map, and there is no graceful degradation,
+just a catastrophic snap. This is *the* reason robust kernels and switchable
+constraints exist, but the deeper insider move is **geometric verification
+before you ever add the edge**: a place-recognition hit (DBoW2/NetVLAD) is only a
+candidate; you confirm it with a RANSAC geometric check and a minimum inlier
+count, and you still add it with a switch variable so the optimizer can disown
+it. Teams that trusted appearance-only loop closure have war stories about maps
+that looked perfect in the lab and ate themselves in a repetitive warehouse.
+
+### Drift is anisotropic, and the unobservable directions are where it lives
+
+Monocular SLAM has an unobservable scale; VINS has four unobservable directions
+(global position and yaw); a pure-LiDAR system degenerates in a long featureless
+tunnel. The number nobody puts on the slide: error accumulates *along the
+unobservable subspace* while staying tight elsewhere, which is why your
+covariance ellipse is a cigar, not a sphere. The practical consequence — known
+to every veteran, rarely written — is that **straight, feature-poor corridors
+and symmetric environments are where SLAM quietly dies**, and the fix is
+operational (mount a wider FOV, drive a less degenerate trajectory, add a
+heterogeneous sensor) far more often than algorithmic.
+
+### The front-end is 90% of the engineering and 10% of the publications
+
+Academic glory is in the back-end (iSAM2, GTSAM, elegant manifolds). The actual
+labor — feature track lifetime management, keyframe selection heuristics, IMU
+initialization that doesn't diverge, handling the first few seconds before scale
+is observable, dynamic-object rejection — is unglamorous front-end plumbing that
+nobody writes a clean paper about. **ORB-SLAM's real contribution was not the
+optimizer; it was a thousand robustness decisions in the tracking thread.** If
+you are debugging a SLAM failure, it is in the front-end with overwhelming
+probability.
+
+### Dynamic scenes break the static-world assumption papers quietly assume
+
+Classical SLAM assumes a rigid, static world. The real world has pedestrians,
+cars, and your own robot's reflection. Features on moving objects produce
+beautiful, confident, wrong constraints. The fielded fix is to run a detector or
+optical-flow consistency check and **mask out dynamic regions before feeding the
+front-end** — a step rarely shown in the canonical pipeline diagram but present
+in every system that works in a city.
+
+### Map representation is a deployment decision, not an academic one
+
+- **Point clouds**: great for registration, useless for planning (no free-space
+  notion).
+- **Occupancy grids**: planner-friendly, memory-hungry in 3D.
+- **TSDFs**: beautiful surfaces, expensive, drift-sensitive.
+
+The insider truth: you almost always carry **two maps** — a sparse,
+optimization-friendly map for localization and a dense, planner-friendly map for
+obstacle avoidance — and keeping them consistent after a loop closure (which
+moves the trajectory the dense map was built against) is a real and rarely
+discussed engineering problem.
+
+### Numbers and norms worth memorizing
+
+- A modern VIO/LIO drifts on the order of **0.1–1% of distance traveled** with no
+  loop closures; below that, suspect you are testing on a friendly dataset.
+- **Run NEES/NIS consistency checks** — an over-confident SLAM estimate rejects
+  the very loop closures that would save it.
+- **Benchmarks lie about generalization.** A system tuned to KITTI's forward-
+  driving, daylight, low-dynamics regime tells you nothing about a handheld
+  device or a drone doing aggressive yaw. Always test on motion that resembles
+  *your* platform.
+- **"We have SLAM" means nothing.** Ask: with loop closure or just odometry?
+  Online or batch? On the target compute or a workstation? With or without GPS
+  priors? The honest answers separate demos from products.
+
+The meta-lesson the field internalizes the hard way: SLAM is not a download, it
+is a contract between an honest front-end and a robust back-end, tuned to a
+specific platform and environment. Treat every loop closure as a suspect, every
+unobservable direction as a leak, and every benchmark number as optimistic.

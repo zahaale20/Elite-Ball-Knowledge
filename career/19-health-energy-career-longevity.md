@@ -153,3 +153,72 @@ Treat yourself like a fielded system with a maintenance schedule:
   care does not threaten a clearance.
 - [04-life-lessons-people-ignore.md](../mindset-and-society/04-life-lessons-people-ignore.md)
   — the compounding truths about a life well spent.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### Cynicism is the early-warning light, not exhaustion
+The research definition of burnout (Christina Maslach) has three components —
+emotional exhaustion, *cynicism/depersonalization*, and a reduced sense of
+efficacy — and the one that shows up first and gets ignored is cynicism. When you
+notice yourself sneering at the mission you used to care about, going through the
+motions, treating users or teammates as obstacles — that's not a personality
+change, it's the smoke detector. People wait for the dramatic exhaustion before
+acting, but by then you've already lost months of capability. Watch the
+cynicism dial the way you'd watch a temperature gauge.
+
+### Sleep is the master variable no hack can beat
+Chronic short sleep (under ~7 hours) degrades cognition, reaction time, and
+emotional regulation on a scale comparable to mild intoxication — and the cruel
+part, documented repeatedly, is that the impaired person *can't perceive their
+own impairment*. You feel fine while operating at 70%. No productivity system,
+nootropic, or extra hour of grind recovers what lost sleep took; the deep work
+file's deep blocks ([16-productivity-deep-work.md](16-productivity-deep-work.md))
+are built on it. The defense world glorifies the all-nighter; the honest
+accounting is that it borrows tomorrow's cognition at a loss. If you optimize one
+thing, optimize sleep — everything else is downstream of it.
+
+### Energy is physical infrastructure, and the overwork ROI cliff is real
+Your afternoon crash, your stalled focus, your short fuse — these are often
+metabolic and physical, not motivational. Zone-2 cardio plus a little strength
+work is a *cognitive* intervention, not a vanity one; it raises the ceiling on
+the energy that fuels everything in this band. And the macro pattern, visible in
+labor data going back a century, is that sustained weeks beyond roughly 50–55
+hours produce *declining and eventually negative* marginal output — the tired,
+error-prone hours generate rework that costs more than they add. "Hero mode" is
+not heroic; it's a withdrawal against next month's productivity, taken at a
+punishing rate. Pacing isn't weakness; it's the only strategy that's still
+excellent at 50.
+
+### The clearance mental-health myth gets people killed by not seeking help
+This one matters enough to state precisely, from the public guidance. There is a
+widespread belief in cleared communities that seeking mental-health treatment is
+disqualifying for a security clearance. It is **not**. The published adjudicative
+guidelines and the SF-86 itself make clear that seeking counseling or therapy is
+generally viewed *favorably* as responsible behavior, the relevant question is
+narrow, and routine treatment for the stresses of life or work is explicitly not
+a concern — it is *untreated* conditions that affect judgment that raise flags.
+The myth itself is the hazard: it talks people out of care that would have kept
+them functional and in the field ([07-security-clearance.md](07-security-clearance.md)).
+Get the help; it protects your career, it doesn't threaten it.
+
+### Diversify your identity before the layoff or the failure tests it
+Engineers who are *only* their work crater hardest when the work is taken away —
+by a layoff, a cancelled program, a failed startup, or a forced pivot. The single
+identity is a concentrated bet on something you don't fully control. Keep one
+anchor alive *outside* the job — a craft, a relationship web, a community, a
+physical pursuit — not as a hobby but as resilience infrastructure, the thing
+that holds when the professional identity wobbles. It's also, not coincidentally,
+where a lot of the diffuse-mode insight and recovery actually happens.
+
+### Relationships are the longest-running variable in life satisfaction
+The Harvard Study of Adult Development — one of the longest longitudinal studies
+ever run — found that the strongest predictor of late-life health and wellbeing
+wasn't income, achievement, or even cholesterol; it was the *quality of close
+relationships*. For a field that rewards monomaniacal focus, this is the
+inconvenient long-horizon truth: the career optimized purely on comp and title,
+with the relationships sacrificed along the way, is how genuinely capable people
+arrive at *successful and miserable*. Define what "enough" means before the
+treadmill defines it for you, and protect the relationships with the same
+discipline you give the work — they are the part that's still paying out at 80.

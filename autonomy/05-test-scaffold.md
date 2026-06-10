@@ -366,3 +366,31 @@ for how this risk-first stance generalizes beyond this repo.
 - Companion guides: sim/test foundations [06-foundations-simulation-test-verification.md](../foundations/06-simulation-test-verification.md), SITL target [03-autonomy-px4-sitl.md](03-px4-sitl.md), onboard policy/decision log [04-autonomy-onboard-system.md](04-onboard-system.md), safety assurance [09-foundations-safety-assurance.md](../foundations/09-safety-assurance.md).
 
 *Test layout and philosophy reflect the author's `pixhawk/drone/test/` scaffold.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### The robotics test pyramid is inverted — and that's the problem
+
+Classic software is mostly unit tests at the base. Robotics confidence lives in *integration* (SITL/HITL), because the bugs that crash hardware are emergent: timing, frame conventions, sensor fusion, mode transitions. Yet integration tests are slow and flaky, so teams under-invest and ship on "it flew once." The honest stance: unit tests catch logic; only HITL catches the bugs that actually break airframes. Plan your effort knowing the expensive tests are the load-bearing ones.
+
+### "Green tests, dead drone" is the failure to fear
+
+A passing suite proves the things you *thought to test*. Every fielded crash is, by definition, an untested interaction. This is why exploratory charters — GPS loss mid-mission, transition brownout, RC loss and low battery at the same instant — earn their place: they hunt the unknown-unknowns a fixed assertion can't reach. If you can't name the failure mode a test defends against, it's theater, and theater gives false confidence, which is worse than no confidence.
+
+### SITL flakiness will train you to ignore failures — resist
+
+Integration tests against SITL are nondeterministic enough (startup races, EKF warmup, port timing) that teams start re-running until green. That habit launders real intermittent bugs into "just flaky test" noise. The fix: quarantine flaky tests *loudly*, never auto-retry-to-green silently, and treat a 1-in-20 failure as exactly what it is — a 5% field failure rate waiting to happen on the worst possible day.
+
+### Fault injection is the only way to test a failsafe
+
+You cannot trust a geofence, a battery-RTL, or a nav-loss interlock you have never actually triggered. So inject the fault: kill GPS in sim, sag the battery, drop the link, freeze a sensor. Failsafes are the highest-consequence, least-exercised code in the system — they run only on your worst day, which is precisely the worst time to discover they were wrong. A failsafe without a test that fires it is an assumption, not a safeguard.
+
+### HITL is the real gate before powered flight
+
+Hardware-in-the-loop (real Pixhawk, simulated world) catches what SITL structurally cannot: real serial timing, the real EKF on real IMU drivers, real CPU contention on the companion. The step order — unit → SITL integration → HITL → tethered → free flight — exists because each stage catches a *disjoint* class of bug. Skipping HITL is the single most common way "it worked in sim" turns into a repair bill and a lost week.
+
+### Test the contract, not the implementation
+
+The durable tests assert on the JSON/WS API contract and observable behavior, not on internal function shapes that churn every refactor. Contract tests survive rewrites and double as living documentation of what the edge node *promises*. When the GCS team and the onboard team share one contract test suite, integration stops being a negotiation and starts being a checkout.

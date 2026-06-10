@@ -198,3 +198,33 @@ def test_uncertainty_grows_during_blackout():
 - **Scaramuzza & Fraundorfer, "Visual Odometry" tutorial (IEEE RAM, 2011/2012).**
 
 > Framing note: VIO is the discipline where two humble, flawed sensors become greater than their sum through the patient algebra of manifolds, preintegration, and weighted least squares. Its hardest lesson is observability: the estimator can only know what the *motion* reveals to it. A master of VIO doesn't just tune covariances — they design the platform's motion to excite the states they need, and they trust the reported uncertainty as much as the estimate itself, because in GPS-denied flight, a confident wrong answer is the one that kills.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The published VIO systems converge beautifully in the paper's figures. Getting your own to converge on your own hardware is a different sport, and almost all of the difficulty is concentrated in three places the papers gloss over: initialization, time sync, and convention discipline.
+
+### Initialization is where VIO actually dies
+
+Monocular VIO has to bootstrap metric scale, gravity direction, initial velocity, and biases from nothing but early motion — and that recovery is **only possible if the motion excites it.** Start the vehicle static, or lift off in pure hover, and scale is mathematically unobservable; the estimator will report a confident answer that is silently wrong by a constant factor. The unwritten rule among drone teams is to *induce* excitation at startup — a deliberate wiggle, a translating takeoff, anything with acceleration in more than one axis — because constant-velocity flight and steady hover are the enemy of observability. Pure rotation with no translation gives you zero parallax and therefore zero depth. If your VIO "drifts after takeoff," the bug is usually not the back-end; it's that you never excited scale and the front-end has been guessing since frame one.
+
+### Time offset and rolling shutter are silent accuracy assassins
+
+The camera and IMU clocks are never truly aligned, and an unmodeled temporal offset $t_d$ of even a few milliseconds smears every reprojection residual — the single most common cause of "it works at slow speed and falls apart when I fly fast." Good systems (VINS-Mono) estimate $t_d$ online; if yours doesn't, you must calibrate it and hold it. **Rolling shutter is poison**: each image row is exposed at a different instant, so a fast yaw shears the image, and unless you model the line delay (or, far better, buy a global-shutter sensor) your features are geometrically inconsistent. Spend the extra dollars on global shutter; it is the cheapest accuracy you will ever buy.
+
+### The noise parameters you set are not the datasheet numbers
+
+Engineers copy the IMU's Allan-variance noise densities straight from the datasheet and wonder why the filter is overconfident. In practice the continuous-time noise you feed the estimator is often **5–10× the datasheet value**, because those covariances must also absorb everything you *didn't* model — scale-factor error, axis misalignment, g-sensitivity, vibration, unmodeled latency. The covariances are tuning knobs that represent "my ignorance," not just thermal noise. Do a real Allan-variance characterization of *your* unit to get the right order of magnitude, then inflate to cover the unmodeled residual.
+
+### Observability, FEJ, and the consistency trap
+
+VIO has exactly four unobservable degrees of freedom — global position (3) and yaw (1) — while roll and pitch are pinned by gravity. The subtle killer is that a naive sliding-window estimator can **gain spurious information about the unobservable yaw** because Jacobians get evaluated at inconsistent linearization points across the window, making the filter overconfident and inconsistent (its reported covariance shrinks below the true error). The fix the field actually uses is **First-Estimates Jacobians (FEJ)** or observability-constrained updates — evaluate the Jacobians for a given state at a single fixed estimate. If you don't know why your filter "looks great until it suddenly diverges," inconsistency from this mechanism is the prime suspect. Run NEES/NIS consistency checks on a dataset with ground truth before you trust a single covariance.
+
+### Convention wars cost more time than algorithms
+
+The deepest VIO bugs are not in the math — they are sign and frame-convention mismatches. Body-to-world vs. world-to-body rotations, **JPL vs. Hamilton quaternion conventions** (which differ in the sign of the imaginary part and the order of multiplication), active vs. passive rotations, gravity as $+9.81$ or $-9.81$ — mix any two and you get an estimator that *almost* works, drifting in a way that looks like a tuning problem but never tunes out. Pick one convention, write it at the top of every file, and audit every library you import against it (OpenVINS is JPL; many others are Hamilton).
+
+### Front-end pragmatics and honest benchmarking
+
+Most production VIO tracks features with cheap KLT optical flow, not descriptors — and it loses everything on textureless white walls, HDR scenes, and motion blur, so a feature health monitor that triggers IMU-only dead-reckoning is mandatory. Remember the categories: **VIO drifts unboundedly** (good systems hold ~0.1–1% of distance traveled); only adding loop closure makes it **VI-SLAM**. When you read results on EuRoC or TUM-VI, assume reported numbers are best-of-N runs on tuned parameters; evaluate your own with `evo` (APE/RPE) on *your* trajectories, because a system that wins on a handheld dataset can still fail on your aggressive quad.

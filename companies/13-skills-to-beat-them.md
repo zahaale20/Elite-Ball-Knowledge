@@ -400,3 +400,27 @@ wheel; keep it turning; the compounding does the rest.
 > that let you live on those axes — and the only thing standing between you and them is deliberate
 > practice. Score yourself honestly, build the engine first, start the flywheel, and remember: size is
 > a liability you don't carry. Go build.
+
+---
+
+## The Dark Side — Documented Costs of These Playbooks
+
+These nine skills are *amplifiers* — and amplifiers are morally neutral. Judgment, iteration, distribution, and leverage make whatever you point them at bigger, including the harms. The single most important caveat in this entire band: **copying a winning playbook copies its externalities too**, and several of the "asymmetric wins" people admire were, on the public record, crimes or harms dressed as moves.
+
+**The externalities travel with the tactic.** Uber's "relentless resourcefulness" included the **Greyball** tool built to evade regulators (*New York Times*, March 2017); Theranos's "rapid iteration" and "taste for the interface" sat on top of a fraud that ended in Elizabeth Holmes's **2022 conviction**; "move fast and break things" broke Cambridge Analytica's millions of users' privacy (2018). When you study these as skill exemplars, you are one careless step from importing the part that put people in court. Resourcefulness without a line it won't cross is just the early chapter of a fraud case.
+
+**Dual-use is not hypothetical in this curriculum.** This study guide is explicitly aimed at autonomy and defense-tech (see the band intro and the [autonomy](../autonomy/) and [career](../career/20-ethics-export-control.md) tracks). That means the skills here attach to **dual-use technology** governed by real law: **ITAR** (22 CFR 120–130) and the **EAR** (15 CFR). Companies have paid eight- and nine-figure settlements for export-control violations; an engineer who "moves fast" with controlled technical data, foreign nationals, or cloud storage can create personal criminal liability, not just a compliance ticket. "Full-loop ownership" (§5) includes owning the export-control and end-use questions *before* you ship.
+
+**Some playbooks should be studied and refused.** Distinguish the transferable skill from the harm it was used for:
+
+| Admired "win" | What to actually learn | What NOT to replicate |
+|---|---|---|
+| Uber's regulatory speed | Operate faster than slow institutions | **Greyball** — engineering to deceive regulators |
+| Theranos's narrative/taste | Sell a vision crisply | Lying about whether the product works (fraud) |
+| Surveillance-data platforms | Model a domain as durable schema | Mass surveillance without consent — see [04](04-palantir-forward-deployed.md) controversy section; Clearview AI's BIPA settlement (2022) and EU bans |
+| "Move fast and break things" | Ship and learn quickly | Externalizing the breakage onto users' privacy/safety |
+| Frugality / density (see [12](12-operating-mechanisms-and-culture.md)) | Do more with less | Worker-harm and union suppression (NLRB findings) |
+
+**The asymmetry of leverage cuts both ways.** Naval's point (§8) — that in the age of infinite leverage *judgment* is the scarce skill — is also the ethical crux: code and media scale a good decision *and* a bad one at zero marginal cost. The same permissionless leverage that lets one person beat an institution lets one person harm at institutional scale, with none of the institution's brakes. That is *more* reason to build judgment and taste deliberately, not less.
+
+> **Why this matters for the operator.** The skills in this module make you dangerous; this section is what keeps you from being a cautionary tale. Before you replicate a giant's move, run the three-part test the whole curriculum keeps returning to: *Is it legal (ITAR/EAR, antitrust, labor law)? Who bears the externality? Would it survive being on the front page?* Importing a playbook means importing its liabilities — so curate. Learn the resourcefulness of Uber without its Greyball, the iteration of the blitzscalers without their breakage, the leverage of the platforms without their lock-in. The point of beating the giants was never to become one of their controversy sections.

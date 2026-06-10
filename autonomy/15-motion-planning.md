@@ -40,6 +40,7 @@ algorithms and geometry rest on
 7. [The planning stack in practice](#7-the-planning-stack-in-practice)
 8. [Practice this week](#8-practice-this-week)
 9. [Sources & further study](#9-sources--further-study)
+10. [The Insider Layer — what the field knows but rarely writes down](#-the-insider-layer--what-the-field-knows-but-rarely-writes-down)
 
 ---
 
@@ -307,3 +308,92 @@ collision** — the same "slow proposes, fast disposes" rule from the decision m
 > function, and the collision model correctly — get those wrong and the world's best
 > planner cheerfully returns the optimal path into a wall. Plan in the right space,
 > and let the optimizer of the next module make the path beautiful.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+Planning courses obsess over the search algorithm. Practitioners know the search
+is the part that works; the failures live in the modeling around it. Here is the
+part that doesn't make the syllabus.
+
+### The collision checker is 90% of your runtime — and your correctness
+
+The clean pseudocode treats `isValid(q)` as an O(1) oracle. In reality
+**collision checking dominates planner runtime**, often 80–95% of it, and its
+*resolution* silently controls correctness. Check too coarsely along an edge and
+the planner tunnels straight through a thin obstacle ("the path goes through the
+table leg"); check too finely and the planner is too slow to run at control rate.
+The fielded tricks — broad-phase/narrow-phase culling, swept-volume checks,
+caching, lazy collision checking (LazyPRM, defer checks until an edge is on a
+candidate path) — are where real planning performance is won, and almost no
+textbook gives them the page count their importance deserves.
+
+### Sampling planners are not deterministic, and that terrifies safety teams
+
+RRT and PRM give you *a* path, fast, but a different path every run, of
+unpredictable quality, with no upper bound on planning time (only probabilistic
+completeness — it finds a solution *eventually* with probability → 1). For a
+ground-truth research demo that's fine. For a certified vehicle it's a nightmare:
+**you cannot validate a planner whose output you cannot reproduce.** This is the
+unwritten reason much of production AV and aerospace planning leans on
+deterministic lattice/graph search or convex optimization despite RRT's academic
+dominance — reviewers and regulators want repeatability and a time bound. When
+you see a sampling planner in a shipped system, there is almost always a
+deterministic fallback and a hard timeout behind it.
+
+### Shortcutting and post-processing are mandatory, never mentioned
+
+A raw RRT path is hideous — jagged, with random detours, often 30–50% longer than
+optimal. Nobody executes it. Every real system runs **path shortcutting / pruning
++ smoothing** (pick two waypoints, try to connect them directly, repeat) as an
+unglamorous but essential post-process. RRT\* fixes optimality in theory but
+converges to the optimum slowly; in practice teams run plain RRT plus aggressive
+shortcutting because it's faster and good enough. The dirty truth: the
+"planner" you ship is really *search + shortcut + smooth + retime*, and the last
+three steps rarely appear in the architecture diagram.
+
+### The cost function is the product; the algorithm is a commodity
+
+You can swap A\* for Dijkstra for D\* Lite and barely change behavior. Change the
+**cost function** — how you weight proximity to obstacles vs. path length vs.
+curvature vs. staying in lane — and you change everything the robot feels like.
+Tuning the cost is the actual job, it is endless, and it is where domain
+expertise lives: the inflation radius around obstacles, the penalty for being
+near a wall, the directional cost that makes a car prefer its lane. This is
+under-published because it's product-specific and looks like "just tuning," but
+it is the difference between a robot that moves like it's confident and one that
+hugs walls or oscillates.
+
+### Replanning rate and the moving-world problem
+
+Static-world planners are a fiction. The world moves, the map updates, the
+estimate jumps after a loop closure — so the real system **replans continuously**
+(D\* Lite and its kin exist exactly to repair a plan cheaply instead of from
+scratch). The insider failure mode: a planner that's individually correct but
+**oscillates** because consecutive replans pick different homotopy classes
+(go-left vs. go-right around the same obstacle), making the robot dither in a
+doorway. Hysteresis, plan-stickiness, and committing to a homotopy class are the
+fixes nobody warns you you'll need.
+
+### Norms and numbers worth carrying
+
+- **C-space dimension is the tyrant.** Sampling planners scale to high DOF where
+  grids explode, but even they suffer in narrow passages — the probability of
+  sampling into a tight corridor shrinks with its width, and *narrow passages are
+  the canonical hard case* every benchmark hides.
+- **OMPL first, custom planner never (until you must).** Reimplementing RRT\* is a
+  rite of passage and a waste of a month; the Open Motion Planning Library is the
+  professional default.
+- **Geometric path ≠ executable trajectory.** The planner here gives a route; it
+  is not dynamically feasible until the trajectory optimizer (next module)
+  retimes it within velocity/accel/jerk limits. Conflating the two is a classic
+  beginner architecture mistake.
+- **Inflate obstacles by the robot radius and *then* plan as a point.** The
+  Minkowski-sum trick is obvious in hindsight and a frequent source of "why did
+  it clip the corner" bugs when forgotten.
+
+The through-line: the search algorithm is the solved, commodity part of planning.
+The engineering judgment — defining the configuration space, the collision model,
+the cost, the replanning policy, and the post-processing — is the entire job, and
+it is the part the literature is quietest about.

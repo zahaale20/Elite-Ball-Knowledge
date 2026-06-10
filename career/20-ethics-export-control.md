@@ -156,3 +156,85 @@ this is part of the job, not separate from it.
 - [05-dod-politics.md](05-dod-politics.md) — the institutional context of these rules.
 - [06-trust-safety-opsec-and-digital-resilience.md](../information-environment/06-trust-safety-opsec-and-digital-resilience.md)
   — operational security and information discipline.
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+> Compliance literacy only. This section explains the *structure* of publicly
+> published U.S. export-control and professional-responsibility frameworks so you
+> can recognize obligations and route them to the right experts. It is **not**
+> legal advice and contains **no** guidance on circumventing any control — the
+> entire posture here is to stay far from every line and ask the empowered
+> officials when in doubt.
+
+### Two regimes, two agencies — getting the jurisdiction wrong *is* the violation
+The public framework splits into **ITAR** (administered by the State Department's
+DDTC, governing defense articles and services on the U.S. Munitions List) and
+**EAR** (administered by Commerce's BIS, governing dual-use items on the Commerce
+Control List). The foundational literacy point: *jurisdiction determination comes
+first*, because treating an ITAR-controlled item as if it were merely EAR (or
+uncontrolled) is itself how violations happen. This is not a judgment call to
+make alone in your head — it is a determination for your organization's export
+compliance officer and counsel, and the published guidance exists precisely so
+non-experts know *when to ask* rather than guess.
+
+### "Deemed exports" — an export can happen without anything crossing a border
+The concept that most surprises engineers and trips up labs and startups: under
+the public rules, *releasing* controlled technical data to a foreign person—even
+in the same room, in the United States—can be "deemed" an export to that person's
+country. A whiteboard session, a shared drive, a code review with a foreign-
+national colleague can implicate the controls. The literacy takeaway is simply to
+*recognize the trigger* and route the situation to compliance before sharing —
+not to improvise. Universities and companies handle this routinely with proper
+licensing and technology control plans; the failure mode is the engineer who
+didn't know the category existed.
+
+### Strict liability and the narrowness of the public-domain exclusion
+Two realities the framework makes explicit. First, many export-control
+violations are *strict liability* — intent is not required, and "I didn't know"
+is not a defense; penalties published in statute are both civil and criminal,
+assessed per violation. Second, the **fundamental research / public-domain
+exclusion** is real but *narrower than people assume*: genuinely published,
+generally accessible information may fall outside control, but the exclusion is
+easy to misread, and it does not launder a controlled article just because you
+wrote about it. Because the boundary is subtle, the correct move is conservative
+— when unsure whether something is publishable, treat it as controlled and ask.
+This is also the link to your public presence
+([13-personal-brand-public-presence.md](13-personal-brand-public-presence.md)):
+build your reputation on the safely-publishable layer of fundamentals and open
+work.
+
+### The aggregation problem and everyday data hygiene
+OPSEC and classification share a counterintuitive property the cleared world
+internalizes: individually-unclassified facts can become sensitive — even
+classified — *in combination*. Need-to-know is therefore about the information,
+not your rank, and CUI (Controlled Unclassified Information) is a real category
+with handling rules even though it carries no classification stamp. The practical,
+publicly-sensible hygiene that follows: don't move work to personal email or
+consumer cloud, and — the modern trap — **don't paste controlled or sensitive
+code, specs, or data into public AI tools**, which can constitute both a spillage
+and, potentially, an export. The convenience of the tool does not change the
+obligation attached to the data.
+
+### The cover-up is worse than the violation — and raising concerns is protected
+The single most important cultural fact, fully public: U.S. export regimes offer
+**voluntary self-disclosure**, and a good-faith VSD typically results in
+substantially reduced penalties, whereas concealment is treated as an
+aggravating factor. The engineer who flags a possible problem early is doing
+exactly what the system is built to reward; the one who hides it converts a
+fixable error into a career-ending one. The same logic governs safety and ethics
+— raising a concern through the proper channel is protected and expected, not
+disloyal ([09-safety-assurance.md](../foundations/09-safety-assurance.md)).
+
+### Dual-use responsibility and the reputation that compounds
+Beyond the letter of the law sits the professional-responsibility layer the
+codes of bodies like IEEE articulate: the engineer bears some responsibility for
+what their work is used to do, and "I just built the technology" has limits as a
+moral position — a live debate in autonomy and lethal-autonomy discussions. You
+don't have to resolve the philosophy to act well: know the rules cold, stay far
+from every line, put your jurisdiction questions in *writing* to the empowered
+official (the paper trail protects you), and decline the gray-area shortcut. The
+quiet payoff is that *impeccable judgment about sensitive things* is one of the
+most durable and valuable reputations in this field — compliance is not friction
+to your career, it is a moat around it.

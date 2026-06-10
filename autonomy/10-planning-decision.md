@@ -18,6 +18,7 @@
 8. [The Reliability / Assurance View of Autonomy](#8-the-reliability--assurance-view-of-autonomy)
 9. [Capability Ladder for This Drone](#9-capability-ladder-for-this-drone)
 10. [Practice This Week](#10-practice-this-week)
+11. [The Insider Layer — what the field knows but rarely writes down](#-the-insider-layer--what-the-field-knows-but-rarely-writes-down)
 
 ---
 
@@ -677,3 +678,31 @@ A concrete, do-it checklist. Each item builds intuition you can defend in an int
 - Koopman, P. — *How Safe Is Safe Enough?* (autonomy safety cases).
 
 *Repo references point to the author's `pixhawk/drone/` codebase. Verify external claims against the primary sources above.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### Most fielded "autonomy" is a state machine, and that's a feature
+
+The dirty secret of deployed systems: the vast majority of "autonomous" behavior is a finite-state machine or behavior tree with hand-written transitions — not a learned policy, not a planner running live in the loop. It is *debuggable, testable, and certifiable*, which a deep net is not. Juniors over-index on the smart deliberative layer; seniors know the executive/sequencing layer is where reliability actually lives and where failsafe arbitration must be bulletproof. The boring conductor, not the clever soloist, is what survives review.
+
+### FSM versus behavior tree: know when each breaks
+
+FSMs are transparent and ideal for a handful of modes, but transition count explodes combinatorially — past roughly ten states they degenerate into unmaintainable spaghetti. Behavior trees scale better through modular, reusable subtrees and built-in fallback semantics, which is why games and modern robotics adopted them. Neither is "AI." Choosing the right structure for your mode count is an unglamorous engineering judgment that quietly determines whether the codebase is alive in a year.
+
+### The trust boundary is the whole job at a defense company
+
+The load-bearing idea of the entire module: an *unbounded* component — a planner, an RL policy, a vision-language model — must never directly command an *unbounded* action. Between the smart-but-unverifiable layer and the actuators sits a verified gate — a geofence, an envelope check, a policy that can only ever *narrow* authority, never widen it. This is **runtime assurance / the Simplex architecture**: a high-performance untrusted controller supervised by a simple, formally trustworthy safety controller that can always take over. If you internalize one thing here, internalize this.
+
+### The demo-to-deployment gap is 90% of the work
+
+A planner that nails a clean demo and a planner you'd trust over a populated area are separated by everything unglamorous: edge cases, sensor dropouts, partial information, adversarial conditions, and the written assurance case. The demo is the 10%. This is exactly why "we have a working autonomy demo" and "we have fielded autonomy" describe different companies. Budget accordingly, and distrust any roadmap that treats the demo as the finish line rather than the starting gun.
+
+### Planners that never ship — the optimality trap
+
+There's a seductive failure mode: building an ever-smarter global planner — a full POMDP, an exotic optimizer — that is mathematically beautiful and never robust enough to deploy. Real systems prefer a *good-enough, fast, predictable* reactive layer with a thin deliberative cap, because predictability beats optimality the moment a human has to supervise and trust the thing. The best plan you can *explain to an operator* beats the optimal plan you can't.
+
+### MOSA and the open-architecture pressure
+
+Defense buyers increasingly mandate modular open-systems approaches, so your decision layer must expose clean, documented interfaces rather than a monolith. The unwritten career point: the autonomy that wins programs is the one that *integrates* — the one another vendor's perception stack or another ground station can plug into. The contract is the product, exactly as the onboard-architecture guide argues, and engineers who design to the interface outlast those who design to the demo.

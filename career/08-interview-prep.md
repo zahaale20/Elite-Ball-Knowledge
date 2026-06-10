@@ -544,3 +544,77 @@ You cannot self-assess interview *performance* — you need reps under observati
 available information. Interview formats, difficulty, and company processes change
 frequently — confirm specifics with your recruiter and the companies' current
 careers pages.*
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+The prep guides teach you to answer questions. The hidden reality is that the
+interview is a *measurement instrument* run by people following a rubric — and once
+you see the machinery, you stop optimizing for "sounding smart" and start
+optimizing for the score that actually gets recorded.
+
+### The decision is made in written feedback, after you leave the room
+Most candidates imagine interviewers chatting and forming a vibe. At any
+structured company, each interviewer independently submits a **written scorecard
+against a rubric** — hire / no-hire with evidence — *before* the group debriefs,
+specifically to prevent groupthink. Your charming small talk doesn't make the
+file; your concrete, scorable behaviors do. This means the real audience for every
+answer is *future-you's interviewer typing notes ten minutes from now*. Give them
+quotable evidence: named projects, numbers, specific decisions they can paste into
+the "hire" box.
+
+### Think out loud or fail — silence is unscoreable
+In a technical round, a correct answer reached silently scores *worse* than a
+slightly-wrong answer reached out loud, because the interviewer is grading your
+**problem-solving process**, not just the final artifact. They literally cannot
+score reasoning they can't hear. The senior move is to narrate: state
+assumptions, name the approach, flag the tradeoff, say "let me sanity-check this."
+A candidate who debugs their own mistake aloud often out-scores one who got it
+right the first time, because they've demonstrated exactly the skill the rubric
+is hunting for.
+
+### The loop sets your level — and your starting salary for years
+Most people think the interview decides *yes/no*. It also decides **what level
+you're slotted into**, and that single classification anchors your band, equity,
+and every future raise's compounding base. The behavioral round in particular is
+usually a **leveling exercise** disguised as a culture chat: "tell me about a
+conflict" is scoring scope and ownership (did you influence one person or align an
+org?). Calibrate your stories *upward to the level you're targeting* on purpose;
+under-pitching your scope here is a tax you pay for years. See
+[06-negotiation-compensation.md](06-negotiation-compensation.md).
+
+### The recruiter is your coach, not a gatekeeper to outwit
+The recruiter is *incentivized to get you hired* — their job is filled reqs — so
+they are the most underused ally in the process. They will, if asked plainly, tell
+you the interview format, who you're meeting, what each round weighs, and how to
+prep. Candidates who treat them as an adversary to be managed leave enormous
+advantage on the table. Ask directly: "What does this loop look like, and how
+should I prepare for each stage?" — then actually do what they say.
+
+### The take-home grades scope discipline, not maximal effort
+The trap in a take-home is that it has no visible ceiling, so over-eager candidates
+spend 20 hours gold-plating — and frequently *lose*, because the rubric is often
+secretly testing whether you can scope to the stated requirement, write a clean
+README, and stop. Senior engineers ship the asked-for thing well, document their
+assumptions and what they deliberately *didn't* do, and respect the time box.
+"What would you add with another week?" answered in the README beats actually
+building it.
+
+### Reverse-questions are a graded round, not a courtesy
+"Do you have questions for me?" is scored signal, not filler. Generic questions
+("what's the culture like?") read as low-interest; sharp, specific ones — about
+the team's hardest current technical tradeoff, how decisions get made, what
+separates a strong performer at this level — read as a peer evaluating *them*
+back. The strongest candidates use this slot to demonstrate they were listening
+and to surface whether *they* even want the role. It's the cheapest place to
+move your score and almost everyone wastes it.
+
+### A referral changes the bar you're measured against
+An internal referral doesn't just bypass the résumé screen — it attaches a trusted
+employee's reputation to you, which shifts the loop from "prove you're worth a
+shot" toward "confirm what we already believe." Interviewers are subtly primed to
+find reasons to say yes. This is why the highest-ROI interview prep often isn't
+more LeetCode — it's getting one real engineer at the company to vouch for you
+before you ever walk in. Mock interviews with a brutal friend are the other
+non-negotiable: reps under realistic pressure beat passive study every time.

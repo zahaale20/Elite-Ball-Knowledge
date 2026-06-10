@@ -390,3 +390,31 @@ never a route that talks to the vehicle directly.
 - Python `asyncio` (event loop, threads, executors): https://docs.python.org/3/library/asyncio.html
 - Hash chaining / tamper-evident logs: Haber & Stornetta, *How to Time-Stamp a Digital Document* (J. Cryptology, 1991); Merkle, *A Digital Signature Based on a Conventional Encryption Function*.
 - Companion guides: roadmap [02-autonomy-vtol-roadmap.md](02-vtol-roadmap.md), SITL [03-autonomy-px4-sitl.md](03-px4-sitl.md), tests [05-autonomy-test-scaffold.md](05-test-scaffold.md), GNC [09-autonomy-gnc.md](09-gnc.md), assurance [09-foundations-safety-assurance.md](../foundations/09-safety-assurance.md).
+
+---
+
+## ⚡ The Insider Layer — What the Field Knows but Rarely Writes Down
+
+### The serial link is your weakest hardware
+
+USB-serial to the Pixhawk (`/dev/ttyACM0`) is the flakiest part of the whole stack. It enumerates differently across boots (which is exactly why the `by-id` symlink exists — use it, always, never hard-code `ttyACM0`), it resets under EMI from the ESCs, and a brown-out re-enumerates it mid-flight. Production practice: reconnect logic with backoff, and active detection of the *silent half-dead link* — port open, file handle valid, but no heartbeats arriving. A link that's "connected" but mute is worse than one that's cleanly down.
+
+### The Pi throttles, and throttling looks like a software bug
+
+A Pi 5 under CV load with poor airflow hits 80–85 °C and throttles; your "FPS dropped and offboard timed out" is thermal, not code. `vcgencmd get_throttled` is the truth oracle — check it before you debug anything else. A heatsink and airflow are flight-safety items, not niceties. Undervoltage from a sagging 5 V rail produces *identical* symptoms, so power the Pi from a real BEC, never from the Pixhawk's servo rail.
+
+### Linux is not real-time, and pretending otherwise bites
+
+The Pi runs Debian, not an RTOS. Any loop near a hard deadline has no scheduling guarantee — a log flush, an `apt` cron job, or the GIL can stall you for tens of milliseconds. Keep anything with a real deadline (offboard streaming) on its own thread or process, raise its priority where it matters, and *design for jitter* instead of wishing it away. The flight controller owns the 1 kHz control loop precisely because the companion structurally cannot.
+
+### One link, many consumers — arbitrate it
+
+MAVSDK, a logger, and QGC all wanting the same serial port is a classic, maddening contention bug. Run a multiplexer (mavlink-router or a MAVSDK server) so the link has exactly one owner and everything else subscribes downstream. Two processes opening the same tty don't fail loudly — they silently corrupt each other's MAVLink parsing, and you'll chase phantom packet errors for a day.
+
+### systemd is your flight-readiness contract
+
+A user-level systemd unit with `Restart=on-failure`, an ordered dependency chain, and a watchdog turns "I forgot to start the service" into a non-event. The watchdog is the real point: a *hung* Python process that still holds the serial port is far worse than a crashed one that restarts cleanly. Encode liveness, not just existence.
+
+### Tamper-evident logs aren't paranoia
+
+Hash-chained logs (the Haber–Stornetta and Merkle lineage this file already cites) matter the instant a flight goes wrong and someone asks "what did it decide, and when?" An append-only, hash-linked decision log is the difference between a defensible incident review and a shrug. At defense-autonomy companies this is table stakes — the ability to *prove* the sequence of decisions, untampered, is part of the product, not an afterthought.

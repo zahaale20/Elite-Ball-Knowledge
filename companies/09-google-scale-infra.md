@@ -304,3 +304,61 @@ durability.* Take the first; supply the second yourself.
 > Framing note: Google teaches you to reach for *leverage* — build the platform, instrument the
 > decision, demand the order-of-magnitude. But it also teaches, by its failures, that *leverage
 > without shipping is a gift to your competitor.* Invent like Google; ship like a startup.
+
+---
+
+## Controversies, Criticisms & Risks (the part the case study leaves out)
+
+> **Why this exists.** §8 critiqued Google on *shipping* — graveyards, bureaucracy, promo-driven
+> engineering. That's the *internal* failure mode. This section covers the *external* record: the
+> antitrust rulings, fines, privacy settlements, and ethics revolts that the "infrastructure and
+> data" story skips. The same data-and-scale advantage that makes Google peerless at leverage is the
+> thing courts and regulators have repeatedly found it abused.
+
+### Antitrust: two US monopoly findings + three EU fines
+
+| Matter | Year | Body | Outcome |
+|---|---|---|---|
+| *US v. Google* (Search) | Ruling **Aug 2024** | US DC District Court (Judge Mehta) | Found Google **illegally maintained a monopoly** in general search and search-text advertising, largely via exclusive default-placement deals (e.g., with Apple). Remedies litigated 2025. |
+| *US v. Google* (Ad tech) | Ruling **Apr 2025** | US ED Virginia (Judge Brinkema) | Found Google **illegally monopolized** ad-exchange and publisher ad-server markets. Remedies phase followed. |
+| EU **Google Shopping** | 2017 | European Commission | **€2.42B** fine for self-preferencing its comparison-shopping service. |
+| EU **Android** | 2018 | European Commission | **€4.34B** fine over restrictive licensing tying Search/Chrome to the Play Store (largely upheld, slightly reduced, by the EU General Court in 2022). |
+| EU **AdSense** | 2019 | European Commission | **€1.49B** fine over exclusivity clauses in search-ad brokering. |
+
+These are not "alleged" — they are *findings* and *fines on the record*, several still under appeal
+on remedy or amount. The ad-tech case in particular targets the very infrastructure leverage §1–§2
+celebrate: owning the buy side, the sell side, *and* the exchange.
+
+### Privacy & tracking
+
+- **Incognito tracking.** *Brown v. Google* alleged Google tracked users in Chrome's "Incognito"
+  mode. Google **settled in 2023–2024**, agreeing to destroy billions of data records and change
+  disclosures (settled without an admission of liability).
+- **Location-history settlements.** In **Nov 2022**, Google agreed to a **$391.5M** settlement with
+  **40 US state AGs** over deceptive location-tracking practices, followed by additional state
+  settlements (e.g., Arizona, and a later multi-state agreement) and disclosure changes.
+
+### Ethics, AI & labor
+
+- **AI-ethics firings.** The exits of researchers **Timnit Gebru (Dec 2020)** and **Margaret
+  Mitchell (Feb 2021)** — Gebru's departure tied to a dispute over a paper on large-language-model
+  risks — drew widespread criticism and an open letter from thousands of employees; Google described
+  the circumstances differently, but the departures and internal fallout are documented public
+  record.
+- **Project Maven.** After a **2018** internal revolt (thousands of employees signed a protest
+  letter; some resigned) over a Pentagon drone-imagery AI contract, Google **declined to renew**
+  Maven and published AI principles.
+- **The "Don't be evil" critique.** Google's longtime motto was **de-emphasized / moved** to the end
+  of its code of conduct around 2018 — a frequently cited symbol in critiques of the gap between its
+  stated values and its conduct.
+
+### Why this matters for the operator
+
+§8 says "invent like Google; ship like a startup." The public record adds a second clause: the
+data-and-leverage reflex this module trains has, at Google's scale, repeatedly crossed into conduct
+that **two US courts called an illegal monopoly** and that EU regulators fined more than **€8B** in
+total. The operator's lesson is not cynicism — it's that *leverage is power, and power gets
+audited.* Build the platform; instrument the decision; and price in the governance, privacy, and
+fairness constraints **before** a regulator prices them in for you. For the contrasting
+narrative-and-ownership culture and *its* documented controversies, see
+[08-companies-amazon-mechanisms-customer-obsession.md](08-amazon-mechanisms-customer-obsession.md).
