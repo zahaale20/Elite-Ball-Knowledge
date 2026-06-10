@@ -63,6 +63,8 @@ open a pull request. Full conventions, style guide, and the quality bar live in
 
 The [`machine learning/`](machine%20learning) folder is **not part of the mastery
 curriculum**. It is a standalone set of university ML course materials (CPSC 5310):
-lecture decks, hands-on notebooks (CNN, RNN, Transformer, and RAG), and two review
-documents — [STUDY_GUIDE.md](machine%20learning/STUDY_GUIDE.md) and
+lecture decks, hands-on notebooks (CNN, RNN, Transformer, and RAG), and three review
+documents — [STUDY_GUIDE.md](machine%20learning/STUDY_GUIDE.md) (deep learning + RAG),
+[STUDY_GUIDE_CLASSICAL_ML.md](machine%20learning/STUDY_GUIDE_CLASSICAL_ML.md) (regression,
+classification, Bayes, SVM, ensembles, clustering, PCA), and
 [FINAL_PRACTICE_EXAM.md](machine%20learning/FINAL_PRACTICE_EXAM.md).
