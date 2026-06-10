@@ -1,0 +1,2 @@
+company,domain,first_name,last_name,title,department,email,source,confidence,date_added,status,notes,personalization,target_segment,value_prop,value_prop_short,trigger,resource_type,topic
+Acme Corp,acme-corp.com,Jordan,Lee,HR Director,hr,jordan.lee@acme-corp.com,referral,,2026-06-10,new,,Saw Acme is opening a second office this quarter,mid-size logistics firms,reducing onboarding admin so HR can focus on people,cutting onboarding admin,your recent expansion,checklist,faster onboarding

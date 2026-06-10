@@ -1,0 +1,8 @@
+{
+  "from_name": "Your Name",
+  "from_email": "you@yourdomain.com",
+  "reply_to": "you@yourdomain.com",
+  "company": "Your Company LLC",
+  "physical_address": "123 Main St, Suite 100, Your City, ST 00000",
+  "unsubscribe_line": "Don't want to hear from me? Reply STOP or UNSUBSCRIBE and I'll remove you immediately."
+}

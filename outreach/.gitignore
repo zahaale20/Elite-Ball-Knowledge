@@ -1,0 +1,8 @@
+# Never commit real outreach data or credentials — only the .example.* templates.
+scripts/sender_config.json
+templates/leads.csv
+templates/suppression.csv
+*.local.csv
+domains.csv
+__pycache__/
+*.pyc
