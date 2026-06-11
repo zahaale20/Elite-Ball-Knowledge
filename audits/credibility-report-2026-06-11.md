@@ -53,7 +53,6 @@ The README claims **"177 in-depth guides across 14 topic folders."** Counting th
 | MEDIUM | [foundations/06-simulation-test-verification.md](../foundations/06-simulation-test-verification.md) | "~17–19 hours awake = legal intoxication" | Roughly correct (Williamson et al. 2010) but individual-dependent and lightly hedged. | Add "approximately" and cite the source. | Likely |
 | MEDIUM | [companies/05-tesla-vertical-integration-data.md](../companies/05-tesla-vertical-integration-data.md) | Autopilot jury-verdict figures | Verdict amounts cited without consistent appeal-status / year caveats. | Add year + "subject to appeal" to each figure. | Likely |
 | MEDIUM | [companies/16-frontier-ai-labs.md](../companies/16-frontier-ai-labs.md) | "for-profit-conversion controversy (2024–2025)" | "2024–2025" may read as stale once resolved. | Use "2024–ongoing"; verify status before redistribution. | Likely |
-| LOW | [README.md](../README.md) | Badge "Made with: AI tools" | Auditor flagged as "outdated model name," but this is the author's own attribution and is plausible as of 2026; **not a content defect**. | No change needed (see appendix — auditor false positive). | Verified |
 | LOW | [companies/15-microsoft-reinvention-platform.md](../companies/15-microsoft-reinvention-platform.md) | "Nokia acquisition was written off ~$7.6B (2023)" | Conflates ~$7.2B (2013) purchase with the $7.6B writeoff (2015); wrong year. | "Microsoft took a $7.6B writeoff (2015) on its ~$7.2B (2013) Nokia phone acquisition." | Verified |
 | LOW | [companies/18-semiconductor-titans-tsmc-asml.md](../companies/18-semiconductor-titans-tsmc-asml.md) | "ASML holds a 100% monopoly on EUV" | True only for *commercial* EUV. | "100% of commercial EUV lithography." | Verified |
 | LOW | [companies/06-nvidia-platform-ecosystem.md](../companies/06-nvidia-platform-ecosystem.md) | "responded with... H20" | H20 availability was still unfolding; "responded with" overstates market reality. | Add "(H20 deployment ongoing, 2024–2025)." | Likely |
@@ -79,9 +78,6 @@ These could not be definitively confirmed by the sub-agents (no live source fetc
 - **`autonomy/04`** — `setuptools >= 81 removed pkg_resources` claim against setuptools release notes.
 - **External URLs** — sub-agents did not perform live link-following at scale; a `lychee`/link-checker pass is recommended to catch dead or redirected links.
 - **`mathematics/` + `engineering/`** — the auditor sampled ~30–40% of each long file. A full read of the remaining content is advisable for complete coverage.
-
-### Auditor false positive (not a repository defect)
-One sub-agent flagged the README badge **"AI tools"** as an "outdated model name," asserting the real model is "Claude 3.5 Sonnet." Given the June 2026 context, **AI tools is plausible and is the author's own build attribution** — this is the auditor's knowledge being stale, not a credibility problem in the repo. No change recommended.
 
 ---
 

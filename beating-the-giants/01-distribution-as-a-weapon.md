@@ -186,6 +186,6 @@ growth metric with a quality guardrail (e.g. activations *that retain at 30 days
 
 ---
 
-*This guide is **AI-assisted synthesis** (AI tools), curated and
+*This guide is **AI-assisted synthesis**, curated and
 reviewed — a starting point, not a primary source. Verify anything load-bearing before you
 rely on it. See the [README](../README.md) for the full note.*

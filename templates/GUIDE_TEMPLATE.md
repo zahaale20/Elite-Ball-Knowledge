@@ -60,6 +60,6 @@ e.g. [Trajectory Optimization](../autonomy/16-trajectory-optimization.md).
 
 *Remember to add a row for this guide to [`01-mastery-curriculum.md`](../01-mastery-curriculum.md).*
 
-*This guide is **AI-assisted synthesis** (AI tools), curated and
+*This guide is **AI-assisted synthesis**, curated and
 reviewed — a starting point, not a primary source. Verify anything load-bearing before
 you rely on it. See the [README](../README.md) for the full note.*

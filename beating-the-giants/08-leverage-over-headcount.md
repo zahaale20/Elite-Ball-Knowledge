@@ -147,6 +147,6 @@ form of leverage — and then hire for density, not volume.
 
 ---
 
-*This guide is **AI-assisted synthesis** (AI tools), curated and
+*This guide is **AI-assisted synthesis**, curated and
 reviewed — a starting point, not a primary source. Verify anything load-bearing before you
 rely on it. See the [README](../README.md) for the full note.*

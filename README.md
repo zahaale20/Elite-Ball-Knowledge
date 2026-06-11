@@ -4,7 +4,6 @@
 [![Topic folders](https://img.shields.io/badge/topic%20folders-15-blueviolet)](01-mastery-curriculum.md)
 [![License: CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-green)](LICENSE)
 [![Contributions: owner-gated](https://img.shields.io/badge/contributions-owner--gated-orange)](CONTRIBUTING.md)
-[![Made with: AI tools](https://img.shields.io/badge/made%20with-AI%20tools-8A2BE2)](#)
 [![Status: AI-assisted — verify before relying](https://img.shields.io/badge/AI--assisted-verify%20before%20relying-critical)](#how-this-library-was-made--read-this-first)
 
 A self-contained, first-principles study library covering everything an autonomy / defense-technology engineer needs,
@@ -16,8 +15,8 @@ building" knowledge of elite autonomy and defense-tech teams — explained from 
 principles, not gatekept.
 
 > **How this library was made — read this first.** This repository is a compilation of
-> real questions people have asked me, answered with the help of **AI tools** and
-> **AI tools**. It is **AI-assisted synthesis that I curate and review** — not
+> real questions people have asked me, answered with the help of **AI tools**. It is
+> **AI-assisted synthesis that I curate and review** — not
 > original primary research, and not a substitute for authoritative sources. Treat every
 > guide as a strong, structured *starting point*: learn the shape of a topic here, then
 > verify anything load-bearing against primary sources before you rely on it, cite it, or

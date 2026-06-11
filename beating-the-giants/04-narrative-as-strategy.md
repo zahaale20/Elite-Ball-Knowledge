@@ -147,6 +147,6 @@ survive diligence is not a strategy; it is a liability with a countdown.
 
 ---
 
-*This guide is **AI-assisted synthesis** (AI tools), curated and
+*This guide is **AI-assisted synthesis**, curated and
 reviewed — a starting point, not a primary source. Verify anything load-bearing before you
 rely on it. See the [README](../README.md) for the full note.*

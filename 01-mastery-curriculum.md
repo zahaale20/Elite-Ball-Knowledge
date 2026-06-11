@@ -1,8 +1,8 @@
 # The Mastery Curriculum — Everything the Top People at Elite Defense-Tech Companies Know
 
 > **How this library was made — read this first.** This repository is a compilation of
-> real questions people have asked me, answered with the help of **AI tools** and
-> **AI tools**. It is **AI-assisted synthesis that I curate and review** — not
+> real questions people have asked me, answered with the help of **AI tools**. It is
+> **AI-assisted synthesis that I curate and review** — not
 > original primary research, and not a substitute for authoritative sources. Treat every
 > guide as a strong, structured *starting point*: learn the shape of a topic here, then
 > verify anything load-bearing against primary sources before you rely on it, cite it, or
