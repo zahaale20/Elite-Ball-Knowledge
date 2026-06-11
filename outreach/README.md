@@ -12,6 +12,11 @@
 > personalization) is *also* a deliverability tactic. The legal path and the profitable path are
 > the same path.
 
+> **AI-assisted — read this first.** Like the rest of this repository, this toolkit is
+> AI-assisted synthesis (AI tools), curated and reviewed. It is not
+> legal advice. Verify the compliance specifics (CAN-SPAM, CASL, GDPR, FINRA Rule 2210 / Reg BI)
+> against the current rules and, where it matters, qualified counsel before you rely on them.
+
 ---
 
 ## ⚖️ Read this first — the boundaries this toolkit respects
