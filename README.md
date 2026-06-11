@@ -5,6 +5,13 @@ topic folders** — covering everything an autonomy / defense-technology enginee
 from the math and control theory under a flight stack to the career, strategy, and
 human-operating-system skills that decide how far that knowledge takes you.
 
+> **How this was made.** This repository is a compilation of questions people have
+> asked me, which I answered with the help of **AI tools** and **Claude Opus
+> 4.8**. The guides are AI-assisted synthesis curated and reviewed by me — not original
+> primary research. Read them as a starting point, verify anything load-bearing against
+> authoritative sources, and keep that context in mind before treating any claim as
+> gospel.
+
 ## Start here
 
 **▶ [The Mastery Curriculum](01-mastery-curriculum.md)** — the master index. It explains
