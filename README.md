@@ -12,6 +12,10 @@ topic folders** — covering everything an autonomy / defense-technology enginee
 from the math and control theory under a flight stack to the career, strategy, and
 human-operating-system skills that decide how far that knowledge takes you.
 
+**Who it's for.** Engineers, students, and career-changers who want the "inside the
+building" knowledge of elite autonomy and defense-tech teams — explained from first
+principles, not gatekept.
+
 > **How this library was made — read this first.** This repository is a compilation of
 > real questions people have asked me, answered with the help of **AI tools** and
 > **AI tools**. It is **AI-assisted synthesis that I curate and review** — not
@@ -20,11 +24,27 @@ human-operating-system skills that decide how far that knowledge takes you.
 > verify anything load-bearing against primary sources before you rely on it, cite it, or
 > build on it. Holding that line is the whole point — it keeps all of us honest.
 
-## Start here
+## Start here in 60 seconds
 
-**▶ [The Mastery Curriculum](01-mastery-curriculum.md)** — the master index. It explains
-how to read the library, maps every guide, and gives ordered **learning paths** so you
-don't try to boil the ocean.
+New here? Don't try to read all 177 guides. Pick the lane that matches you and start
+with one:
+
+- **I want to build autonomy** → [Guidance, Navigation & Control](autonomy/09-gnc.md),
+  then [Sensor Fusion](autonomy/13-sensor-fusion.md).
+- **I want to think like a chief engineer** →
+  [First Principles & Systems Engineering](foundations/01-first_principles_systems_engineering.md).
+- **I want a job in defense-tech** →
+  [The Defense-Aerospace Playbook](career/02-defense-aerospace-playbook.md), then
+  [Interview Prep](career/08-interview-prep.md).
+- **I want the strategy / business side** →
+  [How the Giants Win](companies/01-how-the-giants-win.md).
+- **I'm just curious how this stuff works** →
+  [How AI & LLMs Actually Work](general/04-how-ai-and-llms-actually-work.md).
+
+Want the full map and ordered learning paths instead?
+**▶ [The Mastery Curriculum](01-mastery-curriculum.md)** is the master index — it explains
+how to read the library, maps every guide, and gives ordered paths so you don't try to
+boil the ocean.
 
 ## How it's organized
 

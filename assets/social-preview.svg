@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Social preview card for the repository (GitHub Settings, Social preview).
+  Canvas is exactly 1280x640, the size GitHub renders for link unfurls on
+  X, LinkedIn, Slack, Discord, iMessage, etc.
+
+  HOW TO USE
+  1. Open this file in a browser to preview it.
+  2. Export to PNG at 1280x640 (any of these work):
+       rsvg-convert -w 1280 -h 640 assets/social-preview.svg -o assets/social-preview.png
+       or open in Figma / Inkscape and export a 1280x640 PNG.
+  3. Upload the PNG at: repo Settings, Social preview, Upload an image.
+
+  Edit the text below freely; fonts are system sans-serif so it renders
+  consistently everywhere.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#161d33"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8A2BE2"/>
+      <stop offset="1" stop-color="#4f8cff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1280" height="8" fill="url(#accent)"/>
+
+  <!-- Eyebrow -->
+  <text x="80" y="120" font-family="Arial, Helvetica, sans-serif" font-size="26"
+        letter-spacing="3" fill="#8aa0c6" font-weight="700">FIRST-PRINCIPLES STUDY LIBRARY</text>
+
+  <!-- Title -->
+  <text x="80" y="218" font-family="Arial, Helvetica, sans-serif" font-size="84"
+        fill="#ffffff" font-weight="800">Elite Ball Knowledge</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="296" font-family="Arial, Helvetica, sans-serif" font-size="40"
+        fill="#cdd8ee" font-weight="500">177 in-depth guides · 14 domains</text>
+  <text x="80" y="350" font-family="Arial, Helvetica, sans-serif" font-size="34"
+        fill="#9fb1d4" font-weight="400">autonomy · defense-tech · the math, the career, the strategy</text>
+
+  <!-- Honest hook chip -->
+  <rect x="80" y="430" width="760" height="64" rx="14" fill="#1c2740" stroke="#8A2BE2" stroke-width="2"/>
+  <text x="108" y="471" font-family="Arial, Helvetica, sans-serif" font-size="28"
+        fill="#e6ecf8" font-weight="600">Built in the open with AI tools</text>
+
+  <!-- Honesty line -->
+  <text x="80" y="560" font-family="Arial, Helvetica, sans-serif" font-size="26"
+        fill="#7f93b8" font-weight="400">AI-assisted, curated &amp; reviewed — a starting point. Verify before you rely on it.</text>
+
+  <!-- Decorative node-graph motif (sense → decide → act) -->
+  <g opacity="0.9">
+    <line x1="980" y1="200" x2="1080" y2="140" stroke="#4f8cff" stroke-width="3"/>
+    <line x1="1080" y1="140" x2="1180" y2="220" stroke="#4f8cff" stroke-width="3"/>
+    <line x1="980" y1="200" x2="1070" y2="300" stroke="#8A2BE2" stroke-width="3"/>
+    <line x1="1070" y1="300" x2="1180" y2="220" stroke="#8A2BE2" stroke-width="3"/>
+    <line x1="1070" y1="300" x2="1100" y2="420" stroke="#4f8cff" stroke-width="3"/>
+  </g>
+  <g>
+    <circle cx="980" cy="200" r="16" fill="#4f8cff"/>
+    <circle cx="1080" cy="140" r="16" fill="#8A2BE2"/>
+    <circle cx="1180" cy="220" r="16" fill="#4f8cff"/>
+    <circle cx="1070" cy="300" r="16" fill="#8A2BE2"/>
+    <circle cx="1100" cy="420" r="16" fill="#4f8cff"/>
+  </g>
+</svg>
