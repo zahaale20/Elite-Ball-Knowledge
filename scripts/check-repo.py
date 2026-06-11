@@ -60,6 +60,7 @@ TOPIC_FOLDERS = [
     "space",
     "products",
     "tooling",
+    "beating-the-giants",
 ]
 
 # Directories never walked for link checking or counts.

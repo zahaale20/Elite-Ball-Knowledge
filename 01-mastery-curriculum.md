@@ -93,7 +93,8 @@ independently from `01`**. The folders are: **foundations** (`01–21`),
 **information-environment** (`01–06`), **companies** (`01–20`),
 **engineering** (`01–16`), **software** (`01–15`), **mathematics** (`01–12`),
 **compute-and-hardware** (`01–04`), **mindset-and-society** (`01–17`),
-**general** (`01–14`), **space** (`01`), and **products** (`01`). The first table
+**general** (`01–14`), **space** (`01`), **products** (`01`), and
+**beating-the-giants** (`01–08`). The first table
 below lists the original foundations/career/autonomy/tooling/information-environment
 spine; the remaining folders — including the **Extended Foundations** (`foundations/10–21`),
 **Space**, and **Products** sections — are detailed in the sections that follow it.
@@ -443,6 +444,25 @@ autonomy stack into orbit, the other treats your own tooling as a force multipli
 |---|---|---|
 | `space/01` | [Space Systems & Astronautics](space/01-space-systems-and-astronautics.md) | Reason from vis-viva to real missions — sizing orbits, constellations, link and power budgets for contested space |
 | `products/01` | [Twenty Underrated, High-Impact Products](products/01-twenty-underrated-high-impact-products.md) | Treat tooling as a force multiplier — smell 10× tools early and delete recurring friction permanently |
+
+### The Underdog's Playbook — Beating the Giants (`beating-the-giants/01–08`)
+
+Where [`companies/`](companies/01-how-the-giants-win.md) catalogs *what the winners did*,
+this folder is the operator's execution playbook for *what you do about it* — the
+underdog's layer of distribution, pricing, capital, narrative, speed, defense, regulatory
+navigation, and leverage. It was added to close the convergent gaps surfaced in the
+library's knowledge-gap survey.
+
+| # | Module | What it makes you |
+|---|---|---|
+| 01 | [Distribution as a Weapon](beating-the-giants/01-distribution-as-a-weapon.md) | Get a product to customers at lower cost than the incumbent — and turn the channel into a moat |
+| 02 | [Pricing & Unit Economics](beating-the-giants/02-pricing-and-unit-economics.md) | Price for value, read a contribution-margin curve, and make cost structure a weapon |
+| 03 | [Capital Strategy & Fundraising](beating-the-giants/03-capital-strategy-and-fundraising.md) | Choose capital for its incentives, compute dilution and control, and reason about founder-vs-employee EV |
+| 04 | [Narrative as Strategy](beating-the-giants/04-narrative-as-strategy.md) | Compress strategy into a story that moves talent, capital, and customers — and counter-position the incumbent |
+| 05 | [Speed as Compound Advantage](beating-the-giants/05-speed-as-compound-advantage.md) | Measure cycle time, maximize learning per loop, and protect speed as you scale |
+| 06 | [Incumbent Response & Defense](beating-the-giants/06-incumbent-response-and-defense.md) | Predict the giant's counterattack and build defenses that make you hard to kill |
+| 07 | [Regulatory Judo & Export Control](beating-the-giants/07-regulatory-judo-and-export-control.md) | Turn ITAR/EAR, certification, and compliance from a tax into an asymmetric moat — honestly |
+| 08 | [Leverage Over Headcount](beating-the-giants/08-leverage-over-headcount.md) | Build output through talent density, automation, and AI instead of headcount |
 
 ---
 

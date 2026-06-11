@@ -1,7 +1,7 @@
 # Elite Ball Knowledge Curriculum
 
-[![Guides](https://img.shields.io/badge/guides-177-blue)](01-mastery-curriculum.md)
-[![Topic folders](https://img.shields.io/badge/topic%20folders-14-blueviolet)](01-mastery-curriculum.md)
+[![Guides](https://img.shields.io/badge/guides-185-blue)](01-mastery-curriculum.md)
+[![Topic folders](https://img.shields.io/badge/topic%20folders-15-blueviolet)](01-mastery-curriculum.md)
 [![License: CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-green)](LICENSE)
 [![Contributions: owner-gated](https://img.shields.io/badge/contributions-owner--gated-orange)](CONTRIBUTING.md)
 [![Made with: AI tools](https://img.shields.io/badge/made%20with-AI%20tools-8A2BE2)](#)
@@ -36,7 +36,8 @@ with one:
   [The Defense-Aerospace Playbook](career/02-defense-aerospace-playbook.md), then
   [Interview Prep](career/08-interview-prep.md).
 - **I want the strategy / business side** →
-  [How the Giants Win](companies/01-how-the-giants-win.md).
+  [How the Giants Win](companies/01-how-the-giants-win.md), then the underdog playbook in
+  [Distribution as a Weapon](beating-the-giants/01-distribution-as-a-weapon.md).
 - **I'm just curious how this stuff works** →
   [How AI & LLMs Actually Work](general/04-how-ai-and-llms-actually-work.md).
 
@@ -65,6 +66,7 @@ Every folder is numbered **independently from `01`**. The library is grouped int
 | [`space/`](space) | 01 | Space systems & astronautics |
 | [`products/`](products) | 01 | High-impact tools worth adopting |
 | [`tooling/`](tooling) | 01 | Power prompts for building with AI |
+| [`beating-the-giants/`](beating-the-giants) | 01–08 | The underdog's execution playbook against incumbents |
 
 See the [curriculum index](01-mastery-curriculum.md) for a per-module table of every
 guide and what it makes you.
@@ -102,7 +104,7 @@ live in **[CONTRIBUTING.md](CONTRIBUTING.md)**.
 ## Also in this repo (outside the curriculum)
 
 A few folders live alongside the curriculum but are **not part of it** — they're
-standalone collections kept here for convenience. They aren't counted in the 177-guide
+standalone collections kept here for convenience. They aren't counted in the curriculum
 total and aren't tracked by the curriculum index.
 
 - **[`sie/`](sie)** — an in-depth study guide and rapid-review question bank for FINRA's
