@@ -4,18 +4,21 @@
 [![Topic folders](https://img.shields.io/badge/topic%20folders-14-blueviolet)](01-mastery-curriculum.md)
 [![License: CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-green)](LICENSE)
 [![Contributions: owner-gated](https://img.shields.io/badge/contributions-owner--gated-orange)](CONTRIBUTING.md)
+[![Made with: AI tools](https://img.shields.io/badge/made%20with-AI%20tools-8A2BE2)](#)
+[![Status: AI-assisted — verify before relying](https://img.shields.io/badge/AI--assisted-verify%20before%20relying-critical)](#how-this-library-was-made--read-this-first)
 
 A self-contained, first-principles study library — **177 in-depth guides across 14
 topic folders** — covering everything an autonomy / defense-technology engineer needs,
 from the math and control theory under a flight stack to the career, strategy, and
 human-operating-system skills that decide how far that knowledge takes you.
 
-> **How this was made.** This repository is a compilation of questions people have
-> asked me, which I answered with the help of **AI tools** and **Claude Opus
-> 4.8**. The guides are AI-assisted synthesis curated and reviewed by me — not original
-> primary research. Read them as a starting point, verify anything load-bearing against
-> authoritative sources, and keep that context in mind before treating any claim as
-> gospel.
+> **How this library was made — read this first.** This repository is a compilation of
+> real questions people have asked me, answered with the help of **AI tools** and
+> **AI tools**. It is **AI-assisted synthesis that I curate and review** — not
+> original primary research, and not a substitute for authoritative sources. Treat every
+> guide as a strong, structured *starting point*: learn the shape of a topic here, then
+> verify anything load-bearing against primary sources before you rely on it, cite it, or
+> build on it. Holding that line is the whole point — it keeps all of us honest.
 
 ## Start here
 
@@ -77,13 +80,25 @@ live in **[CONTRIBUTING.md](CONTRIBUTING.md)**.
 - **Community standards** → [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - **License** → Creative Commons Attribution 4.0 International ([CC BY 4.0](LICENSE)) — content is free to share and adapt with credit
 
-## Separate collection — Machine Learning course materials
+## Also in this repo (outside the curriculum)
 
-The [`machine learning/`](machine%20learning) folder is **not part of the mastery
-curriculum**. It is a standalone set of university ML course materials (CPSC 5310):
-lecture decks, hands-on notebooks (CNN, RNN, Transformer, and RAG), and four review
-documents — [STUDY_GUIDE.md](machine%20learning/STUDY_GUIDE.md) (deep learning + RAG),
-[STUDY_GUIDE_CLASSICAL_ML.md](machine%20learning/STUDY_GUIDE_CLASSICAL_ML.md) (regression,
-classification, Bayes, SVM, ensembles, clustering, PCA),
-[CHEATSHEET.md](machine%20learning/CHEATSHEET.md) (exact configs and formulas), and
-[FINAL_PRACTICE_EXAM.md](machine%20learning/FINAL_PRACTICE_EXAM.md).
+A few folders live alongside the curriculum but are **not part of it** — they're
+standalone collections kept here for convenience. They aren't counted in the 177-guide
+total and aren't tracked by the curriculum index.
+
+- **[`machine learning/`](machine%20learning)** — university ML course materials
+  (CPSC 5310): lecture decks, hands-on notebooks (CNN, RNN, Transformer, and RAG), and
+  four review documents — [STUDY_GUIDE.md](machine%20learning/STUDY_GUIDE.md) (deep
+  learning + RAG),
+  [STUDY_GUIDE_CLASSICAL_ML.md](machine%20learning/STUDY_GUIDE_CLASSICAL_ML.md)
+  (regression, classification, Bayes, SVM, ensembles, clustering, PCA),
+  [CHEATSHEET.md](machine%20learning/CHEATSHEET.md) (exact configs and formulas), and
+  [FINAL_PRACTICE_EXAM.md](machine%20learning/FINAL_PRACTICE_EXAM.md).
+- **[`sie/`](sie)** — an in-depth study guide and rapid-review question bank for FINRA's
+  Securities Industry Essentials (SIE) exam.
+- **[`outreach/`](outreach)** — a compliant-by-design B2B lead-generation and outreach
+  toolkit (templates, scripts, and a compliance checklist).
+- **[`sports/`](sports)** — a couple of standalone sports analysis write-ups.
+
+The same honesty note at the top of this README applies to these too: they're
+AI-assisted, and you should verify anything load-bearing before relying on it.
