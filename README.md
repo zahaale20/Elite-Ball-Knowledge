@@ -26,7 +26,7 @@ principles, not gatekept.
 
 ## Start here in 60 seconds
 
-New here? Don't try to read all 177 guides. Pick the lane that matches you and start
+New here? Don't try to read all guides. Pick the lane that matches you and start
 with one:
 
 - **I want to build autonomy** → [Guidance, Navigation & Control](autonomy/09-gnc.md),
