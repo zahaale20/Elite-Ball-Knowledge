@@ -79,9 +79,6 @@ Each top-level folder is a topic band, numbered **independently from `01`**:
 | `products/` | High-impact tools worth adopting |
 | `tooling/` | Power prompts for building with AI |
 
-> The `machine learning/` folder is a **separate** university-course collection, not
-> part of the mastery curriculum. Contribute there only for CPSC 5310 materials.
-
 ---
 
 ## Naming conventions

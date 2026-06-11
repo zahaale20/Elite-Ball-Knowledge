@@ -86,14 +86,6 @@ A few folders live alongside the curriculum but are **not part of it** — they'
 standalone collections kept here for convenience. They aren't counted in the 177-guide
 total and aren't tracked by the curriculum index.
 
-- **[`machine learning/`](machine%20learning)** — university ML course materials
-  (CPSC 5310): lecture decks, hands-on notebooks (CNN, RNN, Transformer, and RAG), and
-  four review documents — [STUDY_GUIDE.md](machine%20learning/STUDY_GUIDE.md) (deep
-  learning + RAG),
-  [STUDY_GUIDE_CLASSICAL_ML.md](machine%20learning/STUDY_GUIDE_CLASSICAL_ML.md)
-  (regression, classification, Bayes, SVM, ensembles, clustering, PCA),
-  [CHEATSHEET.md](machine%20learning/CHEATSHEET.md) (exact configs and formulas), and
-  [FINAL_PRACTICE_EXAM.md](machine%20learning/FINAL_PRACTICE_EXAM.md).
 - **[`sie/`](sie)** — an in-depth study guide and rapid-review question bank for FINRA's
   Securities Industry Essentials (SIE) exam.
 - **[`outreach/`](outreach)** — a compliant-by-design B2B lead-generation and outreach

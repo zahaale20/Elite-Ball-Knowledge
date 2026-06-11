@@ -43,8 +43,8 @@ from urllib.parse import unquote
 ROOT = Path(__file__).resolve().parent.parent
 
 # The 14 curriculum "topic folders" whose numbered guides make up the headline
-# count. Standalone collections (machine learning), the outreach toolkit, sports,
-# and scratch folders are intentionally excluded.
+# count. Standalone collections (the outreach toolkit, sie, sports) and scratch
+# folders are intentionally excluded.
 TOPIC_FOLDERS = [
     "foundations",
     "autonomy",

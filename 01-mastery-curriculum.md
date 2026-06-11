@@ -96,9 +96,7 @@ independently from `01`**. The folders are: **foundations** (`01–21`),
 **general** (`01–14`), **space** (`01`), and **products** (`01`). The first table
 below lists the original foundations/career/autonomy/tooling/information-environment
 spine; the remaining folders — including the **Extended Foundations** (`foundations/10–21`),
-**Space**, and **Products** sections — are detailed in the sections that follow it. A
-separate **machine learning/** folder holds standalone course materials and is
-documented at the end of the repository map, not as part of the curriculum spine.
+**Space**, and **Products** sections — are detailed in the sections that follow it.
 
 | # | File | Band |
 |---|---|---|
@@ -445,19 +443,6 @@ autonomy stack into orbit, the other treats your own tooling as a force multipli
 |---|---|---|
 | `space/01` | [Space Systems & Astronautics](space/01-space-systems-and-astronautics.md) | Reason from vis-viva to real missions — sizing orbits, constellations, link and power budgets for contested space |
 | `products/01` | [Twenty Underrated, High-Impact Products](products/01-twenty-underrated-high-impact-products.md) | Treat tooling as a force multiplier — smell 10× tools early and delete recurring friction permanently |
-
-### Separate Collection — Machine Learning Course Materials (`machine learning/`)
-
-The `machine learning/` folder is **not part of the mastery curriculum** above; it is a
-self-contained collection of university machine-learning course materials (CPSC 5310)
-kept in this repository for convenience. It includes weekly lecture decks (statistics,
-regression, classification, SVMs, ensembles, clustering, PCA, neural networks,
-attention/transformers, and GenAI systems), hands-on notebooks (CNN, RNN, Transformer,
-and RAG "course assistant"), and two review documents:
-[STUDY_GUIDE.md](machine%20learning/STUDY_GUIDE.md) and
-[FINAL_PRACTICE_EXAM.md](machine%20learning/FINAL_PRACTICE_EXAM.md). It complements the
-first-principles ML coverage in [autonomy/01](autonomy/01-ml-ai.md) and
-[general/04](general/04-how-ai-and-llms-actually-work.md) but is maintained separately.
 
 ---
 
