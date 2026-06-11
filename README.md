@@ -7,8 +7,7 @@
 [![Made with: AI tools](https://img.shields.io/badge/made%20with-AI%20tools-8A2BE2)](#)
 [![Status: AI-assisted — verify before relying](https://img.shields.io/badge/AI--assisted-verify%20before%20relying-critical)](#how-this-library-was-made--read-this-first)
 
-A self-contained, first-principles study library — **177 in-depth guides across 14
-topic folders** — covering everything an autonomy / defense-technology engineer needs,
+A self-contained, first-principles study library covering everything an autonomy / defense-technology engineer needs,
 from the math and control theory under a flight stack to the career, strategy, and
 human-operating-system skills that decide how far that knowledge takes you.
 
