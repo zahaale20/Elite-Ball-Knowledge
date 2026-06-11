@@ -70,7 +70,7 @@ live in **[CONTRIBUTING.md](CONTRIBUTING.md)**.
 - **How to contribute** → [CONTRIBUTING.md](CONTRIBUTING.md)
 - **Guide template** → [templates/GUIDE_TEMPLATE.md](templates/GUIDE_TEMPLATE.md)
 - **Community standards** → [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-- **License** → [CC BY 4.0](LICENSE) (content) — free to share and adapt with credit
+- **License** → Creative Commons Attribution 4.0 International ([CC BY 4.0](LICENSE)) — content is free to share and adapt with credit
 
 ## Separate collection — Machine Learning course materials
 

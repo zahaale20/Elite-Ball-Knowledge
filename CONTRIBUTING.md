@@ -5,32 +5,40 @@ study collection**, and it gets better the more sharp minds contribute. This gui
 exists so that **anyone** — not just the original author — can add a guide, fix an
 error, or propose a whole new topic without guessing at the conventions.
 
+**This is a curated, owner-gated library.** Every change goes through the repository
+owner first. Open an issue, wait for sign-off, then do the work. Do **not** push
+directly or open unsolicited pull requests.
+
 If you read nothing else, read **[The 60-second version](#the-60-second-version)**.
 
 ---
 
 ## The 60-second version
 
-1. **Fork** the repo and create a branch: `git checkout -b add/<topic-slug>`.
-2. **Scaffold a new guide** with the helper (it picks the next number for you):
+1. **Propose first** → open a
+   [New guide proposal](.github/ISSUE_TEMPLATE/new-guide-proposal.yml) describing what
+   you want to add, and **wait for the owner to approve it and assign the next number.**
+2. **Fork** the repo and create a branch: `git checkout -b add/<topic-slug>`.
+3. **Scaffold the guide** with the helper (it picks the next number for you):
    ```bash
    ./scripts/new-guide.sh foundations "Your Guide Title"
    ```
    …or copy [`templates/GUIDE_TEMPLATE.md`](templates/GUIDE_TEMPLATE.md) by hand.
-3. **Write it** following the [style guide](#style-guide). Anchor claims to sources.
-4. **Add one row** for your guide to the relevant table in
+4. **Write it** following the [style guide](#style-guide). Anchor claims to sources.
+5. **Add one row** for your guide to the relevant table in
    [`01-mastery-curriculum.md`](01-mastery-curriculum.md).
-5. **Run the validator** to catch broken links, numbering clashes, and a stale
+6. **Run the validator** to catch broken links, numbering clashes, and a stale
    guide count before you push:
    ```bash
    ./scripts/check-repo.py
    ```
    It exits cleanly when the library is consistent (cross-repo `drone/` code
    references are reported as harmless warnings).
-6. **Open a Pull Request** using the template. Done.
+7. **Open a Pull Request** referencing the approved issue, using the template. The
+   owner reviews and merges at their discretion.
 
-You do **not** need permission to start, and you do **not** need to touch anyone
-else's files. The structure below is designed so contributions never collide.
+Numbers are permanent IDs, so once the owner assigns you the next free number your work
+never collides with anyone else's. The structure below explains why.
 
 ---
 
@@ -125,7 +133,10 @@ Every guide follows the same shape so readers can move between them fluidly. The
 
 ## Adding a brand-new topic folder
 
-Only do this when a guide genuinely doesn't fit any existing band.
+Only do this when a guide genuinely doesn't fit any existing band. **Pitch the idea
+first** by opening a
+[New topic folder](.github/ISSUE_TEMPLATE/new-topic-folder.yml) issue and waiting for
+the owner to approve it. Once approved:
 
 1. Create the folder with a lowercase, hyphenated name (e.g. `cyber/`).
 2. Add your first guide as `01-...md`.
@@ -145,9 +156,12 @@ Only do this when a guide genuinely doesn't fit any existing band.
 
 ### Not ready to write a full guide?
 
-- **Propose a guide** → open a *New guide proposal* issue.
-- **Report an error or suggest an improvement** → open a *Correction / improvement* issue.
-- **Pitch a new topic band** → open a *New topic folder* issue.
+- **Propose a guide** → open a
+  [New guide proposal](.github/ISSUE_TEMPLATE/new-guide-proposal.yml) issue.
+- **Report an error or suggest an improvement** → open a
+  [Correction / improvement](.github/ISSUE_TEMPLATE/correction-or-improvement.yml) issue.
+- **Pitch a new topic band** → open a
+  [New topic folder](.github/ISSUE_TEMPLATE/new-topic-folder.yml) issue.
 
 Small, well-scoped PRs merge fastest. A single tight guide beats a sprawling one.
 

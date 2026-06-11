@@ -1,0 +1,41 @@
+name: New topic folder
+description: Pitch a brand-new topic band (folder) for the curriculum.
+title: "[Topic] <folder name>"
+labels: ["new-topic"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose a new topic band only when guides genuinely don't fit any existing
+        folder. This issue is to align with the owner before any work starts — wait for
+        approval before creating the folder. See `CONTRIBUTING.md` for conventions.
+  - type: input
+    id: folder_name
+    attributes:
+      label: Proposed folder name (lowercase, hyphenated)
+      placeholder: "cyber-security"
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: What will this band contain, and why is it its own folder?
+      description: >
+        What topics will guides in this band cover, and why don't they fit an existing
+        folder? A few bullet points are plenty.
+    validations:
+      required: true
+  - type: textarea
+    id: first_guides
+    attributes:
+      label: First few guides you'd seed it with
+      description: Rough titles for the first 1–3 guides, to show the band has legs.
+    validations:
+      required: false
+  - type: checkboxes
+    id: offer
+    attributes:
+      label: Are you offering to seed it?
+      options:
+        - label: Yes, I'll open a PR with the folder and its first guide.
+        - label: No, I'm pitching it for someone else to pick up.
