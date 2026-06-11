@@ -9,12 +9,12 @@
 
 # PLACEHOLDER TITLE — Optional Em-Dash Subtitle
 
-> **Where this sits.** One short paragraph: what this guide teaches, who it's for, and
+> **Why this exists.** One short paragraph: what this guide teaches, who it's for, and
 > how it relates to the rest of the library. Link 2–4 sibling guides so readers can
 > navigate, e.g. it builds on [Optimization](../mathematics/01-optimization.md) and
 > feeds into [Planning & Decision-Making](../autonomy/10-planning-decision.md).
 >
-> **What it makes you.** One sentence on the capability a reader walks away with.
+> **What mastering it makes you.** One sentence on the capability a reader walks away with.
 
 **Companion material (optional).** If this guide anchors to code, a dataset, or another
 guide, name it here with relative links.

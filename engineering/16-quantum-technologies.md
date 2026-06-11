@@ -22,7 +22,7 @@ This closes the open problems of [26-gnss](../autonomy/07-gnss-jamming-spoofing.
 (GPS-denied nav), [87-cryptography](../software/08-cryptography-applied.md)
 (post-quantum security), and [74-sensors](../engineering/10-sensors-and-instrumentation.md)
 (next-generation sensing), grounded in the physics of
-[102-physics-for-engineers](../mathematics/08-physics-for-engineers.md) and the
+[Physics for Engineers](../mathematics/08-physics-for-engineers.md) and the
 information theory of [100-information-theory](../mathematics/06-information-theory.md).
 
 ---

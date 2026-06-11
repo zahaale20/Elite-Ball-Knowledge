@@ -1,0 +1,4 @@
+# Repository owner owns every path by default. GitHub will auto-request the
+# owner's review on any pull request, enforcing the owner-gated workflow
+# described in CONTRIBUTING.md.
+* @zahaale20

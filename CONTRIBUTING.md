@@ -104,8 +104,10 @@ Every guide follows the same shape so readers can move between them fluidly. The
 [template](templates/GUIDE_TEMPLATE.md) has all of this pre-filled:
 
 1. **H1 title** — descriptive, first-principles framing.
-2. **"Where this sits" callout** (`>` blockquote) — how the guide relates to the rest
-   of the library, with links to 2–4 sibling guides.
+2. **"Why this exists" callout** (`>` blockquote) — how the guide relates to the rest
+   of the library, with links to 2–4 sibling guides, followed by a one-line
+   **"What mastering it makes you."** This is the convention the library actually uses;
+   match it rather than inventing a new opener.
 3. **Table of Contents** — for anything longer than a few screens.
 4. **Body** — numbered or named sections, depth over breadth.
 5. **Cross-links** — link generously to related guides with **relative paths**
@@ -171,7 +173,7 @@ Small, well-scoped PRs merge fastest. A single tight guide beats a sprawling one
 
 - [ ] Filename follows `NN-kebab-case.md` and uses the next free number.
 - [ ] No existing guide was renumbered or its links broken.
-- [ ] The guide has the H1 title, "Where this sits" callout, and (if long) a ToC.
+- [ ] The guide has the H1 title, "Why this exists" callout, and (if long) a ToC.
 - [ ] Strong claims are anchored; math/code render correctly.
 - [ ] Added a row to [`01-mastery-curriculum.md`](01-mastery-curriculum.md).
 - [ ] Relative links resolve; no secrets or export-controlled detail.

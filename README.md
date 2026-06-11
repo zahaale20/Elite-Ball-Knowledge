@@ -1,5 +1,10 @@
 # Elite Ball Knowledge Curriculum
 
+[![Guides](https://img.shields.io/badge/guides-177-blue)](01-mastery-curriculum.md)
+[![Topic folders](https://img.shields.io/badge/topic%20folders-14-blueviolet)](01-mastery-curriculum.md)
+[![License: CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-green)](LICENSE)
+[![Contributions: owner-gated](https://img.shields.io/badge/contributions-owner--gated-orange)](CONTRIBUTING.md)
+
 A self-contained, first-principles study library — **177 in-depth guides across 14
 topic folders** — covering everything an autonomy / defense-technology engineer needs,
 from the math and control theory under a flight stack to the career, strategy, and

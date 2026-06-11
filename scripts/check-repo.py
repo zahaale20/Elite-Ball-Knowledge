@@ -22,6 +22,10 @@ What it checks
 3. Guide count — counts numbered guides in the 14 curriculum topic folders and
    compares the total against the figure advertised in README.md, so the headline
    number can never silently drift out of date.
+4. Curriculum invariant — every numbered guide on disk must be linked from
+   01-mastery-curriculum.md, and every guide the index links to must exist. This
+   keeps the master index and the file tree from silently diverging (a guide added
+   but never indexed, or an index row pointing at a deleted/renamed file).
 
 Exit code is 0 only when there are no errors; numbering gaps and count drift are
 reported as warnings unless `--strict` is passed, which promotes them to errors.
@@ -199,6 +203,42 @@ def advertised_count() -> int | None:
     return int(match.group(1)) if match else None
 
 
+def check_curriculum_invariant() -> list[str]:
+    """Every numbered guide on disk must be indexed, and every indexed guide exist.
+
+    Compares the set of `NN-*.md` guides in the topic folders against the set of
+    guide links in 01-mastery-curriculum.md. A guide present on disk but missing
+    from the index, or an index row pointing at a file that does not exist, is an
+    error — both break the contract that the index is the complete map of the
+    library.
+    """
+    errors: list[str] = []
+    index = ROOT / "01-mastery-curriculum.md"
+    if not index.is_file():
+        return ["01-mastery-curriculum.md is missing."]
+
+    topic_prefixes = tuple(f"{folder}/" for folder in TOPIC_FOLDERS)
+
+    # Guide links in the index that point into a topic folder (root-relative).
+    indexed: set[str] = set()
+    for raw_target in LINK_RE.findall(index.read_text(encoding="utf-8")):
+        target = unquote(raw_target.split(" ", 1)[0].split("#", 1)[0].strip())
+        if target.startswith(topic_prefixes) and NUM_PREFIX_RE.match(Path(target).name):
+            indexed.add(target)
+
+    # Numbered guides that actually exist on disk.
+    on_disk: set[str] = set()
+    for folder in TOPIC_FOLDERS:
+        for md in (ROOT / folder).glob("[0-9][0-9]-*.md"):
+            on_disk.add(str(md.relative_to(ROOT)))
+
+    for guide in sorted(on_disk - indexed):
+        errors.append(f"{guide}: on disk but not linked from 01-mastery-curriculum.md")
+    for guide in sorted(indexed - on_disk):
+        errors.append(f"{guide}: linked from 01-mastery-curriculum.md but missing on disk")
+    return errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate repo integrity.")
     parser.add_argument("--counts", action="store_true", help="print the count table")
@@ -213,6 +253,7 @@ def main() -> int:
     files = iter_markdown_files()
     link_errors, link_warnings = check_links(files)
     num_errors, num_warnings, counts = check_numbering()
+    curriculum_errors = check_curriculum_invariant()
     total = sum(counts.values())
 
     if args.counts or not args.quiet:
@@ -237,6 +278,8 @@ def main() -> int:
         print(f"ERROR  {err}")
     for err in num_errors:
         print(f"ERROR  {err}")
+    for err in curriculum_errors:
+        print(f"ERROR  {err}")
     for err in count_errors:
         print(f"ERROR  {err}")
     for warn in link_warnings:
@@ -244,11 +287,8 @@ def main() -> int:
     for warn in num_warnings:
         print(f"WARN   {warn}")
 
-    errors = len(link_errors) + len(num_errors) + len(count_errors)
+    errors = len(link_errors) + len(num_errors) + len(curriculum_errors) + len(count_errors)
     warnings = len(link_warnings) + len(num_warnings)
-    if args.strict:
-        errors += warnings
-        warnings = 0
     if args.strict:
         errors += warnings
         warnings = 0
